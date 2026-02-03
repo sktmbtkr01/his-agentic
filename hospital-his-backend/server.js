@@ -17,7 +17,9 @@ const errorHandler = require('./middleware/error.middleware');
 const Ward = require('./models/Ward');
 const Bed = require('./models/Bed');
 const Department = require('./models/Department');
-const { BED_STATUS, BED_TYPES } = require('./config/constants');
+const User = require('./models/User'); // Added User model
+const bcrypt = require('bcryptjs'); // Added bcrypt for passwords
+const { BED_STATUS, BED_TYPES, USER_ROLES } = require('./config/constants'); // Added USER_ROLES
 
 // Swagger Documentation
 const swaggerUi = require('swagger-ui-express');
@@ -243,10 +245,62 @@ app.get('/api/seed-beds-fix', async (req, res) => {
             }
         }
 
+        // 4. Seed Users (If missing)
+        let usersAdded = 0;
+
+        // Admin
+        const adminExists = await User.findOne({ email: 'admin@hospital-his.com' });
+        if (!adminExists) {
+            const adminDept = departments.find(d => d.departmentCode === 'DEPT-ADMN') || departments[0];
+            await User.create({
+                username: 'admin',
+                email: 'admin@hospital-his.com',
+                password: 'Admin@123',
+                role: USER_ROLES.ADMIN,
+                department: adminDept._id,
+                profile: { firstName: 'System', lastName: 'Admin', phone: '9999999999' },
+                isActive: true
+            });
+            usersAdded++;
+        }
+
+        // Receptionist
+        const recepExists = await User.findOne({ email: 'amit@hospital-his.com' });
+        if (!recepExists) {
+            const adminDept = departments.find(d => d.departmentCode === 'DEPT-ADMN') || departments[0];
+            await User.create({
+                username: 'reception.amit',
+                email: 'amit@hospital-his.com',
+                password: 'Reception@123',
+                role: USER_ROLES.RECEPTIONIST,
+                department: adminDept._id,
+                profile: { firstName: 'Amit', lastName: 'Kumar', phone: '9876543212' },
+                isActive: true
+            });
+            usersAdded++;
+        }
+
+        // Doctor
+        const docExists = await User.findOne({ email: 'dr.sharma@hospital-his.com' });
+        if (!docExists) {
+            const docDept = departments.find(d => d.departmentCode === 'DEPT-GEN') || departments[0];
+            await User.create({
+                username: 'dr.sharma',
+                email: 'dr.sharma@hospital-his.com',
+                password: 'Doctor@123',
+                role: USER_ROLES.DOCTOR,
+                department: docDept._id,
+                profile: { firstName: 'Rajesh', lastName: 'Sharma', phone: '9876543210' },
+                isActive: true
+            });
+            usersAdded++;
+        }
+
         res.status(200).json({
             success: true,
-            message: `Database Repair Complete. Added ${bedsAdded} beds.`,
-            bedsAdded
+            message: `Database Repair Complete. Added ${bedsAdded} beds and ${usersAdded} users.`,
+            bedsAdded,
+            usersAdded
         });
 
     } catch (error) {
