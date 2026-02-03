@@ -1,15 +1,14 @@
 # HIS ID OCR Service - Dockerfile for Hugging Face Spaces
 # Lightweight build using Tesseract + Gemini (NO torch)
 
-FROM python:3.10-slim
+FROM python:3.10-slim-bullseye
 
 WORKDIR /app
 
 # Install system dependencies (Tesseract OCR)
-# Install system dependencies (Tesseract OCR)
 RUN apt-get update && apt-get install -y \
     tesseract-ocr \
-    libgl1-mesa-glx \
+    libgl1 \
     libglib2.0-0 \
     curl \
     && rm -rf /var/lib/apt/lists/*

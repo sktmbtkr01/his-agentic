@@ -1,7 +1,7 @@
 # HIS ML Services - Docker Configuration for Hugging Face Spaces (FastAPI Version)
 # Combines Predictive Analytics and Revenue Leakage services
 
-FROM python:3.10-slim
+FROM python:3.10-slim-bullseye
 
 # Set working directory
 WORKDIR /app

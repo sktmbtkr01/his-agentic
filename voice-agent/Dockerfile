@@ -1,5 +1,5 @@
 # Voice Agent Dockerfile - HF Spaces
-FROM python:3.11-slim
+FROM python:3.11-slim-bullseye
 
 # Set working directory
 WORKDIR /app
@@ -8,6 +8,8 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     gcc \
     libffi-dev \
+    libsndfile1 \
+    ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first for caching
