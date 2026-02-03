@@ -2,7 +2,7 @@
 title: HIS ID OCR
 emoji: 🪪
 colorFrom: green
-colorTo: teal
+colorTo: blue
 sdk: docker
 pinned: false
 ---

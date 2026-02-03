@@ -1,7 +1,7 @@
 ---
 title: HIS ML Services
 emoji: 🧠
-colorFrom: orange
+colorFrom: yellow
 colorTo: red
 sdk: docker
 pinned: false
