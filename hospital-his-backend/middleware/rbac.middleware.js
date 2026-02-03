@@ -17,6 +17,11 @@ exports.authorize = (...roles) => {
             return next(new ErrorResponse('User not authenticated', 401));
         }
 
+        // DEBUG LOGGING
+        console.log(`🔒 RBAC Check Route: ${req.originalUrl}`);
+        console.log(`   User Role: '${req.user.role}'`);
+        console.log(`   Required Roles: ${JSON.stringify(roles)}`);
+
         if (!roles.map(r => r.toLowerCase()).includes(req.user.role.toLowerCase())) {
             return next(
                 new ErrorResponse(

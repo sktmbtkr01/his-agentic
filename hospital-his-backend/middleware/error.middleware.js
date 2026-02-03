@@ -11,6 +11,10 @@ const errorHandler = (err, req, res, next) => {
     error.message = err.message;
 
     // Log error for debugging
+    console.error('----------------------------------------');
+    console.error('❌ ERROR HANDLER CAUGHT:', err.message);
+    console.error('Stack:', err.stack);
+    console.error('----------------------------------------');
     logger.error(`${err.message}`, { stack: err.stack });
 
     // Mongoose bad ObjectId
