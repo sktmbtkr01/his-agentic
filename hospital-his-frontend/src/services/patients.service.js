@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API_BASE_URL, getConfig } from '../config/api.config';
 
-const API_URL = `${API_BASE_URL}/patients/`;
+const API_URL = `${API_BASE_URL}/patients`;
 
 // Get all patients
 const getPatients = async () => {

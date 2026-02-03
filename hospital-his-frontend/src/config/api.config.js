@@ -23,8 +23,16 @@ export const SOCKET_URL = BACKEND_URL;
 
 // Helper to get auth header
 export const getAuthHeader = () => {
-    const token = localStorage.getItem('token');
-    return token ? { Authorization: `Bearer ${token}` } : {};
+    const userStr = localStorage.getItem('user');
+    if (userStr) {
+        try {
+            const user = JSON.parse(userStr);
+            return user.token ? { Authorization: `Bearer ${user.token}` } : {};
+        } catch (e) {
+            return {};
+        }
+    }
+    return {};
 };
 
 // Default axios config
