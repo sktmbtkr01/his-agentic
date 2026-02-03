@@ -42,10 +42,10 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS configuration - allow requests from HIS frontend
+# CORS configuration - allow all origins for HF Spaces deployment
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000", "http://localhost:5001"],
+    allow_origins=["*"],  # HF Spaces needs flexible CORS
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -99,7 +99,7 @@ async def health_check():
     """Detailed health check"""
     return {
         "status": "healthy",
-        "model_loaded": get_donut_loader()._initialized,
+        "service": "HIS ID OCR (Tesseract)",
         "raw_upload_dir": str(UPLOAD_DIR_RAW),
         "masked_upload_dir": str(UPLOAD_DIR_MASKED)
     }
@@ -223,4 +223,5 @@ async def cleanup_uploads():
 # Entry point for running with uvicorn
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=7860)
+

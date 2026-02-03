@@ -28,7 +28,7 @@ class Settings(BaseSettings):
     google_application_credentials: str = ""
     
     # Voice Settings
-    voice_agent_port: int = 5003
+    voice_agent_port: int = 7860  # 7860 for HF Spaces
     voice_language: str = "en-IN"  # Indian English
     voice_gender: Literal["MALE", "FEMALE", "NEUTRAL"] = "FEMALE"
     

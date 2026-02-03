@@ -1,0 +1,23 @@
+name: Deploy Voice Agent to HF Spaces
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'voice-agent/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Push to HF Space
+        uses: JacobLinCool/huggingface-sync@v1
+        with:
+          github: ${{ github.repository }}
+          huggingface: ${{ secrets.HF_VOICE_SPACE }}
+          token: ${{ secrets.HF_TOKEN }}
+          directory: voice-agent

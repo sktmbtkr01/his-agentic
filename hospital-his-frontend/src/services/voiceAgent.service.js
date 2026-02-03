@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const VOICE_AGENT_URL = 'http://localhost:5003';
+import { VOICE_AGENT_URL } from '../config/api.config';
 
 // Start a new voice call session
 const startCall = async (callerId = null) => {

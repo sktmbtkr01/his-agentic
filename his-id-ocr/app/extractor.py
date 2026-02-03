@@ -6,9 +6,10 @@ Parses name, DOB, gender, and Aadhaar number from extracted text.
 """
 
 import re
-import torch
 from PIL import Image
 from typing import Dict, Optional, Any
+import logging
+from datetime import datetime
 import logging
 from datetime import datetime
 

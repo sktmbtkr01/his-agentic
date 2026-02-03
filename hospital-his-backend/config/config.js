@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const config = {
     // Server Configuration
-    port: process.env.PORT || 5001,
+    port: process.env.PORT || 7860,  // 7860 is default for HF Spaces
     nodeEnv: process.env.NODE_ENV || 'development',
 
     // MongoDB Configuration
@@ -19,8 +19,12 @@ const config = {
     jwtRefreshExpire: process.env.JWT_REFRESH_EXPIRE || '30d',
 
     // ML Services URLs
-    mlRevenueServiceUrl: process.env.ML_REVENUE_SERVICE_URL || 'http://localhost:5001',
+    mlRevenueServiceUrl: process.env.ML_REVENUE_SERVICE_URL || 'http://localhost:5004',
     mlPredictServiceUrl: process.env.ML_PREDICT_SERVICE_URL || 'http://localhost:5002',
+    
+    // External Microservices URLs (for HF Spaces deployment)
+    ocrServiceUrl: process.env.OCR_SERVICE_URL || 'http://localhost:8000',
+    voiceServiceUrl: process.env.VOICE_SERVICE_URL || 'http://localhost:5003',
 
     // Email/SMTP Configuration
     smtp: {

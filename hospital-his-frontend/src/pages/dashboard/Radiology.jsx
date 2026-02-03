@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import toast from 'react-hot-toast';
+import { API_BASE_URL } from '../../config/api.config';
 
 // Status badge colors
 const STATUS_COLORS = {
@@ -136,7 +137,7 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
 
                 // Upload to backend
                 const user = JSON.parse(localStorage.getItem('user'));
-                const response = await fetch(`http://localhost:5001/api/v1/radiology/upload-scan/${order._id}`, {
+                const response = await fetch(`${API_BASE_URL}/radiology/upload-scan/${order._id}`, {
                     method: 'POST',
                     headers: {
                         'Authorization': `Bearer ${user?.token}`

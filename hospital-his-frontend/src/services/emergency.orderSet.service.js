@@ -4,8 +4,9 @@
  */
 
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api.config';
 
-const API_BASE_URL = 'http://localhost:5001/api/v1/';
+const API_URL = `${API_BASE_URL}/`;
 
 const getConfig = () => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -27,7 +28,7 @@ const getConfig = () => {
 const getAvailableBundles = async (category = null) => {
     const params = category ? { category } : {};
     const response = await axios.get(
-        API_BASE_URL + 'emergency/order-sets',
+        API_URL + 'emergency/order-sets',
         { ...getConfig(), params }
     );
     return response.data.data;

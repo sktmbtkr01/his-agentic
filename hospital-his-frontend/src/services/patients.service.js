@@ -1,17 +1,7 @@
 import axios from 'axios';
+import { API_BASE_URL, getConfig } from '../config/api.config';
 
-const API_URL = 'http://localhost:5001/api/v1/patients/';
-
-const getConfig = () => {
-    const user = JSON.parse(localStorage.getItem('user'));
-
-    if (user && user.token) {
-        return {
-            headers: { Authorization: `Bearer ${user.token}` }
-        };
-    }
-    return {};
-};
+const API_URL = `${API_BASE_URL}/patients/`;
 
 // Get all patients
 const getPatients = async () => {
@@ -45,7 +35,7 @@ const getPatientHistory = async (id) => {
 
 // Get patient lab results
 const getPatientLabResults = async (patientId) => {
-    const response = await axios.get(`http://localhost:5001/api/v1/lab/orders?patient=${patientId}`, getConfig());
+    const response = await axios.get(`${API_BASE_URL}/lab/orders?patient=${patientId}`, getConfig());
     return response.data.data;
 };
 

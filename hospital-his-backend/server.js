@@ -1,7 +1,4 @@
-// No changes needed.
-
 require('dotenv').config();
-console.log("Mongo URI found:", !!process.env.MONGODB_URI);
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -15,6 +12,10 @@ const config = require('./config/config');
 const connectDB = require('./config/database');
 const logger = require('./utils/logger');
 const errorHandler = require('./middleware/error.middleware');
+
+// Swagger Documentation
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./config/swagger.config');
 
 // Route imports
 const authRoutes = require('./routes/auth.routes');
@@ -130,6 +131,22 @@ if (config.nodeEnv === 'development') {
 // API ROUTES
 // ============================================
 
+// Root route - Welcome message (required for HF Spaces)
+app.get('/', (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: 'HIS Agentic Backend API',
+        version: '1.0.0',
+        environment: config.nodeEnv,
+        endpoints: {
+            health: '/api/health',
+            docs: '/docs',
+            api: '/api/v1/*'
+        },
+        timestamp: new Date().toISOString()
+    });
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
     res.status(200).json({
@@ -138,6 +155,24 @@ app.get('/api/health', (req, res) => {
         environment: config.nodeEnv,
         timestamp: new Date().toISOString(),
     });
+});
+
+// Swagger API Documentation
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
+    customCss: '.swagger-ui .topbar { display: none }',
+    customSiteTitle: 'HIS Agentic API Documentation',
+    swaggerOptions: {
+        persistAuthorization: true,
+        displayRequestDuration: true,
+        docExpansion: 'none',
+        filter: true
+    }
+}));
+
+// Serve swagger spec as JSON
+app.get('/api-docs.json', (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(swaggerSpec);
 });
 
 // API version prefix

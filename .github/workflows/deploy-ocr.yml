@@ -1,0 +1,23 @@
+name: Deploy OCR Service to HF Spaces
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'his-id-ocr/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Push to HF Space
+        uses: JacobLinCool/huggingface-sync@v1
+        with:
+          github: ${{ github.repository }}
+          huggingface: ${{ secrets.HF_OCR_SPACE }}
+          token: ${{ secrets.HF_TOKEN }}
+          directory: his-id-ocr
