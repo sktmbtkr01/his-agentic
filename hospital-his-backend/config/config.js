@@ -14,14 +14,14 @@ const config = {
     mongodbUri: process.env.MONGODB_URI || 'mongodb://localhost:27017/hospital_his',
 
     // JWT Configuration
-    jwtSecret: process.env.JWT_SECRET || 'your_jwt_secret_key_here',
+    jwtSecret: 'your_secure_jwt_secret_key_here', // Hardcoded for consistency
     jwtExpire: process.env.JWT_EXPIRE || '7d',
     jwtRefreshExpire: process.env.JWT_REFRESH_EXPIRE || '30d',
 
     // ML Services URLs
     mlRevenueServiceUrl: process.env.ML_REVENUE_SERVICE_URL || 'http://localhost:5004',
     mlPredictServiceUrl: process.env.ML_PREDICT_SERVICE_URL || 'http://localhost:5002',
-    
+
     // External Microservices URLs (for HF Spaces deployment)
     ocrServiceUrl: process.env.OCR_SERVICE_URL || 'http://localhost:8000',
     voiceServiceUrl: process.env.VOICE_SERVICE_URL || 'http://localhost:5003',
@@ -53,7 +53,12 @@ const config = {
     logLevel: process.env.LOG_LEVEL || 'info',
 
     // Cors
-    corsOrigins: process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : ['http://localhost:3000', 'http://localhost:5173'],
+    corsOrigins: [
+        'https://his-agentic.vercel.app',
+        'http://localhost:3000',
+        'http://localhost:5173',
+        'https://sktmbtkr-his-agentic-backend.hf.space'
+    ],
 };
 
 module.exports = config;
