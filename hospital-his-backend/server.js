@@ -286,7 +286,7 @@ const startServer = async () => {
         await ensureInventoryPolicyDefaults();
 
         // Start HTTP server
-        httpServer.listen(PORT, () => {
+        httpServer.listen(PORT, '0.0.0.0', () => {
             logger.info('═══════════════════════════════════════════════════════════════');
             logger.info('       HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        ');
             logger.info('═══════════════════════════════════════════════════════════════');
