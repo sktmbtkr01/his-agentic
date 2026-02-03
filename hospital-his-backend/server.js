@@ -13,6 +13,12 @@ const connectDB = require('./config/database');
 const logger = require('./utils/logger');
 const errorHandler = require('./middleware/error.middleware');
 
+// Models and Constants for Seeding
+const Ward = require('./models/Ward');
+const Bed = require('./models/Bed');
+const Department = require('./models/Department');
+const { BED_STATUS, BED_TYPES } = require('./config/constants');
+
 // Swagger Documentation
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./config/swagger.config');
@@ -158,6 +164,98 @@ app.get('/api/health', (req, res) => {
         environment: config.nodeEnv,
         timestamp: new Date().toISOString(),
     });
+});
+
+// Database Repair Endpoint (Fixes Missing Beds/Wards)
+app.get('/api/seed-beds-fix', async (req, res) => {
+    try {
+        // 1. Ensure Departments Exist (Upsert)
+        const departmentsData = [
+            { departmentCode: 'DEPT-GEN', name: 'General Medicine', type: 'clinical' },
+            { departmentCode: 'DEPT-CARD', name: 'Cardiology', type: 'clinical' },
+            { departmentCode: 'DEPT-ORTH', name: 'Orthopedics', type: 'clinical' },
+            { departmentCode: 'DEPT-PEDS', name: 'Pediatrics', type: 'clinical' },
+            { departmentCode: 'DEPT-GYNO', name: 'Obstetrics & Gynecology', type: 'clinical' },
+            { departmentCode: 'DEPT-EMRG', name: 'Emergency', type: 'clinical' },
+        ];
+
+        for (const d of departmentsData) {
+            await Department.findOneAndUpdate({ departmentCode: d.departmentCode }, d, { upsert: true });
+        }
+
+        const departments = await Department.find();
+        const genMedDept = departments.find(d => d.departmentCode === 'DEPT-GEN');
+        const cardDept = departments.find(d => d.departmentCode === 'DEPT-CARD');
+        const emergDept = departments.find(d => d.departmentCode === 'DEPT-EMRG');
+        const pedsDept = departments.find(d => d.departmentCode === 'DEPT-PEDS');
+        const gynoDept = departments.find(d => d.departmentCode === 'DEPT-GYNO');
+
+        // 2. Define Wards
+        const wardsData = [
+            { wardCode: 'WRD-GEN-M', name: 'General Ward - Male', type: 'general', department: genMedDept?._id, floor: '1st', building: 'Main', totalBeds: 20 },
+            { wardCode: 'WRD-GEN-F', name: 'General Ward - Female', type: 'general', department: genMedDept?._id, floor: '1st', building: 'Main', totalBeds: 20 },
+            { wardCode: 'WRD-SEMI-M', name: 'Semi-Private Ward - Male', type: 'semi-private', department: genMedDept?._id, floor: '2nd', building: 'Main', totalBeds: 10 },
+            { wardCode: 'WRD-SEMI-F', name: 'Semi-Private Ward - Female', type: 'semi-private', department: genMedDept?._id, floor: '2nd', building: 'Main', totalBeds: 10 },
+            { wardCode: 'WRD-PVT', name: 'Private Rooms', type: 'private', department: genMedDept?._id, floor: '3rd', building: 'Main', totalBeds: 15 },
+            { wardCode: 'WRD-ICU', name: 'Intensive Care Unit', type: 'icu', department: genMedDept?._id, floor: '2nd', building: 'Critical Care', totalBeds: 10 },
+            { wardCode: 'WRD-CCU', name: 'Cardiac Care Unit', type: 'ccu', department: cardDept?._id, floor: '2nd', building: 'Critical Care', totalBeds: 8 },
+            { wardCode: 'WRD-EMRG', name: 'Emergency Ward', type: 'emergency', department: emergDept?._id, floor: 'Ground', building: 'Emergency', totalBeds: 12 },
+            { wardCode: 'WRD-PEDS', name: 'Pediatric Ward', type: 'pediatric', department: pedsDept?._id, floor: '1st', building: 'Main', totalBeds: 15 },
+            { wardCode: 'WRD-NICU', name: 'Neonatal ICU', type: 'nicu', department: pedsDept?._id, floor: '1st', building: 'Critical Care', totalBeds: 6 },
+            { wardCode: 'WRD-MAT', name: 'Maternity Ward', type: 'maternity', department: gynoDept?._id, floor: '3rd', building: 'Main', totalBeds: 20 },
+        ];
+
+        let bedsAdded = 0;
+
+        // 3. Upsert Wards & Seed Beds
+        for (const wData of wardsData) {
+            if (!wData.department) continue;
+
+            const ward = await Ward.findOneAndUpdate(
+                { wardCode: wData.wardCode },
+                wData,
+                { upsert: true, new: true }
+            );
+
+            // Determine Bed Specs
+            let bedType = BED_TYPES.GENERAL;
+            let tariff = 1000;
+            if (ward.type === 'private') { bedType = BED_TYPES.PRIVATE; tariff = 3000; }
+            else if (ward.type.includes('icu') || ward.type === 'ccu') { bedType = BED_TYPES.ICU; tariff = 5000; }
+            else if (ward.type === 'nicu') { bedType = BED_TYPES.NICU; tariff = 6000; }
+
+            // Create Beds
+            for (let i = 1; i <= ward.totalBeds; i++) {
+                const bedNumber = `${ward.wardCode}-${String(i).padStart(2, '0')}`;
+                const exists = await Bed.exists({ bedNumber });
+
+                if (!exists) {
+                    await Bed.create({
+                        bedNumber,
+                        ward: ward._id,
+                        bedType,
+                        status: BED_STATUS.AVAILABLE,
+                        tariff,
+                        lastCleanedAt: new Date()
+                    });
+                    bedsAdded++;
+                }
+            }
+        }
+
+        res.status(200).json({
+            success: true,
+            message: `Database Repair Complete. Added ${bedsAdded} beds.`,
+            bedsAdded
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            error: error.message,
+            stack: error.stack
+        });
+    }
 });
 
 // Swagger API Documentation
