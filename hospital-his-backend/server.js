@@ -85,8 +85,11 @@ app.set('io', io);
 // ============================================
 
 // Security headers
+// Security headers
 app.use(helmet({
     crossOriginResourcePolicy: { policy: 'cross-origin' },
+    contentSecurityPolicy: false, // Disable CSP for HF Spaces compatibility
+    xFrameOptions: false,         // Disable X-Frame-Options to allow embedding
 }));
 
 // CORS
