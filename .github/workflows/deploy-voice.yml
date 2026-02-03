@@ -13,11 +13,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
 
       - name: Push to HF Space
-        uses: JacobLinCool/huggingface-sync@v1
-        with:
-          github: ${{ github.repository }}
-          huggingface: ${{ secrets.HF_VOICE_SPACE }}
-          token: ${{ secrets.HF_TOKEN }}
-          directory: voice-agent
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          cd voice-agent
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git init
+          git add .
+          git commit -m "Deploy from GitHub Actions"
+          git push --force https://sktmbtkr:$HF_TOKEN@huggingface.co/spaces/${{ secrets.HF_VOICE_SPACE }} HEAD:main
