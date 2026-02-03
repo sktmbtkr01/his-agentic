@@ -17,7 +17,7 @@ exports.authorize = (...roles) => {
             return next(new ErrorResponse('User not authenticated', 401));
         }
 
-        if (!roles.includes(req.user.role)) {
+        if (!roles.map(r => r.toLowerCase()).includes(req.user.role.toLowerCase())) {
             return next(
                 new ErrorResponse(
                     `User role '${req.user.role}' is not authorized to access this route`,
