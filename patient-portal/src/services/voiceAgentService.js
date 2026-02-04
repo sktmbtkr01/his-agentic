@@ -5,7 +5,7 @@
 
 import axios from 'axios';
 
-const VOICE_AGENT_URL = import.meta.env.VITE_VOICE_AGENT_URL || 'http://localhost:5003';
+const VOICE_AGENT_URL = import.meta.env.VITE_VOICE_URL || 'http://localhost:5003';
 
 // Get auth token from localStorage
 const getAuthToken = () => {
