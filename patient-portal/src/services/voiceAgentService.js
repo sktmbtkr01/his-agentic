@@ -9,12 +9,7 @@ const VOICE_AGENT_URL = import.meta.env.VITE_VOICE_URL || 'http://localhost:5003
 
 // Get auth token from localStorage
 const getAuthToken = () => {
-    const patientData = localStorage.getItem('patient');
-    if (patientData) {
-        const patient = JSON.parse(patientData);
-        return patient.token;
-    }
-    return null;
+    return localStorage.getItem('patientAccessToken');
 };
 
 const getConfig = () => {
