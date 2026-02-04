@@ -14,7 +14,8 @@ const path = require('path');
 const logger = require('../utils/logger');
 
 // AI OCR Service base URL - configurable via environment
-const AI_OCR_SERVICE_URL = process.env.AI_OCR_SERVICE_URL || 'http://localhost:8000';
+// Uses OCR_SERVICE_URL (matches HF Spaces secret) or falls back to localhost for dev
+const AI_OCR_SERVICE_URL = process.env.OCR_SERVICE_URL || process.env.AI_OCR_SERVICE_URL || 'http://localhost:8000';
 
 /**
  * Extract patient details from an ID card image
