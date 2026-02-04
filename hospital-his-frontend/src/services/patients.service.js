@@ -17,19 +17,19 @@ const createPatient = async (patientData) => {
 
 // Search patients
 const searchPatients = async (query) => {
-    const response = await axios.get(`${API_URL}search?query=${query}`, getConfig());
+    const response = await axios.get(`${API_URL}/search?query=${query}`, getConfig());
     return response.data;
 };
 
 // Get single patient
 const getPatient = async (id) => {
-    const response = await axios.get(API_URL + id, getConfig());
+    const response = await axios.get(`${API_URL}/${id}`, getConfig());
     return response.data.data;
 };
 
 // Get patient history (Timeline)
 const getPatientHistory = async (id) => {
-    const response = await axios.get(API_URL + id + '/history', getConfig());
+    const response = await axios.get(`${API_URL}/${id}/history`, getConfig());
     return response.data.data;
 };
 
