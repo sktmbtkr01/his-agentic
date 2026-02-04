@@ -326,6 +326,23 @@ class IntentClassifier:
         if text_lower in ["no", "nope", "cancel", "wrong", "incorrect"]:
             return IntentResult(intent="CONFIRM_NO", confidence=0.85, entities={})
         
+        # Date detection (DD-MM-YYYY or similar)
+        date_match = re.search(r'\b\d{1,2}[-/\.]\d{1,2}[-/\.]\d{2,4}\b', text)
+        if date_match:
+             return IntentResult(
+                intent="PROVIDE_INFORMATION",
+                confidence=0.85,
+                entities={"date": date_match.group(0), "preferred_date": date_match.group(0)}
+            )
+        
+        # Relative dates
+        if any(w in text_lower for w in ["today", "tomorrow", "next week", "next monday"]):
+             return IntentResult(
+                intent="PROVIDE_INFORMATION",
+                confidence=0.85,
+                entities={"date": text.strip(), "preferred_date": text.strip()}
+             )
+        
         # Try to extract phone number - normalize by removing spaces/dashes
         normalized_text = re.sub(r'[\s\-\.]', '', text)  # Remove spaces, dashes, dots
         phone_match = re.search(r'\b(\d{10})\b', normalized_text)
