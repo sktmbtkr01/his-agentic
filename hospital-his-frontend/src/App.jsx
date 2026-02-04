@@ -26,6 +26,8 @@ import DoctorRadiologyTests from './pages/doctor/DoctorRadiologyTests';
 import LabReportView from './pages/doctor/LabReportView';
 import LabReportsList from './pages/doctor/LabReportsList';
 import PatientEMR from './pages/doctor/PatientEMR';
+import PatientSentinel from './pages/doctor/PatientSentinel';
+import SentinelDashboard from './pages/doctor/SentinelDashboard';
 import NurseDutyRoster from './pages/nursing/NurseDutyRoster';
 import NurseOPDQueue from './pages/nurse/NurseOPDQueue';
 import Admin from './pages/dashboard/Admin';
@@ -131,6 +133,8 @@ function App() {
               <Route path="lab-reports" element={<LabReportsList />} />
               <Route path="lab-reports/:reportId" element={<LabReportView />} />
               <Route path="emr/:patientId" element={<PatientEMR />} />
+              <Route path="sentinel/:patientId" element={<PatientSentinel />} />
+              <Route path="sentinel" element={<SentinelDashboard />} />
 
               {/* Clinical Coding Routes */}
               <Route path="coding" element={<CodingDashboard />} />

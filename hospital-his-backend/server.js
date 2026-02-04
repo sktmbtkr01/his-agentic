@@ -69,6 +69,20 @@ const medicineRoutes = require('./routes/medicine.routes');
 const labReportRoutes = require('./routes/labReport.routes');
 const onboardingRoutes = require('./routes/onboarding.routes');
 
+// Patient Portal Routes
+const patientAuthRoutes = require('./routes/patient/patientAuth.routes');
+const signalsRoutes = require('./routes/patient/signals.routes');
+const healthScoreRoutes = require('./routes/patient/healthScore.routes');
+const careNudgeRoutes = require('./routes/patient/careNudge.routes');
+const patientAppointmentRoutes = require('./routes/patient/patientAppointment.routes');
+const patientPrescriptionRoutes = require('./routes/patient/patientPrescription.routes');
+const patientLabRoutes = require('./routes/patient/patientLab.routes');
+const patientAnalyticsRoutes = require('./routes/patient/analytics.routes');
+const patientRecordsRoutes = require('./routes/patient/patientRecords.routes');
+
+// Doctor Sentinel Routes
+const doctorSentinelRoutes = require('./routes/doctor/doctorSentinel.routes');
+
 // Services (auto-run on startup)
 const { ensureInventoryPolicyDefaults } = require('./services/inventoryPolicyDefaults.service');
 
@@ -377,6 +391,20 @@ app.use(`${API_PREFIX}/medicines`, medicineRoutes);
 app.use(`${API_PREFIX}/nursing`, nursingRoutes);
 app.use(`${API_PREFIX}/lab-reports`, labReportRoutes);
 app.use(`${API_PREFIX}/admin/onboarding`, onboardingRoutes);
+
+// Patient Portal Routes (separate from HIS staff routes)
+app.use(`${API_PREFIX}/patient/auth`, patientAuthRoutes);
+app.use(`${API_PREFIX}/patient/signals`, signalsRoutes);
+app.use(`${API_PREFIX}/patient/score`, healthScoreRoutes);
+app.use(`${API_PREFIX}/patient/nudges`, careNudgeRoutes);
+app.use(`${API_PREFIX}/patient/appointments`, patientAppointmentRoutes);
+app.use(`${API_PREFIX}/patient/prescriptions`, patientPrescriptionRoutes);
+app.use(`${API_PREFIX}/patient/labs`, patientLabRoutes);
+app.use(`${API_PREFIX}/patient/analytics`, patientAnalyticsRoutes);
+app.use(`${API_PREFIX}/patient/records`, patientRecordsRoutes);
+
+// Doctor Sentinel Routes (for HIS integration)
+app.use(`${API_PREFIX}/doctor/sentinel`, doctorSentinelRoutes);
 
 // 404 handler for undefined routes
 app.use('*', (req, res) => {

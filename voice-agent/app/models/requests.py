@@ -9,8 +9,10 @@ from pydantic import BaseModel, Field
 class VoiceCallRequest(BaseModel):
     """Request to initiate a voice call session."""
     caller_id: str = Field(..., description="Unique identifier for the caller (phone number or ID)")
-    channel: str = Field(default="phone", description="Channel: phone, web, mobile")
+    channel: str = Field(default="phone", description="Channel: phone, web, mobile, patient_portal")
     language: Optional[str] = Field(default="en-IN", description="Language code")
+    patient_token: Optional[str] = Field(default=None, description="JWT token for patient portal auth")
+    patient_id: Optional[str] = Field(default=None, description="Patient ID for patient portal users")
 
 
 class TranscribeRequest(BaseModel):

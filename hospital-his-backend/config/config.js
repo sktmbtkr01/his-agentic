@@ -53,12 +53,15 @@ const config = {
     logLevel: process.env.LOG_LEVEL || 'info',
 
     // Cors
-    corsOrigins: [
-        'https://his-agentic.vercel.app',
-        'http://localhost:3000',
-        'http://localhost:5173',
-        'https://sktmbtkr-his-agentic-backend.hf.space'
-    ],
+    corsOrigins: process.env.CORS_ORIGINS
+        ? process.env.CORS_ORIGINS.split(',')
+        : [
+            'http://localhost:3000',
+            'http://localhost:5173',
+            'http://localhost:5174',
+            'https://his-agentic.vercel.app',
+            'https://sktmbtkr-his-agentic-backend.hf.space'
+        ],
 };
 
 module.exports = config;

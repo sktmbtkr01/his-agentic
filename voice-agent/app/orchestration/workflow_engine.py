@@ -46,6 +46,7 @@ class WorkflowEngine:
             LabBookingWorkflow,
             StatusInquiryWorkflow,
             EscalationWorkflow,
+            PatientPortalWorkflow,
         )
         
         # Map intents to workflow handlers
@@ -68,6 +69,9 @@ class WorkflowEngine:
             Intent.ESCALATE_TO_HUMAN: EscalationWorkflow(his_client),
             Intent.REPORT_EMERGENCY: EscalationWorkflow(his_client),
         }
+        
+        # Patient Portal specific workflow (uses patient JWT for auth)
+        self._patient_portal_workflow = PatientPortalWorkflow(his_client)
     
     def create_session(self, caller_id: str, channel: str = "phone") -> str:
         """Create a new conversation session."""
@@ -137,13 +141,18 @@ class WorkflowEngine:
             
             # Get session context
             session_context = self.context_tracker.get_context(session_id)
-            merged_context = {**(context or {}), **session_context}
+            # CRITICAL: Request context should override session context to ensure
+            # patient_token and channel from frontend are preserved
+            merged_context = {**session_context, **(context or {})}
             
             logger.info("WORKFLOW_ENGINE: Context loaded",
                        session_id=session_id,
                        current_workflow=session_context.get("current_workflow"),
                        workflow_state_keys=list(session_context.get("workflow_state", {}).keys()),
-                       turn_count=session_context.get("turn_count", 0))
+                       turn_count=session_context.get("turn_count", 0),
+                       channel=merged_context.get("channel"),
+                       has_patient_token=bool(merged_context.get("patient_token")),
+                       session_channel=session_context.get("channel"))
             
             # Handle simple intents directly
             if intent == Intent.GREETING or intent == "GREETING":
@@ -175,12 +184,81 @@ class WorkflowEngine:
                     is_complete=False
                 )
             
+            # ==================== PATIENT PORTAL CONTINUATION CHECK ====================
+            # If this is a patient portal session with an active workflow, treat ALL 
+            # subsequent inputs as continuations (not new intents)
+            channel = merged_context.get("channel")
+            patient_token = merged_context.get("patient_token")
+            current_workflow = merged_context.get("current_workflow")
+            
+            if channel == "patient_portal" and patient_token and current_workflow:
+                logger.info("WORKFLOW_ENGINE: Patient portal continuation detected",
+                           session_id=session_id,
+                           current_workflow=current_workflow,
+                           intent=str(intent))
+                return await self._handle_continuation(
+                    session_id, intent, entities, merged_context
+                )
+            
             # Handle confirmation intents
             if intent in [Intent.CONFIRM_YES, Intent.CONFIRM_NO, Intent.PROVIDE_INFORMATION,
                          "CONFIRM_YES", "CONFIRM_NO", "PROVIDE_INFORMATION", "CONFIRM", "DENY"]:
                 return await self._handle_continuation(
                     session_id, intent, entities, merged_context
                 )
+            
+            # ==================== PATIENT PORTAL ROUTING ====================
+            # Check if this is a patient portal request
+            channel = merged_context.get("channel")
+            patient_token = merged_context.get("patient_token")
+            
+            # DEBUG PRINT
+            print(f"DEBUG: Checking Routing - Channel: {channel}, Token Present: {bool(patient_token)}, Intent: {intent}")
+            
+            if channel == "patient_portal" and patient_token:
+                # Route appointment-related intents to patient portal workflow
+                intent_enum = Intent(intent) if isinstance(intent, str) else intent
+                portal_intents = [
+                    Intent.BOOK_APPOINTMENT, Intent.RESCHEDULE_APPOINTMENT,
+                    Intent.CANCEL_APPOINTMENT, Intent.CHECK_APPOINTMENT_STATUS,
+                    Intent.GENERAL_STATUS_INQUIRY
+                ]
+                
+                print(f"DEBUG: Intent Enum: {intent_enum}, In Portal Intents: {intent_enum in portal_intents}")
+                
+                if intent_enum in portal_intents:
+                    logger.info("WORKFLOW_ENGINE: Routing to Patient Portal workflow",
+                               session_id=session_id,
+                               intent=str(intent_enum))
+                    
+                    # Set current workflow
+                    self.context_tracker.set_workflow(session_id, intent)
+                    
+                    result = await self._patient_portal_workflow.execute(
+                        session_id=session_id,
+                        intent=intent_enum,
+                        entities=entities,
+                        context=merged_context
+                    )
+                    
+                    # Update session context
+                    if result.updated_context:
+                        self.context_tracker.update_workflow_state(session_id, result.updated_context)
+                    
+                    # Record turn
+                    self.context_tracker.add_turn(
+                        session_id=session_id,
+                        user_input=entities.get("_raw_input", ""),
+                        intent=intent,
+                        entities=entities,
+                        response=result.response_text,
+                        api_calls=result.api_calls_made
+                    )
+                    
+                    if result.is_complete:
+                        self.context_tracker.clear_workflow(session_id)
+                    
+                    return result
             
             # Get workflow handler for intent
             intent_enum = Intent(intent) if isinstance(intent, str) else intent
@@ -301,7 +379,17 @@ class WorkflowEngine:
         # Get the workflow handler
         try:
             workflow_intent = Intent(current_workflow)
-            workflow = self._workflows.get(workflow_intent)
+            
+            # Check if this is a patient portal session - use patient portal workflow
+            channel = context.get("channel")
+            patient_token = context.get("patient_token")
+            
+            if channel == "patient_portal" and patient_token:
+                workflow = self._patient_portal_workflow
+                logger.info("WORKFLOW_ENGINE: Using PatientPortalWorkflow for continuation",
+                           session_id=session_id)
+            else:
+                workflow = self._workflows.get(workflow_intent)
             
             if workflow:
                 # Merge entities with existing context
