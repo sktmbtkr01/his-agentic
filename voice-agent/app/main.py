@@ -47,9 +47,15 @@ async def lifespan(app: FastAPI):
     
     logger.info("Starting Voice Agent service", port=settings.voice_agent_port)
     
+    # Ensure base_url has /api/v1 suffix (common issue in HF Space configuration)
+    base_url = settings.his_api_url
+    if not base_url.endswith("/api/v1"):
+        base_url = f"{base_url.rstrip('/')}/api/v1"
+        logger.info("Appended /api/v1 to HIS API URL", original=settings.his_api_url, new=base_url)
+    
     # Initialize HIS client and authenticate
     his_client = HISClient(
-        base_url=settings.his_api_url,
+        base_url=base_url,
         username=settings.his_api_username,
         password=settings.his_api_password
     )
