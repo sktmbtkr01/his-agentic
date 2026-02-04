@@ -90,7 +90,7 @@ const AppointmentsList = () => {
                                     </span>
                                 </h3>
                                 <p className="text-sm text-gray-500 flex items-center gap-3 mt-1">
-                                    <span className="flex items-center gap-1"><Clock size={14} /> {new Date(app.scheduledDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                                    <span className="flex items-center gap-1"><Clock size={14} /> {app.scheduledTime || new Date(app.scheduledDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                                     <span className="flex items-center gap-1"><Stethoscope size={14} /> Dr. {app.doctor?.profile?.firstName} {app.doctor?.profile?.lastName}</span>
                                     <span className="flex items-center gap-1 text-slate-400">({app.department?.name})</span>
                                 </p>
