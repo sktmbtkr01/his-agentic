@@ -56,7 +56,7 @@ exports.getAllAppointments = asyncHandler(async (req, res, next) => {
         .populate('department', 'name')
         .skip(skip)
         .limit(parseInt(limit))
-        .sort({ scheduledDate: 1, tokenNumber: 1 });
+        .sort({ scheduledDate: -1, createdAt: -1 });
 
     const total = await Appointment.countDocuments(query);
 
