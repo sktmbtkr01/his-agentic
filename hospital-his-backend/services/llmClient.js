@@ -1,28 +1,24 @@
 /**
  * LLM Client Service - Lab Report Summarization
- * Uses OpenRouter API with configurable model
+ * Uses Google Gemini API (primary) with OpenRouter as fallback
  */
 
 const axios = require('axios');
 
-// OpenRouter Configuration - use primary key, or fall back to agentic inventory key
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || process.env.OPENROUTER_AGENTIC_INVENTORY_API_KEY;
+// Google Gemini Configuration
+const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+const GEMINI_MODEL = 'gemini-1.5-flash';
+const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models';
+
+// OpenRouter Configuration (fallback)
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || 'google/gemma-3-27b-it:free';
 const OPENROUTER_BASE_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
 /**
- * Summarize a lab report using OpenRouter LLM
- * @param {string} extractedText - Raw text extracted from the PDF
- * @returns {Promise<Object>} - Structured summary JSON
+ * Build the prompt for lab report summarization
  */
-const summarizeLabReport = async (extractedText) => {
-    if (!OPENROUTER_API_KEY) {
-        console.warn('[LLM] OPENROUTER_API_KEY not configured, returning mock summary');
-        return getMockSummary();
-    }
-
-    try {
-        const prompt = `You are a clinical lab report analyzer helping physicians quickly understand lab results.
+const buildPrompt = (extractedText) => `You are a clinical lab report analyzer helping physicians quickly understand lab results.
 
 LAB DATA:
 ${extractedText}
@@ -48,67 +44,167 @@ RESPOND IN THIS EXACT JSON FORMAT (no markdown, just raw JSON):
     "disclaimer": "AI-generated summary. Not a diagnosis. Doctor must verify."
 }`;
 
-        const response = await axios.post(
-            OPENROUTER_BASE_URL,
-            {
-                model: OPENROUTER_MODEL,
-                messages: [
-                    {
-                        role: 'user',
-                        content: prompt,
-                    },
-                ],
+/**
+ * Summarize using Google Gemini API
+ */
+const summarizeWithGemini = async (extractedText) => {
+    const prompt = buildPrompt(extractedText);
+
+    const response = await axios.post(
+        `${GEMINI_BASE_URL}/${GEMINI_MODEL}:generateContent?key=${GOOGLE_API_KEY}`,
+        {
+            contents: [
+                {
+                    parts: [
+                        { text: prompt }
+                    ]
+                }
+            ],
+            generationConfig: {
                 temperature: 0.3,
-                max_tokens: 2000,
-            },
-            {
-                headers: {
-                    'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
-                    'Content-Type': 'application/json',
-                    'HTTP-Referer': 'http://localhost:5001',
-                    'X-Title': 'Hospital HIS Lab Report Summarizer',
-                },
+                maxOutputTokens: 2000,
             }
-        );
-
-        const content = response.data.choices?.[0]?.message?.content;
-
-        if (!content) {
-            throw new Error('Empty response from LLM');
+        },
+        {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            timeout: 60000
         }
+    );
 
-        // Parse JSON from response (handle potential markdown wrapping)
-        let jsonStr = content.trim();
-        if (jsonStr.startsWith('```json')) {
-            jsonStr = jsonStr.slice(7);
-        }
-        if (jsonStr.startsWith('```')) {
-            jsonStr = jsonStr.slice(3);
-        }
-        if (jsonStr.endsWith('```')) {
-            jsonStr = jsonStr.slice(0, -3);
-        }
-        jsonStr = jsonStr.trim();
+    const content = response.data.candidates?.[0]?.content?.parts?.[0]?.text;
 
-        const summary = JSON.parse(jsonStr);
-        summary.generatedAt = new Date().toISOString();
-        summary.model = OPENROUTER_MODEL;
-
-        console.log(`[LLM] Summary generated successfully using ${OPENROUTER_MODEL}`);
-        return summary;
-
-    } catch (error) {
-        console.error('[LLM] OpenRouter API error:', error.response?.data || error.message);
-
-        // Return error info for debugging
-        throw new Error(`LLM API failed: ${error.response?.data?.error?.message || error.message}`);
+    if (!content) {
+        throw new Error('Empty response from Gemini');
     }
+
+    return {
+        content,
+        model: GEMINI_MODEL,
+        provider: 'gemini'
+    };
+};
+
+/**
+ * Summarize using OpenRouter API (fallback)
+ */
+const summarizeWithOpenRouter = async (extractedText) => {
+    const prompt = buildPrompt(extractedText);
+
+    const response = await axios.post(
+        OPENROUTER_BASE_URL,
+        {
+            model: OPENROUTER_MODEL,
+            messages: [
+                {
+                    role: 'user',
+                    content: prompt,
+                },
+            ],
+            temperature: 0.3,
+            max_tokens: 2000,
+        },
+        {
+            headers: {
+                'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
+                'Content-Type': 'application/json',
+                'HTTP-Referer': 'https://his-agentic.vercel.app',
+                'X-Title': 'Hospital HIS Lab Report Summarizer',
+            },
+            timeout: 60000
+        }
+    );
+
+    const content = response.data.choices?.[0]?.message?.content;
+
+    if (!content) {
+        throw new Error('Empty response from OpenRouter');
+    }
+
+    return {
+        content,
+        model: OPENROUTER_MODEL,
+        provider: 'openrouter'
+    };
+};
+
+/**
+ * Parse JSON from LLM response (handle markdown wrapping)
+ */
+const parseJsonResponse = (content) => {
+    let jsonStr = content.trim();
+
+    // Remove markdown code blocks if present
+    if (jsonStr.startsWith('```json')) {
+        jsonStr = jsonStr.slice(7);
+    }
+    if (jsonStr.startsWith('```')) {
+        jsonStr = jsonStr.slice(3);
+    }
+    if (jsonStr.endsWith('```')) {
+        jsonStr = jsonStr.slice(0, -3);
+    }
+    jsonStr = jsonStr.trim();
+
+    return JSON.parse(jsonStr);
+};
+
+/**
+ * Summarize a lab report using available LLM
+ * Priority: Gemini (if GOOGLE_API_KEY) -> OpenRouter (if OPENROUTER_API_KEY) -> Mock
+ * 
+ * @param {string} extractedText - Raw text extracted from the PDF
+ * @returns {Promise<Object>} - Structured summary JSON
+ */
+const summarizeLabReport = async (extractedText) => {
+    // Try Gemini first (primary)
+    if (GOOGLE_API_KEY) {
+        try {
+            console.log('[LLM] Using Google Gemini for summarization...');
+            const result = await summarizeWithGemini(extractedText);
+            const summary = parseJsonResponse(result.content);
+            summary.generatedAt = new Date().toISOString();
+            summary.model = result.model;
+            summary.provider = result.provider;
+            console.log(`[LLM] Summary generated successfully using ${result.model}`);
+            return summary;
+        } catch (error) {
+            console.error('[LLM] Gemini API error:', error.response?.data || error.message);
+            console.log('[LLM] Falling back to OpenRouter...');
+        }
+    }
+
+    // Try OpenRouter as fallback
+    if (OPENROUTER_API_KEY) {
+        try {
+            console.log('[LLM] Using OpenRouter for summarization...');
+            const result = await summarizeWithOpenRouter(extractedText);
+            const summary = parseJsonResponse(result.content);
+            summary.generatedAt = new Date().toISOString();
+            summary.model = result.model;
+            summary.provider = result.provider;
+            console.log(`[LLM] Summary generated successfully using ${result.model}`);
+            return summary;
+        } catch (error) {
+            console.error('[LLM] OpenRouter API error:', error.response?.data || error.message);
+        }
+    }
+
+    // No API keys configured or all failed
+    if (!GOOGLE_API_KEY && !OPENROUTER_API_KEY) {
+        console.warn('[LLM] No API keys configured, returning mock summary');
+        return getMockSummary();
+    }
+
+    throw new Error('All LLM providers failed. Please check API keys and try again.');
 };
 
 /**
  * Fallback mock summary when API is not configured
  */
 const getMockSummary = () => ({
+    summary: "API keys not configured. This is mock data for testing purposes. Please configure GOOGLE_API_KEY or OPENROUTER_API_KEY in environment variables.",
     keyFindings: [
         {
             parameter: "Hemoglobin",
@@ -118,11 +214,12 @@ const getMockSummary = () => ({
         },
     ],
     abnormalValues: [],
-    normalResults: ["All parameters within normal limits (mock data)"],
-    clinicalNotes: "API key not configured. This is mock data.",
+    overallStatus: "normal",
+    clinicalRecommendation: "No action needed (mock data)",
     disclaimer: "AI-generated summary. Not a diagnosis. Doctor must verify.",
     generatedAt: new Date().toISOString(),
     model: "mock",
+    provider: "mock"
 });
 
 module.exports = {
