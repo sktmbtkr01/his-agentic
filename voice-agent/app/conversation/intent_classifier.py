@@ -319,11 +319,12 @@ class IntentClassifier:
                 entities={"department": text.strip()}
             )
         
-        # Common single-word affirmations
-        if text_lower in ["yes", "yeah", "yep", "correct", "right", "ok", "okay", "sure"]:
+        # Common single-word affirmations (fuzzy match)
+        confirm_words = ["yes", "yeah", "yep", "correct", "right", "ok", "okay", "sure", "confirm", "book", "please", "do it", "go ahead"]
+        if any(w in text_lower for w in confirm_words):
             return IntentResult(intent="CONFIRM_YES", confidence=0.85, entities={})
         
-        if text_lower in ["no", "nope", "cancel", "wrong", "incorrect"]:
+        if any(w in text_lower for w in ["no", "nope", "cancel", "wrong", "incorrect", "don't", "stop"]):
             return IntentResult(intent="CONFIRM_NO", confidence=0.85, entities={})
         
         # Date detection (DD-MM-YYYY or similar)
