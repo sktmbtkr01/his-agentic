@@ -59,6 +59,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             roles: ['doctor', 'nurse', 'receptionist']
         },
         {
+            title: 'Sentinel Alerts',
+            path: '/dashboard/sentinel',
+            icon: <ShieldCheck size={20} className="text-red-500" />,
+            roles: ['doctor', 'head_nurse'] // Restricted to clinical leads
+        },
+        {
             title: 'OPD Queue',
             path: '/dashboard/opd-queue',
             icon: <Stethoscope size={20} />,

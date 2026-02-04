@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+/* ============================================
+   LifelineX Patient Portal - Design System
+   Matching HIS color tokens
+   ============================================ */
+
+:root {
+  /* WARM LIGHT THEME */
+  --color-background: 250 250 249;       /* Stone-50 warm off-white */
+  --color-surface: 255 255 255;          /* Pure white */
+  --color-surface-highlight: 245 245 244; /* Stone-100 */
+
+  --color-text-primary: 28 25 23;        /* Stone-900 (Warm Black) */
+  --color-text-secondary: 87 83 78;      /* Stone-600 */
+  --color-text-muted: 168 162 158;       /* Stone-400 */
+
+  --color-primary: 20 184 166;           /* Teal-500 */
+  --color-primary-hover: 13 148 136;     /* Teal-600 */
+  --color-primary-foreground: 255 255 255;
+
+  /* Status Colors */
+  --color-success: 34 197 94;            /* Green-500 */
+  --color-warning: 245 158 11;           /* Amber-500 */
+  --color-error: 239 68 68;              /* Red-500 */
+  --color-info: 59 130 246;              /* Blue-500 */
+
+  /* Health Score Colors */
+  --color-score-excellent: 34 197 94;    /* Green */
+  --color-score-good: 132 204 22;        /* Lime */
+  --color-score-moderate: 245 158 11;    /* Amber */
+  --color-score-attention: 249 115 22;   /* Orange */
+  --color-score-concern: 239 68 68;      /* Red */
+}
+
+.dark {
+  /* COMFORT DARK THEME */
+  --color-background: 28 25 23;          /* Stone-900 */
+  --color-surface: 41 37 36;             /* Stone-800 */
+  --color-surface-highlight: 68 64 60;   /* Stone-700 */
+
+  --color-text-primary: 231 229 228;     /* Stone-200 */
+  --color-text-secondary: 168 162 158;   /* Stone-400 */
+  --color-text-muted: 120 113 108;       /* Stone-500 */
+
+  --color-primary: 45 212 191;           /* Teal-400 */
+  --color-primary-hover: 20 184 166;     /* Teal-500 */
+  --color-primary-foreground: 28 25 23;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-text-primary));
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ============================================
+   Component Classes
+   ============================================ */
+
+/* Cards */
+.card {
+  background-color: rgb(var(--color-surface));
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  padding: 1.5rem;
+}
+
+.card-elevated {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: rgb(var(--color-primary));
+  color: rgb(var(--color-primary-foreground));
+}
+
+.btn-primary:hover {
+  background-color: rgb(var(--color-primary-hover));
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: rgb(var(--color-surface-highlight));
+  color: rgb(var(--color-text-primary));
+}
+
+.btn-secondary:hover {
+  background-color: rgb(var(--color-surface));
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+}
+
+/* Form Inputs */
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgb(var(--color-surface));
+  border: 1px solid rgb(var(--color-surface-highlight));
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: rgb(var(--color-text-primary));
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: rgb(var(--color-primary));
+  box-shadow: 0 0 0 3px rgb(var(--color-primary) / 0.1);
+}
+
+.input::placeholder {
+  color: rgb(var(--color-text-muted));
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(var(--color-text-secondary));
+  margin-bottom: 0.5rem;
+}
+
+/* Alerts */
+.alert {
+  padding: 0.875rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.alert-error {
+  background-color: rgb(var(--color-error) / 0.1);
+  color: rgb(var(--color-error));
+  border: 1px solid rgb(var(--color-error) / 0.2);
+}
+
+.alert-success {
+  background-color: rgb(var(--color-success) / 0.1);
+  color: rgb(var(--color-success));
+  border: 1px solid rgb(var(--color-success) / 0.2);
+}
+
+.alert-warning {
+  background-color: rgb(var(--color-warning) / 0.1);
+  color: rgb(var(--color-warning));
+  border: 1px solid rgb(var(--color-warning) / 0.2);
+}
+
+/* Health Score Ring */
+.health-score-ring {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.health-score-ring svg {
+  transform: rotate(-90deg);
+}
+
+.health-score-value {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Trend Indicator */
+.trend-improving {
+  color: rgb(var(--color-success));
+}
+
+.trend-stable {
+  color: rgb(var(--color-warning));
+}
+
+.trend-declining {
+  color: rgb(var(--color-error));
+}
+
+/* Loading Spinner */
+.spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid rgb(var(--color-primary-foreground) / 0.3);
+  border-top-color: rgb(var(--color-primary-foreground));
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Page Container */
+.page-container {
+  min-height: 100vh;
+  background-color: rgb(var(--color-background));
+}
+
+/* Logo */
+.logo-text {
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, rgb(var(--color-primary)), rgb(13 148 136));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

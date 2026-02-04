@@ -189,10 +189,12 @@ class ContextTracker:
         return {
             "session_id": session.session_id,
             "caller_id": session.caller_id,
+            "channel": session.channel,  # Include channel for routing
             "turn_count": session.turn_count,
             "current_workflow": session.current_workflow,
             "workflow_state": session.workflow_state,
             "collected_entities": session.context,
+            "patient_token": session.context.get("patient_token"),  # For patient portal auth
             "recent_turns": [
                 {
                     "user": turn.user_input,

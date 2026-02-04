@@ -49,7 +49,7 @@ const config = {
     logLevel: process.env.LOG_LEVEL || 'info',
 
     // Cors
-    corsOrigins: process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : ['http://localhost:3000', 'http://localhost:5173'],
+    corsOrigins: process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : ['http://localhost:3000', 'http://localhost:5173', 'http://localhost:5174'],
 };
 
 module.exports = config;

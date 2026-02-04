@@ -188,8 +188,26 @@ async def handle_voice_call(request: VoiceCallRequest):
             channel=request.channel
         )
         
-        # Generate greeting
-        greeting = await workflow_engine.generate_greeting()
+        # Store patient portal auth info if provided
+        if request.channel == "patient_portal" and request.patient_token:
+            workflow_engine.context_tracker.update_workflow_state(
+                session_id,
+                {
+                    "patient_token": request.patient_token,
+                    "patient_id": request.patient_id
+                }
+            )
+            # Also store in session context for persistence
+            session = workflow_engine.context_tracker.get_session(session_id)
+            if session:
+                session.context["patient_token"] = request.patient_token
+                session.context["patient_id"] = request.patient_id
+        
+        # Generate greeting based on channel
+        if request.channel == "patient_portal":
+            greeting = "Hello! I'm your LifelineX Voice Assistant. I can help you book appointments, check your appointment status, or answer questions about our services. What would you like to do today?"
+        else:
+            greeting = await workflow_engine.generate_greeting()
         
         # Synthesize greeting (gracefully handle TTS failures)
         audio_response = ""
@@ -200,7 +218,9 @@ async def handle_voice_call(request: VoiceCallRequest):
         
         logger.info("Voice call started", 
                    session_id=session_id, 
-                   caller_id=request.caller_id)
+                   caller_id=request.caller_id,
+                   channel=request.channel,
+                   is_patient_portal=request.channel == "patient_portal")
         
         return VoiceCallResponse(
             session_id=session_id,
@@ -273,6 +293,22 @@ async def process_conversation(request: ConversationRequest):
                    session_id=request.session_id,
                    input_length=len(request.user_input))
         
+        # CRITICAL: Merge incoming request context with session context
+        # This ensures patient_token and channel from frontend are available
+        session_context = workflow_engine.context_tracker.get_context(request.session_id)
+        merged_context = {**session_context, **(request.context or {})}
+        
+        # Ensure patient_token from request.context overrides if provided
+        if request.context and request.context.get("patient_token"):
+            merged_context["patient_token"] = request.context["patient_token"]
+        if request.context and request.context.get("channel"):
+            merged_context["channel"] = request.context["channel"]
+            
+        logger.info("Context merged for processing",
+                   session_id=request.session_id,
+                   channel=merged_context.get("channel"),
+                   has_patient_token=bool(merged_context.get("patient_token")))
+        
         # 1. Classify intent with retry
         intent_result = await retry_handler.execute(
             intent_classifier.classify,
@@ -337,7 +373,7 @@ async def process_conversation(request: ConversationRequest):
             session_id=request.session_id,
             intent=intent_to_use,
             entities=final_entities,
-            context=request.context
+            context=merged_context  # Use merged context with patient_token and channel
         )
         
         # 5. Check if safety requires human escalation

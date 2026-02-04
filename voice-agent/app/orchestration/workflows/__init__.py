@@ -8,6 +8,7 @@ from app.orchestration.workflows.bed_allocation import BedAllocationWorkflow
 from app.orchestration.workflows.lab_booking import LabBookingWorkflow
 from app.orchestration.workflows.status_inquiry import StatusInquiryWorkflow
 from app.orchestration.workflows.escalation import EscalationWorkflow
+from app.orchestration.workflows.patient_portal import PatientPortalWorkflow
 
 __all__ = [
     "BaseWorkflow",
@@ -18,4 +19,6 @@ __all__ = [
     "LabBookingWorkflow",
     "StatusInquiryWorkflow",
     "EscalationWorkflow",
+    "PatientPortalWorkflow",
 ]
+

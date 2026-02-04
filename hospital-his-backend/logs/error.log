@@ -6958,3 +6958,698 @@ Error: User role 'receptionist' is not authorized to access this route
     at param (D:\cocode\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:376:14)
     at Function.process_params (D:\cocode\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:421:3)
     at next (D:\cocode\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+2026-02-03 21:14:46 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-03 21:16:48 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-03 21:17:47 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:28:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 21:19:26 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-03 23:03:12 [ERROR]: HealthScore validation failed: calculationMethod: `EMR_RISK_ALIGNED` is not a valid enum value for path `calculationMethod`.
+ValidationError: HealthScore validation failed: calculationMethod: `EMR_RISK_ALIGNED` is not a valid enum value for path `calculationMethod`.
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-03 23:03:40 [ERROR]: HealthScore validation failed: calculationMethod: `EMR_RISK_ALIGNED` is not a valid enum value for path `calculationMethod`.
+ValidationError: HealthScore validation failed: calculationMethod: `EMR_RISK_ALIGNED` is not a valid enum value for path `calculationMethod`.
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-03 23:41:17 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-03 23:42:06 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-03 23:46:48 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-03 23:48:37 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-03 23:48:59 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-03 23:53:41 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-03 23:56:32 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-03 23:57:29 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 23:57:29 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 23:57:34 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 23:57:34 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 23:57:41 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 23:57:41 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 23:59:23 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 23:59:23 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:07 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:07 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:16 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:16 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:41 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:41 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:43 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:43 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:57 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:57 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:02:00 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:02:00 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:02:04 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:02:04 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:02:05 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:02:05 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 14:00:19 [ERROR]: Appointment validation failed: status: `Scheduled` is not a valid enum value for path `status`.
+ValidationError: Appointment validation failed: status: `Scheduled` is not a valid enum value for path `status`.
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-04 14:00:49 [ERROR]: Appointment validation failed: status: `Scheduled` is not a valid enum value for path `status`.
+ValidationError: Appointment validation failed: status: `Scheduled` is not a valid enum value for path `status`.
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-04 14:40:25 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 14:40:35 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 14:41:32 [ERROR]: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+CastError: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+    at ObjectId.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\lab.controller.js:36:20
+2026-02-04 14:46:39 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 14:46:49 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 14:51:43 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 14:59:38 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 14:59:46 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 15:05:05 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 15:05:34 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 15:06:15 [ERROR]: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+CastError: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+    at ObjectId.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\lab.controller.js:36:20
+2026-02-04 15:11:19 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 15:11:31 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 15:13:09 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 15:24:50 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 15:46:39 [ERROR]: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+CastError: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+    at ObjectId.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\lab.controller.js:36:20
+2026-02-04 15:54:11 [ERROR]: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+CastError: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+    at ObjectId.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\lab.controller.js:36:20
+2026-02-04 16:02:55 [ERROR]: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+CastError: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+    at ObjectId.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\lab.controller.js:36:20
+2026-02-04 16:06:14 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000076" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000076" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 16:35:02 [ERROR]: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+StrictPopulateError: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+    at getModelsMapForPopulate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:50:12)
+    at populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4391:21)
+    at _populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4351:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4323:5
+    at new Promise (<anonymous>)
+    at model.populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4322:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2320:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:11)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientLab.controller.js:30:22
+2026-02-04 16:36:41 [ERROR]: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+StrictPopulateError: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+    at getModelsMapForPopulate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:50:12)
+    at populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4391:21)
+    at _populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4351:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4323:5
+    at new Promise (<anonymous>)
+    at model.populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4322:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2320:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:11)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientLab.controller.js:30:22
+2026-02-04 16:36:41 [ERROR]: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+StrictPopulateError: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+    at getModelsMapForPopulate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:50:12)
+    at populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4391:21)
+    at _populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4351:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4323:5
+    at new Promise (<anonymous>)
+    at model.populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4322:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2320:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:11)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientLab.controller.js:30:22
+2026-02-04 16:36:43 [ERROR]: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+StrictPopulateError: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+    at getModelsMapForPopulate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:50:12)
+    at populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4391:21)
+    at _populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4351:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4323:5
+    at new Promise (<anonymous>)
+    at model.populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4322:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2320:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:11)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientLab.controller.js:30:22
+2026-02-04 16:37:19 [ERROR]: AI summary failed: LLM API failed: User not found.
+Error: AI summary failed: LLM API failed: User not found.
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-04 16:37:36 [ERROR]: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+StrictPopulateError: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+    at getModelsMapForPopulate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:50:12)
+    at populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4391:21)
+    at _populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4351:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4323:5
+    at new Promise (<anonymous>)
+    at model.populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4322:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2320:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:11)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientLab.controller.js:30:22
+2026-02-04 16:37:38 [ERROR]: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+StrictPopulateError: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+    at getModelsMapForPopulate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:50:12)
+    at populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4391:21)
+    at _populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4351:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4323:5
+    at new Promise (<anonymous>)
+    at model.populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4322:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2320:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:11)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientLab.controller.js:30:22
+2026-02-04 16:37:39 [ERROR]: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+StrictPopulateError: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+    at getModelsMapForPopulate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:50:12)
+    at populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4391:21)
+    at _populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4351:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4323:5
+    at new Promise (<anonymous>)
+    at model.populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4322:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2320:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:11)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientLab.controller.js:30:22
+2026-02-04 16:38:35 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:28:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 16:55:34 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 16:56:21 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:01:33 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:01:45 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:01:45 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:02:57 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:02:57 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:03:08 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:06:06 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:07:22 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:07:22 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:07:22 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:07:22 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:11:52 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:12:05 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:12:05 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:12:05 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:13:39 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:13:39 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:13:39 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:13:39 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:13:39 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:13:39 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:13:56 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 17:14:19 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientAuth.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-04 17:14:21 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientAuth.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-04 17:40:17 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001

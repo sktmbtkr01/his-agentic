@@ -167,9 +167,17 @@ const PatientEMR = () => {
                 >
                     <ArrowLeft size={20} /> Back to Queue
                 </button>
-                <h1 className="text-2xl font-bold text-slate-800 flex items-center gap-2">
-                    <ClipboardList className="text-primary" /> Patient EMR
-                </h1>
+                <div className="flex items-center gap-4">
+                    <button
+                        onClick={() => navigate(`/dashboard/sentinel/${patientId}`)}
+                        className="px-4 py-2 bg-indigo-50 text-indigo-700 rounded-lg hover:bg-indigo-100 flex items-center gap-2 transition-colors font-medium text-sm"
+                    >
+                        <Activity size={16} /> Sentinel View
+                    </button>
+                    <h1 className="text-2xl font-bold text-slate-800 flex items-center gap-2">
+                        <ClipboardList className="text-primary" /> Patient EMR
+                    </h1>
+                </div>
             </div>
 
             {/* Patient Info Card */}

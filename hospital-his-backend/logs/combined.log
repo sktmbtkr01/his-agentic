@@ -16702,3 +16702,1584 @@ Error: User role 'receptionist' is not authorized to access this route
 2026-02-03 16:16:29 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-03T00:00:00.000Z to 2026-02-04T00:00:00.000Z
 2026-02-03 16:16:29 [INFO]: [ReceptionistDashboard] Registrations today: 3, Total patients: 59
 2026-02-03 16:16:43 [INFO]: Client disconnected: 1zUKg2hmJHc2x0_tAAAI
+2026-02-03 20:37:02 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 20:37:02 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 20:37:08 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 20:37:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:37:08 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 20:37:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:37:08 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 20:37:08 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 20:37:08 [INFO]: 🔌 WebSocket enabled
+2026-02-03 20:37:08 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 20:37:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:42:47 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 20:42:47 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 20:42:52 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 20:42:52 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 20:42:57 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 20:42:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:42:57 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 20:42:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:42:57 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 20:42:57 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 20:42:57 [INFO]: 🔌 WebSocket enabled
+2026-02-03 20:42:57 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 20:42:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:43:06 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-03 20:43:06 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 20:43:11 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 20:43:11 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:43:11 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 20:43:11 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:43:11 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 20:43:11 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 20:43:11 [INFO]: 🔌 WebSocket enabled
+2026-02-03 20:43:11 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 20:43:11 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:43:21 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-03 20:43:21 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 20:43:26 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 20:43:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:43:26 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 20:43:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:43:26 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 20:43:26 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 20:43:26 [INFO]: 🔌 WebSocket enabled
+2026-02-03 20:43:26 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 20:43:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:51:53 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-03 20:51:53 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 20:51:58 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 20:51:58 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:51:58 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 20:51:58 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:51:58 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 20:51:58 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 20:51:58 [INFO]: 🔌 WebSocket enabled
+2026-02-03 20:51:58 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 20:51:58 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:52:34 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-03 20:52:34 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 20:52:40 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 20:52:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:52:40 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 20:52:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:52:40 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 20:52:40 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 20:52:40 [INFO]: 🔌 WebSocket enabled
+2026-02-03 20:52:40 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 20:52:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:53:01 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-03 20:53:01 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 20:53:06 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 20:53:06 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:53:06 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 20:53:06 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 20:53:06 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 20:53:06 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 20:53:06 [INFO]: 🔌 WebSocket enabled
+2026-02-03 20:53:06 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 20:53:06 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:00:19 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 21:00:19 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 21:00:24 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 21:00:24 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:00:24 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 21:00:24 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:00:24 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 21:00:24 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 21:00:24 [INFO]: 🔌 WebSocket enabled
+2026-02-03 21:00:24 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 21:00:24 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:00:49 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-03 21:00:49 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 21:00:54 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 21:00:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:00:54 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 21:00:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:00:54 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 21:00:54 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 21:00:54 [INFO]: 🔌 WebSocket enabled
+2026-02-03 21:00:54 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 21:00:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:01:00 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 21:01:00 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 21:01:05 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 21:01:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:01:05 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 21:01:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:01:05 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 21:01:05 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 21:01:05 [INFO]: 🔌 WebSocket enabled
+2026-02-03 21:01:05 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 21:01:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:14:30 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 21:14:30 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 21:14:30 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 21:14:30 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 21:14:46 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 21:14:46 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 21:14:46 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:14:46 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 21:14:46 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:14:46 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 21:14:46 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 21:14:46 [INFO]: 🔌 WebSocket enabled
+2026-02-03 21:14:46 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 21:14:46 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:16:42 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-03 21:16:42 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 21:16:48 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 21:17:47 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:28:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 21:19:10 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-03 21:19:10 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 21:19:10 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 21:19:10 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 21:19:26 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 21:19:26 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 21:19:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:19:26 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 21:19:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:19:26 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 21:19:26 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 21:19:26 [INFO]: 🔌 WebSocket enabled
+2026-02-03 21:19:26 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 21:19:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:28:32 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-03 21:28:32 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 21:28:37 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 21:28:37 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:28:37 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 21:28:37 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:28:37 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 21:28:37 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 21:28:37 [INFO]: 🔌 WebSocket enabled
+2026-02-03 21:28:37 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 21:28:37 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 21:30:57 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-03 21:30:57 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 22:44:32 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 22:44:32 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 22:44:37 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 22:44:37 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 22:44:37 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 22:44:37 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 22:44:37 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 22:44:37 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 22:44:37 [INFO]: 🔌 WebSocket enabled
+2026-02-03 22:44:37 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 22:44:37 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 22:48:16 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-03 22:48:16 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 22:48:21 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 22:48:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 22:48:21 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 22:48:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 22:48:21 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 22:48:21 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 22:48:21 [INFO]: 🔌 WebSocket enabled
+2026-02-03 22:48:21 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 22:48:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 22:48:39 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-03 22:48:39 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 22:48:44 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 22:48:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 22:48:44 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 22:48:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 22:48:44 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 22:48:44 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 22:48:44 [INFO]: 🔌 WebSocket enabled
+2026-02-03 22:48:44 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 22:48:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 22:49:09 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 22:49:09 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 22:49:14 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 22:49:14 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 22:49:14 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 22:49:14 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 22:49:14 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 22:49:14 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 22:49:14 [INFO]: 🔌 WebSocket enabled
+2026-02-03 22:49:14 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 22:49:14 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 22:57:47 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-03 22:57:47 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 22:57:52 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 22:57:52 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 22:57:52 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 22:57:52 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 22:57:52 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 22:57:52 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 22:57:52 [INFO]: 🔌 WebSocket enabled
+2026-02-03 22:57:52 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 22:57:52 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:03:12 [ERROR]: HealthScore validation failed: calculationMethod: `EMR_RISK_ALIGNED` is not a valid enum value for path `calculationMethod`.
+ValidationError: HealthScore validation failed: calculationMethod: `EMR_RISK_ALIGNED` is not a valid enum value for path `calculationMethod`.
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-03 23:03:40 [ERROR]: HealthScore validation failed: calculationMethod: `EMR_RISK_ALIGNED` is not a valid enum value for path `calculationMethod`.
+ValidationError: HealthScore validation failed: calculationMethod: `EMR_RISK_ALIGNED` is not a valid enum value for path `calculationMethod`.
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-03 23:04:27 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-03 23:04:27 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:04:32 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:04:32 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:04:32 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 23:04:32 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:04:32 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 23:04:32 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 23:04:32 [INFO]: 🔌 WebSocket enabled
+2026-02-03 23:04:32 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 23:04:32 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:11:43 [INFO]: Client connected: EJGWgQXEuy8qSd0_AAAC
+2026-02-03 23:11:43 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:11:43 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:11:43 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:11:43 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:11:52 [INFO]: Client disconnected: EJGWgQXEuy8qSd0_AAAC
+2026-02-03 23:12:02 [INFO]: Client connected: LF4SeNtFn71qVszuAAAF
+2026-02-03 23:12:03 [INFO]: Socket LF4SeNtFn71qVszuAAAF joined emergency room
+2026-02-03 23:12:03 [INFO]: Client disconnected: LF4SeNtFn71qVszuAAAF
+2026-02-03 23:12:08 [INFO]: Client connected: BarAOynEWJsRi5xsAAAI
+2026-02-03 23:12:08 [INFO]: Socket BarAOynEWJsRi5xsAAAI joined emergency room
+2026-02-03 23:12:14 [INFO]: Client disconnected: BarAOynEWJsRi5xsAAAI
+2026-02-03 23:12:14 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:12:14 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:12:14 [INFO]: Client connected: Ip-Cgzpd2Q-9Ae1KAAAL
+2026-02-03 23:12:14 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:12:14 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:13:15 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:13:15 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:14:15 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:14:15 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:15:15 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:15:15 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:16:14 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:16:14 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:16:15 [INFO]: Client disconnected: Ip-Cgzpd2Q-9Ae1KAAAL
+2026-02-03 23:16:16 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:16:16 [INFO]: Client connected: g_0IuxLWPbvC-2vfAAAO
+2026-02-03 23:16:16 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:16:16 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:16:16 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:17:17 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:17:17 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:18:17 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:18:17 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:19:17 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:19:17 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:20:17 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:20:17 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:21:17 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:21:17 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:22:17 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:22:17 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:22:46 [INFO]: Client disconnected: g_0IuxLWPbvC-2vfAAAO
+2026-02-03 23:22:46 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:22:46 [INFO]: Client connected: -tljiRJKU9SG_d5KAAAR
+2026-02-03 23:22:46 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:22:46 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-03 23:22:46 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=3, critical=0
+2026-02-03 23:22:52 [INFO]: Client disconnected: -tljiRJKU9SG_d5KAAAR
+2026-02-03 23:32:57 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 23:32:57 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:33:02 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:33:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:33:02 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 23:33:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:33:02 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 23:33:02 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 23:33:02 [INFO]: 🔌 WebSocket enabled
+2026-02-03 23:33:02 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 23:33:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:33:12 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-03 23:33:12 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:33:17 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:33:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:33:17 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 23:33:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:33:17 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 23:33:17 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 23:33:17 [INFO]: 🔌 WebSocket enabled
+2026-02-03 23:33:17 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 23:33:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:33:23 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 23:33:23 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:33:28 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:33:28 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:33:28 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 23:33:28 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:33:28 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 23:33:28 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 23:33:28 [INFO]: 🔌 WebSocket enabled
+2026-02-03 23:33:28 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 23:33:28 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:33:40 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 23:33:40 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:33:45 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:33:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:33:45 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 23:33:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:33:45 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 23:33:45 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 23:33:45 [INFO]: 🔌 WebSocket enabled
+2026-02-03 23:33:45 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 23:33:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:41:03 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 23:41:03 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:41:10 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:41:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:41:10 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 23:41:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:41:10 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 23:41:10 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 23:41:10 [INFO]: 🔌 WebSocket enabled
+2026-02-03 23:41:10 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 23:41:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:41:12 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-03 23:41:12 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:41:17 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:42:02 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-03 23:42:02 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:42:06 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:43:48 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-03 23:43:48 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:43:53 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:43:53 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:43:53 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 23:43:53 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:43:53 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 23:43:53 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 23:43:53 [INFO]: 🔌 WebSocket enabled
+2026-02-03 23:43:53 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 23:43:53 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:46:43 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-03 23:46:43 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:46:48 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:48:32 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 23:48:32 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:48:37 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:48:42 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-03 23:48:42 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:48:42 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-03 23:48:42 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:48:59 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:48:59 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:48:59 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 23:48:59 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:48:59 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 23:48:59 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 23:48:59 [INFO]: 🔌 WebSocket enabled
+2026-02-03 23:48:59 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 23:48:59 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:48:59 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:53:23 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 23:53:23 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:53:23 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-03 23:53:23 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:53:40 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:53:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:53:40 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 23:53:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:53:40 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 23:53:40 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 23:53:40 [INFO]: 🔌 WebSocket enabled
+2026-02-03 23:53:40 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 23:53:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:53:41 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:56:11 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 23:56:11 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:56:11 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 23:56:11 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:56:27 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:56:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:56:27 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 23:56:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:56:27 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 23:56:27 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 23:56:27 [INFO]: 🔌 WebSocket enabled
+2026-02-03 23:56:27 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 23:56:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:56:32 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:57:29 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 23:57:29 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 23:57:34 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 23:57:34 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 23:57:41 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 23:57:41 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 23:57:59 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-03 23:57:59 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:58:04 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:58:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:58:04 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 23:58:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:58:04 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 23:58:04 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 23:58:04 [INFO]: 🔌 WebSocket enabled
+2026-02-03 23:58:04 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 23:58:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:58:07 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-03 23:58:07 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:58:13 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:58:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:58:13 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 23:58:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:58:13 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 23:58:13 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 23:58:13 [INFO]: 🔌 WebSocket enabled
+2026-02-03 23:58:13 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 23:58:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:58:16 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-03 23:58:16 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-03 23:58:21 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-03 23:58:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:58:21 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-03 23:58:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:58:21 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-03 23:58:21 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-03 23:58:21 [INFO]: 🔌 WebSocket enabled
+2026-02-03 23:58:21 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-03 23:58:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-03 23:59:23 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 23:59:23 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-03 23:59:27 [INFO]: Client connected: r32kEru8OHEUhVgQAAAC
+2026-02-03 23:59:27 [INFO]: Socket r32kEru8OHEUhVgQAAAC joined emergency room
+2026-02-03 23:59:28 [INFO]: Client disconnected: r32kEru8OHEUhVgQAAAC
+2026-02-04 00:01:07 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:07 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:16 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:16 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:41 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:41 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:43 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:43 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:57 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:01:57 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:02:00 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:02:00 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:02:04 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:02:04 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:02:05 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 00:02:05 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 13:32:19 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 13:32:19 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 13:32:26 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 13:32:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 13:32:26 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 13:32:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 13:32:26 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 13:32:26 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 13:32:26 [INFO]: 🔌 WebSocket enabled
+2026-02-04 13:32:26 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 13:32:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 13:36:58 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 13:36:58 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 13:37:06 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 13:37:06 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 13:37:06 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 13:37:06 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 13:37:06 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 13:37:06 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 13:37:06 [INFO]: 🔌 WebSocket enabled
+2026-02-04 13:37:06 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 13:37:06 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 13:41:19 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 13:41:19 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 13:41:24 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 13:41:24 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 13:41:24 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 13:41:24 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 13:41:24 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 13:41:24 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 13:41:24 [INFO]: 🔌 WebSocket enabled
+2026-02-04 13:41:24 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 13:41:24 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 13:43:44 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-04 13:44:27 [INFO]: MongoDB reconnected
+2026-02-04 13:47:39 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 13:47:39 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 13:48:07 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 13:48:07 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 13:48:16 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 13:48:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 13:48:16 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 13:48:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 13:48:16 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 13:48:16 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 13:48:16 [INFO]: 🔌 WebSocket enabled
+2026-02-04 13:48:16 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 13:48:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 13:52:32 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-04 13:52:43 [INFO]: MongoDB reconnected
+2026-02-04 13:55:32 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-04 13:55:42 [INFO]: MongoDB reconnected
+2026-02-04 14:00:19 [ERROR]: Appointment validation failed: status: `Scheduled` is not a valid enum value for path `status`.
+ValidationError: Appointment validation failed: status: `Scheduled` is not a valid enum value for path `status`.
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-04 14:00:49 [ERROR]: Appointment validation failed: status: `Scheduled` is not a valid enum value for path `status`.
+ValidationError: Appointment validation failed: status: `Scheduled` is not a valid enum value for path `status`.
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-04 14:01:58 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 14:01:58 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 14:02:02 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 14:02:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 14:02:02 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 14:02:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 14:02:02 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 14:02:02 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 14:02:02 [INFO]: 🔌 WebSocket enabled
+2026-02-04 14:02:02 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 14:02:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 14:02:32 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 14:02:32 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 14:02:36 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 14:02:36 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 14:02:36 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 14:02:36 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 14:02:36 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 14:02:36 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 14:02:36 [INFO]: 🔌 WebSocket enabled
+2026-02-04 14:02:36 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 14:02:36 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 14:40:25 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 14:40:35 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 14:41:32 [ERROR]: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+CastError: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+    at ObjectId.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\lab.controller.js:36:20
+2026-02-04 14:46:39 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 14:46:49 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 14:51:43 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 14:59:38 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 14:59:46 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 15:05:05 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 15:05:34 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 15:06:15 [ERROR]: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+CastError: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+    at ObjectId.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\lab.controller.js:36:20
+2026-02-04 15:10:01 [INFO]: Client connected: Et9jiB5on09GfkgxAAAC
+2026-02-04 15:10:01 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-04 15:10:01 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=4, critical=0
+2026-02-04 15:10:01 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-04 15:10:01 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=4, critical=0
+2026-02-04 15:10:05 [INFO]: Client disconnected: Et9jiB5on09GfkgxAAAC
+2026-02-04 15:10:14 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-04T00:00:00.000Z to 2026-02-05T00:00:00.000Z
+2026-02-04 15:10:14 [INFO]: Client connected: KMNG35bYqes-LKiuAAAF
+2026-02-04 15:10:14 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 63
+2026-02-04 15:10:14 [INFO]: User 697f269a52f4567a06a1e7fa joined personal room
+2026-02-04 15:10:14 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-04T00:00:00.000Z to 2026-02-05T00:00:00.000Z
+2026-02-04 15:10:14 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 63
+2026-02-04 15:10:16 [INFO]: Client disconnected: KMNG35bYqes-LKiuAAAF
+2026-02-04 15:10:21 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-04T00:00:00.000Z to 2026-02-05T00:00:00.000Z
+2026-02-04 15:10:21 [INFO]: Client connected: z6NraJvKHQdMmXuBAAAI
+2026-02-04 15:10:21 [INFO]: User 697f269a52f4567a06a1e7fa joined personal room
+2026-02-04 15:10:21 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 63
+2026-02-04 15:10:21 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-04T00:00:00.000Z to 2026-02-05T00:00:00.000Z
+2026-02-04 15:10:21 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 63
+2026-02-04 15:10:23 [INFO]: Client disconnected: z6NraJvKHQdMmXuBAAAI
+2026-02-04 15:11:19 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 15:11:31 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 15:13:09 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 15:15:56 [INFO]: Client connected: CoxdW3781ipBg8__AAAL
+2026-02-04 15:15:56 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-04 15:15:56 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=4, critical=0
+2026-02-04 15:15:56 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-04 15:15:56 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=4, critical=0
+2026-02-04 15:15:58 [INFO]: Client disconnected: CoxdW3781ipBg8__AAAL
+2026-02-04 15:24:50 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 15:40:50 [INFO]: Client connected: 2BEghePL-NpnARt9AAAO
+2026-02-04 15:40:51 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-04 15:40:51 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=4, critical=0
+2026-02-04 15:40:51 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-04 15:40:51 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=4, critical=0
+2026-02-04 15:40:56 [INFO]: Client disconnected: 2BEghePL-NpnARt9AAAO
+2026-02-04 15:41:11 [INFO]: Client connected: LBx90jLWjHMZujw_AAAR
+2026-02-04 15:41:11 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-04T00:00:00.000Z to 2026-02-05T00:00:00.000Z
+2026-02-04 15:41:11 [INFO]: User 697f269a52f4567a06a1e7fa joined personal room
+2026-02-04 15:41:11 [INFO]: [ReceptionistDashboard] Registrations today: 3, Total patients: 64
+2026-02-04 15:41:11 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-04T00:00:00.000Z to 2026-02-05T00:00:00.000Z
+2026-02-04 15:41:11 [INFO]: [ReceptionistDashboard] Registrations today: 3, Total patients: 64
+2026-02-04 15:41:13 [INFO]: Client disconnected: LBx90jLWjHMZujw_AAAR
+2026-02-04 15:41:26 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-04T00:00:00.000Z to 2026-02-05T00:00:00.000Z
+2026-02-04 15:41:26 [INFO]: Client connected: dX2-GoBYHA80nYdUAAAU
+2026-02-04 15:41:26 [INFO]: [ReceptionistDashboard] Registrations today: 3, Total patients: 64
+2026-02-04 15:41:26 [INFO]: User 697f269a52f4567a06a1e7fa joined personal room
+2026-02-04 15:41:26 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-04T00:00:00.000Z to 2026-02-05T00:00:00.000Z
+2026-02-04 15:41:26 [INFO]: [ReceptionistDashboard] Registrations today: 3, Total patients: 64
+2026-02-04 15:41:28 [INFO]: Client disconnected: dX2-GoBYHA80nYdUAAAU
+2026-02-04 15:43:58 [INFO]: Client connected: 8OIlDLGLvzfeavrQAAAX
+2026-02-04 15:43:58 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-04T00:00:00.000Z to 2026-02-05T00:00:00.000Z
+2026-02-04 15:43:58 [INFO]: User 697f269a52f4567a06a1e7fa joined personal room
+2026-02-04 15:43:58 [INFO]: [ReceptionistDashboard] Registrations today: 3, Total patients: 64
+2026-02-04 15:43:58 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-04T00:00:00.000Z to 2026-02-05T00:00:00.000Z
+2026-02-04 15:43:58 [INFO]: [ReceptionistDashboard] Registrations today: 3, Total patients: 64
+2026-02-04 15:44:00 [INFO]: Client disconnected: 8OIlDLGLvzfeavrQAAAX
+2026-02-04 15:44:07 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-04T00:00:00.000Z to 2026-02-05T00:00:00.000Z
+2026-02-04 15:44:07 [INFO]: Client connected: p__c-yVC9scXmijcAAAa
+2026-02-04 15:44:07 [INFO]: User 697f269a52f4567a06a1e7fa joined personal room
+2026-02-04 15:44:07 [INFO]: [ReceptionistDashboard] Registrations today: 3, Total patients: 64
+2026-02-04 15:44:07 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-04T00:00:00.000Z to 2026-02-05T00:00:00.000Z
+2026-02-04 15:44:07 [INFO]: [ReceptionistDashboard] Registrations today: 3, Total patients: 64
+2026-02-04 15:44:07 [INFO]: Client disconnected: p__c-yVC9scXmijcAAAa
+2026-02-04 15:45:45 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-04 15:45:45 [INFO]: Client connected: h7o_dN-ND7Eo0QZiAAAd
+2026-02-04 15:45:45 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=4, critical=0
+2026-02-04 15:45:45 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-04 15:45:45 [INFO]: [ClinicalDashboard] Response: appointments=5, labs=4, critical=0
+2026-02-04 15:45:47 [INFO]: Client disconnected: h7o_dN-ND7Eo0QZiAAAd
+2026-02-04 15:46:39 [ERROR]: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+CastError: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+    at ObjectId.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\lab.controller.js:36:20
+2026-02-04 15:54:11 [ERROR]: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+CastError: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+    at ObjectId.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\lab.controller.js:36:20
+2026-02-04 16:02:55 [ERROR]: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+CastError: Cast to ObjectId failed for value "PAT000061" (type string) at path "patient" for model "LabTest"
+    at ObjectId.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\lab.controller.js:36:20
+2026-02-04 16:06:14 [ERROR]: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000076" (type string) at path "patient" because of "BSONError"
+ValidationError: Appointment validation failed: patient: Cast to ObjectId failed for value "PAT000076" (type string) at path "patient" because of "BSONError"
+    at Document.invalidate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at model.create (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\opd.controller.js:17:43
+2026-02-04 16:13:39 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 16:13:39 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 16:13:45 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 16:13:45 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 16:13:50 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 16:13:50 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:13:50 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 16:13:50 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:13:50 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 16:13:50 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 16:13:50 [INFO]: 🔌 WebSocket enabled
+2026-02-04 16:13:50 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 16:13:50 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:24:45 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-04 16:24:45 [INFO]: Client connected: c_tqLiq1PtwPY2Q3AAAC
+2026-02-04 16:24:46 [INFO]: [ClinicalDashboard] Response: appointments=6, labs=4, critical=0
+2026-02-04 16:24:46 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-04 16:24:46 [INFO]: [ClinicalDashboard] Response: appointments=6, labs=4, critical=0
+2026-02-04 16:24:49 [INFO]: Client disconnected: c_tqLiq1PtwPY2Q3AAAC
+2026-02-04 16:31:14 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 16:31:14 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 16:31:19 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 16:31:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:31:19 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 16:31:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:31:19 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 16:31:19 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 16:31:19 [INFO]: 🔌 WebSocket enabled
+2026-02-04 16:31:19 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 16:31:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:31:38 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 16:31:38 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 16:31:42 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 16:31:42 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:31:42 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 16:31:42 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:31:42 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 16:31:42 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 16:31:42 [INFO]: 🔌 WebSocket enabled
+2026-02-04 16:31:42 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 16:31:42 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:31:47 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 16:31:47 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 16:31:52 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 16:31:52 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:31:52 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 16:31:52 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:31:52 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 16:31:52 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 16:31:52 [INFO]: 🔌 WebSocket enabled
+2026-02-04 16:31:52 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 16:31:52 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:35:02 [ERROR]: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+StrictPopulateError: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+    at getModelsMapForPopulate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:50:12)
+    at populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4391:21)
+    at _populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4351:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4323:5
+    at new Promise (<anonymous>)
+    at model.populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4322:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2320:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:11)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientLab.controller.js:30:22
+2026-02-04 16:36:41 [ERROR]: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+StrictPopulateError: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+    at getModelsMapForPopulate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:50:12)
+    at populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4391:21)
+    at _populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4351:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4323:5
+    at new Promise (<anonymous>)
+    at model.populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4322:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2320:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:11)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientLab.controller.js:30:22
+2026-02-04 16:36:41 [ERROR]: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+StrictPopulateError: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+    at getModelsMapForPopulate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:50:12)
+    at populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4391:21)
+    at _populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4351:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4323:5
+    at new Promise (<anonymous>)
+    at model.populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4322:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2320:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:11)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientLab.controller.js:30:22
+2026-02-04 16:36:43 [ERROR]: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+StrictPopulateError: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+    at getModelsMapForPopulate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:50:12)
+    at populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4391:21)
+    at _populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4351:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4323:5
+    at new Promise (<anonymous>)
+    at model.populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4322:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2320:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:11)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientLab.controller.js:30:22
+2026-02-04 16:37:01 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-04 16:37:01 [INFO]: Client connected: jB9cb1h-uX2a0DRMAAAC
+2026-02-04 16:37:01 [INFO]: [ClinicalDashboard] Response: appointments=6, labs=5, critical=0
+2026-02-04 16:37:01 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-04 16:37:01 [INFO]: [ClinicalDashboard] Response: appointments=6, labs=5, critical=0
+2026-02-04 16:37:04 [INFO]: Client disconnected: jB9cb1h-uX2a0DRMAAAC
+2026-02-04 16:37:19 [ERROR]: AI summary failed: LLM API failed: User not found.
+Error: AI summary failed: LLM API failed: User not found.
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-04 16:37:36 [ERROR]: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+StrictPopulateError: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+    at getModelsMapForPopulate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:50:12)
+    at populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4391:21)
+    at _populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4351:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4323:5
+    at new Promise (<anonymous>)
+    at model.populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4322:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2320:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:11)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientLab.controller.js:30:22
+2026-02-04 16:37:38 [ERROR]: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+StrictPopulateError: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+    at getModelsMapForPopulate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:50:12)
+    at populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4391:21)
+    at _populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4351:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4323:5
+    at new Promise (<anonymous>)
+    at model.populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4322:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2320:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:11)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientLab.controller.js:30:22
+2026-02-04 16:37:39 [ERROR]: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+StrictPopulateError: Cannot populate path `doctor` because it is not in your schema. Set the `strictPopulate` option to false to override.
+    at getModelsMapForPopulate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\populate\getModelsMapForPopulate.js:50:12)
+    at populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4391:21)
+    at _populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4351:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4323:5
+    at new Promise (<anonymous>)
+    at model.populate (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\model.js:4322:10)
+    at model.Query._find (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:2320:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async model.Query.exec (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:11)
+    at async C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientLab.controller.js:30:22
+2026-02-04 16:38:35 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:28:21
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-04 16:39:36 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 16:39:36 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 16:39:41 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 16:39:41 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:39:41 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 16:39:41 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:39:41 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 16:39:41 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 16:39:41 [INFO]: 🔌 WebSocket enabled
+2026-02-04 16:39:41 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 16:39:41 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:45:21 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 16:45:21 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 16:45:26 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 16:45:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:45:26 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 16:45:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:45:26 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 16:45:26 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 16:45:26 [INFO]: 🔌 WebSocket enabled
+2026-02-04 16:45:26 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 16:45:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:55:05 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 16:55:05 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 16:55:05 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 16:55:05 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 16:55:21 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 16:55:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:55:21 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 16:55:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:55:21 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 16:55:21 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 16:55:21 [INFO]: 🔌 WebSocket enabled
+2026-02-04 16:55:21 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 16:55:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:55:29 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 16:55:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:55:29 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 16:55:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:55:29 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 16:55:29 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 16:55:29 [INFO]: 🔌 WebSocket enabled
+2026-02-04 16:55:29 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 16:55:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:55:30 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 16:55:30 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 16:55:34 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 16:56:16 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 16:56:16 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 16:56:21 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 16:57:52 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 16:57:52 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 16:57:57 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 16:57:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:57:57 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 16:57:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 16:57:57 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 16:57:57 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 16:57:57 [INFO]: 🔌 WebSocket enabled
+2026-02-04 16:57:57 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 16:57:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:00:51 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:00:51 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:00:51 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:00:51 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:00:52 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:00:52 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:00:52 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:00:52 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:01:33 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:01:33 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:01:33 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:01:33 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 17:01:33 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:01:33 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 17:01:33 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 17:01:33 [INFO]: 🔌 WebSocket enabled
+2026-02-04 17:01:33 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 17:01:33 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:01:45 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:01:45 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:02:15 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:02:15 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:02:15 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:02:15 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:02:15 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:02:15 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:02:15 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:02:15 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:02:55 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:02:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:02:55 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 17:02:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:02:55 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 17:02:55 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 17:02:55 [INFO]: 🔌 WebSocket enabled
+2026-02-04 17:02:55 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 17:02:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:02:57 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:02:57 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:03:08 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:05:24 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:05:24 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:05:24 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:05:24 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:05:24 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:05:24 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:05:25 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:05:25 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:06:05 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:06:05 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:06:05 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:06:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:06:05 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 17:06:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:06:05 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 17:06:05 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 17:06:05 [INFO]: 🔌 WebSocket enabled
+2026-02-04 17:06:05 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 17:06:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:06:06 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:06:17 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:06:18 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:06:18 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:06:18 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:06:18 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:06:18 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:06:18 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:06:18 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:06:18 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:06:18 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:07:22 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:07:22 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:07:22 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:07:22 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:07:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:07:22 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 17:07:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:07:22 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 17:07:22 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 17:07:22 [INFO]: 🔌 WebSocket enabled
+2026-02-04 17:07:22 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 17:07:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:07:22 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:08:05 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:08:05 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:08:10 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:08:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:08:10 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 17:08:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:08:10 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 17:08:10 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 17:08:10 [INFO]: 🔌 WebSocket enabled
+2026-02-04 17:08:10 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 17:08:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:10:47 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:10:47 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:10:47 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:10:47 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:10:47 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:10:47 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:10:47 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:10:47 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:10:47 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:10:47 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:10:49 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:10:49 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:11:15 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:11:15 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:11:52 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:11:52 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:11:52 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 17:11:52 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:11:52 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 17:11:52 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 17:11:52 [INFO]: 🔌 WebSocket enabled
+2026-02-04 17:11:52 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 17:11:52 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:11:52 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:12:05 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:12:05 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:12:05 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:12:17 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:12:17 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:12:17 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:12:17 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:12:17 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:12:17 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:12:17 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:12:17 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:12:17 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:12:17 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:12:17 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:12:17 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:12:18 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:12:18 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:13:25 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:13:25 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:13:39 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:13:39 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:13:39 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:13:39 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 17:13:39 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:13:39 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 17:13:39 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 17:13:39 [INFO]: 🔌 WebSocket enabled
+2026-02-04 17:13:39 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 17:13:39 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:13:39 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:13:39 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:13:39 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:13:39 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:13:39 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:13:56 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:14:19 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientAuth.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-04 17:14:21 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientAuth.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-04 17:20:28 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:20:28 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:20:28 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:20:28 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:20:28 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:20:28 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:20:30 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:20:30 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:20:30 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:20:30 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:20:30 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:20:30 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:20:30 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:20:30 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:20:49 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:20:49 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:20:49 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:20:49 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:20:49 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:20:49 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:20:50 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:20:50 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:20:50 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:20:50 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:20:50 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:20:50 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:20:50 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:20:50 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:21:10 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:21:10 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:21:10 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:21:10 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:21:10 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:21:10 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:21:10 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:21:10 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:21:10 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:21:10 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:21:10 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:21:10 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:21:10 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:21:10 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:21:22 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:21:22 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:21:22 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:21:22 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:21:22 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:21:22 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:21:23 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:21:23 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:21:23 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:21:23 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:21:24 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-04 17:21:24 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:21:24 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:21:24 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:40:04 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-04 17:40:04 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:40:09 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:40:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:40:09 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 17:40:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:40:09 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 17:40:09 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 17:40:09 [INFO]: 🔌 WebSocket enabled
+2026-02-04 17:40:09 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 17:40:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:40:09 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:40:09 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:40:17 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:41:16 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-04 17:41:16 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-04 17:41:21 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-04 17:41:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:41:21 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-04 17:41:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-04 17:41:21 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-04 17:41:21 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-04 17:41:21 [INFO]: 🔌 WebSocket enabled
+2026-02-04 17:41:21 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-04 17:41:21 [INFO]: ═══════════════════════════════════════════════════════════════
