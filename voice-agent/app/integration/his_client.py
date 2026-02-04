@@ -72,7 +72,7 @@ class HISClient:
             client = await self._get_client()
             
             response = await client.post(
-                "/auth/login",
+                "auth/login",
                 json={
                     "email": self.username,
                     "password": self.password
@@ -196,12 +196,12 @@ class HISClient:
         
         params = {"query": search_term}
         
-        result = await self._request("GET", "/patients/search", params=params)
+        result = await self._request("GET", "patients/search", params=params)
         return result.get("data", [])
     
     async def get_patient(self, patient_id: str) -> Dict:
         """Get patient by ID."""
-        result = await self._request("GET", f"/patients/{patient_id}")
+        result = await self._request("GET", f"patients/{patient_id}")
         return result.get("data", {})
     
     async def create_patient(self, patient_data: Dict) -> Dict:
@@ -211,7 +211,7 @@ class HISClient:
         Args:
             patient_data: Patient details (firstName, lastName, phone, dob, gender, etc.)
         """
-        result = await self._request("POST", "/patients", data=patient_data)
+        result = await self._request("POST", "patients", data=patient_data)
         return result.get("data", {})
     
     # =========================================================================
@@ -220,12 +220,12 @@ class HISClient:
     
     async def get_departments(self) -> List[Dict]:
         """Get all departments."""
-        result = await self._request("GET", "/departments")
+        result = await self._request("GET", "departments")
         return result.get("data", [])
     
     async def get_department_doctors(self, department_id: str) -> List[Dict]:
         """Get doctors in a department."""
-        result = await self._request("GET", f"/departments/{department_id}/doctors")
+        result = await self._request("GET", f"departments/{department_id}/doctors")
         return result.get("data", [])
     
     # =========================================================================
@@ -239,7 +239,7 @@ class HISClient:
         Args:
             appointment_data: {patient, doctor, department, scheduledDate, scheduledTime, chiefComplaint}
         """
-        result = await self._request("POST", "/opd/appointments", data=appointment_data)
+        result = await self._request("POST", "opd/appointments", data=appointment_data)
         return result.get("data", {})
     
     async def get_appointments(
@@ -257,17 +257,17 @@ class HISClient:
         if date:
             params["date"] = date
         
-        result = await self._request("GET", "/opd/appointments", params=params)
+        result = await self._request("GET", "opd/appointments", params=params)
         return result.get("data", [])
     
     async def checkin_appointment(self, appointment_id: str) -> Dict:
         """Check in patient for appointment."""
-        result = await self._request("PUT", f"/opd/appointments/{appointment_id}/checkin")
+        result = await self._request("PUT", f"opd/appointments/{appointment_id}/checkin")
         return result.get("data", {})
     
     async def get_opd_queue(self) -> List[Dict]:
         """Get current OPD queue."""
-        result = await self._request("GET", "/opd/queue")
+        result = await self._request("GET", "opd/queue")
         return result.get("data", [])
     
     # =========================================================================
@@ -276,18 +276,18 @@ class HISClient:
     
     async def get_bed_availability(self) -> Dict:
         """Get bed availability summary."""
-        result = await self._request("GET", "/beds/availability")
+        result = await self._request("GET", "beds/availability")
         return result.get("data", {})
     
     async def get_beds(self, status: Optional[str] = None) -> List[Dict]:
         """Get all beds with optional status filter."""
         params = {"status": status} if status else {}
-        result = await self._request("GET", "/beds", params=params)
+        result = await self._request("GET", "beds", params=params)
         return result.get("data", [])
     
     async def allocate_bed(self, patient_id: str, bed_id: str) -> Dict:
         """Allocate bed to patient."""
-        result = await self._request("POST", "/beds/allocate", data={
+        result = await self._request("POST", "beds/allocate", data={
             "patient": patient_id,
             "bed": bed_id
         })
@@ -299,12 +299,12 @@ class HISClient:
     
     async def create_admission(self, admission_data: Dict) -> Dict:
         """Create IPD admission."""
-        result = await self._request("POST", "/ipd/admissions", data=admission_data)
+        result = await self._request("POST", "ipd/admissions", data=admission_data)
         return result.get("data", {})
     
     async def get_admission_requests(self) -> List[Dict]:
         """Get pending admission requests."""
-        result = await self._request("GET", "/ipd/requests")
+        result = await self._request("GET", "ipd/requests")
         return result.get("data", [])
     
     # =========================================================================
@@ -313,12 +313,12 @@ class HISClient:
     
     async def create_emergency_case(self, case_data: Dict) -> Dict:
         """Create emergency case."""
-        result = await self._request("POST", "/emergency/cases", data=case_data)
+        result = await self._request("POST", "emergency/cases", data=case_data)
         return result.get("data", {})
     
     async def get_emergency_queue(self) -> List[Dict]:
         """Get emergency queue sorted by triage."""
-        result = await self._request("GET", "/emergency/queue")
+        result = await self._request("GET", "emergency/queue")
         return result.get("data", [])
     
     # =========================================================================
@@ -327,13 +327,13 @@ class HISClient:
     
     async def get_lab_tests(self) -> List[Dict]:
         """Get available lab tests."""
-        result = await self._request("GET", "/lab/tests")
+        result = await self._request("GET", "lab/tests")
         return result.get("data", [])
     
     async def get_lab_orders(self, patient_id: Optional[str] = None) -> List[Dict]:
         """Get lab orders for patient."""
         params = {"patient": patient_id} if patient_id else {}
-        result = await self._request("GET", "/lab/orders", params=params)
+        result = await self._request("GET", "lab/orders", params=params)
         return result.get("data", [])
     
     # =========================================================================
@@ -342,7 +342,7 @@ class HISClient:
     
     async def get_patient_bills(self, patient_id: str) -> List[Dict]:
         """Get bills for a patient."""
-        result = await self._request("GET", f"/billing/patient/{patient_id}")
+        result = await self._request("GET", f"billing/patient/{patient_id}")
         return result.get("data", [])
 
 
