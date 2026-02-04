@@ -93,7 +93,9 @@ class PatientPortalWorkflow(BaseWorkflow):
                 "Content-Type": "application/json"
             }
             
-            url = f"{PATIENT_PORTAL_API}{endpoint}"
+            # Use the base URL from the configured HIS Client (which points to the correct backend)
+            # endpoint is expected to start with /, e.g., /appointments
+            url = f"{self.his_client.base_url}/patient{endpoint}"
             
             if method == "GET":
                 response = await client.get(url, headers=headers)
