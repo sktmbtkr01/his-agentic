@@ -100,16 +100,56 @@ Authorization: Bearer <your_jwt_token>
                     tags: ['Patients'],
                     summary: 'Get All Patients',
                     parameters: [
-                        { name: 'page', in: 'query', schema: { type: 'integer' } },
-                        { name: 'limit', in: 'query', schema: { type: 'integer' } },
-                        { name: 'search', in: 'query', schema: { type: 'string' } }
+                        { name: 'page', in: 'query', schema: { type: 'integer' }, description: 'Page number' },
+                        { name: 'limit', in: 'query', schema: { type: 'integer' }, description: 'Results per page' },
+                        { name: 'search', in: 'query', schema: { type: 'string' }, description: 'Search by name, phone, or patient ID' }
                     ],
                     responses: { 200: { description: 'List of patients' } }
                 },
                 post: {
                     tags: ['Patients'],
                     summary: 'Register New Patient',
-                    responses: { 201: { description: 'Patient created' } }
+                    requestBody: {
+                        required: true,
+                        content: {
+                            'application/json': {
+                                schema: {
+                                    type: 'object',
+                                    required: ['firstName', 'lastName', 'dateOfBirth', 'gender', 'phone'],
+                                    properties: {
+                                        firstName: { type: 'string', example: 'John' },
+                                        lastName: { type: 'string', example: 'Doe' },
+                                        dateOfBirth: { type: 'string', format: 'date', example: '1990-05-15' },
+                                        gender: { type: 'string', enum: ['male', 'female', 'other'], example: 'male' },
+                                        phone: { type: 'string', example: '9876543210' },
+                                        email: { type: 'string', example: 'john.doe@example.com' },
+                                        address: {
+                                            type: 'object',
+                                            properties: {
+                                                street: { type: 'string', example: '123 Main Street' },
+                                                city: { type: 'string', example: 'Mumbai' },
+                                                state: { type: 'string', example: 'Maharashtra' },
+                                                pincode: { type: 'string', example: '400001' }
+                                            }
+                                        },
+                                        bloodGroup: { type: 'string', enum: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'], example: 'O+' },
+                                        emergencyContact: {
+                                            type: 'object',
+                                            properties: {
+                                                name: { type: 'string', example: 'Jane Doe' },
+                                                relationship: { type: 'string', example: 'Spouse' },
+                                                phone: { type: 'string', example: '9876543211' }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    responses: {
+                        201: { description: 'Patient created successfully' },
+                        400: { description: 'Validation error - missing required fields' }
+                    }
                 }
             },
             '/patients/{id}': {
@@ -117,9 +157,44 @@ Authorization: Bearer <your_jwt_token>
                     tags: ['Patients'],
                     summary: 'Get Patient by ID',
                     parameters: [
-                        { name: 'id', in: 'path', required: true, schema: { type: 'string' } }
+                        { name: 'id', in: 'path', required: true, schema: { type: 'string' }, description: 'Patient MongoDB ID' }
                     ],
                     responses: { 200: { description: 'Patient details' } }
+                },
+                put: {
+                    tags: ['Patients'],
+                    summary: 'Update Patient',
+                    parameters: [
+                        { name: 'id', in: 'path', required: true, schema: { type: 'string' }, description: 'Patient MongoDB ID' }
+                    ],
+                    requestBody: {
+                        required: true,
+                        content: {
+                            'application/json': {
+                                schema: {
+                                    type: 'object',
+                                    properties: {
+                                        firstName: { type: 'string' },
+                                        lastName: { type: 'string' },
+                                        phone: { type: 'string' },
+                                        email: { type: 'string' },
+                                        address: { type: 'object' }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    responses: { 200: { description: 'Patient updated' } }
+                }
+            },
+            '/patients/search': {
+                get: {
+                    tags: ['Patients'],
+                    summary: 'Search Patients',
+                    parameters: [
+                        { name: 'query', in: 'query', required: true, schema: { type: 'string' }, description: 'Search term (name, phone, or patient ID)' }
+                    ],
+                    responses: { 200: { description: 'Search results' } }
                 }
             },
             // OPD endpoints
@@ -127,12 +202,110 @@ Authorization: Bearer <your_jwt_token>
                 get: {
                     tags: ['OPD'],
                     summary: 'Get OPD Appointments',
+                    parameters: [
+                        { name: 'date', in: 'query', schema: { type: 'string', format: 'date' }, description: 'Filter by date (YYYY-MM-DD)' },
+                        { name: 'doctor', in: 'query', schema: { type: 'string' }, description: 'Filter by doctor ID' },
+                        { name: 'department', in: 'query', schema: { type: 'string' }, description: 'Filter by department ID' },
+                        { name: 'status', in: 'query', schema: { type: 'string', enum: ['scheduled', 'checked_in', 'in_progress', 'completed', 'cancelled'] }, description: 'Filter by status' }
+                    ],
                     responses: { 200: { description: 'List of appointments' } }
                 },
                 post: {
                     tags: ['OPD'],
                     summary: 'Create OPD Appointment',
-                    responses: { 201: { description: 'Appointment created' } }
+                    requestBody: {
+                        required: true,
+                        content: {
+                            'application/json': {
+                                schema: {
+                                    type: 'object',
+                                    required: ['patient', 'doctor', 'department', 'scheduledDate'],
+                                    properties: {
+                                        patient: { type: 'string', description: 'Patient MongoDB ID', example: '6798...' },
+                                        doctor: { type: 'string', description: 'Doctor User MongoDB ID', example: '6798...' },
+                                        department: { type: 'string', description: 'Department MongoDB ID', example: '6798...' },
+                                        scheduledDate: { type: 'string', format: 'date-time', example: '2026-02-05T10:00:00.000Z' },
+                                        scheduledTime: { type: 'string', example: '10:00' },
+                                        appointmentType: { type: 'string', enum: ['NEW', 'FOLLOWUP', 'ROUTINE'], example: 'NEW' },
+                                        chiefComplaint: { type: 'string', example: 'Fever and headache' },
+                                        notes: { type: 'string', example: 'Patient requested morning slot' }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    responses: {
+                        201: { description: 'Appointment created' },
+                        400: { description: 'Validation error' }
+                    }
+                }
+            },
+            '/opd/appointments/{id}': {
+                get: {
+                    tags: ['OPD'],
+                    summary: 'Get Appointment by ID',
+                    parameters: [
+                        { name: 'id', in: 'path', required: true, schema: { type: 'string' } }
+                    ],
+                    responses: { 200: { description: 'Appointment details' } }
+                },
+                put: {
+                    tags: ['OPD'],
+                    summary: 'Update Appointment',
+                    parameters: [
+                        { name: 'id', in: 'path', required: true, schema: { type: 'string' } }
+                    ],
+                    requestBody: {
+                        content: {
+                            'application/json': {
+                                schema: {
+                                    type: 'object',
+                                    properties: {
+                                        scheduledDate: { type: 'string', format: 'date-time' },
+                                        status: { type: 'string', enum: ['scheduled', 'checked_in', 'in_progress', 'completed', 'cancelled'] },
+                                        notes: { type: 'string' }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    responses: { 200: { description: 'Appointment updated' } }
+                },
+                delete: {
+                    tags: ['OPD'],
+                    summary: 'Cancel Appointment',
+                    parameters: [
+                        { name: 'id', in: 'path', required: true, schema: { type: 'string' } }
+                    ],
+                    responses: { 200: { description: 'Appointment cancelled' } }
+                }
+            },
+            '/opd/appointments/{id}/checkin': {
+                put: {
+                    tags: ['OPD'],
+                    summary: 'Check-in Patient',
+                    parameters: [
+                        { name: 'id', in: 'path', required: true, schema: { type: 'string' } }
+                    ],
+                    responses: { 200: { description: 'Patient checked in' } }
+                }
+            },
+            '/opd/queue': {
+                get: {
+                    tags: ['OPD'],
+                    summary: 'Get OPD Queue',
+                    parameters: [
+                        { name: 'department', in: 'query', schema: { type: 'string' }, description: 'Filter by department' },
+                        { name: 'doctor', in: 'query', schema: { type: 'string' }, description: 'Filter by doctor' }
+                    ],
+                    responses: { 200: { description: 'Current OPD queue' } }
+                }
+            },
+            '/opd/dashboard': {
+                get: {
+                    tags: ['OPD'],
+                    summary: 'Get OPD Dashboard Stats',
+                    responses: { 200: { description: 'Dashboard statistics' } }
                 }
             },
             // IPD endpoints
