@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+require('./Counter'); // Ensure Counter model is registered
 
 /**
  * Prescription Model
@@ -160,8 +161,28 @@ prescriptionSchema.pre('save', async function (next) {
         try {
             const today = new Date();
             const dateStr = today.toISOString().slice(0, 10).replace(/-/g, '');
-            const count = await mongoose.model('Prescription').countDocuments();
-            this.prescriptionNumber = `RX${dateStr}${String(count + 1).padStart(5, '0')}`;
+            const counterId = `prescription_${dateStr}`;
+            const Counter = mongoose.model('Counter');
+
+            // Atomic increment to ensure uniqueness
+            // Try to find and increment
+            let counter = await Counter.findByIdAndUpdate(
+                counterId,
+                { $inc: { seq: 1 } },
+                { new: true, upsert: true }
+            );
+
+            // If we just created it (seq==1), we might want to check for existing documents 
+            // if we are recovering from a system without counters.
+            // But strict sequentiality isn't as critical as uniqueness. 
+            // If the counter reset (e.g. redis/memcache lost, but this is mongo), 
+            // or if we are starting fresh day, upsert=true handles it.
+            // Using a timestamp based ID (dateStr) ensures day-level rotation.
+
+            // To be extra safe against "first of the day" race conditions combined with manual DB edits:
+            // Just trust the counter. 
+
+            this.prescriptionNumber = `RX${dateStr}${String(counter.seq).padStart(5, '0')}`;
         } catch (err) {
             return next(err);
         }

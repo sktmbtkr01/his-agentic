@@ -95,8 +95,16 @@ exports.getAppointmentById = asyncHandler(async (req, res, next) => {
  * @route   PUT /api/opd/appointments/:id
  */
 exports.updateAppointment = asyncHandler(async (req, res, next) => {
-    // Fetch full appointment first to ensure all fields are populated
-    let appointment = await Appointment.findById(req.params.id)
+    // Use findByIdAndUpdate to avoid VersionError (optimistic concurrency control) failures
+    // in case of concurrent updates (e.g. fast double-clicks or background jobs)
+    let appointment = await Appointment.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {
+            new: true,
+            runValidators: true
+        }
+    )
         .populate('patient')
         .populate('doctor')
         .populate('department');
@@ -104,16 +112,6 @@ exports.updateAppointment = asyncHandler(async (req, res, next) => {
     if (!appointment) {
         return next(new ErrorResponse('Appointment not found', 404));
     }
-
-    // Update the appointment with new values
-    Object.assign(appointment, req.body);
-    await appointment.save();
-
-    // Reload to get populated references after save
-    appointment = await Appointment.findById(appointment._id)
-        .populate('patient')
-        .populate('doctor')
-        .populate('department');
 
     // Automated Billing: If status changed to 'completed', add Consultation Fee
     if (req.body.status === 'completed') {
