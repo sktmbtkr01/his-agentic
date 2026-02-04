@@ -178,11 +178,14 @@ class WorkflowEngine:
                 )
             
             if intent == Intent.UNCLEAR or intent == "UNCLEAR":
-                return WorkflowResult(
-                    success=True,
-                    response_text="I'm sorry, I didn't quite understand that. Could you please repeat or tell me more about what you need help with?",
-                    is_complete=False
-                )
+                # CRITICAL: Only return error if we are NOT in an active workflow
+                # If there IS a workflow, let it try to handle the raw input (e.g. fuzzy matching names)
+                if not merged_context.get("current_workflow"):
+                    return WorkflowResult(
+                        success=True,
+                        response_text="I'm sorry, I didn't quite understand that. Could you please repeat or tell me more about what you need help with?",
+                        is_complete=False
+                    )
             
             # ==================== PATIENT PORTAL CONTINUATION CHECK ====================
             # If this is a patient portal session with an active workflow, treat ALL 
