@@ -343,6 +343,15 @@ class IntentClassifier:
                 entities={"date": text.strip(), "preferred_date": text.strip()}
              )
         
+        # Time detection (HH:MM)
+        time_match = re.search(r'\b\d{1,2}:\d{2}(?:\s?[ap]m)?\b', text, re.IGNORECASE)
+        if time_match:
+             return IntentResult(
+                intent="PROVIDE_INFORMATION",
+                confidence=0.85,
+                entities={"time": time_match.group(0), "preferred_time": time_match.group(0)}
+             )
+        
         # Try to extract phone number - normalize by removing spaces/dashes
         normalized_text = re.sub(r'[\s\-\.]', '', text)  # Remove spaces, dashes, dots
         phone_match = re.search(r'\b(\d{10})\b', normalized_text)
