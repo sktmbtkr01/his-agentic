@@ -202,7 +202,7 @@ class PatientPortalWorkflow(BaseWorkflow):
         if not preferred_date:
             return WorkflowResult(
                 success=True,
-                response_text="When would you like the appointment? You can say today, tomorrow, or a specific date.",
+                response_text="When would you like the appointment? You can say today, tomorrow, or a specific date (DD-MM-YYYY).",
                 is_complete=False,
                 updated_context={
                     "step": "need_date",
@@ -507,12 +507,32 @@ class PatientPortalWorkflow(BaseWorkflow):
                                doctor_id=merged_entities["doctor_id"])
                     break
         
+        # Handle date selection (manual fallback)
+        if step == "need_date":
+            user_input = new_entities.get("_raw_input", "").lower()
+            if "today" in user_input:
+                merged_entities["preferred_date"] = "today"
+            elif "tomorrow" in user_input:
+                merged_entities["preferred_date"] = "tomorrow"
+            elif "next" in user_input:
+                merged_entities["preferred_date"] = user_input
+
         # Handle time selection
         if step == "select_time":
             user_input = new_entities.get("_raw_input", "").strip()
             # Check if input looks like a time
             if ":" in user_input or any(t in user_input.lower() for t in ["am", "pm"]):
                 merged_entities["preferred_time"] = user_input
+            else:
+                 # Try to extract simple numbers (e.g. "10" -> "10:00")
+                import re
+                hour_match = re.search(r'\b(\d{1,2})\b', user_input)
+                if hour_match:
+                    hour = int(hour_match.group(1))
+                    if 1 <= hour <= 12: # Assume 9-5 range usually, but 1-12 is safe logic
+                         merged_entities["preferred_time"] = f"{hour}:00"
+                    elif 13 <= hour <= 23:
+                         merged_entities["preferred_time"] = f"{hour}:00"
         
         # Handle confirmation
         if step == "awaiting_confirmation":
