@@ -12,11 +12,11 @@ import toast from 'react-hot-toast';
 
 // Status badge colors
 const STATUS_COLORS = {
-    ordered: 'bg-blue-100 text-blue-700 border-blue-200',
-    scheduled: 'bg-yellow-100 text-yellow-700 border-yellow-200',
-    'in-progress': 'bg-purple-100 text-purple-700 border-purple-200',
-    completed: 'bg-green-100 text-green-700 border-green-200',
-    cancelled: 'bg-red-100 text-red-700 border-red-200',
+    ordered: 'bg-blue-500/10 text-blue-500 border-blue-500/30',
+    scheduled: 'bg-yellow-500/10 text-yellow-500 border-yellow-500/30',
+    'in-progress': 'bg-purple-500/10 text-purple-500 border-purple-500/30',
+    completed: 'bg-green-500/10 text-green-500 border-green-500/30',
+    cancelled: 'bg-red-500/10 text-red-500 border-red-500/30',
 };
 
 // Modality icons/colors
@@ -161,16 +161,16 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
 
     return (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-y-auto py-4">
-            <div className="bg-white rounded-xl p-6 w-full max-w-2xl shadow-2xl m-4 max-h-[90vh] overflow-y-auto">
-                <div className="flex justify-between items-center mb-4 sticky top-0 bg-white pb-2">
-                    <h3 className="text-lg font-bold text-gray-800">Enter Radiology Report</h3>
+            <div className="bg-surface rounded-xl p-6 w-full max-w-2xl shadow-2xl m-4 max-h-[90vh] overflow-y-auto">
+                <div className="flex justify-between items-center mb-4 sticky top-0 bg-surface pb-2">
+                    <h3 className="text-lg font-bold text-text-primary">Enter Radiology Report</h3>
                     <button onClick={onClose}>
-                        <X size={20} className="text-gray-400 hover:text-gray-600" />
+                        <X size={20} className="text-text-muted hover:text-text-secondary" />
                     </button>
                 </div>
 
-                <div className="mb-4 p-3 bg-slate-50 rounded-lg">
-                    <p className="text-sm text-gray-600">
+                <div className="mb-4 p-3 bg-surface-secondary rounded-lg">
+                    <p className="text-sm text-text-secondary">
                         <span className="font-medium">{order.test?.testName}</span> for{' '}
                         <span className="font-medium">{order.patient?.firstName} {order.patient?.lastName}</span>
                     </p>
@@ -185,8 +185,8 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
                 <form onSubmit={handleSubmit}>
                     <div className="space-y-4">
                         {/* Common: File Upload */}
-                        <div className="p-4 border-2 border-dashed border-gray-200 rounded-lg hover:border-primary/50 transition-colors">
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <div className="p-4 border-2 border-dashed border-border rounded-lg hover:border-primary/50 transition-colors">
+                            <label className="block text-sm font-medium text-text-primary mb-2">
                                 <Upload size={16} className="inline mr-1" /> Upload Scan Image/Report
                             </label>
                             <input
@@ -194,25 +194,25 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
                                 name="scanImage"
                                 accept="image/*,.pdf,.dcm"
                                 onChange={handleChange}
-                                className="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20"
+                                className="w-full text-sm text-text-secondary file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20"
                             />
                             {uploadedFileName && (
-                                <p className="mt-2 text-sm text-green-600">Selected: {uploadedFileName}</p>
+                                <p className="mt-2 text-sm text-green-500">Selected: {uploadedFileName}</p>
                             )}
                         </div>
 
                         {/* X-Ray Specific Fields */}
                         {scanCategory === 'xray' && (
-                            <div className="p-4 bg-blue-50 rounded-lg space-y-3">
-                                <h4 className="font-medium text-blue-800 text-sm">X-Ray Specific</h4>
+                            <div className="p-4 bg-blue-500/10 rounded-lg space-y-3">
+                                <h4 className="font-medium text-blue-500 text-sm">X-Ray Specific</h4>
                                 <div className="grid grid-cols-2 gap-3">
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">View Type</label>
+                                        <label className="block text-sm font-medium text-text-primary mb-1">View Type</label>
                                         <select
                                             name="xrayViewType"
                                             value={formData.xrayViewType}
                                             onChange={handleChange}
-                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                            className="w-full px-3 py-2 border border-border bg-surface rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                                         >
                                             <option value="">Select View</option>
                                             <option value="PA">PA (Posteroanterior)</option>
@@ -221,14 +221,14 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
                                         </select>
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Body Part Confirmation</label>
+                                        <label className="block text-sm font-medium text-text-primary mb-1">Body Part Confirmation</label>
                                         <input
                                             type="text"
                                             name="xrayBodyPartConfirmation"
                                             value={formData.xrayBodyPartConfirmation}
                                             onChange={handleChange}
                                             placeholder="e.g., Chest, Left Hand"
-                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                            className="w-full px-3 py-2 border border-border bg-surface rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                                         />
                                     </div>
                                 </div>
@@ -237,16 +237,16 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
 
                         {/* Ultrasound Specific Fields */}
                         {(scanCategory === 'ultrasound' || scanCategory === 'obstetric') && (
-                            <div className="p-4 bg-green-50 rounded-lg space-y-3">
-                                <h4 className="font-medium text-green-800 text-sm">Ultrasound Specific</h4>
+                            <div className="p-4 bg-green-500/10 rounded-lg space-y-3">
+                                <h4 className="font-medium text-green-500 text-sm">Ultrasound Specific</h4>
                                 <div className="grid grid-cols-2 gap-3">
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Preparation</label>
+                                        <label className="block text-sm font-medium text-text-primary mb-1">Preparation</label>
                                         <select
                                             name="ultrasoundPreparation"
                                             value={formData.ultrasoundPreparation}
                                             onChange={handleChange}
-                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                            className="w-full px-3 py-2 border border-border bg-surface rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                                         >
                                             <option value="">Select Preparation</option>
                                             <option value="Fasting">Fasting</option>
@@ -255,20 +255,20 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
                                         </select>
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Indication/Reason</label>
+                                        <label className="block text-sm font-medium text-text-primary mb-1">Indication/Reason</label>
                                         <input
                                             type="text"
                                             name="ultrasoundIndication"
                                             value={formData.ultrasoundIndication}
                                             onChange={handleChange}
                                             placeholder="Clinical indication"
-                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                            className="w-full px-3 py-2 border border-border bg-surface rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                                         />
                                     </div>
                                 </div>
                                 {isObstetric && (
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Gestational Age (weeks)</label>
+                                        <label className="block text-sm font-medium text-text-primary mb-1">Gestational Age (weeks)</label>
                                         <input
                                             type="number"
                                             name="gestationalAge"
@@ -277,7 +277,7 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
                                             min="1"
                                             max="45"
                                             placeholder="Enter weeks"
-                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                            className="w-full px-3 py-2 border border-border bg-surface rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                                         />
                                     </div>
                                 )}
@@ -286,8 +286,8 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
 
                         {/* CT Scan Specific Fields */}
                         {scanCategory === 'ct' && (
-                            <div className="p-4 bg-purple-50 rounded-lg space-y-3">
-                                <h4 className="font-medium text-purple-800 text-sm">CT Scan Specific</h4>
+                            <div className="p-4 bg-purple-500/10 rounded-lg space-y-3">
+                                <h4 className="font-medium text-purple-500 text-sm">CT Scan Specific</h4>
                                 <div className="flex items-center gap-6">
                                     <label className="flex items-center gap-2 cursor-pointer">
                                         <input
@@ -295,9 +295,9 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
                                             name="contrastUsed"
                                             checked={formData.contrastUsed}
                                             onChange={handleChange}
-                                            className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary"
+                                            className="w-4 h-4 rounded border-border text-primary focus:ring-primary"
                                         />
-                                        <span className="text-sm text-gray-700">Contrast Used?</span>
+                                        <span className="text-sm text-text-primary">Contrast Used?</span>
                                     </label>
                                     <label className="flex items-center gap-2 cursor-pointer">
                                         <input
@@ -305,33 +305,33 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
                                             name="allergyHistory"
                                             checked={formData.allergyHistory}
                                             onChange={handleChange}
-                                            className="w-4 h-4 rounded border-gray-300 text-red-500 focus:ring-red-500"
+                                            className="w-4 h-4 rounded border-border text-red-500 focus:ring-red-500"
                                         />
-                                        <span className="text-sm text-gray-700">Allergy History</span>
+                                        <span className="text-sm text-text-primary">Allergy History</span>
                                     </label>
                                 </div>
                                 {formData.contrastUsed && (
                                     <div className="grid grid-cols-2 gap-3 mt-2">
                                         <div>
-                                            <label className="block text-sm font-medium text-gray-700 mb-1">Contrast Type</label>
+                                            <label className="block text-sm font-medium text-text-primary mb-1">Contrast Type</label>
                                             <input
                                                 type="text"
                                                 name="contrastType"
                                                 value={formData.contrastType}
                                                 onChange={handleChange}
                                                 placeholder="e.g., Iodinated"
-                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                                className="w-full px-3 py-2 border border-border bg-surface rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                                             />
                                         </div>
                                         <div>
-                                            <label className="block text-sm font-medium text-gray-700 mb-1">Contrast Dose</label>
+                                            <label className="block text-sm font-medium text-text-primary mb-1">Contrast Dose</label>
                                             <input
                                                 type="text"
                                                 name="contrastDose"
                                                 value={formData.contrastDose}
                                                 onChange={handleChange}
                                                 placeholder="e.g., 100ml"
-                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                                className="w-full px-3 py-2 border border-border bg-surface rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                                             />
                                         </div>
                                     </div>
@@ -341,8 +341,8 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
 
                         {/* MRI Specific Fields */}
                         {scanCategory === 'mri' && (
-                            <div className="p-4 bg-pink-50 rounded-lg space-y-3">
-                                <h4 className="font-medium text-pink-800 text-sm">MRI Specific</h4>
+                            <div className="p-4 bg-pink-500/10 rounded-lg space-y-3">
+                                <h4 className="font-medium text-pink-500 text-sm">MRI Specific</h4>
                                 <div className="flex flex-wrap items-center gap-6">
                                     <label className="flex items-center gap-2 cursor-pointer">
                                         <input
@@ -350,9 +350,9 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
                                             name="metalImplantCheck"
                                             checked={formData.metalImplantCheck}
                                             onChange={handleChange}
-                                            className="w-4 h-4 rounded border-gray-300 text-red-500 focus:ring-red-500"
+                                            className="w-4 h-4 rounded border-border text-red-500 focus:ring-red-500"
                                         />
-                                        <span className="text-sm text-gray-700">Metal Implant Present</span>
+                                        <span className="text-sm text-text-primary">Metal Implant Present</span>
                                     </label>
                                     <label className="flex items-center gap-2 cursor-pointer">
                                         <input
@@ -360,9 +360,9 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
                                             name="claustrophobia"
                                             checked={formData.claustrophobia}
                                             onChange={handleChange}
-                                            className="w-4 h-4 rounded border-gray-300 text-yellow-500 focus:ring-yellow-500"
+                                            className="w-4 h-4 rounded border-border text-yellow-500 focus:ring-yellow-500"
                                         />
-                                        <span className="text-sm text-gray-700">Claustrophobia</span>
+                                        <span className="text-sm text-text-primary">Claustrophobia</span>
                                     </label>
                                     <label className="flex items-center gap-2 cursor-pointer">
                                         <input
@@ -370,9 +370,9 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
                                             name="sedationRequired"
                                             checked={formData.sedationRequired}
                                             onChange={handleChange}
-                                            className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary"
+                                            className="w-4 h-4 rounded border-border text-primary focus:ring-primary"
                                         />
-                                        <span className="text-sm text-gray-700">Sedation Required</span>
+                                        <span className="text-sm text-text-primary">Sedation Required</span>
                                     </label>
                                 </div>
                             </div>
@@ -380,28 +380,28 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
 
                         {/* ECG/Echo Specific Fields */}
                         {scanCategory === 'ecg' && (
-                            <div className="p-4 bg-teal-50 rounded-lg space-y-3">
-                                <h4 className="font-medium text-teal-800 text-sm">ECG/Echo Specific</h4>
+                            <div className="p-4 bg-teal-500/10 rounded-lg space-y-3">
+                                <h4 className="font-medium text-teal-500 text-sm">ECG/Echo Specific</h4>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Measurement Notes</label>
+                                    <label className="block text-sm font-medium text-text-primary mb-1">Measurement Notes</label>
                                     <textarea
                                         name="measurementNotes"
                                         rows="3"
                                         value={formData.measurementNotes}
                                         onChange={handleChange}
                                         placeholder="Enter detailed measurements..."
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                        className="w-full px-3 py-2 border border-border bg-surface rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                                     ></textarea>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Report Summary</label>
+                                    <label className="block text-sm font-medium text-text-primary mb-1">Report Summary</label>
                                     <textarea
                                         name="reportSummary"
                                         rows="2"
                                         value={formData.reportSummary}
                                         onChange={handleChange}
                                         placeholder="Brief summary..."
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                        className="w-full px-3 py-2 border border-border bg-surface rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                                     ></textarea>
                                 </div>
                             </div>
@@ -409,7 +409,7 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
 
                         {/* Common: Findings */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Findings *</label>
+                            <label className="block text-sm font-medium text-text-primary mb-1">Findings *</label>
                             <textarea
                                 name="findings"
                                 rows="4"
@@ -417,13 +417,13 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
                                 value={formData.findings}
                                 onChange={handleChange}
                                 placeholder="Enter detailed findings..."
-                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                className="w-full px-3 py-2 border border-border bg-surface rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                             ></textarea>
                         </div>
 
                         {/* Common: Impression */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Impression *</label>
+                            <label className="block text-sm font-medium text-text-primary mb-1">Impression *</label>
                             <textarea
                                 name="impression"
                                 rows="3"
@@ -431,29 +431,29 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
                                 value={formData.impression}
                                 onChange={handleChange}
                                 placeholder="Enter clinical impression..."
-                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                className="w-full px-3 py-2 border border-border bg-surface rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                             ></textarea>
                         </div>
 
                         {/* Common: Recommendations */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Recommendations</label>
+                            <label className="block text-sm font-medium text-text-primary mb-1">Recommendations</label>
                             <textarea
                                 name="recommendations"
                                 rows="2"
                                 value={formData.recommendations}
                                 onChange={handleChange}
                                 placeholder="Any follow-up recommendations..."
-                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                className="w-full px-3 py-2 border border-border bg-surface rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                             ></textarea>
                         </div>
                     </div>
 
-                    <div className="mt-6 flex justify-end gap-3 sticky bottom-0 bg-white pt-4 border-t">
+                    <div className="mt-6 flex justify-end gap-3 sticky bottom-0 bg-surface pt-4 border-t border-border">
                         <button
                             type="button"
                             onClick={onClose}
-                            className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50"
+                            className="px-4 py-2 border border-border rounded-lg text-text-primary hover:bg-surface-highlight"
                         >
                             Cancel
                         </button>
@@ -649,7 +649,7 @@ const Radiology = () => {
         : [];
 
     if (loading) {
-        return <div className="p-12 text-center text-gray-500">Loading Radiology Module...</div>;
+        return <div className="p-12 text-center text-text-secondary">Loading Radiology Module...</div>;
     }
 
     return (
@@ -657,52 +657,52 @@ const Radiology = () => {
             {/* Header */}
             <div className="flex justify-between items-center">
                 <div>
-                    <h1 className="text-2xl font-bold text-slate-800 flex items-center gap-2">
+                    <h1 className="text-2xl font-bold text-text-primary flex items-center gap-2">
                         <Scan className="text-primary" />
                         Radiology & Imaging
                     </h1>
-                    <p className="text-gray-500 text-sm">Manage imaging orders, scheduling, and reports</p>
+                    <p className="text-text-secondary text-sm">Manage imaging orders, scheduling, and reports</p>
                 </div>
             </div>
 
             {/* Dashboard KPIs */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                <div className="bg-surface p-4 rounded-xl shadow-sm border border-border">
                     <div className="flex justify-between items-start mb-2">
-                        <span className="text-gray-500 text-xs uppercase font-semibold">Pending Orders</span>
+                        <span className="text-text-secondary text-xs uppercase font-semibold">Pending Orders</span>
                         <Clock size={16} className="text-blue-500" />
                     </div>
-                    <div className="text-2xl font-bold text-secondary-dark">{dashboard?.pending || 0}</div>
+                    <div className="text-2xl font-bold text-text-primary">{dashboard?.pending || 0}</div>
                 </div>
-                <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                <div className="bg-surface p-4 rounded-xl shadow-sm border border-border">
                     <div className="flex justify-between items-start mb-2">
-                        <span className="text-gray-500 text-xs uppercase font-semibold">Completed Today</span>
+                        <span className="text-text-secondary text-xs uppercase font-semibold">Completed Today</span>
                         <CheckCircle size={16} className="text-green-500" />
                     </div>
-                    <div className="text-2xl font-bold text-green-600">{dashboard?.completedToday || 0}</div>
+                    <div className="text-2xl font-bold text-green-500">{dashboard?.completedToday || 0}</div>
                 </div>
-                <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                <div className="bg-surface p-4 rounded-xl shadow-sm border border-border">
                     <div className="flex justify-between items-start mb-2">
-                        <span className="text-gray-500 text-xs uppercase font-semibold">In Queue</span>
+                        <span className="text-text-secondary text-xs uppercase font-semibold">In Queue</span>
                         <Activity size={16} className="text-purple-500" />
                     </div>
-                    <div className="text-2xl font-bold text-purple-600">{queue.length}</div>
+                    <div className="text-2xl font-bold text-purple-500">{queue.length}</div>
                 </div>
-                <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                <div className="bg-surface p-4 rounded-xl shadow-sm border border-border">
                     <div className="flex justify-between items-start mb-2">
-                        <span className="text-gray-500 text-xs uppercase font-semibold">Available Tests</span>
+                        <span className="text-text-secondary text-xs uppercase font-semibold">Available Tests</span>
                         <Image size={16} className="text-orange-500" />
                     </div>
-                    <div className="text-2xl font-bold text-orange-600">{tests.length}</div>
+                    <div className="text-2xl font-bold text-orange-500">{tests.length}</div>
                 </div>
             </div>
 
             {/* Main Content */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Left: Orders/Queue List */}
-                <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-100">
+                <div className="lg:col-span-2 bg-surface rounded-xl shadow-sm border border-border">
                     {/* Tabs */}
-                    <div className="flex border-b border-gray-100">
+                    <div className="flex border-b border-border">
                         {[
                             { id: 'queue', label: 'Work Queue', icon: Activity },
                             { id: 'orders', label: 'All Orders', icon: FileText },
@@ -714,7 +714,7 @@ const Radiology = () => {
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`flex items-center gap-2 px-6 py-4 text-sm font-medium transition-all ${activeTab === tab.id
                                     ? 'text-primary border-b-2 border-primary bg-primary/5'
-                                    : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                                    : 'text-text-secondary hover:text-text-primary hover:bg-surface-highlight'
                                     }`}
                             >
                                 <tab.icon size={18} />
@@ -725,25 +725,25 @@ const Radiology = () => {
 
                     {/* Queue Tab */}
                     {activeTab === 'queue' && (
-                        <div className="divide-y divide-slate-100">
+                        <div className="divide-y divide-border">
                             {queue.length === 0 ? (
-                                <div className="p-12 text-center text-gray-500">
+                                <div className="p-12 text-center text-text-secondary">
                                     <CheckCircle size={48} className="mx-auto text-green-300 mb-4" />
                                     <p>No pending items in the queue</p>
                                 </div>
                             ) : (
                                 queue.map(item => (
-                                    <div key={item._id} className="p-4 hover:bg-slate-50/50 flex items-center justify-between">
+                                    <div key={item._id} className="p-4 hover:bg-surface-highlight flex items-center justify-between">
                                         <div className="flex items-center gap-4">
                                             <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold`}
                                                 style={{ backgroundColor: MODALITY_CONFIG[item.test?.modality]?.color || '#6B7280' }}>
                                                 {item.test?.modality?.charAt(0).toUpperCase()}
                                             </div>
                                             <div>
-                                                <div className="font-medium text-gray-800">
+                                                <div className="font-medium text-text-primary">
                                                     {item.patient?.firstName} {item.patient?.lastName}
                                                 </div>
-                                                <div className="text-sm text-gray-500">
+                                                <div className="text-sm text-text-secondary">
                                                     {item.test?.testName} • {item.testNumber}
                                                 </div>
                                             </div>
@@ -779,14 +779,14 @@ const Radiology = () => {
                     {activeTab === 'orders' && (
                         <>
                             {/* Filter Bar */}
-                            <div className="p-4 border-b border-gray-100 flex gap-2">
+                            <div className="p-4 border-b border-border flex gap-2">
                                 {['all', 'ordered', 'scheduled', 'in-progress', 'completed'].map(status => (
                                     <button
                                         key={status}
                                         onClick={() => setStatusFilter(status)}
                                         className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${statusFilter === status
                                             ? 'bg-primary text-white'
-                                            : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
+                                            : 'bg-surface-secondary text-text-secondary hover:bg-surface-highlight'
                                             }`}
                                     >
                                         {status.replace('-', ' ').toUpperCase()}
@@ -795,32 +795,32 @@ const Radiology = () => {
                             </div>
                             <div className="overflow-x-auto">
                                 <table className="w-full text-left text-sm">
-                                    <thead className="bg-slate-50 border-b border-slate-100">
+                                    <thead className="bg-surface-secondary border-b border-border">
                                         <tr>
-                                            <th className="px-4 py-3 text-gray-600">Test #</th>
-                                            <th className="px-4 py-3 text-gray-600">Patient</th>
-                                            <th className="px-4 py-3 text-gray-600">Test</th>
-                                            <th className="px-4 py-3 text-gray-600">Modality</th>
-                                            <th className="px-4 py-3 text-gray-600">Status</th>
-                                            <th className="px-4 py-3 text-gray-600">Date</th>
-                                            <th className="px-4 py-3 text-gray-600 text-right">Actions</th>
+                                            <th className="px-4 py-3 text-text-secondary">Test #</th>
+                                            <th className="px-4 py-3 text-text-secondary">Patient</th>
+                                            <th className="px-4 py-3 text-text-secondary">Test</th>
+                                            <th className="px-4 py-3 text-text-secondary">Modality</th>
+                                            <th className="px-4 py-3 text-text-secondary">Status</th>
+                                            <th className="px-4 py-3 text-text-secondary">Date</th>
+                                            <th className="px-4 py-3 text-text-secondary text-right">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody className="divide-y divide-slate-100">
+                                    <tbody className="divide-y divide-border">
                                         {filteredOrders.length === 0 ? (
                                             <tr>
-                                                <td colSpan="7" className="px-4 py-12 text-center text-gray-500">
+                                                <td colSpan="7" className="px-4 py-12 text-center text-text-secondary">
                                                     No orders found.
                                                 </td>
                                             </tr>
                                         ) : (
                                             filteredOrders.map(order => (
-                                                <tr key={order._id} className="hover:bg-slate-50/50">
+                                                <tr key={order._id} className="hover:bg-surface-highlight">
                                                     <td className="px-4 py-3 font-mono text-xs">{order.testNumber}</td>
-                                                    <td className="px-4 py-3">
+                                                    <td className="px-4 py-3 text-text-primary">
                                                         {order.patient?.firstName} {order.patient?.lastName}
                                                     </td>
-                                                    <td className="px-4 py-3 text-gray-600">{order.test?.testName}</td>
+                                                    <td className="px-4 py-3 text-text-secondary">{order.test?.testName}</td>
                                                     <td className="px-4 py-3">
                                                         <span className="px-2 py-0.5 rounded text-xs text-white"
                                                             style={{ backgroundColor: MODALITY_CONFIG[order.test?.modality]?.color }}>
@@ -832,7 +832,7 @@ const Radiology = () => {
                                                             {order.status?.toUpperCase()}
                                                         </span>
                                                     </td>
-                                                    <td className="px-4 py-3 text-gray-500">
+                                                    <td className="px-4 py-3 text-text-secondary">
                                                         {new Date(order.createdAt).toLocaleDateString()}
                                                     </td>
                                                     <td className="px-4 py-3 text-right">
@@ -859,11 +859,11 @@ const Radiology = () => {
                     {activeTab === 'tests' && (
                         <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                             {tests.map(test => (
-                                <div key={test._id} className="p-4 border border-slate-100 rounded-lg hover:shadow-md transition-shadow">
+                                <div key={test._id} className="p-4 border border-border rounded-lg hover:shadow-md transition-shadow">
                                     <div className="flex justify-between items-start">
                                         <div>
-                                            <h4 className="font-semibold text-gray-800">{test.testName}</h4>
-                                            <p className="text-sm text-gray-500">{test.testCode} • {test.bodyPart}</p>
+                                            <h4 className="font-semibold text-text-primary">{test.testName}</h4>
+                                            <p className="text-sm text-text-secondary">{test.testCode} • {test.bodyPart}</p>
                                         </div>
                                         <span className="px-2 py-0.5 rounded text-xs text-white"
                                             style={{ backgroundColor: MODALITY_CONFIG[test.modality]?.color }}>
@@ -871,14 +871,14 @@ const Radiology = () => {
                                         </span>
                                     </div>
                                     <div className="mt-3 flex justify-between items-center text-sm">
-                                        <span className="text-gray-500">
+                                        <span className="text-text-secondary">
                                             <Clock size={14} className="inline mr-1" />
                                             {test.duration} min
                                         </span>
-                                        <span className="font-bold text-green-600">₹{test.price}</span>
+                                        <span className="font-bold text-green-500">₹{test.price}</span>
                                     </div>
                                     {test.contrastRequired && (
-                                        <div className="mt-2 text-xs text-orange-600 bg-orange-50 px-2 py-1 rounded inline-block">
+                                        <div className="mt-2 text-xs text-orange-500 bg-orange-500/10 px-2 py-1 rounded inline-block">
                                             <AlertCircle size={12} className="inline mr-1" />
                                             Contrast Required
                                         </div>
@@ -894,13 +894,13 @@ const Radiology = () => {
                             {unbilledOrders.length === 0 ? (
                                 <div className="p-12 text-center">
                                     <CheckCircle size={48} className="mx-auto text-green-200 mb-4" />
-                                    <h3 className="text-lg font-bold text-slate-400">All Billed</h3>
-                                    <p className="text-gray-400">No unbilled radiology orders at the moment.</p>
+                                    <h3 className="text-lg font-bold text-text-muted">All Billed</h3>
+                                    <p className="text-text-muted">No unbilled radiology orders at the moment.</p>
                                 </div>
                             ) : (
                                 <>
                                     <div className="flex items-center justify-between mb-4">
-                                        <span className="text-sm font-medium text-gray-500">
+                                        <span className="text-sm font-medium text-text-secondary">
                                             {unbilledOrders.length} unbilled order(s)
                                         </span>
                                         <button

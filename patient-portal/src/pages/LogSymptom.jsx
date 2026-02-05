@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import signalsService from '../services/signals.service';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, Check, AlertCircle } from 'lucide-react';
 
 // Symptom options with icons
 const SYMPTOMS = [
@@ -11,32 +13,32 @@ const SYMPTOMS = [
     { id: 'cough', label: 'Cough', icon: '😷' },
     { id: 'body_ache', label: 'Body Ache', icon: '💪' },
     { id: 'chest_pain', label: 'Chest Pain', icon: '💔' },
-    { id: 'shortness_of_breath', label: 'Shortness of Breath', icon: '😮‍💨' },
+    { id: 'shortness_of_breath', label: 'S.O.B.', icon: '😮‍💨' },
     { id: 'dizziness', label: 'Dizziness', icon: '😵' },
-    { id: 'stomach_pain', label: 'Stomach Pain', icon: '🤮' },
+    { id: 'stomach_pain', label: 'Stomach', icon: '🤮' },
     { id: 'back_pain', label: 'Back Pain', icon: '🔙' },
     { id: 'joint_pain', label: 'Joint Pain', icon: '🦴' },
     { id: 'sore_throat', label: 'Sore Throat', icon: '😖' },
     { id: 'runny_nose', label: 'Runny Nose', icon: '🤧' },
-    { id: 'loss_of_appetite', label: 'Loss of Appetite', icon: '🍽️' },
+    { id: 'loss_of_appetite', label: 'No Appetite', icon: '🍽️' },
     { id: 'insomnia', label: 'Insomnia', icon: '😫' },
     { id: 'anxiety', label: 'Anxiety', icon: '😰' },
     { id: 'other', label: 'Other', icon: '➕' },
 ];
 
 const SEVERITIES = [
-    { id: 'mild', label: 'Mild', color: 'bg-green-100 text-green-700 border-green-300' },
-    { id: 'moderate', label: 'Moderate', color: 'bg-amber-100 text-amber-700 border-amber-300' },
-    { id: 'severe', label: 'Severe', color: 'bg-red-100 text-red-700 border-red-300' },
+    { id: 'mild', label: 'Mild', color: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
+    { id: 'moderate', label: 'Moderate', color: 'bg-amber-50 text-amber-700 border-amber-200' },
+    { id: 'severe', label: 'Severe', color: 'bg-rose-50 text-rose-700 border-rose-200' },
 ];
 
 const DURATIONS = [
-    { value: 30, unit: 'minutes', label: '30 min' },
-    { value: 1, unit: 'hours', label: '1 hour' },
-    { value: 2, unit: 'hours', label: '2 hours' },
-    { value: 4, unit: 'hours', label: '4 hours' },
-    { value: 1, unit: 'days', label: '1 day' },
-    { value: 2, unit: 'days', label: '2+ days' },
+    { value: 30, unit: 'minutes', label: '30m' },
+    { value: 1, unit: 'hours', label: '1h' },
+    { value: 3, unit: 'hours', label: '3h' },
+    { value: 6, unit: 'hours', label: '6h' },
+    { value: 1, unit: 'days', label: '1d' },
+    { value: 3, unit: 'days', label: '3d+' },
 ];
 
 const LogSymptom = () => {
@@ -77,169 +79,195 @@ const LogSymptom = () => {
     };
 
     return (
-        <div className="page-container min-h-screen pb-20">
-            {/* Header */}
-            <div className="bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-6">
-                <div className="max-w-2xl mx-auto flex items-center gap-4">
-                    <Link to="/dashboard" className="text-white/80 hover:text-white">
-                        ← Back
-                    </Link>
-                    <h1 className="text-xl font-bold flex-1">Log Symptom</h1>
-                    <span className="text-sm opacity-80">Step {step}/3</span>
+        <div className="min-h-screen bg-[var(--color-background)] pb-24 relative overflow-x-hidden">
+            {/* Glass Header */}
+            <div className="sticky top-0 z-30 glass border-b border-slate-200/50 px-4 py-4 flex items-center justify-between">
+                <button 
+                    onClick={() => step === 1 ? navigate('/dashboard') : setStep(step - 1)}
+                    className="p-2 -ml-2 rounded-full hover:bg-slate-100/50 text-slate-600 transition-colors"
+                >
+                    <ChevronLeft size={24} />
+                </button>
+                <h1 className="text-lg font-bold text-slate-800">Log Symptom</h1>
+                <div className="w-8 h-8 flex items-center justify-center font-bold text-xs text-rose-500 bg-rose-50 rounded-full">
+                    {step}/3
                 </div>
             </div>
 
-            <div className="max-w-2xl mx-auto px-4 py-6">
-                {error && (
-                    <div className="alert alert-error mb-4">{error}</div>
-                )}
+            {/* Progress Bar */}
+            <div className="h-1 w-full bg-slate-100">
+                <div 
+                    className="h-full bg-rose-500 transition-all duration-300"
+                    style={{ width: `${(step / 3) * 100}%` }}
+                />
+            </div>
 
-                {/* Step 1: Select Symptom */}
-                {step === 1 && (
-                    <div>
-                        <h2 className="text-lg font-semibold mb-4" style={{ color: 'rgb(var(--color-text-primary))' }}>
-                            What are you experiencing?
-                        </h2>
-                        <div className="grid grid-cols-3 gap-3">
-                            {SYMPTOMS.map((symptom) => (
-                                <button
-                                    key={symptom.id}
-                                    onClick={() => {
-                                        setSelectedSymptom(symptom);
-                                        setStep(2);
-                                    }}
-                                    className={`card p-4 text-center hover:shadow-md transition ${selectedSymptom?.id === symptom.id ? 'ring-2 ring-teal-500' : ''
-                                        }`}
-                                >
-                                    <span className="text-2xl mb-2 block">{symptom.icon}</span>
-                                    <span className="text-sm" style={{ color: 'rgb(var(--color-text-primary))' }}>
-                                        {symptom.label}
-                                    </span>
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-                )}
+            <div className="px-6 py-6 max-w-lg mx-auto">
+                <AnimatePresence mode='wait'>
+                    {error && (
+                        <motion.div 
+                            initial={{ opacity: 0, y: -10 }} 
+                            animate={{ opacity: 1, y: 0 }}
+                            className="p-4 mb-6 rounded-2xl bg-rose-50 border border-rose-100 text-rose-700 flex items-center gap-3"
+                        >
+                            <AlertCircle size={20} />
+                            <p className="text-sm font-medium">{error}</p>
+                        </motion.div>
+                    )}
 
-                {/* Step 2: Severity & Duration */}
-                {step === 2 && (
-                    <div>
-                        <div className="text-center mb-6">
-                            <span className="text-4xl mb-2 block">{selectedSymptom?.icon}</span>
-                            <h2 className="text-lg font-semibold" style={{ color: 'rgb(var(--color-text-primary))' }}>
-                                {selectedSymptom?.label}
-                            </h2>
-                        </div>
-
-                        {/* Severity */}
-                        <div className="mb-6">
-                            <h3 className="text-sm font-medium mb-3" style={{ color: 'rgb(var(--color-text-secondary))' }}>
-                                How severe is it?
-                            </h3>
-                            <div className="flex gap-3">
-                                {SEVERITIES.map((sev) => (
+                    {/* Step 1: Select Symptom */}
+                    {step === 1 && (
+                        <motion.div
+                            key="step1"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                        >
+                            <h2 className="text-xl font-bold text-slate-800 mb-2">What's wrong?</h2>
+                            <p className="text-slate-500 mb-6">Select the symptom that describes your feeling.</p>
+                            
+                            <div className="grid grid-cols-3 gap-3">
+                                {SYMPTOMS.map((symptom) => (
                                     <button
-                                        key={sev.id}
-                                        onClick={() => setSeverity(sev.id)}
-                                        className={`flex-1 py-3 px-4 rounded-lg border text-center font-medium transition ${sev.color} ${severity === sev.id ? 'ring-2 ring-offset-2' : 'opacity-60 hover:opacity-100'
-                                            }`}
+                                        key={symptom.id}
+                                        onClick={() => {
+                                            setSelectedSymptom(symptom);
+                                            setStep(2);
+                                        }}
+                                        className={`p-4 rounded-2xl flex flex-col items-center justify-center gap-2 transition-all duration-300 border border-transparent
+                                            ${selectedSymptom?.id === symptom.id 
+                                                ? 'bg-rose-50 border-rose-200 shadow-inner' 
+                                                : 'bg-white shadow-sm hover:shadow-md hover:-translate-y-1'
+                                            }
+                                        `}
                                     >
-                                        {sev.label}
+                                        <span className="text-3xl filter drop-shadow-sm">{symptom.icon}</span>
+                                        <span className="text-xs font-semibold text-slate-600 text-center leading-tight">
+                                            {symptom.label}
+                                        </span>
                                     </button>
                                 ))}
                             </div>
-                        </div>
+                        </motion.div>
+                    )}
 
-                        {/* Duration */}
-                        <div className="mb-6">
-                            <h3 className="text-sm font-medium mb-3" style={{ color: 'rgb(var(--color-text-secondary))' }}>
-                                How long have you had this? (optional)
-                            </h3>
-                            <div className="grid grid-cols-3 gap-2">
-                                {DURATIONS.map((dur, idx) => (
-                                    <button
-                                        key={idx}
-                                        onClick={() => setDuration(duration?.label === dur.label ? null : dur)}
-                                        className={`py-2 px-3 rounded-lg border text-sm transition ${duration?.label === dur.label
-                                                ? 'border-teal-500 bg-teal-50 text-teal-700'
-                                                : 'border-stone-200 hover:border-stone-300'
-                                            }`}
-                                        style={{ color: duration?.label !== dur.label ? 'rgb(var(--color-text-primary))' : undefined }}
-                                    >
-                                        {dur.label}
-                                    </button>
-                                ))}
+                    {/* Step 2: Severity & Duration */}
+                    {step === 2 && (
+                        <motion.div
+                            key="step2"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                        >
+                            {/* Selected Context */}
+                            <div className="text-center mb-8">
+                                <div className="w-20 h-20 bg-white rounded-3xl mx-auto shadow-lg shadow-rose-500/10 flex items-center justify-center text-5xl mb-4">
+                                    {selectedSymptom?.icon}
+                                </div>
+                                <h2 className="text-2xl font-bold text-slate-800">{selectedSymptom?.label}</h2>
                             </div>
-                        </div>
 
-                        <div className="flex gap-3">
-                            <button
-                                onClick={() => setStep(1)}
-                                className="btn btn-secondary flex-1"
-                            >
-                                Back
-                            </button>
+                            {/* Severity */}
+                            <div className="mb-8">
+                                <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Severity</h3>
+                                <div className="grid grid-cols-3 gap-3">
+                                    {SEVERITIES.map((sev) => (
+                                        <button
+                                            key={sev.id}
+                                            onClick={() => setSeverity(sev.id)}
+                                            className={`py-4 rounded-2xl font-semibold text-sm transition-all duration-300 border flex flex-col items-center gap-1
+                                                ${severity === sev.id 
+                                                    ? `${sev.color} ring-2 ring-offset-2 ring-transparent shadow-md transform scale-105` 
+                                                    : 'bg-white border-slate-100 text-slate-500 hover:bg-slate-50'
+                                                }`}
+                                        >
+                                            {sev.id === 'mild' && '😌'}
+                                            {sev.id === 'moderate' && '😐'}
+                                            {sev.id === 'severe' && '😫'}
+                                            <span>{sev.label}</span>
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Duration */}
+                            <div className="mb-8">
+                                <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Duration</h3>
+                                <div className="grid grid-cols-3 gap-3">
+                                    {DURATIONS.map((dur, idx) => (
+                                        <button
+                                            key={idx}
+                                            onClick={() => setDuration(duration?.label === dur.label ? null : dur)}
+                                            className={`py-3 px-2 rounded-xl text-sm font-medium transition-all duration-200 border
+                                                ${duration?.label === dur.label
+                                                    ? 'bg-slate-800 text-white border-slate-800 shadow-lg shadow-slate-500/30'
+                                                    : 'bg-white border-slate-100 text-slate-600 hover:border-slate-300'
+                                                }`}
+                                        >
+                                            {dur.label}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+
                             <button
                                 onClick={() => setStep(3)}
-                                className="btn btn-primary flex-1"
+                                className="w-full py-4 bg-rose-500 text-white rounded-2xl font-bold text-lg shadow-xl shadow-rose-500/20 active:scale-95 transition-transform"
                             >
-                                Next
+                                Continue
                             </button>
-                        </div>
-                    </div>
-                )}
+                        </motion.div>
+                    )}
 
-                {/* Step 3: Notes & Confirm */}
-                {step === 3 && (
-                    <div>
-                        <div className="text-center mb-6">
-                            <span className="text-4xl mb-2 block">{selectedSymptom?.icon}</span>
-                            <h2 className="text-lg font-semibold" style={{ color: 'rgb(var(--color-text-primary))' }}>
-                                {selectedSymptom?.label}
-                            </h2>
-                            <p className="text-sm mt-1" style={{ color: 'rgb(var(--color-text-secondary))' }}>
-                                {SEVERITIES.find((s) => s.id === severity)?.label} severity
-                                {duration ? ` • ${duration.label}` : ''}
-                            </p>
-                        </div>
+                    {/* Step 3: Notes & Confirm */}
+                    {step === 3 && (
+                        <motion.div
+                            key="step3"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                        >
+                           <div className="card-premium p-6 mb-6 bg-white flex items-center gap-4">
+                                <div className="text-4xl">{selectedSymptom?.icon}</div>
+                                <div>
+                                    <h3 className="font-bold text-slate-800 text-lg">{selectedSymptom?.label}</h3>
+                                    <p className="text-sm text-slate-500">
+                                        <span className="capitalize font-medium text-rose-500">{severity}</span>
+                                        {duration && (
+                                            <span className="ml-2 pl-2 border-l border-slate-200">{duration.label} duration</span>
+                                        )}
+                                    </p>
+                                </div>
+                           </div>
 
-                        {/* Notes */}
-                        <div className="mb-6">
-                            <label className="label">Additional Notes (optional)</label>
-                            <textarea
-                                value={notes}
-                                onChange={(e) => setNotes(e.target.value)}
-                                placeholder="Any additional details about your symptom..."
-                                className="input min-h-[100px] resize-none"
-                                rows={4}
-                            />
-                        </div>
+                            {/* Notes */}
+                            <div className="mb-8">
+                                <label className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 block">Additional Notes</label>
+                                <textarea
+                                    value={notes}
+                                    onChange={(e) => setNotes(e.target.value)}
+                                    placeholder="Describe your pain level or specific details..."
+                                    className="w-full p-4 rounded-2xl bg-white border border-slate-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 transition-all outline-none resize-none text-slate-700 min-h-[140px]"
+                                />
+                            </div>
 
-                        <div className="flex gap-3">
-                            <button
-                                onClick={() => setStep(2)}
-                                className="btn btn-secondary flex-1"
-                                disabled={isSubmitting}
-                            >
-                                Back
-                            </button>
                             <button
                                 onClick={handleSubmit}
                                 disabled={isSubmitting}
-                                className="btn btn-primary flex-1"
+                                className="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold text-lg shadow-xl shadow-slate-900/20 active:scale-95 transition-transform flex items-center justify-center gap-2"
                             >
                                 {isSubmitting ? (
-                                    <span className="flex items-center justify-center gap-2">
-                                        <span className="spinner"></span>
-                                        Saving...
-                                    </span>
+                                    <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                                 ) : (
-                                    'Log Symptom'
+                                    <>
+                                        <Check size={20} />
+                                        <span>Log Entry</span>
+                                    </>
                                 )}
                             </button>
-                        </div>
-                    </div>
-                )}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         </div>
     );

@@ -27,9 +27,11 @@ const PatientDocumentSchema = new mongoose.Schema({
     ocrData: {
         rawText: { type: String }, // Extracted text
         confidence: { type: Number },
-        extractedFields: { // Structured data extracted via LLM/Regex (Optional expansion)
-            date: Date,
-            doctorName: String,
+        classificationConfidence: { type: String, enum: ['low', 'medium', 'high'] },
+        extractedFields: { // Structured data extracted via OCR/Regex
+            date: { type: String },
+            doctorName: { type: String },
+            hospitalName: { type: String },
             keywords: [String]
         }
     },
@@ -47,5 +49,7 @@ const PatientDocumentSchema = new mongoose.Schema({
 
 // Index for getting timeline quickly
 PatientDocumentSchema.index({ patient: 1, uploadedAt: -1 });
+PatientDocumentSchema.index({ patient: 1, type: 1 });
+PatientDocumentSchema.index({ patient: 1, ocrConfirmed: 1 });
 
 module.exports = mongoose.model('PatientDocument', PatientDocumentSchema);

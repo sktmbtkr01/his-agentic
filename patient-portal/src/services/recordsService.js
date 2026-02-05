@@ -7,20 +7,17 @@ const recordsService = {
         return api.get(`/patient/records/timeline?${query}`);
     },
 
-    // Upload a new document
-    uploadDocument: async (formData) => {
-        // FormData must contain 'file', 'title', 'type'
-        return api.post('/patient/records/upload', formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
-        });
+    // Get all patient documents
+    getDocuments: async (filters = {}) => {
+        const query = new URLSearchParams(filters).toString();
+        return api.get(`/patient/records/documents?${query}`);
     },
 
-    // Confirm OCR data
-    confirmOCR: async (documentId, data) => {
-        return api.put(`/patient/records/ocr/${documentId}/confirm`, data);
-    }
+    // Get single document by ID
+    getDocument: async (documentId) => {
+        return api.get(`/patient/records/documents/${documentId}`);
+    },
+
 };
 
 export default recordsService;

@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchLiveBoard } from '../../features/emergency/emergencySlice';
 
 const TRIAGE_COLORS = {
-    critical: { bg: 'bg-red-600', text: 'text-white', border: 'border-red-600' },
-    urgent: { bg: 'bg-orange-500', text: 'text-white', border: 'border-orange-500' },
-    'less-urgent': { bg: 'bg-yellow-400', text: 'text-gray-900', border: 'border-yellow-400' },
-    'non-urgent': { bg: 'bg-green-500', text: 'text-white', border: 'border-green-500' },
+    critical: { bg: 'bg-red-600 dark:bg-red-600/20', text: 'text-white dark:text-red-400', border: 'border-red-600' },
+    urgent: { bg: 'bg-orange-500 dark:bg-orange-500/20', text: 'text-white dark:text-orange-400', border: 'border-orange-500' },
+    'less-urgent': { bg: 'bg-yellow-400 dark:bg-yellow-400/20', text: 'text-gray-900 dark:text-yellow-400', border: 'border-yellow-400' },
+    'non-urgent': { bg: 'bg-green-500 dark:bg-green-500/20', text: 'text-white dark:text-green-400', border: 'border-green-500' },
 };
 
 const EmergencyQueue = ({ onSelectCase }) => {
@@ -37,15 +37,15 @@ const EmergencyQueue = ({ onSelectCase }) => {
 
     if (waitingCases.length === 0) {
         return (
-            <div className="bg-gray-50 rounded-lg p-6 text-center">
-                <p className="text-gray-500">No patients waiting in queue</p>
+            <div className="bg-surface-secondary rounded-lg p-6 text-center border border-border">
+                <p className="text-text-muted">No patients waiting in queue</p>
             </div>
         );
     }
 
     return (
         <div className="space-y-3">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+            <h3 className="text-lg font-semibold text-text-primary mb-4">
                 🚶 Waiting Queue ({waitingCases.length})
             </h3>
 
@@ -55,18 +55,18 @@ const EmergencyQueue = ({ onSelectCase }) => {
                 return (
                     <div
                         key={emergencyCase._id}
-                        className={`border-l-4 ${triageColor.border} bg-white rounded-lg shadow-sm p-4 cursor-pointer hover:shadow-md transition-shadow`}
+                        className={`border-l-4 ${triageColor.border} bg-surface rounded-lg shadow-sm p-4 cursor-pointer hover:shadow-md transition-shadow border border-t-border border-r-border border-b-border`}
                         onClick={() => onSelectCase && onSelectCase(emergencyCase)}
                     >
                         <div className="flex justify-between items-start">
                             <div>
                                 <div className="flex items-center gap-2">
-                                    <span className="text-lg font-bold text-gray-400">#{index + 1}</span>
-                                    <span className="font-semibold text-gray-900">
+                                    <span className="text-lg font-bold text-text-muted">#{index + 1}</span>
+                                    <span className="font-semibold text-text-primary">
                                         {getPatientName(emergencyCase.patient)}
                                     </span>
                                 </div>
-                                <p className="text-sm text-gray-500 mt-1">
+                                <p className="text-sm text-text-secondary mt-1">
                                     {emergencyCase.chiefComplaint}
                                 </p>
                             </div>
@@ -74,7 +74,7 @@ const EmergencyQueue = ({ onSelectCase }) => {
                                 <span className={`${triageColor.bg} ${triageColor.text} px-2 py-1 rounded text-xs font-medium`}>
                                     {emergencyCase.triageLevel}
                                 </span>
-                                <p className="text-sm text-gray-500 mt-1">
+                                <p className="text-sm text-text-muted mt-1">
                                     {emergencyCase.waitingTime || 'Just arrived'}
                                 </p>
                             </div>

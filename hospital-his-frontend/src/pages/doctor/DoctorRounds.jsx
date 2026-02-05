@@ -129,26 +129,26 @@ const DoctorRounds = () => {
     // Get status color
     const getStatusColor = (status) => {
         switch (status) {
-            case 'active': return 'bg-green-100 text-green-700';
-            case 'completed': return 'bg-blue-100 text-blue-700';
-            case 'discontinued': return 'bg-gray-100 text-gray-700';
-            default: return 'bg-gray-100 text-gray-700';
+            case 'active': return 'bg-green-500/10 text-green-500';
+            case 'completed': return 'bg-blue-500/10 text-blue-500';
+            case 'discontinued': return 'bg-surface-secondary text-text-secondary';
+            default: return 'bg-surface-secondary text-text-secondary';
         }
     };
 
     // Get priority color
     const getPriorityColor = (priority) => {
         switch (priority) {
-            case 'critical': return 'bg-red-100 text-red-700';
-            case 'high': return 'bg-orange-100 text-orange-700';
-            case 'medium': return 'bg-yellow-100 text-yellow-700';
-            case 'low': return 'bg-blue-100 text-blue-700';
-            default: return 'bg-gray-100 text-gray-700';
+            case 'critical': return 'bg-red-500/10 text-red-500';
+            case 'high': return 'bg-orange-500/10 text-orange-500';
+            case 'medium': return 'bg-yellow-500/10 text-yellow-500';
+            case 'low': return 'bg-blue-500/10 text-blue-500';
+            default: return 'bg-surface-secondary text-text-secondary';
         }
     };
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-surface-secondary">
             {/* Header */}
             <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-6 py-4">
                 <div className="max-w-7xl mx-auto">
@@ -180,29 +180,29 @@ const DoctorRounds = () => {
             <div className="max-w-7xl mx-auto px-6 py-6">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     {/* Patient List */}
-                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                        <div className="px-4 py-3 border-b border-gray-100">
+                    <div className="bg-surface rounded-xl shadow-sm border border-border overflow-hidden">
+                        <div className="px-4 py-3 border-b border-border">
                             <div className="relative">
-                                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted" />
                                 <input
                                     type="text"
                                     placeholder="Search patients..."
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
-                                    className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                    className="w-full pl-10 pr-4 py-2 border border-border rounded-lg bg-surface focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                                 />
                             </div>
                         </div>
 
-                        <div className="divide-y divide-gray-100 max-h-[600px] overflow-y-auto">
+                        <div className="divide-y divide-border max-h-[600px] overflow-y-auto">
                             {loading ? (
                                 <div className="p-8 text-center">
                                     <div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
-                                    <p className="text-gray-500 text-sm">Loading patients...</p>
+                                    <p className="text-text-secondary text-sm">Loading patients...</p>
                                 </div>
                             ) : filteredPatients.length === 0 ? (
-                                <div className="p-8 text-center text-gray-500">
-                                    <Users className="w-12 h-12 mx-auto mb-2 text-gray-300" />
+                                <div className="p-8 text-center text-text-secondary">
+                                    <Users className="w-12 h-12 mx-auto mb-2 text-text-muted" />
                                     <p>No admitted patients found</p>
                                 </div>
                             ) : (
@@ -210,7 +210,7 @@ const DoctorRounds = () => {
                                     <div
                                         key={admission._id}
                                         onClick={() => handleSelectPatient(admission)}
-                                        className={`px-4 py-3 cursor-pointer hover:bg-gray-50 transition-colors ${selectedPatient?._id === admission._id ? 'bg-indigo-50 border-l-4 border-l-indigo-500' : ''
+                                        className={`px-4 py-3 cursor-pointer hover:bg-surface-highlight transition-colors ${selectedPatient?._id === admission._id ? 'bg-indigo-500/10 border-l-4 border-l-indigo-500' : ''
                                             }`}
                                     >
                                         <div className="flex items-center justify-between">
@@ -219,21 +219,21 @@ const DoctorRounds = () => {
                                                     {admission.patient?.firstName?.charAt(0) || 'P'}
                                                 </div>
                                                 <div>
-                                                    <div className="font-medium text-gray-800">
+                                                    <div className="font-medium text-text-primary">
                                                         {admission.patient?.firstName} {admission.patient?.lastName}
                                                     </div>
-                                                    <div className="text-xs text-gray-500 flex items-center gap-2">
+                                                    <div className="text-xs text-text-secondary flex items-center gap-2">
                                                         <Bed className="w-3 h-3" />
                                                         {admission.bed?.bedNumber || 'N/A'}
-                                                        <span className="text-gray-300">•</span>
+                                                        <span className="text-text-muted">•</span>
                                                         {admission.patient?.patientId}
                                                     </div>
                                                 </div>
                                             </div>
-                                            <ChevronRight className="w-5 h-5 text-gray-400" />
+                                            <ChevronRight className="w-5 h-5 text-text-muted" />
                                         </div>
-                                        <div className="mt-2 text-xs text-gray-500">
-                                            <span className="font-medium text-gray-600">Diagnosis:</span> {admission.diagnosis || 'Not specified'}
+                                        <div className="mt-2 text-xs text-text-secondary">
+                                            <span className="font-medium text-text-primary">Diagnosis:</span> {admission.diagnosis || 'Not specified'}
                                         </div>
                                     </div>
                                 ))
@@ -244,34 +244,34 @@ const DoctorRounds = () => {
                     {/* Care Plans Section */}
                     <div className="lg:col-span-2">
                         {!selectedPatient ? (
-                            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-12 text-center">
-                                <Stethoscope className="w-16 h-16 mx-auto mb-4 text-gray-300" />
-                                <h2 className="text-xl font-semibold text-gray-600 mb-2">Select a Patient</h2>
-                                <p className="text-gray-400">
+                            <div className="bg-surface rounded-xl shadow-sm border border-border p-12 text-center">
+                                <Stethoscope className="w-16 h-16 mx-auto mb-4 text-text-muted" />
+                                <h2 className="text-xl font-semibold text-text-secondary mb-2">Select a Patient</h2>
+                                <p className="text-text-muted">
                                     Click on a patient from the list to view and manage their care plans
                                 </p>
                             </div>
                         ) : (
                             <div className="space-y-6">
                                 {/* Patient Header */}
-                                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                                <div className="bg-surface rounded-xl shadow-sm border border-border p-6">
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-4">
                                             <div className="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center text-white text-xl font-bold">
                                                 {selectedPatient.patient?.firstName?.charAt(0)}
                                             </div>
                                             <div>
-                                                <h2 className="text-xl font-bold text-gray-800">
+                                                <h2 className="text-xl font-bold text-text-primary">
                                                     {selectedPatient.patient?.firstName} {selectedPatient.patient?.lastName}
                                                 </h2>
-                                                <div className="flex items-center gap-3 text-sm text-gray-500">
+                                                <div className="flex items-center gap-3 text-sm text-text-secondary">
                                                     <span>{selectedPatient.patient?.patientId}</span>
-                                                    <span className="text-gray-300">•</span>
+                                                    <span className="text-text-muted">•</span>
                                                     <span>Bed: {selectedPatient.bed?.bedNumber || 'N/A'}</span>
-                                                    <span className="text-gray-300">•</span>
+                                                    <span className="text-text-muted">•</span>
                                                     <span>Ward: {selectedPatient.ward?.name || 'N/A'}</span>
                                                 </div>
-                                                <div className="text-sm text-gray-600 mt-1">
+                                                <div className="text-sm text-text-secondary mt-1">
                                                     <span className="font-medium">Diagnosis:</span> {selectedPatient.diagnosis || 'Not specified'}
                                                 </div>
                                             </div>
@@ -311,14 +311,14 @@ const DoctorRounds = () => {
                                 </AnimatePresence>
 
                                 {/* Tab Navigation */}
-                                <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                                    <div className="flex border-b border-gray-100">
+                                <div className="bg-surface rounded-xl shadow-sm border border-border overflow-hidden">
+                                    <div className="flex border-b border-border">
                                         <button
                                             onClick={() => setActiveTab('careplans')}
                                             className={`px-6 py-4 font-medium flex items-center gap-2 transition-colors ${
                                                 activeTab === 'careplans'
                                                     ? 'text-indigo-600 border-b-2 border-indigo-600'
-                                                    : 'text-gray-600 hover:text-gray-800'
+                                                    : 'text-text-secondary hover:text-text-primary'
                                             }`}
                                         >
                                             <ClipboardList className="w-5 h-5" />
@@ -329,7 +329,7 @@ const DoctorRounds = () => {
                                             className={`px-6 py-4 font-medium flex items-center gap-2 transition-colors ${
                                                 activeTab === 'vitals'
                                                     ? 'text-indigo-600 border-b-2 border-indigo-600'
-                                                    : 'text-gray-600 hover:text-gray-800'
+                                                    : 'text-text-secondary hover:text-text-primary'
                                             }`}
                                         >
                                             <Activity className="w-5 h-5" />
@@ -340,7 +340,7 @@ const DoctorRounds = () => {
                                             className={`px-6 py-4 font-medium flex items-center gap-2 transition-colors ${
                                                 activeTab === 'notes'
                                                     ? 'text-indigo-600 border-b-2 border-indigo-600'
-                                                    : 'text-gray-600 hover:text-gray-800'
+                                                    : 'text-text-secondary hover:text-text-primary'
                                             }`}
                                         >
                                             <FileText className="w-5 h-5" />
@@ -350,14 +350,14 @@ const DoctorRounds = () => {
 
                                     {/* Care Plans Tab */}
                                     {activeTab === 'careplans' && (
-                                        <div className="divide-y divide-gray-100">
+                                        <div className="divide-y divide-border">
                                             {carePlans.length === 0 ? (
-                                                <div className="p-8 text-center text-gray-500">
-                                                    <ClipboardList className="w-12 h-12 mx-auto mb-2 text-gray-300" />
+                                                <div className="p-8 text-center text-text-secondary">
+                                                    <ClipboardList className="w-12 h-12 mx-auto mb-2 text-text-muted" />
                                                     <p>No care plans created yet</p>
                                                     <button
                                                         onClick={() => setShowCarePlanCreator(true)}
-                                                        className="mt-4 px-4 py-2 bg-indigo-100 text-indigo-600 rounded-lg hover:bg-indigo-200 transition-colors"
+                                                        className="mt-4 px-4 py-2 bg-indigo-500/10 text-indigo-500 rounded-lg hover:bg-indigo-500/20 transition-colors"
                                                     >
                                                         Create First Plan
                                                     </button>
@@ -367,28 +367,28 @@ const DoctorRounds = () => {
                                                     <div
                                                         key={plan._id}
                                                         onClick={() => setSelectedCarePlan(plan)}
-                                                        className={`p-6 cursor-pointer hover:bg-gray-50 transition-colors ${
-                                                            selectedCarePlan?._id === plan._id ? 'bg-indigo-50' : ''
+                                                        className={`p-6 cursor-pointer hover:bg-surface-highlight transition-colors ${
+                                                            selectedCarePlan?._id === plan._id ? 'bg-indigo-500/10' : ''
                                                         }`}
                                                     >
                                                         <div className="flex items-start justify-between">
                                                             <div>
-                                                                <h4 className="font-semibold text-gray-800">{plan.title}</h4>
-                                                                <p className="text-sm text-gray-600 mt-1">{plan.description}</p>
+                                                                <h4 className="font-semibold text-text-primary">{plan.title}</h4>
+                                                                <p className="text-sm text-text-secondary mt-1">{plan.description}</p>
                                                                 <div className="flex items-center gap-4 mt-3">
                                                                     <span className={`text-xs px-2 py-1 rounded-full ${
                                                                         plan.status === 'active'
-                                                                            ? 'bg-green-100 text-green-700'
-                                                                            : 'bg-gray-100 text-gray-600'
+                                                                            ? 'bg-green-500/10 text-green-500'
+                                                                            : 'bg-surface-secondary text-text-secondary'
                                                                     }`}>
                                                                         {plan.status}
                                                                     </span>
-                                                                    <span className="text-xs text-gray-500">
+                                                                    <span className="text-xs text-text-secondary">
                                                                         Created: {new Date(plan.createdAt).toLocaleDateString()}
                                                                     </span>
                                                                 </div>
                                                             </div>
-                                                            <ChevronRight className="w-5 h-5 text-gray-400" />
+                                                            <ChevronRight className="w-5 h-5 text-text-muted" />
                                                         </div>
                                                     </div>
                                                 ))
@@ -398,17 +398,17 @@ const DoctorRounds = () => {
 
                                     {/* Vitals Tab */}
                                     {activeTab === 'vitals' && (
-                                        <div className="divide-y divide-gray-100 max-h-[600px] overflow-y-auto">
+                                        <div className="divide-y divide-border max-h-[600px] overflow-y-auto">
                                             {vitals.length === 0 ? (
-                                                <div className="p-8 text-center text-gray-500">
-                                                    <Activity className="w-12 h-12 mx-auto mb-2 text-gray-300" />
+                                                <div className="p-8 text-center text-text-secondary">
+                                                    <Activity className="w-12 h-12 mx-auto mb-2 text-text-muted" />
                                                     <p>No vitals recorded yet</p>
                                                 </div>
                                             ) : (
                                                 vitals.map((vital) => (
-                                                    <div key={vital._id} className="p-6 hover:bg-gray-50">
+                                                    <div key={vital._id} className="p-6 hover:bg-surface-highlight">
                                                         <div className="flex items-start justify-between mb-3">
-                                                            <span className="text-sm text-gray-500">
+                                                            <span className="text-sm text-text-secondary">
                                                                 {new Date(vital.recordedAt).toLocaleString()}
                                                             </span>
                                                             {vital.isCritical && (
@@ -421,43 +421,43 @@ const DoctorRounds = () => {
                                                         <div className="grid grid-cols-2 gap-4 text-sm">
                                                             {vital.bloodPressure && (
                                                                 <div>
-                                                                    <span className="text-gray-600">BP:</span>
+                                                                    <span className="text-text-secondary">BP:</span>
                                                                     <span className="ml-2 font-medium">{vital.bloodPressure.systolic}/{vital.bloodPressure.diastolic} mmHg</span>
                                                                 </div>
                                                             )}
                                                             {vital.pulse?.rate && (
                                                                 <div>
-                                                                    <span className="text-gray-600">Pulse:</span>
+                                                                    <span className="text-text-secondary">Pulse:</span>
                                                                     <span className="ml-2 font-medium">{vital.pulse.rate} bpm</span>
                                                                 </div>
                                                             )}
                                                             {vital.temperature?.value && (
                                                                 <div>
-                                                                    <span className="text-gray-600">Temp:</span>
+                                                                    <span className="text-text-secondary">Temp:</span>
                                                                     <span className="ml-2 font-medium">{vital.temperature.value}°{vital.temperature.unit === 'celsius' ? 'C' : 'F'}</span>
                                                                 </div>
                                                             )}
                                                             {vital.respiratoryRate?.rate && (
                                                                 <div>
-                                                                    <span className="text-gray-600">RR:</span>
+                                                                    <span className="text-text-secondary">RR:</span>
                                                                     <span className="ml-2 font-medium">{vital.respiratoryRate.rate} /min</span>
                                                                 </div>
                                                             )}
                                                             {vital.oxygenSaturation?.value && (
                                                                 <div>
-                                                                    <span className="text-gray-600">O2 Sat:</span>
+                                                                    <span className="text-text-secondary">O2 Sat:</span>
                                                                     <span className="ml-2 font-medium">{vital.oxygenSaturation.value}%</span>
                                                                 </div>
                                                             )}
                                                             {vital.painScore?.score !== undefined && (
                                                                 <div>
-                                                                    <span className="text-gray-600">Pain:</span>
+                                                                    <span className="text-text-secondary">Pain:</span>
                                                                     <span className="ml-2 font-medium">{vital.painScore.score}/10</span>
                                                                 </div>
                                                             )}
                                                         </div>
                                                         {vital.recordedBy && (
-                                                            <div className="text-xs text-gray-400 mt-2">
+                                                            <div className="text-xs text-text-muted mt-2">
                                                                 Recorded by: {vital.recordedBy.profile?.firstName} {vital.recordedBy.profile?.lastName}
                                                             </div>
                                                         )}
@@ -469,26 +469,26 @@ const DoctorRounds = () => {
 
                                     {/* Nursing Notes Tab */}
                                     {activeTab === 'notes' && (
-                                        <div className="divide-y divide-gray-100 max-h-[600px] overflow-y-auto">
+                                        <div className="divide-y divide-border max-h-[600px] overflow-y-auto">
                                             {nursingNotes.length === 0 ? (
-                                                <div className="p-8 text-center text-gray-500">
-                                                    <FileText className="w-12 h-12 mx-auto mb-2 text-gray-300" />
+                                                <div className="p-8 text-center text-text-secondary">
+                                                    <FileText className="w-12 h-12 mx-auto mb-2 text-text-muted" />
                                                     <p>No nursing notes recorded yet</p>
                                                 </div>
                                             ) : (
                                                 nursingNotes.map((note) => (
-                                                    <div key={note._id} className="p-6 hover:bg-gray-50">
+                                                    <div key={note._id} className="p-6 hover:bg-surface-highlight">
                                                         <div className="flex items-start justify-between mb-2">
-                                                            <span className="text-xs text-gray-500 font-medium uppercase">
+                                                            <span className="text-xs text-text-secondary font-medium uppercase">
                                                                 {note.noteType}
                                                             </span>
-                                                            <span className="text-xs text-gray-400">
+                                                            <span className="text-xs text-text-muted">
                                                                 {new Date(note.createdAt).toLocaleString()}
                                                             </span>
                                                         </div>
-                                                        <p className="text-sm text-gray-700 mb-3 whitespace-pre-wrap">{note.content}</p>
+                                                        <p className="text-sm text-text-primary mb-3 whitespace-pre-wrap">{note.content}</p>
                                                         {note.createdBy && (
-                                                            <div className="text-xs text-gray-400">
+                                                            <div className="text-xs text-text-muted">
                                                                 By: {note.createdBy.profile?.firstName} {note.createdBy.profile?.lastName}
                                                             </div>
                                                         )}
@@ -499,10 +499,10 @@ const DoctorRounds = () => {
                                     )}
                                 <div>
                                     {carePlans.length === 0 ? (
-                                        <div className="p-8 text-center text-gray-500">
+                                        <div className="p-8 text-center text-text-secondary">
                                             <button
                                                 onClick={() => setShowCarePlanCreator(true)}
-                                                className="mt-4 px-4 py-2 bg-indigo-100 text-indigo-600 rounded-lg hover:bg-indigo-200 transition-colors"
+                                                className="mt-4 px-4 py-2 bg-indigo-500/10 text-indigo-500 rounded-lg hover:bg-indigo-500/20 transition-colors"
                                             >
                                                 Create First Care Plan
                                             </button>
@@ -512,21 +512,21 @@ const DoctorRounds = () => {
                                             <div key={plan._id} className="p-4">
                                                 <div className="flex items-start justify-between mb-3">
                                                     <div>
-                                                        <h4 className="font-semibold text-gray-800">{plan.title}</h4>
+                                                        <h4 className="font-semibold text-text-primary">{plan.title}</h4>
                                                         <div className="flex items-center gap-2 mt-1">
                                                             <span className={`px-2 py-0.5 rounded text-xs font-medium ${getStatusColor(plan.status)}`}>
                                                                 {plan.status}
                                                             </span>
-                                                            <span className="text-xs text-gray-400">
+                                                            <span className="text-xs text-text-muted">
                                                                 Created: {new Date(plan.createdAt).toLocaleDateString()}
                                                             </span>
                                                         </div>
                                                     </div>
                                                     <button
                                                         onClick={() => setSelectedCarePlan(selectedCarePlan?._id === plan._id ? null : plan)}
-                                                        className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                                                        className="p-2 hover:bg-surface-highlight rounded-lg transition-colors"
                                                     >
-                                                        <Eye className="w-4 h-4 text-gray-400" />
+                                                        <Eye className="w-4 h-4 text-text-muted" />
                                                     </button>
                                                 </div>
 
@@ -537,21 +537,21 @@ const DoctorRounds = () => {
                                                                 initial={{ opacity: 0, height: 0 }}
                                                                 animate={{ opacity: 1, height: 'auto' }}
                                                                 exit={{ opacity: 0, height: 0 }}
-                                                                className="mt-4 pt-4 border-t border-gray-100"
+                                                                className="mt-4 pt-4 border-t border-border"
                                                             >
                                                                 {/* Goals */}
                                                                 <div className="mb-4">
-                                                                    <h5 className="text-sm font-semibold text-gray-600 mb-2 flex items-center gap-1">
+                                                                    <h5 className="text-sm font-semibold text-text-secondary mb-2 flex items-center gap-1">
                                                                         <Target className="w-4 h-4" />
                                                                         Goals
                                                                     </h5>
                                                                     <div className="space-y-2">
                                                                         {plan.goals?.map((goal, idx) => (
-                                                                            <div key={idx} className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg">
+                                                                            <div key={idx} className="flex items-center gap-2 p-2 bg-surface-secondary rounded-lg">
                                                                                 <div className={`w-2 h-2 rounded-full ${goal.status === 'achieved' ? 'bg-green-500' :
-                                                                                        goal.status === 'active' ? 'bg-blue-500' : 'bg-gray-300'
+                                                                                        goal.status === 'active' ? 'bg-blue-500' : 'bg-text-muted'
                                                                                     }`} />
-                                                                                <span className="text-sm text-gray-700 flex-1">{goal.description}</span>
+                                                                                <span className="text-sm text-text-primary flex-1">{goal.description}</span>
                                                                                 <span className={`px-2 py-0.5 rounded text-xs ${getPriorityColor(goal.priority)}`}>
                                                                                     {goal.priority}
                                                                                 </span>
@@ -562,15 +562,15 @@ const DoctorRounds = () => {
 
                                                                 {/* Interventions */}
                                                                 <div>
-                                                                    <h5 className="text-sm font-semibold text-gray-600 mb-2 flex items-center gap-1">
+                                                                    <h5 className="text-sm font-semibold text-text-secondary mb-2 flex items-center gap-1">
                                                                         <Activity className="w-4 h-4" />
                                                                         Interventions
                                                                     </h5>
                                                                     <div className="space-y-2">
                                                                         {plan.interventions?.map((intervention, idx) => (
-                                                                            <div key={idx} className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
-                                                                                <span className="text-sm text-gray-700">{intervention.description}</span>
-                                                                                <span className="px-2 py-0.5 bg-indigo-100 text-indigo-600 rounded text-xs">
+                                                                            <div key={idx} className="flex items-center justify-between p-2 bg-surface-secondary rounded-lg">
+                                                                                <span className="text-sm text-text-primary">{intervention.description}</span>
+                                                                                <span className="px-2 py-0.5 bg-indigo-500/10 text-indigo-500 rounded text-xs">
                                                                                     {intervention.frequency}
                                                                                 </span>
                                                                             </div>

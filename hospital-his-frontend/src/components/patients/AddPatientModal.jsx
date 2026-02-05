@@ -4,12 +4,13 @@ import { X, Check, Scan, Shield, Camera, Upload, RefreshCw, AlertCircle, CheckCi
 import { useDispatch } from 'react-redux';
 import { createPatient } from '../../features/patients/patientsSlice';
 import ScanIDModal from '../idScan/ScanIDModal';
+import toast from 'react-hot-toast';
 
 import axios from 'axios';
 
 const API_URL = 'http://localhost:5001/api/v1';
 
-const AddPatientModal = ({ isOpen, onClose }) => {
+const AddPatientModal = ({ isOpen, onClose, onSuccess }) => {
     const dispatch = useDispatch();
     const [step, setStep] = useState('form'); // 'form' or 'success'
     const [showScanModal, setShowScanModal] = useState(false);
@@ -308,6 +309,7 @@ const AddPatientModal = ({ isOpen, onClose }) => {
 
             await dispatch(createPatient(submitData)).unwrap();
             setStep('success');
+            if (onSuccess) onSuccess();
             setTimeout(() => {
                 setStep('form');
                 setFormData(initialFormData);
@@ -315,7 +317,7 @@ const AddPatientModal = ({ isOpen, onClose }) => {
             }, 2500);
         } catch (error) {
             console.error(error);
-            alert('Failed to create patient: ' + error);
+            toast.error('Failed to create patient: ' + (error.message || error));
         }
     };
 

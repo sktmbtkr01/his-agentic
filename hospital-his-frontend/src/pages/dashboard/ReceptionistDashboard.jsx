@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from 'recharts';
 import io from 'socket.io-client';
 import { useNavigate } from 'react-router-dom';
+import { WelcomeBanner } from '../../components/dashboard';
 
 const SOCKET_URL = 'http://localhost:5001';
 const POLLING_INTERVAL = 30000; // 30 seconds
@@ -46,37 +47,37 @@ const CountUp = ({ value, duration = 1000 }) => {
 const StatCard = ({ title, value, subtext, icon: Icon, baseColor, isLoading, index }) => {
     const colorClasses = {
         blue: {
-            bg: 'bg-blue-50',
-            border: 'border-blue-100',
-            text: 'text-blue-600',
-            iconBg: 'bg-blue-100',
+            bg: 'bg-blue-500/10',
+            border: 'border-blue-500/20',
+            text: 'text-blue-500',
+            iconBg: 'bg-blue-500/10',
             shadow: 'shadow-blue-500/10',
             accent: 'via-blue-400',
             ring: 'ring-blue-500/10'
         },
         purple: {
-            bg: 'bg-purple-50',
-            border: 'border-purple-100',
-            text: 'text-purple-600',
-            iconBg: 'bg-purple-100',
+            bg: 'bg-purple-500/10',
+            border: 'border-purple-500/20',
+            text: 'text-purple-500',
+            iconBg: 'bg-purple-500/10',
             shadow: 'shadow-purple-500/10',
             accent: 'via-purple-400',
             ring: 'ring-purple-500/10'
         },
         amber: {
-            bg: 'bg-amber-50',
-            border: 'border-amber-100',
-            text: 'text-amber-600',
-            iconBg: 'bg-amber-100',
+            bg: 'bg-amber-500/10',
+            border: 'border-amber-500/20',
+            text: 'text-amber-500',
+            iconBg: 'bg-amber-500/10',
             shadow: 'shadow-amber-500/10',
             accent: 'via-amber-400',
             ring: 'ring-amber-500/10'
         },
         emerald: {
-            bg: 'bg-emerald-50',
-            border: 'border-emerald-100',
-            text: 'text-emerald-600',
-            iconBg: 'bg-emerald-100',
+            bg: 'bg-emerald-500/10',
+            border: 'border-emerald-500/20',
+            text: 'text-emerald-500',
+            iconBg: 'bg-emerald-500/10',
             shadow: 'shadow-emerald-500/10',
             accent: 'via-emerald-400',
             ring: 'ring-emerald-500/10'
@@ -91,10 +92,10 @@ const StatCard = ({ title, value, subtext, icon: Icon, baseColor, isLoading, ind
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
             whileHover={{ y: -5 }}
-            className={`relative p-6 rounded-2xl border ${colors.border} bg-white shadow-lg ${colors.shadow} hover:shadow-xl transition-all duration-300 group overflow-hidden`}
+            className={`relative p-6 rounded-2xl border ${colors.border} bg-surface shadow-lg ${colors.shadow} hover:shadow-xl transition-all duration-300 group overflow-hidden`}
         >
             {/* Subtle Gradient Background */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${colors.bg} to-white opacity-40`} />
+            <div className={`absolute inset-0 bg-gradient-to-br ${colors.bg} to-transparent opacity-40`} />
 
             {/* Top Accent Line */}
             <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent ${colors.accent} to-transparent opacity-50`} />
@@ -102,10 +103,10 @@ const StatCard = ({ title, value, subtext, icon: Icon, baseColor, isLoading, ind
             <div className="relative z-10">
                 <div className="flex items-start justify-between mb-4">
                     <div>
-                        <p className="text-slate-500 text-xs font-bold tracking-wider uppercase opacity-80 mb-1">{title}</p>
-                        <h3 className="text-4xl font-black text-slate-800 tracking-tight">
+                        <p className="text-text-secondary text-xs font-bold tracking-wider uppercase opacity-80 mb-1">{title}</p>
+                        <h3 className="text-4xl font-black text-text-primary tracking-tight">
                             {isLoading ? (
-                                <div className="h-10 w-20 bg-slate-100 animate-pulse rounded-lg"></div>
+                                <div className="h-10 w-20 bg-surface-secondary animate-pulse rounded-lg"></div>
                             ) : (
                                 <CountUp value={value} />
                             )}
@@ -119,11 +120,11 @@ const StatCard = ({ title, value, subtext, icon: Icon, baseColor, isLoading, ind
                     </motion.div>
                 </div>
                 <div className="flex items-center gap-2 mt-2">
-                    <span className={`flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full bg-white/60 ${colors.text} ring-1 ${colors.ring}`}>
+                    <span className={`flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full bg-surface/60 ${colors.text} ring-1 ${colors.ring}`}>
                         <TrendingUp size={10} />
                         Live
                     </span>
-                    <span className="text-sm font-medium text-slate-400">{subtext}</span>
+                    <span className="text-sm font-medium text-text-muted">{subtext}</span>
                 </div>
             </div>
         </motion.div>
@@ -276,12 +277,12 @@ const ReceptionistDashboard = () => {
 
     if (isError) {
         return (
-            <div className="min-h-[60vh] flex flex-col items-center justify-center p-8 text-center bg-red-50 rounded-2xl border border-red-100 m-8">
-                <div className="bg-red-100 p-4 rounded-full text-red-500 mb-4">
+            <div className="min-h-[60vh] flex flex-col items-center justify-center p-8 text-center bg-red-500/10 rounded-2xl border border-red-500/20 m-8">
+                <div className="bg-red-500/10 p-4 rounded-full text-red-500 mb-4">
                     <Activity size={32} />
                 </div>
-                <h3 className="text-xl font-bold text-red-800 mb-2">Something went wrong</h3>
-                <p className="text-red-600 mb-6">{message}</p>
+                <h3 className="text-xl font-bold text-red-500 mb-2">Something went wrong</h3>
+                <p className="text-red-400 mb-6">{message}</p>
                 <button onClick={handleManualRefresh} className="px-6 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition-colors shadow-lg shadow-red-200">
                     Try Again
                 </button>
@@ -293,17 +294,17 @@ const ReceptionistDashboard = () => {
         return (
             <div className="p-8 max-w-7xl mx-auto">
                 <div className="flex justify-between items-end mb-8 animate-pulse">
-                    <div className="h-10 bg-gray-200 rounded w-1/3"></div>
-                    <div className="h-8 bg-gray-200 rounded w-32"></div>
+                    <div className="h-10 bg-surface-secondary rounded w-1/3"></div>
+                    <div className="h-8 bg-surface-secondary rounded w-32"></div>
                 </div>
                 <div className="grid grid-cols-4 gap-6 mb-8">
                     {[...Array(4)].map((_, i) => (
-                        <div key={i} className="h-40 bg-gray-100 rounded-2xl animate-pulse"></div>
+                        <div key={i} className="h-40 bg-surface-secondary rounded-2xl animate-pulse"></div>
                     ))}
                 </div>
                 <div className="grid grid-cols-3 gap-6">
-                    <div className="col-span-2 h-96 bg-gray-100 rounded-2xl animate-pulse"></div>
-                    <div className="h-96 bg-gray-100 rounded-2xl animate-pulse"></div>
+                    <div className="col-span-2 h-96 bg-surface-secondary rounded-2xl animate-pulse"></div>
+                    <div className="h-96 bg-surface-secondary rounded-2xl animate-pulse"></div>
                 </div>
             </div>
         );
@@ -311,46 +312,27 @@ const ReceptionistDashboard = () => {
 
     return (
         <div className="min-h-screen pb-10 max-w-7xl mx-auto">
-            {/* Header Section */}
-            <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div>
-                    <div className="flex items-center gap-2 text-gray-500 text-sm font-medium mb-1">
-                        <span>{format(currentTime, 'EEEE, d MMMM yyyy')}</span>
-                        <span>•</span>
-                        <Clock size={14} />
-                        <span>{format(currentTime, 'h:mm a')}</span>
-                    </div>
-                    <h1 className="text-3xl font-bold text-slate-800">
-                        {greeting}, <span className="text-blue-600">{user?.name?.split(' ')[0] || 'Receptionist'}</span> 👋
-                    </h1>
-                    <p className="text-gray-500 mt-1">Here's what's happening at the front desk right now.</p>
-                </div>
+            {/* Premium Welcome Banner */}
+            <WelcomeBanner
+                userName={user?.name?.split(' ')[0] || 'Receptionist'}
+                role="receptionist"
+                onRefresh={handleManualRefresh}
+                isRefreshing={isRefreshing}
+                lastUpdated={lastRefresh || new Date()}
+                subtitle="Here's what's happening at the front desk right now."
+            />
 
-                <div className="flex items-center gap-3">
-                    {lastRefresh && (
-                        <div className="hidden md:block text-right mr-2">
-                            <p className="text-[10px] uppercase tracking-wider text-gray-400 font-semibold">Last Updated</p>
-                            <p className="text-xs font-medium text-gray-600">{format(lastRefresh, 'h:mm:ss a')}</p>
-                        </div>
-                    )}
-                    <button
-                        onClick={handleManualRefresh}
-                        disabled={isRefreshing}
-                        className="p-3 bg-white border border-gray-200 rounded-xl text-gray-600 hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm active:scale-95 disabled:opacity-50"
-                        title="Refresh Data"
-                    >
-                        <RefreshCw size={20} className={isRefreshing ? 'animate-spin' : ''} />
-                    </button>
-                    <button
-                        onClick={() => navigate('/notifications')}
-                        className="p-3 bg-white border border-gray-200 rounded-xl text-gray-600 hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm active:scale-95 relative"
-                        title="Notifications"
-                    >
-                        <Bell size={20} />
-                        {notifications.length > 0 && <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white"></span>}
-                    </button>
-                </div>
-            </header>
+            {/* Quick Action Buttons */}
+            <div className="flex justify-end gap-3 mt-4 mb-6">
+                <button
+                    onClick={() => navigate('/notifications')}
+                    className="p-3 bg-surface border border-border rounded-xl text-text-secondary hover:bg-surface-highlight hover:border-border transition-all shadow-sm active:scale-95 relative"
+                    title="Notifications"
+                >
+                    <Bell size={20} />
+                    {notifications.length > 0 && <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white"></span>}
+                </button>
+            </div>
 
             {/* Quick Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -399,21 +381,21 @@ const ReceptionistDashboard = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200/60 shadow-lg shadow-slate-200/50"
+                    className="lg:col-span-2 bg-surface p-6 rounded-2xl border border-border shadow-lg shadow-slate-200/50 dark:shadow-none"
                 >
                     <div className="flex items-center justify-between mb-8">
                         <div>
-                            <h3 className="font-bold text-lg text-slate-800 flex items-center gap-2">
+                            <h3 className="font-bold text-lg text-text-primary flex items-center gap-2">
                                 <Users size={20} className="text-blue-500" />
                                 Patient Traffic
                             </h3>
-                            <p className="text-sm font-medium text-slate-400 mt-1">Hourly breakdown of footfall</p>
+                            <p className="text-sm font-medium text-text-muted mt-1">Hourly breakdown of footfall</p>
                         </div>
                         <div className="flex items-center gap-4 text-xs font-bold tracking-wide">
-                            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-50 text-blue-700 border border-blue-100">
+                            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-500/10 text-blue-500 border border-blue-500/20">
                                 <span className="w-2.5 h-2.5 rounded-full bg-blue-500"></span> Registrations
                             </div>
-                            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-purple-50 text-purple-700 border border-purple-100">
+                            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-purple-500/10 text-purple-500 border border-purple-500/20">
                                 <span className="w-2.5 h-2.5 rounded-full bg-purple-500"></span> Appointments
                             </div>
                         </div>
@@ -466,7 +448,7 @@ const ReceptionistDashboard = () => {
                                 </BarChart>
                             </ResponsiveContainer>
                         ) : (
-                            <div className="h-full flex flex-col items-center justify-center text-gray-300">
+                            <div className="h-full flex flex-col items-center justify-center text-text-muted">
                                 <Activity size={48} className="mb-4 opacity-20" />
                                 <p>No traffic recorded yet today</p>
                             </div>
@@ -554,14 +536,14 @@ const ReceptionistDashboard = () => {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.6 }}
-                        className="bg-white p-6 rounded-2xl border border-slate-200 shadow-lg shadow-slate-200/50"
+                        className="bg-surface p-6 rounded-2xl border border-border shadow-lg shadow-slate-200/50 dark:shadow-none"
                     >
                         <div className="flex justify-between items-center mb-6">
-                            <h3 className="font-bold text-slate-800 text-lg flex items-center gap-2">
+                            <h3 className="font-bold text-text-primary text-lg flex items-center gap-2">
                                 <Bell size={20} className="text-orange-500" />
                                 Live Updates
                             </h3>
-                            <span className="flex items-center gap-2 px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full text-[10px] font-bold uppercase tracking-wide border border-emerald-100">
+                            <span className="flex items-center gap-2 px-2.5 py-1 bg-emerald-500/10 text-emerald-500 rounded-full text-[10px] font-bold uppercase tracking-wide border border-emerald-500/20">
                                 <span className="relative flex h-2 w-2">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -576,12 +558,12 @@ const ReceptionistDashboard = () => {
                                     <motion.div
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
-                                        className="text-center py-8 border border-dashed border-slate-200 rounded-xl bg-slate-50/50"
+                                        className="text-center py-8 border border-dashed border-border rounded-xl bg-surface-secondary/50"
                                     >
-                                        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mx-auto mb-3 text-slate-300 shadow-sm border border-slate-100">
+                                        <div className="w-10 h-10 bg-surface rounded-full flex items-center justify-center mx-auto mb-3 text-text-muted shadow-sm border border-border">
                                             <Activity size={18} />
                                         </div>
-                                        <p className="text-slate-400 font-medium text-sm">Waiting for events...</p>
+                                        <p className="text-text-muted font-medium text-sm">Waiting for events...</p>
                                     </motion.div>
                                 ) : (
                                     notifications.map((notif, idx) => (
@@ -590,24 +572,24 @@ const ReceptionistDashboard = () => {
                                             initial={{ opacity: 0, x: 20, height: 0 }}
                                             animate={{ opacity: 1, x: 0, height: 'auto' }}
                                             exit={{ opacity: 0, x: -20, height: 0 }}
-                                            className="group relative bg-white border border-slate-100 rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
+                                            className="group relative bg-surface border border-border rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
                                         >
                                             {/* Left Accent Border based on type */}
                                             <div className={`absolute left-0 top-0 bottom-0 w-1 ${notif.type === 'registration' ? 'bg-blue-500' :
-                                                notif.type === 'appointment' ? 'bg-purple-500' : 'bg-gray-400'
+                                                notif.type === 'appointment' ? 'bg-purple-500' : 'bg-text-muted'
                                                 }`} />
 
                                             <div className="flex justify-between items-start mb-1 pl-2">
-                                                <span className={`font-bold text-sm ${notif.type === 'registration' ? 'text-blue-700' :
-                                                    notif.type === 'appointment' ? 'text-purple-700' : 'text-slate-700'
+                                                <span className={`font-bold text-sm ${notif.type === 'registration' ? 'text-blue-500' :
+                                                    notif.type === 'appointment' ? 'text-purple-500' : 'text-text-primary'
                                                     }`}>
                                                     {notif.title}
                                                 </span>
-                                                <span className="text-[10px] text-slate-400 font-medium bg-slate-50 px-1.5 py-0.5 rounded border border-slate-100">
+                                                <span className="text-[10px] text-text-muted font-medium bg-surface-secondary px-1.5 py-0.5 rounded border border-border">
                                                     {format(notif.time, 'h:mm a')}
                                                 </span>
                                             </div>
-                                            <p className="text-xs text-slate-500 font-medium leading-relaxed pl-2 group-hover:text-slate-700 transition-colors">
+                                            <p className="text-xs text-text-secondary font-medium leading-relaxed pl-2 group-hover:text-text-primary transition-colors">
                                                 {notif.message}
                                             </p>
                                         </motion.div>

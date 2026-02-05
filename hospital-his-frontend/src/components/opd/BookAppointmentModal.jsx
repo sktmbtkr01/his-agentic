@@ -4,8 +4,9 @@ import { X, Check, Search, Calendar, User, Stethoscope } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createAppointment, getDepartments, getDoctorsByDepartment, clearDoctors } from '../../features/opd/opdSlice';
 import { getPatients } from '../../features/patients/patientsSlice';
+import toast from 'react-hot-toast';
 
-const BookAppointmentModal = ({ isOpen, onClose }) => {
+const BookAppointmentModal = ({ isOpen, onClose, onSuccess }) => {
     const dispatch = useDispatch();
     const [step, setStep] = useState('form');
 
@@ -56,11 +57,12 @@ const BookAppointmentModal = ({ isOpen, onClose }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!formData.patient) return alert('Please select a patient from the search');
+        if (!formData.patient) return toast.error('Please select a patient from the search');
 
         try {
             await dispatch(createAppointment(formData)).unwrap();
             setStep('success');
+            if (onSuccess) onSuccess();
             setTimeout(() => {
                 setStep('form');
                 setFormData({
@@ -72,7 +74,7 @@ const BookAppointmentModal = ({ isOpen, onClose }) => {
             }, 2500);
         } catch (error) {
             console.error(error);
-            alert('Failed to book appointment: ' + error);
+            toast.error('Failed to book appointment: ' + (error.message || error));
         }
     };
 

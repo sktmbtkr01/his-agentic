@@ -6,7 +6,9 @@ const { authenticatePatient } = require('../../middleware/patientAuth.middleware
 const {
     getTimeline,
     uploadDocument,
-    confirmOCR
+    confirmOCR,
+    getDocument,
+    getDocuments
 } = require('../../controllers/patient/patientRecords.controller');
 
 // Configure Multer for file upload
@@ -37,8 +39,15 @@ const upload = multer({
 
 router.use(authenticatePatient);
 
+// Timeline
 router.get('/timeline', getTimeline);
+
+// Document management
+router.get('/documents', getDocuments);
+router.get('/documents/:id', getDocument);
 router.post('/upload', upload.single('file'), uploadDocument);
+
+// OCR confirmation
 router.put('/ocr/:id/confirm', confirmOCR);
 
 module.exports = router;

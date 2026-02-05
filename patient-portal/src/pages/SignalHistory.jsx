@@ -1,18 +1,20 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import signalsService from '../services/signals.service';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, Stethoscope, Smile, TrendingUp, Activity, Filter, Trash2, Calendar, Clock, Droplets, Utensils, Moon } from 'lucide-react';
 
 const CATEGORY_CONFIG = {
-    symptom: { icon: '🩺', label: 'Symptom', color: 'bg-red-100 text-red-700' },
-    mood: { icon: '😊', label: 'Mood', color: 'bg-yellow-100 text-yellow-700' },
-    lifestyle: { icon: '🏃', label: 'Lifestyle', color: 'bg-green-100 text-green-700' },
-    vitals: { icon: '❤️', label: 'Vitals', color: 'bg-purple-100 text-purple-700' },
+    symptom: { icon: <Stethoscope size={20} />, label: 'Symptom', color: 'bg-rose-50 text-rose-600 border-rose-100', accent: 'border-rose-500' },
+    mood: { icon: <Smile size={20} />, label: 'Mood', color: 'bg-amber-50 text-amber-600 border-amber-100', accent: 'border-amber-500' },
+    lifestyle: { icon: <TrendingUp size={20} />, label: 'Lifestyle', color: 'bg-emerald-50 text-emerald-600 border-emerald-100', accent: 'border-emerald-500' },
+    vitals: { icon: <Activity size={20} />, label: 'Vitals', color: 'bg-indigo-50 text-indigo-600 border-indigo-100', accent: 'border-indigo-500' },
 };
 
 const SEVERITY_COLORS = {
-    mild: 'bg-green-100 text-green-700',
+    mild: 'bg-emerald-100 text-emerald-700',
     moderate: 'bg-amber-100 text-amber-700',
-    severe: 'bg-red-100 text-red-700',
+    severe: 'bg-rose-100 text-rose-700',
 };
 
 const MOOD_ICONS = {
@@ -24,6 +26,7 @@ const MOOD_ICONS = {
 };
 
 const SignalHistory = () => {
+    const navigate = useNavigate();
     const [signals, setSignals] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
@@ -84,23 +87,27 @@ const SignalHistory = () => {
         switch (signal.category) {
             case 'symptom':
                 return (
-                    <div>
-                        <h3 className="font-medium capitalize" style={{ color: 'rgb(var(--color-text-primary))' }}>
-                            {signal.symptom?.type?.replace(/_/g, ' ')}
-                        </h3>
-                        <div className="flex items-center gap-2 mt-1">
-                            <span className={`text-xs px-2 py-0.5 rounded ${SEVERITY_COLORS[signal.symptom?.severity] || ''}`}>
+                    <div className="flex-1">
+                        <div className="flex justify-between items-start">
+                             <h3 className="font-bold text-slate-800 capitalize text-lg">
+                                {signal.symptom?.type?.replace(/_/g, ' ')}
+                            </h3>
+                            <span className={`text-[10px] font-bold uppercase trackin-wider px-2 py-1 rounded-full ${SEVERITY_COLORS[signal.symptom?.severity] || 'bg-slate-100 text-slate-500'}`}>
                                 {signal.symptom?.severity}
                             </span>
+                        </div>
+                       
+                        <div className="flex items-center gap-2 mt-1 text-xs font-medium text-slate-400">
                             {signal.symptom?.duration && (
-                                <span className="text-xs" style={{ color: 'rgb(var(--color-text-muted))' }}>
+                                <span className="flex items-center gap-1">
+                                    <Clock size={12} />
                                     {signal.symptom.duration.value} {signal.symptom.duration.unit}
                                 </span>
                             )}
                         </div>
                         {signal.symptom?.notes && (
-                            <p className="text-sm mt-2" style={{ color: 'rgb(var(--color-text-secondary))' }}>
-                                {signal.symptom.notes}
+                            <p className="text-sm mt-3 pt-3 border-t border-slate-50 text-slate-600 italic">
+                                "{signal.symptom.notes}"
                             </p>
                         )}
                     </div>
@@ -108,49 +115,65 @@ const SignalHistory = () => {
 
             case 'mood':
                 return (
-                    <div>
-                        <h3 className="font-medium flex items-center gap-2" style={{ color: 'rgb(var(--color-text-primary))' }}>
-                            <span className="text-xl">{MOOD_ICONS[signal.mood?.type] || '😐'}</span>
+                    <div className="flex-1">
+                        <h3 className="font-bold text-slate-800 flex items-center gap-2 text-lg">
+                            <span className="text-2xl filter drop-shadow-sm">{MOOD_ICONS[signal.mood?.type] || '😐'}</span>
                             <span className="capitalize">{signal.mood?.type}</span>
                         </h3>
                         {signal.mood?.stressLevel && (
-                            <p className="text-sm mt-1" style={{ color: 'rgb(var(--color-text-secondary))' }}>
-                                Stress: {signal.mood.stressLevel}/10
-                            </p>
+                             <div className="mt-2 text-xs font-medium flex items-center gap-2">
+                                <span className="text-slate-400">Stress Level:</span>
+                                <div className="h-1.5 w-16 bg-slate-100 rounded-full overflow-hidden">
+                                    <div 
+                                        className={`h-full rounded-full ${signal.mood.stressLevel > 7 ? 'bg-red-500' : signal.mood.stressLevel > 4 ? 'bg-amber-500' : 'bg-emerald-500'}`} 
+                                        style={{width: `${signal.mood.stressLevel * 10}%`}}
+                                    ></div>
+                                </div>
+                                <span className="text-slate-600">{signal.mood.stressLevel}/10</span>
+                            </div>
                         )}
                         {signal.mood?.notes && (
-                            <p className="text-sm mt-2" style={{ color: 'rgb(var(--color-text-secondary))' }}>
-                                {signal.mood.notes}
+                             <p className="text-sm mt-3 pt-3 border-t border-slate-50 text-slate-600 italic">
+                                "{signal.mood.notes}"
                             </p>
                         )}
                     </div>
                 );
 
             case 'lifestyle':
-                const items = [];
-                if (signal.lifestyle?.sleep) {
-                    items.push(`Sleep: ${signal.lifestyle.sleep.duration}h (${signal.lifestyle.sleep.quality})`);
-                }
-                if (signal.lifestyle?.activity) {
-                    items.push(`Activity: ${signal.lifestyle.activity.type} - ${signal.lifestyle.activity.duration}min`);
-                }
-                if (signal.lifestyle?.hydration) {
-                    items.push(`Water: ${signal.lifestyle.hydration.glasses} glasses`);
-                }
-                if (signal.lifestyle?.meals) {
-                    items.push(`Meals: ${signal.lifestyle.meals.count} (${signal.lifestyle.meals.quality})`);
-                }
                 return (
-                    <div>
-                        <h3 className="font-medium" style={{ color: 'rgb(var(--color-text-primary))' }}>Lifestyle Log</h3>
-                        <ul className="text-sm mt-1 space-y-1" style={{ color: 'rgb(var(--color-text-secondary))' }}>
-                            {items.map((item, i) => (
-                                <li key={i}>• {item}</li>
-                            ))}
-                        </ul>
+                    <div className="flex-1">
+                        <h3 className="font-bold text-slate-800 mb-3">Daily Log</h3>
+                        <div className="grid grid-cols-2 gap-2">
+                             {signal.lifestyle?.sleep && (
+                                <div className="bg-indigo-50 rounded-lg p-2 text-xs text-indigo-700 flex items-center gap-2">
+                                    <Moon size={14} />
+                                    <span>{signal.lifestyle.sleep.duration}h <span className="opacity-70">({signal.lifestyle.sleep.quality})</span></span>
+                                </div>
+                            )}
+                            {signal.lifestyle?.activity && (
+                                <div className="bg-rose-50 rounded-lg p-2 text-xs text-rose-700 flex items-center gap-2">
+                                    <Activity size={14} />
+                                    <span className="truncate max-w-[100px]">{signal.lifestyle.activity.duration}m {signal.lifestyle.activity.type}</span>
+                                </div>
+                            )}
+                             {signal.lifestyle?.hydration && (
+                                <div className="bg-sky-50 rounded-lg p-2 text-xs text-sky-700 flex items-center gap-2">
+                                    <Droplets size={14} />
+                                    <span>{signal.lifestyle.hydration.glasses} glasses</span>
+                                </div>
+                            )}
+                             {signal.lifestyle?.meals && (
+                                <div className="bg-orange-50 rounded-lg p-2 text-xs text-orange-700 flex items-center gap-2">
+                                    <Utensils size={14} />
+                                    <span>{signal.lifestyle.meals.count} meals</span>
+                                </div>
+                            )}
+                        </div>
+                       
                         {signal.lifestyle?.notes && (
-                            <p className="text-sm mt-2" style={{ color: 'rgb(var(--color-text-muted))' }}>
-                                {signal.lifestyle.notes}
+                             <p className="text-sm mt-3 pt-3 border-t border-slate-50 text-slate-600 italic">
+                                "{signal.lifestyle.notes}"
                             </p>
                         )}
                     </div>
@@ -159,25 +182,25 @@ const SignalHistory = () => {
             case 'vitals':
                 const vitalItems = [];
                 if (signal.vitals?.bloodPressure) {
-                    vitalItems.push(`BP: ${signal.vitals.bloodPressure.systolic}/${signal.vitals.bloodPressure.diastolic}`);
+                    vitalItems.push({ label: 'BP', value: `${signal.vitals.bloodPressure.systolic}/${signal.vitals.bloodPressure.diastolic}`, unit: '' });
                 }
                 if (signal.vitals?.heartRate) {
-                    vitalItems.push(`Heart Rate: ${signal.vitals.heartRate} bpm`);
+                    vitalItems.push({ label: 'HR', value: signal.vitals.heartRate, unit: 'bpm' });
                 }
                 if (signal.vitals?.temperature) {
-                    vitalItems.push(`Temperature: ${signal.vitals.temperature}°C`);
-                }
-                if (signal.vitals?.weight) {
-                    vitalItems.push(`Weight: ${signal.vitals.weight} kg`);
+                    vitalItems.push({ label: 'Temp', value: signal.vitals.temperature, unit: '°C' });
                 }
                 return (
-                    <div>
-                        <h3 className="font-medium" style={{ color: 'rgb(var(--color-text-primary))' }}>Vitals Log</h3>
-                        <ul className="text-sm mt-1 space-y-1" style={{ color: 'rgb(var(--color-text-secondary))' }}>
+                    <div className="flex-1">
+                         <h3 className="font-bold text-slate-800 mb-3">Vitals Check</h3>
+                         <div className="flex gap-3 flex-wrap">
                             {vitalItems.map((item, i) => (
-                                <li key={i}>• {item}</li>
+                                <div key={i} className="flex flex-col items-center bg-slate-50 border border-slate-100 p-2 rounded-xl min-w-[60px]">
+                                    <span className="text-[10px] font-bold text-slate-400 uppercase">{item.label}</span>
+                                    <span className="font-bold text-slate-800">{item.value} <span className="text-[10px] font-normal text-slate-500">{item.unit}</span></span>
+                                </div>
                             ))}
-                        </ul>
+                         </div>
                     </div>
                 );
 
@@ -187,114 +210,134 @@ const SignalHistory = () => {
     };
 
     const filters = [
-        { id: 'all', label: 'All', icon: '📋' },
-        { id: 'symptom', label: 'Symptoms', icon: '🩺' },
-        { id: 'mood', label: 'Mood', icon: '😊' },
-        { id: 'lifestyle', label: 'Lifestyle', icon: '🏃' },
+        { id: 'all', label: 'All', icon: <Filter size={16} /> },
+        { id: 'symptom', label: 'Symptoms', icon: <Stethoscope size={16} /> },
+        { id: 'mood', label: 'Mood', icon: <Smile size={16} /> },
+        { id: 'lifestyle', label: 'Lifestyle', icon: <TrendingUp size={16} /> },
     ];
 
     return (
-        <div className="page-container min-h-screen pb-20">
-            {/* Header */}
-            <div className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-6">
-                <div className="max-w-2xl mx-auto flex items-center gap-4">
-                    <Link to="/dashboard" className="text-white/80 hover:text-white">
-                        ← Back
-                    </Link>
-                    <h1 className="text-xl font-bold flex-1">Signal History</h1>
-                    <span className="text-sm opacity-80">{pagination.total} entries</span>
+        <div className="min-h-screen bg-[var(--color-background)] pb-24 relative overflow-x-hidden">
+            {/* Glass Header */}
+             <div className="sticky top-0 z-30 glass border-b border-slate-200/50 px-4 pt-4 pb-2">
+                 <div className="flex items-center justify-between mb-4">
+                    <button 
+                        onClick={() => navigate('/dashboard')}
+                        className="p-2 -ml-2 rounded-full hover:bg-slate-100/50 text-slate-600 transition-colors"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
+                    <div className="text-center">
+                        <h1 className="text-lg font-bold text-slate-800">History</h1>
+                        <p className="text-xs font-medium text-slate-500">{pagination.total} Entr{pagination.total === 1 ? 'y' : 'ies'}</p>
+                    </div>
+                    <div className="w-8"></div>
+                </div>
+
+                {/* Filters */}
+                <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide px-1">
+                    {filters.map((filter) => (
+                        <button
+                            key={filter.id}
+                            onClick={() => setActiveFilter(filter.id)}
+                            className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap border
+                                ${activeFilter === filter.id
+                                    ? 'bg-slate-800 text-white border-slate-800 shadow-md transform scale-105'
+                                    : 'bg-white text-slate-500 border-slate-200 hover:border-slate-300'
+                                }`}
+                        >
+                            {filter.icon} {filter.label}
+                        </button>
+                    ))}
                 </div>
             </div>
 
-            {/* Filters */}
-            <div className="sticky top-0 bg-white shadow-sm z-10" style={{ backgroundColor: 'rgb(var(--color-surface))' }}>
-                <div className="max-w-2xl mx-auto px-4">
-                    <div className="flex gap-2 py-3 overflow-x-auto">
-                        {filters.map((filter) => (
-                            <button
-                                key={filter.id}
-                                onClick={() => setActiveFilter(filter.id)}
-                                className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition ${activeFilter === filter.id
-                                        ? 'bg-teal-500 text-white'
-                                        : 'bg-stone-100 hover:bg-stone-200'
-                                    }`}
-                                style={{ color: activeFilter !== filter.id ? 'rgb(var(--color-text-primary))' : undefined }}
-                            >
-                                {filter.icon} {filter.label}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            </div>
+            <div className="px-4 py-6 max-w-lg mx-auto">
+                <AnimatePresence mode='wait'>
+                    {error && <motion.div initial={{opacity:0}} animate={{opacity:1}} className="alert alert-error mb-4">{error}</motion.div>}
 
-            <div className="max-w-2xl mx-auto px-4 py-4">
-                {error && <div className="alert alert-error mb-4">{error}</div>}
+                    {isLoading ? (
+                         <motion.div initial={{opacity:0}} animate={{opacity:1}} className="flex flex-col items-center justify-center py-20 gap-4">
+                             <div className="w-10 h-10 border-4 border-slate-200 border-t-blue-500 rounded-full animate-spin"></div>
+                             <p className="text-sm font-medium text-slate-400">Loading your history...</p>
+                         </motion.div>
+                    ) : signals.length === 0 ? (
+                        <motion.div initial={{opacity:0}} animate={{opacity:1}} className="text-center py-20 px-8">
+                            <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">
+                                📝
+                            </div>
+                            <h2 className="text-xl font-bold text-slate-800 mb-2">No entries found</h2>
+                            <p className="text-slate-500 mb-8 text-sm">
+                                Entries you create will appear here. Start by logging your first symptom or mood.
+                            </p>
+                            <Link to="/dashboard" className="px-6 py-3 bg-blue-600 text-white rounded-xl font-bold shadow-lg shadow-blue-500/20 active:scale-95 transition-transform inline-block">
+                                Go to Dashboard
+                            </Link>
+                        </motion.div>
+                    ) : (
+                        <motion.div 
+                            initial={{ opacity: 0 }} 
+                            animate={{ opacity: 1 }}
+                            className="space-y-4"
+                        >
+                            {signals.map((signal, idx) => {
+                                const config = CATEGORY_CONFIG[signal.category] || { icon: <Activity />, label: 'Signal', color: 'bg-slate-100', accent: 'border-slate-200' };
+                                return (
+                                    <motion.div 
+                                        key={signal._id} 
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: idx * 0.05 }}
+                                        className="card-premium p-0 bg-white overflow-hidden group hover:shadow-md transition-shadow"
+                                    >
+                                        <div className={`h-1 w-full bg-gradient-to-r from-transparent via-current to-transparent opacity-20 ${config.color.split(' ')[1]}`}></div>
+                                        <div className="p-5 flex items-start gap-4">
+                                            {/* Icon Box */}
+                                            <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm flex-shrink-0 border ${config.color}`}>
+                                                {config.icon}
+                                            </div>
 
-                {isLoading ? (
-                    <div className="text-center py-12">
-                        <div className="spinner mx-auto mb-4" style={{ width: '2rem', height: '2rem' }}></div>
-                        <p style={{ color: 'rgb(var(--color-text-secondary))' }}>Loading history...</p>
-                    </div>
-                ) : signals.length === 0 ? (
-                    <div className="text-center py-12">
-                        <span className="text-5xl mb-4 block">📝</span>
-                        <h2 className="text-lg font-semibold mb-2" style={{ color: 'rgb(var(--color-text-primary))' }}>
-                            No entries yet
-                        </h2>
-                        <p className="mb-4" style={{ color: 'rgb(var(--color-text-secondary))' }}>
-                            Start logging your health signals to see them here
-                        </p>
-                        <Link to="/dashboard" className="btn btn-primary">
-                            Go to Dashboard
-                        </Link>
-                    </div>
-                ) : (
-                    <div className="space-y-3">
-                        {signals.map((signal) => {
-                            const config = CATEGORY_CONFIG[signal.category] || { icon: '📋', label: 'Signal', color: 'bg-stone-100' };
-                            return (
-                                <div key={signal._id} className="card relative">
-                                    <div className="flex items-start gap-3">
-                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center text-lg ${config.color}`}>
-                                            {config.icon}
+                                            {/* Content */}
+                                            <div className="flex-1 min-w-0">
+                                                <div className="flex justify-between items-start mb-2">
+                                                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                                        <Calendar size={10} /> {formatDate(signal.recordedAt)}
+                                                    </span>
+                                                    <button
+                                                        onClick={() => handleDelete(signal._id)}
+                                                        className="text-slate-300 hover:text-rose-500 transition-colors p-1 -mt-1 -mr-1"
+                                                    >
+                                                        <Trash2 size={16} />
+                                                    </button>
+                                                </div>
+                                                
+                                                {renderSignalContent(signal)}
+                                            </div>
                                         </div>
-                                        <div className="flex-1">
-                                            {renderSignalContent(signal)}
-                                            <p className="text-xs mt-2" style={{ color: 'rgb(var(--color-text-muted))' }}>
-                                                {formatDate(signal.recordedAt)}
-                                            </p>
-                                        </div>
-                                        <button
-                                            onClick={() => handleDelete(signal._id)}
-                                            className="text-red-400 hover:text-red-600 text-sm p-1"
-                                            title="Delete"
-                                        >
-                                            ✕
-                                        </button>
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                )}
+                                    </motion.div>
+                                );
+                            })}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
                 {/* Pagination */}
                 {pagination.pages > 1 && (
-                    <div className="flex justify-center gap-2 mt-6">
+                    <div className="flex justify-center gap-4 mt-8">
                         <button
                             onClick={() => fetchSignals(pagination.page - 1)}
                             disabled={pagination.page === 1}
-                            className="btn btn-secondary text-sm disabled:opacity-50"
+                            className="px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 font-bold text-xs disabled:opacity-50 hover:bg-slate-50 transition-colors"
                         >
                             Previous
                         </button>
-                        <span className="px-4 py-2 text-sm" style={{ color: 'rgb(var(--color-text-secondary))' }}>
-                            Page {pagination.page} of {pagination.pages}
+                        <span className="px-4 py-2 text-xs font-medium text-slate-400">
+                             {pagination.page} / {pagination.pages}
                         </span>
                         <button
                             onClick={() => fetchSignals(pagination.page + 1)}
                             disabled={pagination.page === pagination.pages}
-                            className="btn btn-secondary text-sm disabled:opacity-50"
+                            className="px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 font-bold text-xs disabled:opacity-50 hover:bg-slate-50 transition-colors"
                         >
                             Next
                         </button>

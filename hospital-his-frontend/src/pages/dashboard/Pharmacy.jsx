@@ -308,14 +308,14 @@ const Pharmacy = () => {
         <div className="max-w-7xl mx-auto p-6">
             <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
                 <div>
-                    <h1 className="text-3xl font-bold text-slate-800 flex items-center gap-3">
+                    <h1 className="text-3xl font-bold text-text-primary flex items-center gap-3">
                         <Pill className="text-emerald-500" size={32} /> Pharmacy
                     </h1>
-                    <p className="text-gray-500 mt-1">Dispensing, Inventory & Safety Management</p>
+                    <p className="text-text-secondary mt-1">Dispensing, Inventory & Safety Management</p>
                 </div>
 
                 {/* Tab Switcher */}
-                <div className="flex p-1 bg-gray-100 rounded-xl">
+                <div className="flex p-1 bg-surface-secondary rounded-xl">
                     {tabs.map(tab => {
                         const Icon = tab.icon;
                         return (
@@ -323,8 +323,8 @@ const Pharmacy = () => {
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${activeTab === tab.id
-                                    ? 'bg-white text-emerald-600 shadow-sm'
-                                    : 'text-gray-500 hover:text-gray-700'
+                                    ? 'bg-surface text-emerald-600 shadow-sm'
+                                    : 'text-text-secondary hover:text-text-primary'
                                     }`}
                             >
                                 <Icon size={16} />
@@ -344,14 +344,14 @@ const Pharmacy = () => {
                                 <input
                                     type="text"
                                     placeholder="Search Patient Name or ID..."
-                                    className="pl-10 pr-4 py-2 border border-gray-200 rounded-lg w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                                    className="pl-10 pr-4 py-2 border border-border rounded-lg w-full md:w-64 bg-surface focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                 />
-                                <FileText size={18} className="absolute left-3 top-2.5 text-gray-400" />
+                                <FileText size={18} className="absolute left-3 top-2.5 text-text-muted" />
                             </div>
 
-                            <div className="flex items-center gap-2 bg-emerald-50 px-4 py-2 rounded-lg text-emerald-700 font-medium whitespace-nowrap">
+                            <div className="flex items-center gap-2 bg-emerald-500/10 px-4 py-2 rounded-lg text-emerald-500 font-medium whitespace-nowrap">
                                 <Clock size={18} />
                                 <span>Pending: {filteredQueue.length}</span>
                             </div>
@@ -360,14 +360,14 @@ const Pharmacy = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {loading && queue.length === 0 ? (
-                            <div className="col-span-full text-center py-20 text-gray-400">Loading queue...</div>
+                            <div className="col-span-full text-center py-20 text-text-muted">Loading queue...</div>
                         ) : filteredQueue.length === 0 ? (
-                            <div className="col-span-full text-center py-20 bg-white rounded-2xl border border-dashed border-gray-200">
+                            <div className="col-span-full text-center py-20 bg-surface rounded-2xl border border-dashed border-border">
                                 <CheckCircle size={48} className="mx-auto text-emerald-200 mb-4" />
-                                <h3 className="text-xl font-bold text-slate-400">
+                                <h3 className="text-xl font-bold text-text-muted">
                                     {searchTerm ? 'No matches found.' : 'All Clear!'}
                                 </h3>
-                                <p className="text-gray-400">
+                                <p className="text-text-muted">
                                     {searchTerm ? 'Try a different search term.' : 'No pending prescriptions at the moment.'}
                                 </p>
                             </div>
@@ -378,28 +378,28 @@ const Pharmacy = () => {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     layout
-                                    className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all cursor-pointer group"
+                                    className="bg-surface p-6 rounded-2xl border border-border shadow-sm hover:shadow-md transition-all cursor-pointer group"
                                     onClick={() => handleSelectPrescription(item)}
                                 >
                                     <div className="flex justify-between items-start mb-4">
-                                        <span className="bg-emerald-50 text-emerald-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                                        <span className="bg-emerald-500/10 text-emerald-500 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
                                             {item.prescriptionNumber || `Rx #${item._id.slice(-6)}`}
                                         </span>
                                         {item.safetyStatus?.hasMajorInteractions && (
-                                            <span className="bg-red-100 text-red-600 px-2 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                                            <span className="bg-red-500/10 text-red-500 px-2 py-1 rounded-full text-xs font-bold flex items-center gap-1">
                                                 <AlertTriangle size={12} /> Alert
                                             </span>
                                         )}
                                     </div>
 
-                                    <h3 className="font-bold text-slate-800 text-lg mb-1 flex items-center gap-2">
-                                        <User size={18} className="text-gray-400" />
+                                    <h3 className="font-bold text-text-primary text-lg mb-1 flex items-center gap-2">
+                                        <User size={18} className="text-text-muted" />
                                         {item.patient?.firstName} {item.patient?.lastName}
                                     </h3>
-                                    <p className="text-sm text-gray-500 mb-4 pl-6">{item.patient?.patientId}</p>
+                                    <p className="text-sm text-text-secondary mb-4 pl-6">{item.patient?.patientId}</p>
 
-                                    <div className="border-t border-gray-50 pt-4 flex justify-between items-center">
-                                        <div className="text-xs text-gray-500">
+                                    <div className="border-t border-border pt-4 flex justify-between items-center">
+                                        <div className="text-xs text-text-secondary">
                                             {item.medicines?.length || 0} medicine(s)
                                         </div>
                                         <button className="text-emerald-500 font-medium text-sm group-hover:underline flex items-center gap-1">
@@ -416,13 +416,13 @@ const Pharmacy = () => {
             {/* Billing Tab */}
             {activeTab === 'billing' && (
                 <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-                        <div className="p-6 border-b border-gray-100 bg-gradient-to-r from-emerald-50 to-teal-50">
-                            <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+                    <div className="bg-surface rounded-2xl border border-border shadow-sm overflow-hidden">
+                        <div className="p-6 border-b border-border bg-gradient-to-r from-emerald-500/10 to-teal-500/10">
+                            <h2 className="text-xl font-bold text-text-primary flex items-center gap-2">
                                 <Receipt className="text-emerald-500" />
                                 Generate Pharmacy Bill
                             </h2>
-                            <p className="text-sm text-gray-500 mt-1">
+                            <p className="text-sm text-text-secondary mt-1">
                                 Select dispensed medicines to generate a bill for the patient
                             </p>
                         </div>
@@ -430,14 +430,14 @@ const Pharmacy = () => {
                         {unbilledDispenses.length === 0 ? (
                             <div className="p-12 text-center">
                                 <CheckCircle size={48} className="mx-auto text-emerald-200 mb-4" />
-                                <h3 className="text-lg font-bold text-slate-400">All Dispensed</h3>
-                                <p className="text-gray-400">No unbilled dispenses at the moment.</p>
+                                <h3 className="text-lg font-bold text-text-muted">All Dispensed</h3>
+                                <p className="text-text-muted">No unbilled dispenses at the moment.</p>
                             </div>
                         ) : (
                             <>
                                 <div className="p-6">
                                     <div className="flex items-center justify-between mb-4">
-                                        <span className="text-sm font-medium text-gray-500">
+                                        <span className="text-sm font-medium text-text-secondary">
                                             {unbilledDispenses.length} unbilled dispense(s)
                                         </span>
                                         <button
@@ -448,7 +448,7 @@ const Pharmacy = () => {
                                                     setSelectedForBilling(unbilledDispenses.map(d => d._id));
                                                 }
                                             }}
-                                            className="text-sm text-emerald-600 font-medium hover:underline"
+                                            className="text-sm text-emerald-500 font-medium hover:underline"
                                         >
                                             {selectedForBilling.length === unbilledDispenses.length ? 'Deselect All' : 'Select All'}
                                         </button>
@@ -468,32 +468,32 @@ const Pharmacy = () => {
                                                         );
                                                     }}
                                                     className={`flex items-center gap-4 p-4 rounded-xl border cursor-pointer transition-colors ${isSelected
-                                                        ? 'bg-emerald-50 border-emerald-200'
-                                                        : 'bg-white border-gray-100 hover:bg-gray-50'
+                                                        ? 'bg-emerald-500/10 border-emerald-500/30'
+                                                        : 'bg-surface border-border hover:bg-surface-highlight'
                                                         }`}
                                                 >
-                                                    <div className={`w-5 h-5 rounded border-2 flex items-center justify-center ${isSelected ? 'bg-emerald-500 border-emerald-500' : 'border-gray-300'
+                                                    <div className={`w-5 h-5 rounded border-2 flex items-center justify-center ${isSelected ? 'bg-emerald-500 border-emerald-500' : 'border-border'
                                                         }`}>
                                                         {isSelected && <Check size={12} className="text-white" />}
                                                     </div>
 
                                                     <div className="flex-1">
                                                         <div className="flex items-center gap-2">
-                                                            <span className="font-mono text-sm text-emerald-600 font-bold">
+                                                            <span className="font-mono text-sm text-emerald-500 font-bold">
                                                                 {dispense.dispenseNumber}
                                                             </span>
-                                                            <span className="text-sm text-gray-400">•</span>
-                                                            <span className="text-sm text-gray-600">
+                                                            <span className="text-sm text-text-muted">•</span>
+                                                            <span className="text-sm text-text-secondary">
                                                                 {dispense.patient?.firstName} {dispense.patient?.lastName}
                                                             </span>
                                                         </div>
-                                                        <p className="text-xs text-gray-400 mt-1">
+                                                        <p className="text-xs text-text-muted mt-1">
                                                             {dispense.items?.length || 0} item(s) • {new Date(dispense.dispensedAt).toLocaleDateString()}
                                                         </p>
                                                     </div>
 
                                                     <div className="text-right">
-                                                        <p className="font-bold text-slate-800">₹{dispense.netAmount || 0}</p>
+                                                        <p className="font-bold text-text-primary">₹{dispense.netAmount || 0}</p>
                                                     </div>
                                                 </div>
                                             );
@@ -502,12 +502,12 @@ const Pharmacy = () => {
                                 </div>
 
                                 {selectedForBilling.length > 0 && (
-                                    <div className="p-6 border-t border-gray-100 bg-gray-50 flex justify-between items-center">
+                                    <div className="p-6 border-t border-border bg-surface-secondary flex justify-between items-center">
                                         <div>
-                                            <p className="font-bold text-slate-800">
+                                            <p className="font-bold text-text-primary">
                                                 {selectedForBilling.length} dispense(s) selected
                                             </p>
-                                            <p className="text-sm text-gray-500">
+                                            <p className="text-sm text-text-secondary">
                                                 Total: ₹{unbilledDispenses
                                                     .filter(d => selectedForBilling.includes(d._id))
                                                     .reduce((sum, d) => sum + (d.netAmount || 0), 0)}
@@ -581,13 +581,13 @@ const Pharmacy = () => {
                             <div className="p-6 overflow-y-auto flex-1">
                                 {/* Safety Alerts Section */}
                                 {checkingSafety ? (
-                                    <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl mb-6">
+                                    <div className="flex items-center gap-3 p-4 bg-surface-secondary rounded-xl mb-6">
                                         <div className="animate-spin w-5 h-5 border-2 border-emerald-500 border-t-transparent rounded-full"></div>
-                                        <span className="text-gray-600">Running safety checks...</span>
+                                        <span className="text-text-secondary">Running safety checks...</span>
                                     </div>
                                 ) : safetyResult && (
                                     <div className="mb-6">
-                                        <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-2">
+                                        <h3 className="text-sm font-bold text-text-secondary uppercase tracking-wider mb-3 flex items-center gap-2">
                                             <Shield size={16} />
                                             Safety Check Results
                                         </h3>
@@ -604,7 +604,7 @@ const Pharmacy = () => {
 
                                 {/* Medicines List with Batch Selection */}
                                 <div>
-                                    <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3">
+                                    <h3 className="text-sm font-bold text-text-secondary uppercase tracking-wider mb-3">
                                         Medicines & Batch Selection
                                     </h3>
 
@@ -616,14 +616,14 @@ const Pharmacy = () => {
                                             const totalSelected = batches.reduce((sum, b) => sum + b.quantity, 0);
 
                                             return (
-                                                <div key={idx} className="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                                                <div key={idx} className="p-4 bg-surface-secondary rounded-xl border border-border">
                                                     <div className="flex items-center justify-between">
                                                         <div>
-                                                            <div className="font-bold text-slate-800">{medicineName}</div>
-                                                            <div className="text-sm text-gray-500">
+                                                            <div className="font-bold text-text-primary">{medicineName}</div>
+                                                            <div className="text-sm text-text-secondary">
                                                                 {med.dosage} • {med.frequency} • {med.duration}
                                                             </div>
-                                                            <div className="text-sm text-emerald-600 font-medium mt-1">
+                                                            <div className="text-sm text-emerald-500 font-medium mt-1">
                                                                 Need: {med.quantity} units
                                                             </div>
                                                         </div>
@@ -631,8 +631,8 @@ const Pharmacy = () => {
                                                             <button
                                                                 onClick={() => setShowBatchSelector({ medicineId, medicineName, quantity: med.quantity })}
                                                                 className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${totalSelected >= med.quantity
-                                                                    ? 'bg-green-100 text-green-700 border border-green-200'
-                                                                    : 'bg-blue-100 text-blue-700 border border-blue-200 hover:bg-blue-200'
+                                                                    ? 'bg-green-500/10 text-green-500 border border-green-500/30'
+                                                                    : 'bg-blue-500/10 text-blue-500 border border-blue-500/30 hover:bg-blue-500/20'
                                                                     }`}
                                                             >
                                                                 {totalSelected > 0 ? (
@@ -645,7 +645,7 @@ const Pharmacy = () => {
                                                                 )}
                                                             </button>
                                                             {batches.length > 0 && (
-                                                                <p className="text-xs text-gray-400 mt-1">
+                                                                <p className="text-xs text-text-muted mt-1">
                                                                     {batches.map(b => b.batchNumber).join(', ')}
                                                                 </p>
                                                             )}
@@ -659,8 +659,8 @@ const Pharmacy = () => {
                             </div>
 
                             {/* Footer Actions */}
-                            <div className="p-6 border-t border-gray-100 bg-gray-50 flex justify-between items-center flex-shrink-0">
-                                <div className="text-sm text-gray-500">
+                            <div className="p-6 border-t border-border bg-surface-secondary flex justify-between items-center flex-shrink-0">
+                                <div className="text-sm text-text-secondary">
                                     {safetyResult?.requiresOverride && !overrideComplete && (
                                         <span className="text-red-600 flex items-center gap-1">
                                             <AlertTriangle size={16} />
@@ -671,7 +671,7 @@ const Pharmacy = () => {
                                 <div className="flex gap-3">
                                     <button
                                         onClick={() => setSelectedPrescription(null)}
-                                        className="px-6 py-3 rounded-xl border border-gray-200 text-gray-600 font-medium hover:bg-white transition-colors"
+                                        className="px-6 py-3 rounded-xl border border-border text-text-secondary font-medium hover:bg-surface transition-colors"
                                     >
                                         Cancel
                                     </button>
@@ -722,29 +722,29 @@ const Pharmacy = () => {
                             {paymentSuccess ? (
                                 /* Success View */
                                 <div className="text-center py-6">
-                                    <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 text-emerald-600">
+                                    <div className="w-16 h-16 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-4 text-emerald-500">
                                         <CheckCircle size={32} />
                                     </div>
-                                    <h3 className="text-xl font-bold text-slate-800 mb-2">Payment Successful!</h3>
-                                    <p className="text-gray-500 mb-6">Receipt generated for Pharmacy Bill</p>
+                                    <h3 className="text-xl font-bold text-text-primary mb-2">Payment Successful!</h3>
+                                    <p className="text-text-secondary mb-6">Receipt generated for Pharmacy Bill</p>
 
-                                    <div className="bg-gray-50 p-4 rounded-xl text-left mb-6 border border-gray-100">
+                                    <div className="bg-surface-secondary p-4 rounded-xl text-left mb-6 border border-border">
                                         <div className="flex justify-between mb-2">
-                                            <span className="text-sm text-gray-500">Bill Number</span>
-                                            <span className="font-mono font-bold text-slate-700">{paymentModalData.billNumber}</span>
+                                            <span className="text-sm text-text-secondary">Bill Number</span>
+                                            <span className="font-mono font-bold text-text-primary">{paymentModalData.billNumber}</span>
                                         </div>
                                         <div className="flex justify-between mb-2">
-                                            <span className="text-sm text-gray-500">Amount Paid</span>
-                                            <span className="font-bold text-emerald-600">₹{parseFloat(paymentAmount).toFixed(2)}</span>
+                                            <span className="text-sm text-text-secondary">Amount Paid</span>
+                                            <span className="font-bold text-emerald-500">₹{parseFloat(paymentAmount).toFixed(2)}</span>
                                         </div>
                                         <div className="flex justify-between mb-2">
-                                            <span className="text-sm text-gray-500">Payment Mode</span>
-                                            <span className="capitalize font-medium text-slate-700">{paymentMode}</span>
+                                            <span className="text-sm text-text-secondary">Payment Mode</span>
+                                            <span className="capitalize font-medium text-text-primary">{paymentMode}</span>
                                         </div>
                                         {paymentRef && (
                                             <div className="flex justify-between">
-                                                <span className="text-sm text-gray-500">Reference</span>
-                                                <span className="font-mono text-sm text-slate-700">{paymentRef}</span>
+                                                <span className="text-sm text-text-secondary">Reference</span>
+                                                <span className="font-mono text-sm text-text-primary">{paymentRef}</span>
                                             </div>
                                         )}
                                     </div>
@@ -752,7 +752,7 @@ const Pharmacy = () => {
                                     <div className="flex gap-3">
                                         <button
                                             onClick={() => window.print()}
-                                            className="flex-1 py-3 border border-gray-200 rounded-xl font-medium text-gray-600 hover:bg-gray-50 flex items-center justify-center gap-2"
+                                            className="flex-1 py-3 border border-border rounded-xl font-medium text-text-secondary hover:bg-surface-highlight flex items-center justify-center gap-2"
                                         >
                                             <Receipt size={18} /> Print Receipt
                                         </button>
@@ -767,42 +767,42 @@ const Pharmacy = () => {
                             ) : (
                                 /* Payment Form */
                                 <>
-                                    <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                                    <h3 className="text-lg font-bold text-text-primary mb-4 flex items-center gap-2">
                                         <Banknote size={24} className="text-emerald-500" />
                                         Collect Payment
                                     </h3>
 
-                                    <div className="p-4 bg-emerald-50 rounded-xl mb-4 border border-emerald-100">
+                                    <div className="p-4 bg-emerald-500/10 rounded-xl mb-4 border border-emerald-500/20">
                                         <div className="flex justify-between items-center mb-2">
-                                            <span className="text-sm text-emerald-700 font-medium">Bill Number</span>
-                                            <span className="font-mono font-bold text-emerald-800">{paymentModalData.billNumber}</span>
+                                            <span className="text-sm text-emerald-500 font-medium">Bill Number</span>
+                                            <span className="font-mono font-bold text-emerald-600">{paymentModalData.billNumber}</span>
                                         </div>
                                         <div className="flex justify-between items-center">
-                                            <span className="text-sm text-emerald-700 font-medium">Total Amount</span>
-                                            <span className="text-xl font-bold text-emerald-800">₹{paymentModalData.grandTotal}</span>
+                                            <span className="text-sm text-emerald-500 font-medium">Total Amount</span>
+                                            <span className="text-xl font-bold text-emerald-600">₹{paymentModalData.grandTotal}</span>
                                         </div>
                                     </div>
 
                                     <div className="space-y-4">
                                         <div>
-                                            <label className="text-sm font-medium text-slate-700 block mb-1">Payment Amount</label>
+                                            <label className="text-sm font-medium text-text-primary block mb-1">Payment Amount</label>
                                             <div className="relative">
-                                                <span className="absolute left-3 top-2.5 text-gray-500 font-bold">₹</span>
+                                                <span className="absolute left-3 top-2.5 text-text-secondary font-bold">₹</span>
                                                 <input
                                                     type="number"
                                                     value={paymentAmount}
                                                     onChange={(e) => setPaymentAmount(e.target.value)}
                                                     max={paymentModalData.balanceAmount}
-                                                    className="w-full pl-8 pr-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 font-bold text-lg"
+                                                    className="w-full pl-8 pr-4 py-2.5 border border-border rounded-lg bg-surface focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 font-bold text-lg"
                                                 />
                                             </div>
-                                            <p className="text-xs text-gray-400 mt-1 text-right">
+                                            <p className="text-xs text-text-muted mt-1 text-right">
                                                 Balance Due: ₹{paymentModalData.balanceAmount}
                                             </p>
                                         </div>
 
                                         <div>
-                                            <label className="text-sm font-medium text-slate-700 block mb-1">Payment Mode</label>
+                                            <label className="text-sm font-medium text-text-primary block mb-1">Payment Mode</label>
                                             <div className="flex gap-2">
                                                 {['cash', 'card', 'upi'].map((mode) => (
                                                     <button
@@ -810,7 +810,7 @@ const Pharmacy = () => {
                                                         onClick={() => setPaymentMode(mode)}
                                                         className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium capitalize transition-colors flex items-center justify-center gap-2 ${paymentMode === mode
                                                             ? 'bg-emerald-600 text-white shadow-md shadow-emerald-200'
-                                                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                                            : 'bg-surface-secondary text-text-secondary hover:bg-surface-highlight'
                                                             }`}
                                                     >
                                                         {mode === 'card' && <CreditCard size={14} />}
@@ -821,12 +821,12 @@ const Pharmacy = () => {
                                         </div>
 
                                         <div>
-                                            <label className="text-sm font-medium text-slate-700 block mb-1">Reference / Transaction ID</label>
+                                            <label className="text-sm font-medium text-text-primary block mb-1">Reference / Transaction ID</label>
                                             <input
                                                 type="text"
                                                 value={paymentRef}
                                                 onChange={(e) => setPaymentRef(e.target.value)}
-                                                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                                                className="w-full px-4 py-2.5 border border-border rounded-lg bg-surface focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
                                                 placeholder="Optional..."
                                             />
                                         </div>
@@ -835,7 +835,7 @@ const Pharmacy = () => {
                                     <div className="flex gap-3 mt-6">
                                         <button
                                             onClick={closePaymentModal}
-                                            className="flex-1 py-3 border border-gray-200 rounded-xl font-medium text-gray-600 hover:bg-gray-50"
+                                            className="flex-1 py-3 border border-border rounded-xl font-medium text-text-secondary hover:bg-surface-highlight"
                                         >
                                             Later
                                         </button>

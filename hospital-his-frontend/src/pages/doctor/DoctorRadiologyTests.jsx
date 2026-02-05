@@ -108,37 +108,37 @@ const DoctorRadiologyTests = () => {
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                    <div className="p-3 bg-violet-100 rounded-xl text-violet-600">
+                    <div className="p-3 bg-violet-500/10 rounded-xl text-violet-500">
                         <ScanLine size={24} />
                     </div>
                     <div>
-                        <h1 className="text-2xl font-bold text-slate-800">Radiology Test Results</h1>
-                        <p className="text-gray-500 text-sm">View completed radiology scans and reports</p>
+                        <h1 className="text-2xl font-bold text-text-primary">Radiology Test Results</h1>
+                        <p className="text-text-secondary text-sm">View completed radiology scans and reports</p>
                     </div>
                 </div>
                 <button
                     onClick={fetchCompletedTests}
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-surface-secondary hover:bg-surface-highlight text-text-secondary rounded-lg transition-colors"
                 >
                     <RefreshCw size={16} /> Refresh
                 </button>
             </div>
 
             {/* Tests List */}
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+            <div className="bg-surface rounded-2xl border border-border shadow-sm overflow-hidden">
                 {loading ? (
                     <div className="p-12 text-center">
                         <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-violet-600 border-t-transparent mb-4"></div>
-                        <p className="text-gray-500">Loading completed radiology tests...</p>
+                        <p className="text-text-secondary">Loading completed radiology tests...</p>
                     </div>
                 ) : completedTests.length === 0 ? (
                     <div className="p-12 text-center">
-                        <ScanLine size={40} className="mx-auto text-gray-300 mb-4" />
-                        <p className="text-gray-500">No completed radiology tests found</p>
+                        <ScanLine size={40} className="mx-auto text-text-muted mb-4" />
+                        <p className="text-text-secondary">No completed radiology tests found</p>
                     </div>
                 ) : (
                     <table className="w-full text-left">
-                        <thead className="bg-gray-50 text-gray-500 text-xs uppercase font-semibold">
+                        <thead className="bg-surface-secondary text-text-secondary text-xs uppercase font-semibold">
                             <tr>
                                 <th className="px-6 py-4">Test #</th>
                                 <th className="px-6 py-4">Patient</th>
@@ -148,41 +148,41 @@ const DoctorRadiologyTests = () => {
                                 <th className="px-6 py-4 text-right">Action</th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-gray-100">
+                        <tbody className="divide-y divide-border">
                             {completedTests.map((test) => (
-                                <tr key={test._id} className="hover:bg-gray-50/50 transition-colors">
-                                    <td className="px-6 py-4 font-mono text-sm text-slate-600">{test.testNumber}</td>
+                                <tr key={test._id} className="hover:bg-surface-highlight transition-colors">
+                                    <td className="px-6 py-4 font-mono text-sm text-text-secondary">{test.testNumber}</td>
                                     <td className="px-6 py-4">
                                         <div className="flex items-center gap-2">
-                                            <div className="w-8 h-8 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center text-xs font-bold">
+                                            <div className="w-8 h-8 rounded-full bg-violet-500/10 text-violet-500 flex items-center justify-center text-xs font-bold">
                                                 {test.patient?.firstName?.[0]}{test.patient?.lastName?.[0]}
                                             </div>
                                             <div>
-                                                <div className="font-medium text-slate-700">
+                                                <div className="font-medium text-text-primary">
                                                     {test.patient?.firstName} {test.patient?.lastName}
                                                 </div>
-                                                <div className="text-xs text-gray-400">{test.patient?.patientId}</div>
+                                                <div className="text-xs text-text-muted">{test.patient?.patientId}</div>
                                             </div>
                                         </div>
                                     </td>
                                     <td className="px-6 py-4">
-                                        <div className="font-medium text-slate-700">{test.test?.testName || 'Unknown'}</div>
+                                        <div className="font-medium text-text-primary">{test.test?.testName || 'Unknown'}</div>
                                         {test.test?.modality && (
-                                            <span className="text-xs text-violet-500 px-1.5 py-0.5 bg-violet-50 rounded">
+                                            <span className="text-xs text-violet-500 px-1.5 py-0.5 bg-violet-500/10 rounded">
                                                 {test.test.modality}
                                             </span>
                                         )}
                                     </td>
-                                    <td className="px-6 py-4 text-sm text-gray-500">
+                                    <td className="px-6 py-4 text-sm text-text-secondary">
                                         {test.completedAt ? new Date(test.completedAt).toLocaleDateString('en-IN') : 'N/A'}
                                     </td>
                                     <td className="px-6 py-4">
                                         {test.scanImage || test.reportUrl ? (
-                                            <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700 flex items-center gap-1 w-fit">
+                                            <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-green-500/10 text-green-500 flex items-center gap-1 w-fit">
                                                 <Image size={12} /> Available
                                             </span>
                                         ) : (
-                                            <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-500">
+                                            <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-surface-secondary text-text-secondary">
                                                 No Image
                                             </span>
                                         )}
@@ -217,7 +217,7 @@ const DoctorRadiologyTests = () => {
                             initial={{ scale: 0.95, y: 20 }}
                             animate={{ scale: 1, y: 0 }}
                             exit={{ scale: 0.95, y: 20 }}
-                            className="bg-white rounded-2xl shadow-xl w-full max-w-4xl relative z-10 overflow-hidden max-h-[90vh] overflow-y-auto"
+                            className="bg-surface rounded-2xl shadow-xl w-full max-w-4xl relative z-10 overflow-hidden max-h-[90vh] overflow-y-auto"
                         >
                             {/* Header */}
                             <div className="bg-violet-600 p-6 text-white flex justify-between items-center sticky top-0 z-10">
@@ -236,26 +236,26 @@ const DoctorRadiologyTests = () => {
 
                             <div className="p-6">
                                 {/* Patient Info */}
-                                <div className="flex items-center gap-3 mb-6 p-4 bg-slate-50 rounded-xl">
-                                    <div className="w-12 h-12 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center font-bold">
+                                <div className="flex items-center gap-3 mb-6 p-4 bg-surface-secondary rounded-xl">
+                                    <div className="w-12 h-12 rounded-full bg-violet-500/10 text-violet-500 flex items-center justify-center font-bold">
                                         {selectedTest.patient?.firstName?.[0]}{selectedTest.patient?.lastName?.[0]}
                                     </div>
                                     <div>
-                                        <div className="font-bold text-slate-800">
+                                        <div className="font-bold text-text-primary">
                                             {selectedTest.patient?.firstName} {selectedTest.patient?.lastName}
                                         </div>
-                                        <div className="text-sm text-gray-500">{selectedTest.patient?.patientId}</div>
+                                        <div className="text-sm text-text-secondary">{selectedTest.patient?.patientId}</div>
                                     </div>
                                     <div className="ml-auto text-right">
-                                        <div className="text-sm text-gray-500">Modality</div>
-                                        <div className="font-medium text-violet-600">{selectedTest.test?.modality || 'N/A'}</div>
+                                        <div className="text-sm text-text-secondary">Modality</div>
+                                        <div className="font-medium text-violet-500">{selectedTest.test?.modality || 'N/A'}</div>
                                     </div>
                                 </div>
 
                                 {/* Scan Image */}
                                 {getScanImageUrl() && (
                                     <div className="mb-6">
-                                        <h3 className="font-bold text-slate-700 mb-3 flex items-center gap-2">
+                                        <h3 className="font-bold text-text-primary mb-3 flex items-center gap-2">
                                             <Image size={18} className="text-violet-500" /> Scan Image
                                         </h3>
                                         <div className="bg-gray-900 rounded-xl p-4 flex justify-center">
@@ -272,7 +272,7 @@ const DoctorRadiologyTests = () => {
                                             href={getScanImageUrl()}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 mt-3 px-4 py-2 bg-violet-100 hover:bg-violet-200 text-violet-700 rounded-lg font-medium transition-colors"
+                                            className="inline-flex items-center gap-2 mt-3 px-4 py-2 bg-violet-500/10 hover:bg-violet-500/20 text-violet-500 rounded-lg font-medium transition-colors"
                                         >
                                             <Image size={16} /> Open Full Image
                                         </a>
@@ -282,7 +282,7 @@ const DoctorRadiologyTests = () => {
                                 {/* Report PDF */}
                                 {getReportUrl() && (
                                     <div className="mb-6">
-                                        <h3 className="font-bold text-slate-700 mb-3 flex items-center gap-2">
+                                        <h3 className="font-bold text-text-primary mb-3 flex items-center gap-2">
                                             <FileText size={18} className="text-red-500" /> Report PDF
                                         </h3>
                                         <a
@@ -330,14 +330,14 @@ const DoctorRadiologyTests = () => {
 
                                 {/* No report data message */}
                                 {!getScanImageUrl() && !getReportUrl() && !selectedTest.findings && !selectedTest.impression && (
-                                    <div className="p-8 text-center bg-gray-50 rounded-xl">
-                                        <ScanLine size={40} className="mx-auto text-gray-300 mb-3" />
-                                        <p className="text-gray-500">No detailed report available for this scan.</p>
+                                    <div className="p-8 text-center bg-surface-secondary rounded-xl">
+                                        <ScanLine size={40} className="mx-auto text-text-muted mb-3" />
+                                        <p className="text-text-secondary">No detailed report available for this scan.</p>
                                     </div>
                                 )}
 
                                 {/* Footer Info */}
-                                <div className="mt-6 pt-4 border-t border-gray-100 text-sm text-gray-500">
+                                <div className="mt-6 pt-4 border-t border-border text-sm text-text-secondary">
                                     <div className="flex justify-between">
                                         <span>Performed by: {selectedTest.performedBy?.profile?.firstName} {selectedTest.performedBy?.profile?.lastName || 'N/A'}</span>
                                         <span>Completed: {selectedTest.completedAt ? new Date(selectedTest.completedAt).toLocaleString() : 'N/A'}</span>
@@ -345,8 +345,8 @@ const DoctorRadiologyTests = () => {
                                 </div>
 
                                 {/* Radiology Risk Level Section */}
-                                <div className="mb-6 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                                    <h3 className="font-bold text-slate-700 mb-3 flex items-center gap-2">
+                                <div className="mb-6 p-4 bg-surface-secondary rounded-xl border border-border">
+                                    <h3 className="font-bold text-text-primary mb-3 flex items-center gap-2">
                                         <Shield size={18} className="text-violet-500" /> Set Radiology Risk Level
                                         {savedRiskLevel && (
                                             <span className="ml-auto text-xs font-semibold text-green-600 bg-green-100 px-2 py-1 rounded-full flex items-center gap-1">
@@ -354,14 +354,14 @@ const DoctorRadiologyTests = () => {
                                             </span>
                                         )}
                                     </h3>
-                                    <p className="text-sm text-gray-500 mb-3">
+                                    <p className="text-sm text-text-secondary mb-3">
                                         Based on radiology findings, select the patient's risk level. This will update their OPD risk score.
                                     </p>
                                     <div className="flex items-center gap-3">
                                         <select
                                             value={selectedRiskLevel}
                                             onChange={(e) => { setSelectedRiskLevel(e.target.value); setSavedRiskLevel(null); }}
-                                            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-200 focus:border-violet-500"
+                                            className="flex-1 px-4 py-2 border border-border rounded-lg bg-surface focus:ring-2 focus:ring-violet-200 focus:border-violet-500"
                                         >
                                             <option value="NORMAL">Normal (+0)</option>
                                             <option value="MILD">Mild (+1)</option>
@@ -388,7 +388,7 @@ const DoctorRadiologyTests = () => {
                                 <div className="flex justify-end gap-3 pt-4">
                                     <button
                                         onClick={closeModal}
-                                        className="px-6 py-2.5 rounded-xl border border-gray-200 text-gray-600 font-medium hover:bg-gray-50"
+                                        className="px-6 py-2.5 rounded-xl border border-border text-text-secondary font-medium hover:bg-surface-highlight"
                                     >
                                         Close
                                     </button>

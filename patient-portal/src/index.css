@@ -1,52 +1,173 @@
 @import "tailwindcss";
 
 /* ============================================
-   LifelineX Patient Portal - Design System
-   Matching HIS color tokens
+   LifelineX Portal - Premium Health UI System
    ============================================ */
 
+/* 1. Typography */
+/* Using system-ui fallbacks that look clean on all OS */
+@theme {
+  --font-display: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-body: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+}
+
 :root {
-  /* WARM LIGHT THEME */
-  --color-background: 250 250 249;       /* Stone-50 warm off-white */
-  --color-surface: 255 255 255;          /* Pure white */
-  --color-surface-highlight: 245 245 244; /* Stone-100 */
+  /* PREMIUM BLUE THEME - Trustworthy & Calm */
+  /* Using specific HSL values for better transparency handling */
+  
+  /* Primary Brand: Royal Health Blue */
+  --color-primary: #2563EB;        /* Blue 600 */
+  --color-primary-light: #60A5FA;  /* Blue 400 */
+  --color-primary-dark: #1E40AF;   /* Blue 800 */
+  --color-primary-fade: rgba(37, 99, 235, 0.08); /* Transparent Pill Background */
 
-  --color-text-primary: 28 25 23;        /* Stone-900 (Warm Black) */
-  --color-text-secondary: 87 83 78;      /* Stone-600 */
-  --color-text-muted: 168 162 158;       /* Stone-400 */
+  /* Secondary: Soft Gray/Slate */
+  --color-secondary: #64748B;      /* Slate 500 */
+  --color-secondary-light: #F1F5F9; /* Slate 100 */
 
-  --color-primary: 20 184 166;           /* Teal-500 */
-  --color-primary-hover: 13 148 136;     /* Teal-600 */
-  --color-primary-foreground: 255 255 255;
+  /* Semantic Colors */
+  --color-success: #10B981;        /* Emerald 500 */
+  --color-warning: #F59E0B;        /* Amber 500 */
+  --color-danger: #EF4444;         /* Red 500 */
+  --color-info: #0EA5E9;           /* Sky 500 */
 
-  /* Status Colors */
-  --color-success: 34 197 94;            /* Green-500 */
-  --color-warning: 245 158 11;           /* Amber-500 */
-  --color-error: 239 68 68;              /* Red-500 */
-  --color-info: 59 130 246;              /* Blue-500 */
+  /* Backgrounds & Surfaces */
+  --color-background: #F8FAFC;     /* Slate 50 - Very clean, clinical background */
+  --color-surface: #FFFFFF;        /* Pure White */
+  --color-surface-translucent: rgba(255, 255, 255, 0.8); /* For Glassmorphism */
+  
+  /* Text */
+  --color-text-primary: #0F172A;   /* Slate 900 */
+  --color-text-secondary: #475569; /* Slate 600 */
+  --color-text-muted: #94A3B8;     /* Slate 400 */
 
-  /* Health Score Colors */
-  --color-score-excellent: 34 197 94;    /* Green */
-  --color-score-good: 132 204 22;        /* Lime */
-  --color-score-moderate: 245 158 11;    /* Amber */
-  --color-score-attention: 249 115 22;   /* Orange */
-  --color-score-concern: 239 68 68;      /* Red */
+  /* Design Tokens */
+  --radius-xl: 1.5rem;   /* 24px - App-like rounded corners */
+  --radius-lg: 1rem;     /* 16px */
+  --radius-md: 0.75rem;  /* 12px */
+  
+  --shadow-soft: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  --shadow-float: 0 10px 40px -10px rgba(37, 99, 235, 0.2);
 }
 
 .dark {
-  /* COMFORT DARK THEME */
-  --color-background: 28 25 23;          /* Stone-900 */
-  --color-surface: 41 37 36;             /* Stone-800 */
-  --color-surface-highlight: 68 64 60;   /* Stone-700 */
+  /* DARK MODE - Deep Blue/Slate "Night Clinic" Vibe */
+  --color-primary: #60A5FA;        /* Blue 400 - Brigher for dark mode */
+  --color-primary-fade: rgba(96, 165, 250, 0.15);
 
-  --color-text-primary: 231 229 228;     /* Stone-200 */
-  --color-text-secondary: 168 162 158;   /* Stone-400 */
-  --color-text-muted: 120 113 108;       /* Stone-500 */
-
-  --color-primary: 45 212 191;           /* Teal-400 */
-  --color-primary-hover: 20 184 166;     /* Teal-500 */
-  --color-primary-foreground: 28 25 23;
+  --color-background: #020617;     /* Slate 950 obsidian */
+  --color-surface: #0F172A;        /* Slate 900 */
+  --color-surface-translucent: rgba(15, 23, 42, 0.8);
+  
+  --color-text-primary: #F8FAFC;   /* Slate 50 */
+  --color-text-secondary: #94A3B8; /* Slate 400 */
+  --color-text-muted: #64748B;     /* Slate 500 */
+  
+  --color-secondary-light: #1E293B; /* Slate 800 */
 }
+
+/* ============================================
+   Utility Components
+   ============================================ */
+
+@layer components {
+  /* Layout Base */
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  /* App-like Card - Neumorphic / Soft */
+  .card-premium {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .dark .card-premium {
+    border-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--color-surface);
+  }
+
+  .card-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Glassmorphism Effect */
+  .glass {
+    background: var(--color-surface-translucent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark .glass {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Buttons */
+  .btn-primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-primary);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+  }
+
+  .btn-ghost:hover {
+    background-color: var(--color-primary-fade);
+  }
+
+  /* Text Gradients (for Premium Headings) */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary), #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Smooth Inputs */
+  .input-modern {
+    background-color: var(--color-secondary-light);
+    border: 1px solid transparent;
+    border-radius: var(--radius-lg);
+    padding: 0.8rem 1rem;
+    color: var(--color-text-primary);
+    transition: all 0.2s;
+    width: 100%;
+  }
+
+  .input-modern:focus {
+    background-color: var(--color-surface);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-fade);
+    outline: none;
+  }
+}
+
 
 /* ============================================
    Base Styles
