@@ -11,8 +11,9 @@ const GEMINI_MODEL = 'gemini-1.5-flash';
 const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models';
 
 // OpenRouter Configuration (fallback)
+// OpenRouter Configuration (fallback)
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
-const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || 'google/gemma-3-27b-it:free';
+const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || 'google/gemini-pro-1.5'; // specific model fallback
 const OPENROUTER_BASE_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
 /**
@@ -158,6 +159,9 @@ const parseJsonResponse = (content) => {
  * @returns {Promise<Object>} - Structured summary JSON
  */
 const summarizeLabReport = async (extractedText) => {
+    let lastError = null;
+    let errors = [];
+
     // Try Gemini first (primary)
     if (GOOGLE_API_KEY) {
         try {
@@ -170,8 +174,11 @@ const summarizeLabReport = async (extractedText) => {
             console.log(`[LLM] Summary generated successfully using ${result.model}`);
             return summary;
         } catch (error) {
-            console.error('[LLM] Gemini API error:', error.response?.data || error.message);
+            const errorMsg = error.response?.data?.error?.message || error.message;
+            console.error('[LLM] Gemini API error:', errorMsg);
             console.log('[LLM] Falling back to OpenRouter...');
+            errors.push(`Gemini: ${errorMsg}`);
+            lastError = error;
         }
     }
 
@@ -187,17 +194,22 @@ const summarizeLabReport = async (extractedText) => {
             console.log(`[LLM] Summary generated successfully using ${result.model}`);
             return summary;
         } catch (error) {
-            console.error('[LLM] OpenRouter API error:', error.response?.data || error.message);
+            const errorMsg = error.response?.data?.error?.message || error.message;
+            console.error('[LLM] OpenRouter API error:', errorMsg);
+            errors.push(`OpenRouter: ${errorMsg}`);
+            lastError = error;
         }
     }
 
-    // No API keys configured or all failed
+    // No API keys configured
     if (!GOOGLE_API_KEY && !OPENROUTER_API_KEY) {
         console.warn('[LLM] No API keys configured, returning mock summary');
         return getMockSummary();
     }
 
-    throw new Error('All LLM providers failed. Please check API keys and try again.');
+    // All configured providers failed
+    const errorDetails = errors.join(' | ');
+    throw new Error(`All LLM providers failed. Details: ${errorDetails}. Please check API keys.`);
 };
 
 /**
