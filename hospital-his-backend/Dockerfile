@@ -1,6 +1,9 @@
 # HIS Agentic Backend - Dockerfile for Hugging Face Spaces
 FROM node:18-alpine
 
+# Install system dependencies for OCR (GraphicsMagick, Ghostscript)
+RUN apk add --no-cache graphicsmagick ghostscript
+
 # Set working directory
 WORKDIR /app
 
