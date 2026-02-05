@@ -41,7 +41,7 @@ const getAvailableBundles = async (category = null) => {
  */
 const getTraumaBundleByLevel = async (level) => {
     const response = await axios.get(
-        API_BASE_URL + `emergency/order-sets/trauma/${level}`,
+        `${API_BASE_URL}/emergency/order-sets/trauma/${level}`,
         getConfig()
     );
     return response.data.data;
@@ -55,7 +55,7 @@ const getTraumaBundleByLevel = async (level) => {
  */
 const applyBundle = async (emergencyCaseId, bundleData) => {
     const response = await axios.post(
-        API_BASE_URL + `emergency/cases/${emergencyCaseId}/apply-bundle`,
+        `${API_BASE_URL}/emergency/cases/${emergencyCaseId}/apply-bundle`,
         bundleData,
         getConfig()
     );
@@ -69,7 +69,7 @@ const applyBundle = async (emergencyCaseId, bundleData) => {
  */
 const getAppliedBundles = async (emergencyCaseId) => {
     const response = await axios.get(
-        API_BASE_URL + `emergency/cases/${emergencyCaseId}/bundles`,
+        `${API_BASE_URL}/emergency/cases/${emergencyCaseId}/bundles`,
         getConfig()
     );
     return response.data.data;
@@ -85,7 +85,7 @@ const getAppliedBundles = async (emergencyCaseId) => {
  */
 const addNursingNote = async (emergencyCaseId, note) => {
     const response = await axios.post(
-        API_BASE_URL + `emergency/cases/${emergencyCaseId}/nursing-notes`,
+        `${API_BASE_URL}/emergency/cases/${emergencyCaseId}/nursing-notes`,
         { note },
         getConfig()
     );
@@ -99,7 +99,7 @@ const addNursingNote = async (emergencyCaseId, note) => {
  */
 const markReadyForDoctor = async (emergencyCaseId) => {
     const response = await axios.post(
-        API_BASE_URL + `emergency/cases/${emergencyCaseId}/ready-for-doctor`,
+        `${API_BASE_URL}/emergency/cases/${emergencyCaseId}/ready-for-doctor`,
         {},
         getConfig()
     );
@@ -117,7 +117,7 @@ const markReadyForDoctor = async (emergencyCaseId) => {
  */
 const setEmergencyTag = async (emergencyCaseId, tag, traumaLevel = null) => {
     const response = await axios.post(
-        API_BASE_URL + `emergency/cases/${emergencyCaseId}/set-tag`,
+        `${API_BASE_URL}/emergency/cases/${emergencyCaseId}/set-tag`,
         { tag, traumaLevel },
         getConfig()
     );
@@ -132,7 +132,7 @@ const setEmergencyTag = async (emergencyCaseId, tag, traumaLevel = null) => {
  */
 const processDisposition = async (emergencyCaseId, dispositionData) => {
     const response = await axios.post(
-        API_BASE_URL + `emergency/cases/${emergencyCaseId}/disposition`,
+        `${API_BASE_URL}/emergency/cases/${emergencyCaseId}/disposition`,
         dispositionData,
         getConfig()
     );
@@ -147,7 +147,7 @@ const processDisposition = async (emergencyCaseId, dispositionData) => {
  */
 const updateStatus = async (emergencyCaseId, status) => {
     const response = await axios.put(
-        API_BASE_URL + `emergency/cases/${emergencyCaseId}/status`,
+        `${API_BASE_URL}/emergency/cases/${emergencyCaseId}/status`,
         { status },
         getConfig()
     );
