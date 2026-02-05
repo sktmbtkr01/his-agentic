@@ -562,9 +562,9 @@ const DoctorRounds = () => {
                                         </div>
                                     )}
                                 </div>
-                        )}
                             </div>
-                </div>
+                        )}
+                    </div>
                 </div>
             </div>
             );
