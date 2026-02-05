@@ -567,7 +567,8 @@ const DoctorRounds = () => {
                     </div>
                 </div>
             </div>
-            );
+        </div>
+    );
 };
 
-            export default DoctorRounds;
+export default DoctorRounds;
