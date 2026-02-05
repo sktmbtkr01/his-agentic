@@ -11,6 +11,7 @@ import {
 import { format } from 'date-fns';
 import { motion } from 'framer-motion';
 import nursingService from '../../services/nursing.service';
+import { WelcomeBanner } from '../../components/dashboard';
 
 // --- Reusable Components ---
 
@@ -54,11 +55,11 @@ const StatCard = ({ title, value, subtext, icon: Icon, color, onClick, isLoading
                 <div className={`p-3 rounded-xl mb-4 inline-block ${color} bg-opacity-10 shadow-sm`}>
                     <Icon size={24} className={color.replace('bg-', 'text-')} />
                 </div>
-                <p className="text-slate-500 text-xs font-bold tracking-wider uppercase mb-1">{title}</p>
-                <h3 className="text-4xl font-extrabold text-slate-800 tracking-tight mb-2">
-                    {isLoading ? <div className="h-9 w-20 bg-gray-200/50 animate-pulse rounded"></div> : <CountUp value={value} />}
+                <p className="text-text-secondary text-xs font-bold tracking-wider uppercase mb-1">{title}</p>
+                <h3 className="text-4xl font-extrabold text-text-primary tracking-tight mb-2">
+                    {isLoading ? <div className="h-9 w-20 bg-surface-secondary animate-pulse rounded"></div> : <CountUp value={value} />}
                 </h3>
-                <div className="flex items-center text-xs font-medium text-slate-500">
+                <div className="flex items-center text-xs font-medium text-text-secondary">
                     {subtext}
                     {onClick && <ChevronRight size={14} className="ml-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />}
                 </div>
@@ -73,10 +74,10 @@ const StatCard = ({ title, value, subtext, icon: Icon, color, onClick, isLoading
 // Alert Severity Badge
 const SeverityBadge = ({ severity }) => {
     const styles = {
-        'critical': 'bg-red-50 text-red-600 border-red-100',
-        'high': 'bg-orange-50 text-orange-600 border-orange-100',
-        'medium': 'bg-amber-50 text-amber-600 border-amber-100',
-        'low': 'bg-blue-50 text-blue-600 border-blue-100'
+        'critical': 'bg-red-500/10 text-red-500 border-red-500/20',
+        'high': 'bg-orange-500/10 text-orange-500 border-orange-500/20',
+        'medium': 'bg-amber-500/10 text-amber-500 border-amber-500/20',
+        'low': 'bg-blue-500/10 text-blue-500 border-blue-500/20'
     };
     return (
         <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider border ${styles[severity] || styles['medium']}`}>
@@ -149,56 +150,41 @@ const NurseDashboard = () => {
 
     return (
         <div className="min-h-screen pb-12 max-w-7xl mx-auto">
-            {/* Header Section */}
-            <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div>
-                    <div className="flex items-center gap-2 text-gray-500 text-sm font-medium mb-1">
-                        <span>{format(currentTime, 'EEEE, d MMMM yyyy')}</span>
-                        <span>•</span>
-                        <Clock size={14} />
-                        <span>{format(currentTime, 'h:mm a')}</span>
-                    </div>
-                    <h1 className="text-3xl font-bold text-slate-800">
-                        {greeting}, <span className="text-teal-600">{user?.name?.split(' ')[0] || 'Nurse'}</span> 💉
-                    </h1>
-                    <p className="text-gray-500 mt-1">
-                        {currentShift
-                            ? `Your ${currentShift.shiftType} shift is active • Started at ${format(new Date(currentShift.actualStartTime), 'h:mm a')}`
-                            : 'Start your shift to begin caring for patients.'
-                        }
-                    </p>
-                </div>
+            {/* Premium Welcome Banner */}
+            <WelcomeBanner
+                userName={user?.name?.split(' ')[0] || 'Nurse'}
+                role="nurse"
+                onRefresh={handleRefresh}
+                isRefreshing={loading}
+                lastUpdated={new Date()}
+                subtitle={currentShift
+                    ? `Your ${currentShift.shiftType} shift is active • Started at ${format(new Date(currentShift.actualStartTime), 'h:mm a')}`
+                    : 'Start your shift to begin caring for patients.'
+                }
+            />
 
-                <div className="flex items-center gap-3">
-                    <button
-                        onClick={handleRefresh}
-                        disabled={loading}
-                        className="p-3 bg-white border border-gray-200 rounded-xl text-gray-600 hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm active:scale-95 disabled:opacity-50"
-                        title="Refresh Data"
-                    >
-                        <RefreshCw size={20} className={loading ? 'animate-spin' : ''} />
-                    </button>
-                    <button
-                        onClick={() => navigate('/nursing')}
-                        className="px-5 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all shadow-lg shadow-slate-200 inline-flex items-center gap-2"
-                    >
-                        {currentShift ? 'Go to Nursing Station' : 'Start Shift'} <ArrowRight size={18} />
-                    </button>
-                </div>
-            </header>
+            {/* Quick Action Button */}
+            <div className="flex justify-end mt-4 mb-6">
+                <button
+                    onClick={() => navigate('/nursing')}
+                    className="px-5 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all shadow-lg shadow-slate-200 inline-flex items-center gap-2"
+                >
+                    {currentShift ? 'Go to Nursing Station' : 'Start Shift'} <ArrowRight size={18} />
+                </button>
+            </div>
 
             {/* No Active Shift State */}
             {!loading && !currentShift && (
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl border border-teal-100 p-12 text-center mb-8"
+                    className="bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-3xl border border-teal-500/20 p-12 text-center mb-8"
                 >
-                    <div className="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <LogIn size={36} className="text-teal-600" />
+                    <div className="w-20 h-20 bg-teal-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <LogIn size={36} className="text-teal-500" />
                     </div>
-                    <h2 className="text-2xl font-bold text-slate-800 mb-2">No Active Shift</h2>
-                    <p className="text-gray-500 mb-6 max-w-md mx-auto">
+                    <h2 className="text-2xl font-bold text-text-primary mb-2">No Active Shift</h2>
+                    <p className="text-text-secondary mb-6 max-w-md mx-auto">
                         You don't have an active shift right now. Start your shift to see your assigned patients and tasks.
                     </p>
                     <button
@@ -267,14 +253,14 @@ const NurseDashboard = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
-                            className="lg:col-span-2 bg-white rounded-3xl border border-gray-100 p-6 shadow-sm flex flex-col"
+                            className="lg:col-span-2 bg-surface rounded-3xl border border-border p-6 shadow-sm flex flex-col"
                         >
                             <div className="flex items-center justify-between mb-6">
                                 <div>
-                                    <h3 className="font-bold text-xl text-slate-800 flex items-center gap-2">
+                                    <h3 className="font-bold text-xl text-text-primary flex items-center gap-2">
                                         <Stethoscope className="text-teal-500" size={20} /> My Patients
                                     </h3>
-                                    <p className="text-sm text-gray-400">Patients assigned to your shift</p>
+                                    <p className="text-sm text-text-muted">Patients assigned to your shift</p>
                                 </div>
                                 <button onClick={() => navigate('/nursing')} className="text-sm font-bold text-teal-600 hover:text-teal-700 flex items-center gap-1">
                                     View All <ChevronRight size={16} />
@@ -284,11 +270,11 @@ const NurseDashboard = () => {
                             <div className="flex-1 overflow-hidden">
                                 {assignedPatients.length === 0 ? (
                                     <div className="h-64 flex flex-col items-center justify-center text-center">
-                                        <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mb-4 text-slate-300">
+                                        <div className="w-16 h-16 bg-surface-secondary rounded-full flex items-center justify-center mb-4 text-text-muted">
                                             <User size={32} />
                                         </div>
-                                        <h4 className="text-slate-600 font-bold">No patients assigned</h4>
-                                        <p className="text-slate-400 text-sm">Patients will appear here once assigned to your shift.</p>
+                                        <h4 className="text-text-secondary font-bold">No patients assigned</h4>
+                                        <p className="text-text-muted text-sm">Patients will appear here once assigned to your shift.</p>
                                     </div>
                                 ) : (
                                     <div className="space-y-3">
@@ -296,17 +282,17 @@ const NurseDashboard = () => {
                                             <div
                                                 key={assignment._id || idx}
                                                 onClick={() => navigate('/nursing')}
-                                                className="group p-4 rounded-xl border border-gray-100 hover:border-teal-100 bg-white hover:bg-teal-50/30 transition-all cursor-pointer flex items-center justify-between"
+                                                className="group p-4 rounded-xl border border-border hover:border-teal-500/30 bg-surface hover:bg-teal-500/5 transition-all cursor-pointer flex items-center justify-between"
                                             >
                                                 <div className="flex items-center gap-4">
                                                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white font-bold text-sm">
                                                         {assignment.patient?.firstName?.[0] || '?'}{assignment.patient?.lastName?.[0] || '?'}
                                                     </div>
                                                     <div>
-                                                        <h4 className="font-bold text-slate-700 group-hover:text-teal-700 transition-colors">
+                                                        <h4 className="font-bold text-text-primary group-hover:text-teal-500 transition-colors">
                                                             {assignment.patient?.firstName} {assignment.patient?.lastName}
                                                         </h4>
-                                                        <div className="flex items-center gap-2 text-xs text-slate-500">
+                                                        <div className="flex items-center gap-2 text-xs text-text-secondary">
                                                             <span className="font-mono">{assignment.patient?.patientId || 'N/A'}</span>
                                                             <span>•</span>
                                                             <span>Bed: {assignment.bed?.bedNumber || 'N/A'}</span>
@@ -317,20 +303,20 @@ const NurseDashboard = () => {
                                                     <div className="flex gap-1">
                                                         <button
                                                             onClick={(e) => { e.stopPropagation(); navigate('/nursing'); }}
-                                                            className="p-2 bg-pink-50 text-pink-600 rounded-lg hover:bg-pink-100 transition-colors"
+                                                            className="p-2 bg-pink-500/10 text-pink-500 rounded-lg hover:bg-pink-500/20 transition-colors"
                                                             title="Record Vitals"
                                                         >
                                                             <Heart size={16} />
                                                         </button>
                                                         <button
                                                             onClick={(e) => { e.stopPropagation(); navigate('/nursing'); }}
-                                                            className="p-2 bg-purple-50 text-purple-600 rounded-lg hover:bg-purple-100 transition-colors"
+                                                            className="p-2 bg-purple-500/10 text-purple-500 rounded-lg hover:bg-purple-500/20 transition-colors"
                                                             title="Medications"
                                                         >
                                                             <Pill size={16} />
                                                         </button>
                                                     </div>
-                                                    <ChevronRight size={18} className="text-gray-300 group-hover:text-teal-400 group-hover:translate-x-1 transition-all" />
+                                                    <ChevronRight size={18} className="text-text-muted group-hover:text-teal-500 group-hover:translate-x-1 transition-all" />
                                                 </div>
                                             </div>
                                         ))}
@@ -381,15 +367,15 @@ const NurseDashboard = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.6 }}
-                                className="bg-white rounded-3xl border border-gray-100 p-6 shadow-sm"
+                                className="bg-surface rounded-3xl border border-border p-6 shadow-sm"
                             >
-                                <h4 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
+                                <h4 className="font-bold text-text-primary mb-4 flex items-center gap-2">
                                     <Bell size={18} className="text-red-500" />
                                     Active Alerts
                                 </h4>
                                 {alerts.length === 0 ? (
-                                    <div className="text-center py-4 text-slate-400 text-sm flex flex-col items-center">
-                                        <CheckCircle size={24} className="text-emerald-400 mb-2" />
+                                    <div className="text-center py-4 text-text-muted text-sm flex flex-col items-center">
+                                        <CheckCircle size={24} className="text-emerald-500 mb-2" />
                                         No active alerts
                                     </div>
                                 ) : (
@@ -397,13 +383,13 @@ const NurseDashboard = () => {
                                         {alerts.map((alert, idx) => (
                                             <div
                                                 key={alert._id || idx}
-                                                className="p-3 bg-red-50 border border-red-100 rounded-xl text-sm"
+                                                className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-sm"
                                             >
                                                 <div className="flex justify-between items-start mb-1">
-                                                    <p className="font-medium text-red-800 flex-1 line-clamp-1">{alert.title || 'Alert'}</p>
+                                                    <p className="font-medium text-red-500 flex-1 line-clamp-1">{alert.title || 'Alert'}</p>
                                                     <SeverityBadge severity={alert.severity} />
                                                 </div>
-                                                <p className="text-xs text-red-600">
+                                                <p className="text-xs text-red-400">
                                                     {alert.patient?.firstName} {alert.patient?.lastName}
                                                 </p>
                                             </div>
@@ -417,24 +403,24 @@ const NurseDashboard = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.7 }}
-                                className="bg-white rounded-3xl border border-gray-100 p-6 shadow-sm"
+                                className="bg-surface rounded-3xl border border-border p-6 shadow-sm"
                             >
-                                <h4 className="font-bold text-slate-800 mb-4">Quick Actions</h4>
+                                <h4 className="font-bold text-text-primary mb-4">Quick Actions</h4>
                                 <div className="space-y-2">
-                                    <button onClick={() => navigate('/nursing')} className="w-full p-3 text-left rounded-xl hover:bg-slate-50 transition-colors flex items-center gap-3 text-sm font-medium text-slate-600 hover:text-slate-900 border border-transparent hover:border-slate-200">
-                                        <div className="p-2 bg-pink-50 text-pink-600 rounded-lg">
+                                    <button onClick={() => navigate('/nursing')} className="w-full p-3 text-left rounded-xl hover:bg-surface-highlight transition-colors flex items-center gap-3 text-sm font-medium text-text-secondary hover:text-text-primary border border-transparent hover:border-border">
+                                        <div className="p-2 bg-pink-500/10 text-pink-500 rounded-lg">
                                             <Heart size={18} />
                                         </div>
                                         Record Vitals
                                     </button>
-                                    <button onClick={() => navigate('/nursing')} className="w-full p-3 text-left rounded-xl hover:bg-slate-50 transition-colors flex items-center gap-3 text-sm font-medium text-slate-600 hover:text-slate-900 border border-transparent hover:border-slate-200">
-                                        <div className="p-2 bg-purple-50 text-purple-600 rounded-lg">
+                                    <button onClick={() => navigate('/nursing')} className="w-full p-3 text-left rounded-xl hover:bg-surface-highlight transition-colors flex items-center gap-3 text-sm font-medium text-text-secondary hover:text-text-primary border border-transparent hover:border-border">
+                                        <div className="p-2 bg-purple-500/10 text-purple-500 rounded-lg">
                                             <Pill size={18} />
                                         </div>
                                         Administer Medication
                                     </button>
-                                    <button onClick={() => navigate('/report-incident')} className="w-full p-3 text-left rounded-xl hover:bg-slate-50 transition-colors flex items-center gap-3 text-sm font-medium text-slate-600 hover:text-slate-900 border border-transparent hover:border-slate-200">
-                                        <div className="p-2 bg-amber-50 text-amber-600 rounded-lg">
+                                    <button onClick={() => navigate('/report-incident')} className="w-full p-3 text-left rounded-xl hover:bg-surface-highlight transition-colors flex items-center gap-3 text-sm font-medium text-text-secondary hover:text-text-primary border border-transparent hover:border-border">
+                                        <div className="p-2 bg-amber-500/10 text-amber-500 rounded-lg">
                                             <AlertTriangle size={18} />
                                         </div>
                                         Report Incident

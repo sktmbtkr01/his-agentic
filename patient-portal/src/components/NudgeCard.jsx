@@ -27,9 +27,9 @@ const NudgeCard = ({ nudge, onRespond }) => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, height: 0 }}
-            className={`p-4 rounded-xl border mb-3 flex items-start gap-4 shadow-sm ${getPriorityColor()}`}
+            className={`p-4 rounded-2xl border mb-3 flex items-start gap-4 shadow-sm transition-shadow hover:shadow-md ${getPriorityColor()}`}
         >
-            <div className="bg-white p-2 rounded-full shadow-sm">
+            <div className={`p-2 rounded-full shadow-sm bg-white`}>
                 {getIcon()}
             </div>
 

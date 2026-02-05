@@ -10,6 +10,7 @@ import {
 import { format } from 'date-fns';
 import { motion } from 'framer-motion';
 import billingService from '../../services/billing.service';
+import { WelcomeBanner } from '../../components/dashboard';
 
 // --- Reusable Components (Local) ---
 
@@ -53,11 +54,11 @@ const StatCard = ({ title, value, subtext, icon: Icon, color, onClick, isLoading
                 <div className={`p-3 rounded-xl mb-4 inline-block ${color} bg-opacity-10 shadow-sm`}>
                     <Icon size={24} className={color.replace('bg-', 'text-')} />
                 </div>
-                <p className="text-slate-500 text-xs font-bold tracking-wider uppercase mb-1">{title}</p>
-                <h3 className="text-4xl font-extrabold text-slate-800 tracking-tight mb-2">
-                    {isLoading ? <div className="h-9 w-20 bg-gray-200/50 animate-pulse rounded"></div> : <CountUp value={value} prefix={prefix} />}
+                <p className="text-text-secondary text-xs font-bold tracking-wider uppercase mb-1">{title}</p>
+                <h3 className="text-4xl font-extrabold text-text-primary tracking-tight mb-2">
+                    {isLoading ? <div className="h-9 w-20 bg-surface-secondary animate-pulse rounded"></div> : <CountUp value={value} prefix={prefix} />}
                 </h3>
-                <div className="flex items-center text-xs font-medium text-slate-500">
+                <div className="flex items-center text-xs font-medium text-text-secondary">
                     {subtext}
                     {onClick && <ChevronRight size={14} className="ml-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />}
                 </div>
@@ -72,20 +73,20 @@ const StatCard = ({ title, value, subtext, icon: Icon, color, onClick, isLoading
 
 // Status Badge
 const StatusBadge = ({ status, paymentStatus }) => {
-    let style = 'bg-gray-50 text-gray-600 border-gray-100';
+    let style = 'bg-surface-secondary text-text-secondary border-border';
     let label = status;
 
     if (status === 'cancelled') {
-        style = 'bg-red-50 text-red-600 border-red-100';
+        style = 'bg-red-500/10 text-red-500 border-red-500/20';
         label = 'Cancelled';
     } else if (status === 'finalized' && paymentStatus === 'paid') {
-        style = 'bg-emerald-50 text-emerald-600 border-emerald-100';
+        style = 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20';
         label = 'Paid';
     } else if (status === 'finalized') {
-        style = 'bg-blue-50 text-blue-600 border-blue-100';
+        style = 'bg-blue-500/10 text-blue-500 border-blue-500/20';
         label = 'Finalized';
     } else if (status === 'draft') {
-        style = 'bg-amber-50 text-amber-600 border-amber-100';
+        style = 'bg-amber-500/10 text-amber-500 border-amber-500/20';
         label = 'Draft';
     }
 
@@ -155,38 +156,25 @@ const BillingDashboard = () => {
 
     return (
         <div className="min-h-screen pb-12 max-w-7xl mx-auto">
-            {/* Header Section */}
-            <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div>
-                    <div className="flex items-center gap-2 text-gray-500 text-sm font-medium mb-1">
-                        <span>{format(currentTime, 'EEEE, d MMMM yyyy')}</span>
-                        <span>•</span>
-                        <Clock size={14} />
-                        <span>{format(currentTime, 'h:mm a')}</span>
-                    </div>
-                    <h1 className="text-3xl font-bold text-slate-800">
-                        {greeting}, <span className="text-indigo-600">{user?.name?.split(' ')[0] || 'Billing Staff'}</span> 💰
-                    </h1>
-                    <p className="text-gray-500 mt-1">Manage bills, collect payments, and track revenue.</p>
-                </div>
+            {/* Premium Welcome Banner */}
+            <WelcomeBanner
+                userName={user?.name?.split(' ')[0] || 'Billing Staff'}
+                role="billing"
+                onRefresh={handleRefresh}
+                isRefreshing={loading}
+                lastUpdated={new Date()}
+                subtitle="Manage bills, collect payments, and track revenue."
+            />
 
-                <div>
-                    <button
-                        onClick={handleRefresh}
-                        disabled={loading}
-                        className="p-3 bg-white border border-gray-200 rounded-xl text-gray-600 hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm active:scale-95 disabled:opacity-50"
-                        title="Refresh Data"
-                    >
-                        <RefreshCw size={20} className={loading ? 'animate-spin' : ''} />
-                    </button>
-                    <button
-                        onClick={() => navigate('/billing')}
-                        className="ml-3 px-5 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all shadow-lg shadow-slate-200 inline-flex items-center gap-2"
-                    >
-                        Go to Billing <ArrowRight size={18} />
-                    </button>
-                </div>
-            </header>
+            {/* Quick Action Button */}
+            <div className="flex justify-end mt-4 mb-6">
+                <button
+                    onClick={() => navigate('/billing')}
+                    className="px-5 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all shadow-lg shadow-slate-200 inline-flex items-center gap-2"
+                >
+                    Go to Billing <ArrowRight size={18} />
+                </button>
+            </div>
 
             {/* Stats Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -243,14 +231,14 @@ const BillingDashboard = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="lg:col-span-2 bg-white rounded-3xl border border-gray-100 p-6 shadow-sm flex flex-col"
+                    className="lg:col-span-2 bg-surface rounded-3xl border border-border p-6 shadow-sm flex flex-col"
                 >
                     <div className="flex items-center justify-between mb-6">
                         <div>
-                            <h3 className="font-bold text-xl text-slate-800 flex items-center gap-2">
+                            <h3 className="font-bold text-xl text-text-primary flex items-center gap-2">
                                 <FileText className="text-blue-500" size={20} /> Recent Bills
                             </h3>
-                            <p className="text-sm text-gray-400">Latest billing activity</p>
+                            <p className="text-sm text-text-muted">Latest billing activity</p>
                         </div>
                         <button onClick={() => navigate('/billing')} className="text-sm font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1">
                             View All <ChevronRight size={16} />
@@ -260,11 +248,11 @@ const BillingDashboard = () => {
                     <div className="flex-1 overflow-hidden">
                         {recentBills.length === 0 ? (
                             <div className="h-64 flex flex-col items-center justify-center text-center">
-                                <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mb-4 text-slate-300">
+                                <div className="w-16 h-16 bg-surface-secondary rounded-full flex items-center justify-center mb-4 text-text-muted">
                                     <Receipt size={32} />
                                 </div>
-                                <h4 className="text-slate-600 font-bold">No bills yet</h4>
-                                <p className="text-slate-400 text-sm">Start creating bills to see them here.</p>
+                                <h4 className="text-text-secondary font-bold">No bills yet</h4>
+                                <p className="text-text-muted text-sm">Start creating bills to see them here.</p>
                             </div>
                         ) : (
                             <div className="space-y-3">
@@ -272,17 +260,17 @@ const BillingDashboard = () => {
                                     <div
                                         key={bill._id || idx}
                                         onClick={() => navigate('/billing')}
-                                        className="group p-4 rounded-xl border border-gray-100 hover:border-blue-100 bg-white hover:bg-blue-50/30 transition-all cursor-pointer flex items-center justify-between"
+                                        className="group p-4 rounded-xl border border-border hover:border-blue-500/30 bg-surface hover:bg-blue-500/5 transition-all cursor-pointer flex items-center justify-between"
                                     >
                                         <div className="flex items-center gap-4">
-                                            <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-500 group-hover:bg-white group-hover:text-blue-600 transition-colors">
+                                            <div className="w-10 h-10 rounded-full bg-surface-secondary flex items-center justify-center text-xs font-bold text-text-secondary group-hover:bg-surface group-hover:text-blue-500 transition-colors">
                                                 {bill.patient?.firstName?.[0] || '?'}{bill.patient?.lastName?.[0] || '?'}
                                             </div>
                                             <div>
-                                                <h4 className="font-bold text-slate-700 group-hover:text-blue-700 transition-colors">
+                                                <h4 className="font-bold text-text-primary group-hover:text-blue-500 transition-colors">
                                                     {bill.patient?.firstName} {bill.patient?.lastName}
                                                 </h4>
-                                                <div className="flex items-center gap-2 text-xs text-slate-500">
+                                                <div className="flex items-center gap-2 text-xs text-text-secondary">
                                                     <span className="font-mono">{bill.billNumber || 'N/A'}</span>
                                                     <span>•</span>
                                                     <span>₹{(bill.grandTotal || 0).toLocaleString()}</span>
@@ -291,13 +279,13 @@ const BillingDashboard = () => {
                                         </div>
                                         <div className="flex items-center gap-4">
                                             <div className="text-right hidden sm:block">
-                                                <p className="text-[10px] uppercase text-gray-400 font-bold tracking-wider">Date</p>
-                                                <p className="text-xs font-medium text-slate-600">
+                                                <p className="text-[10px] uppercase text-text-muted font-bold tracking-wider">Date</p>
+                                                <p className="text-xs font-medium text-text-secondary">
                                                     {bill.createdAt ? format(new Date(bill.createdAt), 'dd MMM') : 'N/A'}
                                                 </p>
                                             </div>
                                             <StatusBadge status={bill.status} paymentStatus={bill.paymentStatus} />
-                                            <ChevronRight size={18} className="text-gray-300 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+                                            <ChevronRight size={18} className="text-text-muted group-hover:text-blue-500 group-hover:translate-x-1 transition-all" />
                                         </div>
                                     </div>
                                 ))}
@@ -337,15 +325,15 @@ const BillingDashboard = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6 }}
-                        className="bg-white rounded-3xl border border-gray-100 p-6 shadow-sm"
+                        className="bg-surface rounded-3xl border border-border p-6 shadow-sm"
                     >
-                        <h4 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <h4 className="font-bold text-text-primary mb-4 flex items-center gap-2">
                             <AlertTriangle size={18} className="text-amber-500" />
                             Pending Payments
                         </h4>
                         {pendingBills.length === 0 ? (
-                            <div className="text-center py-4 text-slate-400 text-sm flex flex-col items-center">
-                                <CheckCircle size={24} className="text-emerald-400 mb-2" />
+                            <div className="text-center py-4 text-text-muted text-sm flex flex-col items-center">
+                                <CheckCircle size={24} className="text-emerald-500 mb-2" />
                                 No pending payments
                             </div>
                         ) : (
@@ -354,17 +342,17 @@ const BillingDashboard = () => {
                                     <div
                                         key={bill._id || idx}
                                         onClick={() => navigate('/billing')}
-                                        className="p-3 bg-amber-50 border border-amber-100 rounded-xl text-sm cursor-pointer hover:bg-amber-100 transition-colors"
+                                        className="p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl text-sm cursor-pointer hover:bg-amber-500/20 transition-colors"
                                     >
                                         <div className="flex justify-between items-center">
-                                            <p className="font-medium text-amber-800">
+                                            <p className="font-medium text-amber-500">
                                                 {bill.patient?.firstName} {bill.patient?.lastName}
                                             </p>
-                                            <p className="font-bold text-amber-700">
+                                            <p className="font-bold text-amber-600">
                                                 ₹{((bill.grandTotal || 0) - (bill.paidAmount || 0)).toLocaleString()}
                                             </p>
                                         </div>
-                                        <p className="text-xs text-amber-600 mt-0.5">
+                                        <p className="text-xs text-amber-400 mt-0.5">
                                             Bill: {bill.billNumber}
                                         </p>
                                     </div>
@@ -378,24 +366,24 @@ const BillingDashboard = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.7 }}
-                        className="bg-white rounded-3xl border border-gray-100 p-6 shadow-sm"
+                        className="bg-surface rounded-3xl border border-border p-6 shadow-sm"
                     >
-                        <h4 className="font-bold text-slate-800 mb-4">Quick Actions</h4>
+                        <h4 className="font-bold text-text-primary mb-4">Quick Actions</h4>
                         <div className="space-y-2">
-                            <button onClick={() => navigate('/billing')} className="w-full p-3 text-left rounded-xl hover:bg-slate-50 transition-colors flex items-center gap-3 text-sm font-medium text-slate-600 hover:text-slate-900 border border-transparent hover:border-slate-200">
-                                <div className="p-2 bg-blue-50 text-blue-600 rounded-lg">
+                            <button onClick={() => navigate('/billing')} className="w-full p-3 text-left rounded-xl hover:bg-surface-highlight transition-colors flex items-center gap-3 text-sm font-medium text-text-secondary hover:text-text-primary border border-transparent hover:border-border">
+                                <div className="p-2 bg-blue-500/10 text-blue-500 rounded-lg">
                                     <Receipt size={18} />
                                 </div>
                                 Create New Bill
                             </button>
-                            <button onClick={() => navigate('/billing')} className="w-full p-3 text-left rounded-xl hover:bg-slate-50 transition-colors flex items-center gap-3 text-sm font-medium text-slate-600 hover:text-slate-900 border border-transparent hover:border-slate-200">
-                                <div className="p-2 bg-emerald-50 text-emerald-600 rounded-lg">
+                            <button onClick={() => navigate('/billing')} className="w-full p-3 text-left rounded-xl hover:bg-surface-highlight transition-colors flex items-center gap-3 text-sm font-medium text-text-secondary hover:text-text-primary border border-transparent hover:border-border">
+                                <div className="p-2 bg-emerald-500/10 text-emerald-500 rounded-lg">
                                     <CreditCard size={18} />
                                 </div>
                                 Collect Payment
                             </button>
-                            <button onClick={() => navigate('/insurance')} className="w-full p-3 text-left rounded-xl hover:bg-slate-50 transition-colors flex items-center gap-3 text-sm font-medium text-slate-600 hover:text-slate-900 border border-transparent hover:border-slate-200">
-                                <div className="p-2 bg-purple-50 text-purple-600 rounded-lg">
+                            <button onClick={() => navigate('/insurance')} className="w-full p-3 text-left rounded-xl hover:bg-surface-highlight transition-colors flex items-center gap-3 text-sm font-medium text-text-secondary hover:text-text-primary border border-transparent hover:border-border">
+                                <div className="p-2 bg-purple-500/10 text-purple-500 rounded-lg">
                                     <FileText size={18} />
                                 </div>
                                 Manage Insurance Claims

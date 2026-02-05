@@ -86,6 +86,9 @@ import ProcedureCodes from './pages/coding/ProcedureCodes';
 // Voice Assistant
 import VoiceAssistant from './pages/voice/VoiceAssistant';
 
+// Dashboard Demo (Phase 2 Components)
+import DashboardDemo from './pages/dashboard/DashboardDemo';
+
 function App() {
   return (
     <Provider store={store}>
@@ -96,6 +99,7 @@ function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/dashboard-demo" element={<DashboardDemo />} />
 
             {/* Clinical Dashboard Routes */}
             <Route path="/dashboard" element={

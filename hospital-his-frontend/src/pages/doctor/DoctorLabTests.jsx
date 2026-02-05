@@ -140,37 +140,37 @@ const DoctorLabTests = () => {
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                    <div className="p-3 bg-purple-100 rounded-xl text-purple-600">
+                    <div className="p-3 bg-purple-500/10 rounded-xl text-purple-500">
                         <FlaskConical size={24} />
                     </div>
                     <div>
-                        <h1 className="text-2xl font-bold text-slate-800">Lab Test Results</h1>
-                        <p className="text-gray-500 text-sm">View completed lab tests with AI summaries</p>
+                        <h1 className="text-2xl font-bold text-text-primary">Lab Test Results</h1>
+                        <p className="text-text-secondary text-sm">View completed lab tests with AI summaries</p>
                     </div>
                 </div>
                 <button
                     onClick={fetchCompletedTests}
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-surface-secondary hover:bg-surface-highlight text-text-secondary rounded-lg transition-colors"
                 >
                     <RefreshCw size={16} /> Refresh
                 </button>
             </div>
 
             {/* Tests List */}
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+            <div className="bg-surface rounded-2xl border border-border shadow-sm overflow-hidden">
                 {loading ? (
                     <div className="p-12 text-center">
                         <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-purple-600 border-t-transparent mb-4"></div>
-                        <p className="text-gray-500">Loading completed tests...</p>
+                        <p className="text-text-secondary">Loading completed tests...</p>
                     </div>
                 ) : completedTests.length === 0 ? (
                     <div className="p-12 text-center">
-                        <FlaskConical size={40} className="mx-auto text-gray-300 mb-4" />
-                        <p className="text-gray-500">No completed lab tests found</p>
+                        <FlaskConical size={40} className="mx-auto text-text-muted mb-4" />
+                        <p className="text-text-secondary">No completed lab tests found</p>
                     </div>
                 ) : (
                     <table className="w-full text-left">
-                        <thead className="bg-gray-50 text-gray-500 text-xs uppercase font-semibold">
+                        <thead className="bg-surface-secondary text-text-secondary text-xs uppercase font-semibold">
                             <tr>
                                 <th className="px-6 py-4">Test #</th>
                                 <th className="px-6 py-4">Patient</th>
@@ -180,34 +180,34 @@ const DoctorLabTests = () => {
                                 <th className="px-6 py-4 text-right">Action</th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-gray-100">
+                        <tbody className="divide-y divide-border">
                             {completedTests.map((test) => (
-                                <tr key={test._id} className="hover:bg-gray-50/50 transition-colors">
-                                    <td className="px-6 py-4 font-mono text-sm text-slate-600">{test.testNumber}</td>
+                                <tr key={test._id} className="hover:bg-surface-highlight transition-colors">
+                                    <td className="px-6 py-4 font-mono text-sm text-text-secondary">{test.testNumber}</td>
                                     <td className="px-6 py-4">
                                         <div className="flex items-center gap-2">
-                                            <div className="w-8 h-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-xs font-bold">
+                                            <div className="w-8 h-8 rounded-full bg-purple-500/10 text-purple-500 flex items-center justify-center text-xs font-bold">
                                                 {test.patient?.firstName?.[0]}{test.patient?.lastName?.[0]}
                                             </div>
                                             <div>
-                                                <div className="font-medium text-slate-700">
+                                                <div className="font-medium text-text-primary">
                                                     {test.patient?.firstName} {test.patient?.lastName}
                                                 </div>
-                                                <div className="text-xs text-gray-400">{test.patient?.patientId}</div>
+                                                <div className="text-xs text-text-muted">{test.patient?.patientId}</div>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="px-6 py-4 font-medium text-slate-700">{test.test?.testName || 'Unknown'}</td>
-                                    <td className="px-6 py-4 text-sm text-gray-500">
+                                    <td className="px-6 py-4 font-medium text-text-primary">{test.test?.testName || 'Unknown'}</td>
+                                    <td className="px-6 py-4 text-sm text-text-secondary">
                                         {test.completedAt ? new Date(test.completedAt).toLocaleDateString('en-IN') : 'N/A'}
                                     </td>
                                     <td className="px-6 py-4">
                                         {test.reportPdf ? (
-                                            <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700 flex items-center gap-1 w-fit">
+                                            <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-green-500/10 text-green-500 flex items-center gap-1 w-fit">
                                                 <FileText size={12} /> PDF Available
                                             </span>
                                         ) : (
-                                            <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-500">
+                                            <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-surface-secondary text-text-secondary">
                                                 No PDF
                                             </span>
                                         )}
@@ -242,7 +242,7 @@ const DoctorLabTests = () => {
                             initial={{ scale: 0.95, y: 20 }}
                             animate={{ scale: 1, y: 0 }}
                             exit={{ scale: 0.95, y: 20 }}
-                            className="bg-white rounded-2xl shadow-xl w-full max-w-5xl relative z-10 overflow-hidden max-h-[90vh] overflow-y-auto"
+                            className="bg-surface rounded-2xl shadow-xl w-full max-w-5xl relative z-10 overflow-hidden max-h-[90vh] overflow-y-auto"
                         >
                             {/* Header */}
                             <div className="bg-purple-600 p-6 text-white flex justify-between items-center sticky top-0 z-10">
@@ -261,28 +261,28 @@ const DoctorLabTests = () => {
 
                             <div className="p-6">
                                 {/* Patient Info */}
-                                <div className="flex items-center gap-3 mb-6 p-4 bg-slate-50 rounded-xl">
-                                    <div className="w-12 h-12 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold">
+                                <div className="flex items-center gap-3 mb-6 p-4 bg-surface-secondary rounded-xl">
+                                    <div className="w-12 h-12 rounded-full bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold">
                                         {selectedTest.patient?.firstName?.[0]}{selectedTest.patient?.lastName?.[0]}
                                     </div>
                                     <div>
-                                        <div className="font-bold text-slate-800">
+                                        <div className="font-bold text-text-primary">
                                             {selectedTest.patient?.firstName} {selectedTest.patient?.lastName}
                                         </div>
-                                        <div className="text-sm text-gray-500">{selectedTest.patient?.patientId}</div>
+                                        <div className="text-sm text-text-secondary">{selectedTest.patient?.patientId}</div>
                                     </div>
                                 </div>
 
                                 {/* Test Results */}
                                 {selectedTest.results && selectedTest.results.length > 0 && (
                                     <div className="mb-6">
-                                        <h3 className="font-bold text-slate-700 mb-3 flex items-center gap-2">
+                                        <h3 className="font-bold text-text-primary mb-3 flex items-center gap-2">
                                             📊 Test Parameters
                                         </h3>
-                                        <div className="bg-gray-50 rounded-xl p-4">
+                                        <div className="bg-surface-secondary rounded-xl p-4">
                                             <table className="w-full text-sm">
                                                 <thead>
-                                                    <tr className="text-gray-500 text-xs uppercase">
+                                                    <tr className="text-text-secondary text-xs uppercase">
                                                         <th className="text-left py-2">Parameter</th>
                                                         <th className="text-left py-2">Value</th>
                                                         <th className="text-left py-2">Unit</th>
@@ -292,13 +292,13 @@ const DoctorLabTests = () => {
                                                 </thead>
                                                 <tbody>
                                                     {selectedTest.results.map((result, idx) => (
-                                                        <tr key={idx} className="border-t border-gray-200">
-                                                            <td className="py-2 font-medium text-slate-700">{result.parameter}</td>
-                                                            <td className={`py-2 ${result.isAbnormal ? 'text-amber-600 font-bold' : ''} ${result.isCritical ? 'text-red-600 font-bold' : ''}`}>
+                                                        <tr key={idx} className="border-t border-border">
+                                                            <td className="py-2 font-medium text-text-primary">{result.parameter}</td>
+                                                            <td className={`py-2 ${result.isAbnormal ? 'text-amber-500 font-bold' : ''} ${result.isCritical ? 'text-red-500 font-bold' : ''}`}>
                                                                 {result.value}
                                                             </td>
-                                                            <td className="py-2 text-gray-500">{result.unit}</td>
-                                                            <td className="py-2 text-gray-500">{result.normalRange}</td>
+                                                            <td className="py-2 text-text-secondary">{result.unit}</td>
+                                                            <td className="py-2 text-text-secondary">{result.normalRange}</td>
                                                             <td className="py-2">
                                                                 {result.isCritical ? (
                                                                     <span className="text-red-600 font-bold">⚠️ Critical</span>
@@ -325,7 +325,7 @@ const DoctorLabTests = () => {
                                 {/* PDF Preview */}
                                 {getPdfUrl() && (
                                     <div className="mb-6">
-                                        <h3 className="font-bold text-slate-700 mb-3 flex items-center gap-2">
+                                        <h3 className="font-bold text-text-primary mb-3 flex items-center gap-2">
                                             <FileText size={18} className="text-red-500" /> Lab Report PDF
                                         </h3>
                                         <a
@@ -341,7 +341,7 @@ const DoctorLabTests = () => {
 
                                 {/* AI Summary Section */}
                                 <div className="mb-6">
-                                    <h3 className="font-bold text-slate-700 mb-3 flex items-center gap-2">
+                                    <h3 className="font-bold text-text-primary mb-3 flex items-center gap-2">
                                         <Bot size={18} className="text-blue-500" /> AI Summary
                                     </h3>
 
@@ -354,9 +354,9 @@ const DoctorLabTests = () => {
                                     </div>
 
                                     {summaryLoading ? (
-                                        <div className="p-8 text-center bg-gray-50 rounded-xl">
+                                        <div className="p-8 text-center bg-surface-secondary rounded-xl">
                                             <Loader size={32} className="mx-auto animate-spin text-blue-500 mb-3" />
-                                            <p className="text-gray-600">Generating AI summary...</p>
+                                            <p className="text-text-secondary">Generating AI summary...</p>
                                         </div>
                                     ) : summaryError ? (
                                         <div className="p-6 bg-red-50 border border-red-200 rounded-xl">
@@ -388,28 +388,28 @@ const DoctorLabTests = () => {
 
                                             {/* Summary Paragraphs */}
                                             {aiSummary.summary && (
-                                                <div className="mb-4 p-4 bg-white rounded-lg">
-                                                    <h4 className="font-semibold text-blue-800 mb-2">Clinical Summary</h4>
-                                                    <p className="text-slate-700 leading-relaxed whitespace-pre-line">{aiSummary.summary}</p>
+                                                <div className="mb-4 p-4 bg-surface rounded-lg">
+                                                    <h4 className="font-semibold text-blue-500 mb-2">Clinical Summary</h4>
+                                                    <p className="text-text-primary leading-relaxed whitespace-pre-line">{aiSummary.summary}</p>
                                                 </div>
                                             )}
 
                                             {/* Legacy format: Key Findings */}
                                             {aiSummary.keyFindings && aiSummary.keyFindings.length > 0 && (
                                                 <div className="mb-4">
-                                                    <h4 className="font-semibold text-blue-800 mb-2">Key Findings</h4>
+                                                    <h4 className="font-semibold text-blue-500 mb-2">Key Findings</h4>
                                                     <div className="space-y-2">
                                                         {aiSummary.keyFindings.map((finding, idx) => (
-                                                            <div key={idx} className="flex items-center gap-3 text-sm bg-white p-3 rounded-lg">
+                                                            <div key={idx} className="flex items-center gap-3 text-sm bg-surface p-3 rounded-lg">
                                                                 <span className={`px-2 py-1 rounded text-xs font-bold ${finding.status === 'high' || finding.status === 'low'
-                                                                    ? 'bg-amber-100 text-amber-700'
-                                                                    : 'bg-green-100 text-green-700'
+                                                                    ? 'bg-amber-500/10 text-amber-500'
+                                                                    : 'bg-green-500/10 text-green-500'
                                                                     }`}>
                                                                     {finding.status?.toUpperCase()}
                                                                 </span>
-                                                                <span className="font-medium text-slate-700">{finding.parameter}:</span>
-                                                                <span className="text-slate-600">{finding.value}</span>
-                                                                {finding.referenceRange && <span className="text-gray-400 text-xs">(Ref: {finding.referenceRange})</span>}
+                                                                <span className="font-medium text-text-primary">{finding.parameter}:</span>
+                                                                <span className="text-text-secondary">{finding.value}</span>
+                                                                {finding.referenceRange && <span className="text-text-muted text-xs">(Ref: {finding.referenceRange})</span>}
                                                             </div>
                                                         ))}
                                                     </div>
@@ -453,23 +453,23 @@ const DoctorLabTests = () => {
 
                                             {/* Legacy: Clinical Notes */}
                                             {aiSummary.clinicalNotes && (
-                                                <div className="p-3 bg-white rounded-lg mt-4">
-                                                    <h4 className="font-semibold text-slate-700 mb-1">Clinical Notes</h4>
-                                                    <p className="text-sm text-slate-600">{aiSummary.clinicalNotes}</p>
+                                                <div className="p-3 bg-surface rounded-lg mt-4">
+                                                    <h4 className="font-semibold text-text-primary mb-1">Clinical Notes</h4>
+                                                    <p className="text-sm text-text-secondary">{aiSummary.clinicalNotes}</p>
                                                 </div>
                                             )}
 
                                             {aiSummary.generatedAt && (
-                                                <p className="text-xs text-gray-400 mt-3">
+                                                <p className="text-xs text-text-muted mt-3">
                                                     Generated: {new Date(aiSummary.generatedAt).toLocaleString()}
                                                     {aiSummary.model && ` • Model: ${aiSummary.model}`}
                                                 </p>
                                             )}
                                         </div>
                                     ) : (
-                                        <div className="p-6 bg-gray-50 rounded-xl text-center">
-                                            <Bot size={40} className="mx-auto text-gray-400 mb-3" />
-                                            <p className="text-gray-600 mb-4">No AI summary generated yet</p>
+                                        <div className="p-6 bg-surface-secondary rounded-xl text-center">
+                                            <Bot size={40} className="mx-auto text-text-muted mb-3" />
+                                            <p className="text-text-secondary mb-4">No AI summary generated yet</p>
                                             {selectedTest.reportPdf ? (
                                                 <button
                                                     onClick={generateAiSummary}
@@ -478,7 +478,7 @@ const DoctorLabTests = () => {
                                                     <Bot size={18} /> Generate AI Summary
                                                 </button>
                                             ) : (
-                                                <p className="text-sm text-gray-500">
+                                                <p className="text-sm text-text-muted">
                                                     Upload a PDF report first to enable AI summary
                                                 </p>
                                             )}
@@ -487,8 +487,8 @@ const DoctorLabTests = () => {
                                 </div>
 
                                 {/* Lab Risk Level Section */}
-                                <div className="mb-6 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                                    <h3 className="font-bold text-slate-700 mb-3 flex items-center gap-2">
+                                <div className="mb-6 p-4 bg-surface-secondary rounded-xl border border-border">
+                                    <h3 className="font-bold text-text-primary mb-3 flex items-center gap-2">
                                         <Shield size={18} className="text-purple-500" /> Set Lab Risk Level
                                         {savedRiskLevel && (
                                             <span className="ml-auto text-xs font-semibold text-green-600 bg-green-100 px-2 py-1 rounded-full flex items-center gap-1">
@@ -496,14 +496,14 @@ const DoctorLabTests = () => {
                                             </span>
                                         )}
                                     </h3>
-                                    <p className="text-sm text-gray-500 mb-3">
+                                    <p className="text-sm text-text-secondary mb-3">
                                         Based on lab results, select the patient's risk level. This will update their OPD risk score.
                                     </p>
                                     <div className="flex items-center gap-3">
                                         <select
                                             value={selectedRiskLevel}
                                             onChange={(e) => { setSelectedRiskLevel(e.target.value); setSavedRiskLevel(null); }}
-                                            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-200 focus:border-purple-500"
+                                            className="flex-1 px-4 py-2 border border-border rounded-lg bg-surface focus:ring-2 focus:ring-purple-200 focus:border-purple-500"
                                         >
                                             <option value="NORMAL">Normal (+0)</option>
                                             <option value="MILD">Mild (+1)</option>
@@ -527,10 +527,10 @@ const DoctorLabTests = () => {
                                 </div>
 
                                 {/* Actions */}
-                                <div className="flex justify-end gap-3 pt-4 border-t">
+                                <div className="flex justify-end gap-3 pt-4 border-t border-border">
                                     <button
                                         onClick={closeModal}
-                                        className="px-6 py-2.5 rounded-xl border border-gray-200 text-gray-600 font-medium hover:bg-gray-50"
+                                        className="px-6 py-2.5 rounded-xl border border-border text-text-secondary font-medium hover:bg-surface-highlight"
                                     >
                                         Close
                                     </button>

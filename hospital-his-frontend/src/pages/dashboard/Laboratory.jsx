@@ -249,10 +249,10 @@ const Laboratory = () => {
 
     const getStatusBadge = (status) => {
         const styles = {
-            'ordered': 'bg-blue-50 text-blue-600 border-blue-100',
-            'sample-collected': 'bg-amber-50 text-amber-600 border-amber-100',
-            'in-progress': 'bg-purple-50 text-purple-600 border-purple-100',
-            'completed': 'bg-emerald-50 text-emerald-600 border-emerald-100',
+            'ordered': 'bg-blue-500/10 text-blue-500 border-blue-500/20',
+            'sample-collected': 'bg-amber-500/10 text-amber-500 border-amber-500/20',
+            'in-progress': 'bg-purple-500/10 text-purple-500 border-purple-500/20',
+            'completed': 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20',
         };
         const labels = {
             'ordered': 'Ordered',
@@ -261,7 +261,7 @@ const Laboratory = () => {
             'completed': 'Completed',
         };
         return (
-            <span className={`px-2.5 py-1 rounded-full text-xs font-bold border ${styles[status] || 'bg-gray-50 text-gray-600'}`}>
+            <span className={`px-2.5 py-1 rounded-full text-xs font-bold border ${styles[status] || 'bg-surface-secondary text-text-secondary'}`}>
                 {labels[status] || status}
             </span>
         );
@@ -272,27 +272,27 @@ const Laboratory = () => {
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                    <div className="p-3 bg-purple-100 rounded-xl text-purple-600">
+                    <div className="p-3 bg-purple-500/10 rounded-xl text-purple-500">
                         <FlaskConical size={24} />
                     </div>
                     <div>
-                        <h1 className="text-2xl font-bold text-slate-800">Laboratory</h1>
-                        <p className="text-gray-500 text-sm">Lab Test Management</p>
+                        <h1 className="text-2xl font-bold text-text-primary">Laboratory</h1>
+                        <p className="text-text-secondary text-sm">Lab Test Management</p>
                     </div>
                 </div>
 
                 {/* Tab Switcher */}
-                <div className="flex p-1 bg-gray-100 rounded-xl">
+                <div className="flex p-1 bg-surface-secondary rounded-xl">
                     <button
                         onClick={() => setActiveTab('queue')}
-                        className={`px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${activeTab === 'queue' ? 'bg-white text-purple-600 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                        className={`px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${activeTab === 'queue' ? 'bg-surface text-purple-500 shadow-sm' : 'text-text-muted hover:text-text-primary'
                             }`}
                     >
                         <Clock size={16} /> Work Queue
                     </button>
                     <button
                         onClick={() => setActiveTab('billing')}
-                        className={`px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${activeTab === 'billing' ? 'bg-white text-purple-600 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                        className={`px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${activeTab === 'billing' ? 'bg-surface text-purple-500 shadow-sm' : 'text-text-muted hover:text-text-primary'
                             }`}
                     >
                         <Receipt size={16} /> Generate Bill
@@ -304,45 +304,45 @@ const Laboratory = () => {
                 <>
                     {/* Stats Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                        <div className="bg-surface p-5 rounded-xl border border-border shadow-sm">
                             <div className="flex items-center gap-3">
-                                <div className="p-2 bg-blue-50 rounded-lg text-blue-500"><Clock size={20} /></div>
+                                <div className="p-2 bg-blue-500/10 rounded-lg text-blue-500"><Clock size={20} /></div>
                                 <div>
-                                    <div className="text-2xl font-bold text-slate-800">{stats.pending}</div>
-                                    <div className="text-xs text-gray-500">Pending Tests</div>
+                                    <div className="text-2xl font-bold text-text-primary">{stats.pending}</div>
+                                    <div className="text-xs text-text-secondary">Pending Tests</div>
                                 </div>
                             </div>
                         </div>
-                        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                        <div className="bg-surface p-5 rounded-xl border border-border shadow-sm">
                             <div className="flex items-center gap-3">
-                                <div className="p-2 bg-emerald-50 rounded-lg text-emerald-500"><CheckCircle size={20} /></div>
+                                <div className="p-2 bg-emerald-500/10 rounded-lg text-emerald-500"><CheckCircle size={20} /></div>
                                 <div>
-                                    <div className="text-2xl font-bold text-slate-800">{stats.completedToday}</div>
-                                    <div className="text-xs text-gray-500">Completed Today</div>
+                                    <div className="text-2xl font-bold text-text-primary">{stats.completedToday}</div>
+                                    <div className="text-xs text-text-secondary">Completed Today</div>
                                 </div>
                             </div>
                         </div>
-                        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                        <div className="bg-surface p-5 rounded-xl border border-border shadow-sm">
                             <div className="flex items-center gap-3">
-                                <div className="p-2 bg-amber-50 rounded-lg text-amber-500"><AlertCircle size={20} /></div>
+                                <div className="p-2 bg-amber-500/10 rounded-lg text-amber-500"><AlertCircle size={20} /></div>
                                 <div>
-                                    <div className="text-2xl font-bold text-slate-800">{queue.filter(q => q.status === 'ordered').length}</div>
-                                    <div className="text-xs text-gray-500">Awaiting Sample</div>
+                                    <div className="text-2xl font-bold text-text-primary">{queue.filter(q => q.status === 'ordered').length}</div>
+                                    <div className="text-xs text-text-secondary">Awaiting Sample</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     {/* Work Queue Table */}
-                    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-                        <div className="p-4 border-b border-gray-100 flex items-center justify-between">
-                            <h2 className="font-bold text-slate-800">Work Queue</h2>
-                            <button onClick={fetchData} className="text-sm text-gray-500 hover:text-primary">Refresh</button>
+                    <div className="bg-surface rounded-2xl border border-border shadow-sm overflow-hidden">
+                        <div className="p-4 border-b border-border flex items-center justify-between">
+                            <h2 className="font-bold text-text-primary">Work Queue</h2>
+                            <button onClick={fetchData} className="text-sm text-text-muted hover:text-primary">Refresh</button>
                         </div>
 
                         <div className="overflow-x-auto">
                             <table className="w-full text-left">
-                                <thead className="bg-gray-50 text-gray-500 text-xs uppercase font-semibold">
+                                <thead className="bg-surface-secondary text-text-muted text-xs uppercase font-semibold">
                                     <tr>
                                         <th className="px-6 py-4">Test #</th>
                                         <th className="px-6 py-4">Patient</th>
@@ -352,29 +352,29 @@ const Laboratory = () => {
                                         <th className="px-6 py-4 text-right">Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody className="divide-y divide-gray-100">
+                                <tbody className="divide-y divide-border">
                                     {loading ? (
-                                        <tr><td colSpan="6" className="text-center py-10 text-gray-400">Loading queue...</td></tr>
+                                        <tr><td colSpan="6" className="text-center py-10 text-text-muted">Loading queue...</td></tr>
                                     ) : queue.length === 0 ? (
-                                        <tr><td colSpan="6" className="text-center py-10 text-gray-400">No pending tests in queue.</td></tr>
+                                        <tr><td colSpan="6" className="text-center py-10 text-text-muted">No pending tests in queue.</td></tr>
                                     ) : (
                                         queue.map((order) => (
-                                            <tr key={order._id} className="hover:bg-gray-50/50 transition-colors">
-                                                <td className="px-6 py-4 font-mono text-sm text-slate-600">{order.testNumber}</td>
+                                            <tr key={order._id} className="hover:bg-surface-highlight/50 transition-colors">
+                                                <td className="px-6 py-4 font-mono text-sm text-text-secondary">{order.testNumber}</td>
                                                 <td className="px-6 py-4">
                                                     <div className="flex items-center gap-2">
-                                                        <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-500">
+                                                        <div className="w-8 h-8 rounded-full bg-surface-secondary flex items-center justify-center text-xs font-bold text-text-muted">
                                                             {order.patient?.firstName?.[0]}{order.patient?.lastName?.[0]}
                                                         </div>
                                                         <div>
-                                                            <div className="font-medium text-slate-700">{order.patient?.firstName} {order.patient?.lastName}</div>
-                                                            <div className="text-xs text-gray-400">{order.patient?.patientId}</div>
+                                                            <div className="font-medium text-text-primary">{order.patient?.firstName} {order.patient?.lastName}</div>
+                                                            <div className="text-xs text-text-muted">{order.patient?.patientId}</div>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td className="px-6 py-4 font-medium text-slate-700">{order.test?.testName || 'Unknown Test'}</td>
+                                                <td className="px-6 py-4 font-medium text-text-primary">{order.test?.testName || 'Unknown Test'}</td>
                                                 <td className="px-6 py-4">{getStatusBadge(order.status)}</td>
-                                                <td className="px-6 py-4 text-sm text-gray-500">{new Date(order.createdAt).toLocaleDateString()}</td>
+                                                <td className="px-6 py-4 text-sm text-text-secondary">{new Date(order.createdAt).toLocaleDateString()}</td>
                                                 <td className="px-6 py-4 text-right">
                                                     {order.status === 'ordered' && (
                                                         <button
@@ -411,7 +411,7 @@ const Laboratory = () => {
                                 />
                                 <motion.div
                                     initial={{ scale: 0.95, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.95, y: 20 }}
-                                    className="bg-white rounded-2xl shadow-xl w-full max-w-2xl relative z-10 overflow-hidden max-h-[90vh] overflow-y-auto"
+                                    className="bg-surface rounded-2xl shadow-xl w-full max-w-2xl relative z-10 overflow-hidden max-h-[90vh] overflow-y-auto"
                                 >
                                     <div className="bg-purple-600 p-6 text-white flex justify-between items-center sticky top-0 z-10">
                                         <div>
@@ -427,29 +427,29 @@ const Laboratory = () => {
 
                                     <div className="p-6">
                                         {/* Patient Info */}
-                                        <div className="flex items-center gap-3 mb-6 p-4 bg-slate-50 rounded-xl">
-                                            <div className="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                        <div className="flex items-center gap-3 mb-6 p-4 bg-surface-secondary rounded-xl">
+                                            <div className="w-12 h-12 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center font-bold">
                                                 {selectedOrder.patient?.firstName?.[0]}{selectedOrder.patient?.lastName?.[0]}
                                             </div>
                                             <div>
-                                                <div className="font-bold text-slate-800">{selectedOrder.patient?.firstName} {selectedOrder.patient?.lastName}</div>
-                                                <div className="text-sm text-gray-500">{selectedOrder.patient?.patientId}</div>
+                                                <div className="font-bold text-text-primary">{selectedOrder.patient?.firstName} {selectedOrder.patient?.lastName}</div>
+                                                <div className="text-sm text-text-secondary">{selectedOrder.patient?.patientId}</div>
                                             </div>
                                         </div>
 
                                         {/* Parameters Form */}
                                         <div className="space-y-4 mb-6">
-                                            <h3 className="font-bold text-slate-700 text-sm uppercase tracking-wider">Test Parameters</h3>
+                                            <h3 className="font-bold text-text-primary text-sm uppercase tracking-wider">Test Parameters</h3>
                                             {resultData.length === 0 ? (
-                                                <p className="text-gray-500 text-sm">No parameters defined for this test. Please add manually.</p>
+                                                <p className="text-text-secondary text-sm">No parameters defined for this test. Please add manually.</p>
                                             ) : (
                                                 resultData.map((param, idx) => (
-                                                    <div key={idx} className={`grid grid-cols-12 gap-3 items-center p-3 rounded-lg border transition-all duration-300 ${param.isCritical ? 'bg-red-100 border-red-300 shadow-[0_0_10px_rgba(239,68,68,0.3)]' :
-                                                        param.isAbnormal ? 'bg-amber-50 border-amber-200' :
-                                                            'bg-gray-50 border-gray-100'
+                                                    <div key={idx} className={`grid grid-cols-12 gap-3 items-center p-3 rounded-lg border transition-all duration-300 ${param.isCritical ? 'bg-red-500/10 border-red-500/30 shadow-[0_0_10px_rgba(239,68,68,0.3)]' :
+                                                        param.isAbnormal ? 'bg-amber-500/10 border-amber-500/30' :
+                                                            'bg-surface-secondary border-border'
                                                         }`}>
                                                         <div className="col-span-4">
-                                                            <div className={`font-medium ${param.isCritical ? 'text-red-700 font-bold' : 'text-slate-700'}`}>
+                                                            <div className={`font-medium ${param.isCritical ? 'text-red-500 font-bold' : 'text-text-primary'}`}>
                                                                 {param.parameter}
                                                             </div>
                                                             <div className="text-xs text-gray-400">Normal: {param.normalRange || 'N/A'}</div>

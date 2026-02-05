@@ -147,11 +147,11 @@ const BedManagement = () => {
 
     const getStatusColor = (status) => {
         switch (status) {
-            case 'available': return 'bg-emerald-50 text-emerald-600 border-emerald-100';
-            case 'occupied': return 'bg-rose-50 text-rose-600 border-rose-100';
-            case 'under-maintenance': return 'bg-amber-50 text-amber-600 border-amber-100';
-            case 'reserved': return 'bg-indigo-50 text-indigo-600 border-indigo-100';
-            default: return 'bg-slate-50 text-slate-600 border-slate-100';
+            case 'available': return 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20';
+            case 'occupied': return 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20';
+            case 'under-maintenance': return 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20';
+            case 'reserved': return 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20';
+            default: return 'bg-surface-secondary text-text-secondary border-border';
         }
     };
 
@@ -164,10 +164,10 @@ const BedManagement = () => {
             {/* Header section with Stats */}
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
                 <div>
-                    <h1 className="text-2xl font-bold text-slate-800 flex items-center gap-2">
+                    <h1 className="text-2xl font-bold text-text-primary flex items-center gap-2">
                         <Bed className="text-primary" /> Bed Management
                     </h1>
-                    <p className="text-slate-500">Monitor and manage ward occupancy and bed allocations</p>
+                    <p className="text-text-secondary">Monitor and manage ward occupancy and bed allocations</p>
                 </div>
 
                 {occupancy && (
@@ -178,8 +178,8 @@ const BedManagement = () => {
                             { label: 'Occupied', value: occupancy.occupied, icon: <Activity size={18} />, color: 'rose' },
                             { label: 'Occupancy', value: `${occupancy.occupancyRate}%`, icon: <Clock size={18} />, color: 'amber' }
                         ].map((stat, i) => (
-                            <div key={i} className="bg-white p-3 rounded-xl border border-slate-100 shadow-sm flex items-center gap-3">
-                                <div className={`p-2 bg-${stat.color}-50 text-${stat.color}-600 rounded-lg`}>
+                            <div key={i} className="bg-surface p-3 rounded-xl border border-border shadow-sm flex items-center gap-3">
+                                <div className={`p-2 bg-${stat.color}-500/10 text-${stat.color}-600 dark:text-${stat.color}-400 rounded-lg`}>
                                     {stat.icon}
                                 </div>
                                 <div>
@@ -193,13 +193,13 @@ const BedManagement = () => {
             </div>
 
             {/* Filter and Search Bar */}
-            <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm mb-6 flex flex-col lg:flex-row gap-4 justify-between items-center">
+            <div className="bg-surface p-4 rounded-xl border border-border shadow-sm mb-6 flex flex-col lg:flex-row gap-4 justify-between items-center">
                 <div className="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 w-full lg:w-auto">
                     <button
                         onClick={() => setSelectedWard('all')}
                         className={`px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${selectedWard === 'all'
                                 ? 'bg-primary text-white shadow-md'
-                                : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
+                                : 'bg-surface-secondary text-text-secondary hover:bg-surface-highlight'
                             }`}
                     >
                         All Wards
@@ -210,7 +210,7 @@ const BedManagement = () => {
                             onClick={() => setSelectedWard(ward._id)}
                             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${selectedWard === ward._id
                                     ? 'bg-primary text-white shadow-md'
-                                    : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
+                                    : 'bg-surface-secondary text-text-secondary hover:bg-surface-highlight'
                                 }`}
                         >
                             {ward.name}
@@ -220,25 +220,25 @@ const BedManagement = () => {
 
                 <div className="flex items-center gap-3 w-full lg:w-auto">
                     <div className="relative flex-1 lg:w-64">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" size={18} />
                         <input
                             type="text"
                             placeholder="Bed # or Patient..."
-                            className="w-full pl-10 pr-4 py-2 bg-slate-50 border-transparent focus:bg-white focus:border-primary outline-none rounded-lg text-sm transition-all"
+                            className="w-full pl-10 pr-4 py-2 bg-surface-secondary border border-transparent focus:bg-surface focus:border-primary outline-none rounded-lg text-sm text-text-primary placeholder:text-text-muted transition-all"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                         />
                     </div>
-                    <div className="flex items-center bg-slate-50 p-1 rounded-lg border border-slate-100">
+                    <div className="flex items-center bg-surface-secondary p-1 rounded-lg border border-border">
                         <button
                             onClick={() => setViewMode('grid')}
-                            className={`p-1.5 rounded-md transition-all ${viewMode === 'grid' ? 'bg-white text-primary shadow-sm' : 'text-slate-400'}`}
+                            className={`p-1.5 rounded-md transition-all ${viewMode === 'grid' ? 'bg-surface text-primary shadow-sm' : 'text-text-muted'}`}
                         >
                             <LayoutGrid size={18} />
                         </button>
                         <button
                             onClick={() => setViewMode('list')}
-                            className={`p-1.5 rounded-md transition-all ${viewMode === 'list' ? 'bg-white text-primary shadow-sm' : 'text-slate-400'}`}
+                            className={`p-1.5 rounded-md transition-all ${viewMode === 'list' ? 'bg-surface text-primary shadow-sm' : 'text-text-muted'}`}
                         >
                             <List size={18} />
                         </button>
@@ -257,8 +257,8 @@ const BedManagement = () => {
                     <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-300">
                         <Search size={32} />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-800 mb-1">No beds found</h3>
-                    <p className="text-slate-500">Try adjusting your filters or search query</p>
+                    <h3 className="text-lg font-bold text-text-primary mb-1">No beds found</h3>
+                    <p className="text-text-secondary">Try adjusting your filters or search query</p>
                 </div>
             ) : viewMode === 'grid' ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
@@ -269,11 +269,11 @@ const BedManagement = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             whileHover={{ y: -4 }}
                             onClick={() => handleBedClick(bed)}
-                            className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden group"
+                            className="bg-surface rounded-2xl border border-border shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden group"
                         >
                             <div className="p-4 flex justify-between items-start mb-2">
-                                <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${bed.status === 'occupied' ? 'bg-rose-100 text-rose-600' :
-                                        bed.status === 'available' ? 'bg-emerald-100 text-emerald-600' : 'bg-slate-100 text-slate-400'
+                                <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${bed.status === 'occupied' ? 'bg-rose-500/10 text-rose-500' :
+                                        bed.status === 'available' ? 'bg-emerald-500/10 text-emerald-500' : 'bg-surface-secondary text-text-muted'
                                     } group-hover:scale-110 transition-transform`}>
                                     <Bed size={22} />
                                 </div>
@@ -283,57 +283,57 @@ const BedManagement = () => {
                             </div>
 
                             <div className="px-5 pb-5">
-                                <div className="text-lg font-bold text-slate-800 mb-1">{bed.bedNumber}</div>
-                                <div className="text-xs text-slate-400 font-medium flex items-center gap-1 mb-4">
+                                <div className="text-lg font-bold text-text-primary mb-1">{bed.bedNumber}</div>
+                                <div className="text-xs text-text-muted font-medium flex items-center gap-1 mb-4">
                                     <Building size={12} /> {bed.ward?.name} • {getBedTypeLabel(bed.bedType)}
                                 </div>
 
                                 {bed.status === 'occupied' && bed.currentPatient ? (
-                                    <div className="bg-slate-50 rounded-xl p-3 border border-slate-100">
+                                    <div className="bg-surface-secondary rounded-xl p-3 border border-border">
                                         <div className="flex items-center gap-2 mb-1">
                                             <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-[10px] font-bold">
                                                 {bed.currentPatient.firstName[0]}{bed.currentPatient.lastName[0]}
                                             </div>
-                                            <div className="text-sm font-bold text-slate-700 truncate">
+                                            <div className="text-sm font-bold text-text-primary truncate">
                                                 {bed.currentPatient.firstName} {bed.currentPatient.lastName}
                                             </div>
                                         </div>
-                                        <div className="text-[10px] text-slate-400 pl-8">ID: {bed.currentPatient.patientId}</div>
+                                        <div className="text-[10px] text-text-muted pl-8">ID: {bed.currentPatient.patientId}</div>
                                     </div>
                                 ) : (
-                                    <div className="py-2 text-sm text-slate-400 italic">No patient assigned</div>
+                                    <div className="py-2 text-sm text-text-muted italic">No patient assigned</div>
                                 )}
                             </div>
                         </motion.div>
                     ))}
 
                     {/* Placeholder for adding new bed if admin */}
-                    <div className="border-2 border-dashed border-slate-200 rounded-2xl flex flex-col items-center justify-center min-h-[200px] hover:border-primary/40 hover:bg-primary/5 transition-all cursor-pointer group">
-                        <div className="w-12 h-12 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 group-hover:bg-primary group-hover:text-white transition-all mb-3">
+                    <div className="border-2 border-dashed border-border rounded-2xl flex flex-col items-center justify-center min-h-[200px] hover:border-primary/40 hover:bg-primary/5 transition-all cursor-pointer group">
+                        <div className="w-12 h-12 bg-surface-secondary rounded-full flex items-center justify-center text-text-secondary group-hover:bg-primary group-hover:text-white transition-all mb-3">
                             <Plus size={24} />
                         </div>
-                        <span className="text-slate-500 font-medium group-hover:text-primary transition-all">Add Bed</span>
+                        <span className="text-text-secondary font-medium group-hover:text-primary transition-all">Add Bed</span>
                     </div>
                 </div>
             ) : (
-                <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <div className="bg-surface rounded-2xl border border-border shadow-sm overflow-hidden">
                     <table className="w-full">
-                        <thead className="bg-slate-50 border-b border-slate-100">
+                        <thead className="bg-surface-secondary border-b border-border">
                             <tr>
-                                <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Bed #</th>
-                                <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Ward</th>
-                                <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Type</th>
-                                <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Status</th>
-                                <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Patient</th>
-                                <th className="px-6 py-4 text-right text-xs font-bold text-slate-500 uppercase tracking-wider">Actions</th>
+                                <th className="px-6 py-4 text-left text-xs font-bold text-text-secondary uppercase tracking-wider">Bed #</th>
+                                <th className="px-6 py-4 text-left text-xs font-bold text-text-secondary uppercase tracking-wider">Ward</th>
+                                <th className="px-6 py-4 text-left text-xs font-bold text-text-secondary uppercase tracking-wider">Type</th>
+                                <th className="px-6 py-4 text-left text-xs font-bold text-text-secondary uppercase tracking-wider">Status</th>
+                                <th className="px-6 py-4 text-left text-xs font-bold text-text-secondary uppercase tracking-wider">Patient</th>
+                                <th className="px-6 py-4 text-right text-xs font-bold text-text-secondary uppercase tracking-wider">Actions</th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-slate-50">
+                        <tbody className="divide-y divide-border">
                             {filteredBeds.map(bed => (
-                                <tr key={bed._id} className="hover:bg-slate-50/50 transition-colors group">
-                                    <td className="px-6 py-4 text-sm font-bold text-slate-700">{bed.bedNumber}</td>
-                                    <td className="px-6 py-4 text-sm text-slate-600">{bed.ward?.name}</td>
-                                    <td className="px-6 py-4 text-sm text-slate-600">{getBedTypeLabel(bed.bedType)}</td>
+                                <tr key={bed._id} className="hover:bg-surface-highlight transition-colors group">
+                                    <td className="px-6 py-4 text-sm font-bold text-text-primary">{bed.bedNumber}</td>
+                                    <td className="px-6 py-4 text-sm text-text-secondary">{bed.ward?.name}</td>
+                                    <td className="px-6 py-4 text-sm text-text-secondary">{getBedTypeLabel(bed.bedType)}</td>
                                     <td className="px-6 py-4">
                                         <div className={`inline-flex px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border ${getStatusColor(bed.status)}`}>
                                             {bed.status}
@@ -342,18 +342,18 @@ const BedManagement = () => {
                                     <td className="px-6 py-4">
                                         {bed.currentPatient ? (
                                             <div className="flex items-center gap-2">
-                                                <div className="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-500">
+                                                <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">
                                                     {bed.currentPatient.firstName[0]}{bed.currentPatient.lastName[0]}
                                                 </div>
                                                 <div>
-                                                    <div className="text-sm font-bold text-slate-700">{bed.currentPatient.firstName} {bed.currentPatient.lastName}</div>
-                                                    <div className="text-[10px] text-slate-400">{bed.currentPatient.patientId}</div>
+                                                    <div className="text-sm font-bold text-text-primary">{bed.currentPatient.firstName} {bed.currentPatient.lastName}</div>
+                                                    <div className="text-[10px] text-text-muted">{bed.currentPatient.patientId}</div>
                                                 </div>
                                             </div>
-                                        ) : <span className="text-slate-300 text-sm italic">None</span>}
+                                        ) : <span className="text-text-muted text-sm italic">None</span>}
                                     </td>
                                     <td className="px-6 py-4 text-right">
-                                        <button onClick={() => handleBedClick(bed)} className="p-2 hover:bg-white hover:shadow-sm rounded-lg transition-all text-slate-400 hover:text-primary">
+                                        <button onClick={() => handleBedClick(bed)} className="p-2 hover:bg-surface-secondary hover:shadow-sm rounded-lg transition-all text-text-muted hover:text-primary">
                                             <MoreVertical size={18} />
                                         </button>
                                     </td>
@@ -379,7 +379,7 @@ const BedManagement = () => {
                             initial={{ opacity: 0, scale: 0.95, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                            className="bg-white rounded-3xl shadow-2xl w-full max-w-lg relative z-10 overflow-hidden"
+                            className="bg-surface rounded-3xl shadow-2xl w-full max-w-lg relative z-10 overflow-hidden"
                         >
                             <div className="h-24 bg-primary relative">
                                 <button
@@ -388,7 +388,7 @@ const BedManagement = () => {
                                 >
                                     <X size={18} />
                                 </button>
-                                <div className="absolute left-8 -bottom-8 w-16 h-16 bg-white rounded-2xl shadow-lg border-4 border-white flex items-center justify-center text-primary">
+                                <div className="absolute left-8 -bottom-8 w-16 h-16 bg-surface rounded-2xl shadow-lg border-4 border-surface flex items-center justify-center text-primary">
                                     <Bed size={32} />
                                 </div>
                             </div>
@@ -396,8 +396,8 @@ const BedManagement = () => {
                             <div className="pt-12 px-8 pb-8">
                                 <div className="flex justify-between items-start mb-6">
                                     <div>
-                                        <h2 className="text-2xl font-bold text-slate-800">Bed {selectedBed.bedNumber}</h2>
-                                        <p className="text-slate-500">{selectedBed.ward?.name} • {getBedTypeLabel(selectedBed.bedType)}</p>
+                                        <h2 className="text-2xl font-bold text-text-primary">Bed {selectedBed.bedNumber}</h2>
+                                        <p className="text-text-secondary">{selectedBed.ward?.name} • {getBedTypeLabel(selectedBed.bedType)}</p>
                                     </div>
                                     <div className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border ${getStatusColor(selectedBed.status)}`}>
                                         {selectedBed.status}
@@ -406,35 +406,35 @@ const BedManagement = () => {
 
                                 <div className="space-y-6">
                                     {selectedBed.status === 'occupied' && selectedBed.currentPatient ? (
-                                        <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                                        <div className="bg-surface-secondary rounded-2xl p-6 border border-border">
                                             <div className="flex items-center gap-4 mb-4">
                                                 <div className="w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center text-xl font-bold">
                                                     {selectedBed.currentPatient.firstName[0]}{selectedBed.currentPatient.lastName[0]}
                                                 </div>
                                                 <div>
-                                                    <div className="text-lg font-bold text-slate-800">
+                                                    <div className="text-lg font-bold text-text-primary">
                                                         {selectedBed.currentPatient.firstName} {selectedBed.currentPatient.lastName}
                                                     </div>
-                                                    <div className="text-sm text-slate-500 font-medium">Patient ID: {selectedBed.currentPatient.patientId}</div>
+                                                    <div className="text-sm text-text-secondary font-medium">Patient ID: {selectedBed.currentPatient.patientId}</div>
                                                 </div>
                                             </div>
-                                            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-200/60">
+                                            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-border">
                                                 <div>
-                                                    <div className="text-[10px] uppercase font-bold text-slate-400 mb-0.5 tracking-wider">Admission ID</div>
-                                                    <div className="text-sm font-bold text-slate-700">#{selectedBed.currentAdmission?.admissionNumber || 'ADM-00452'}</div>
+                                                    <div className="text-[10px] uppercase font-bold text-text-muted mb-0.5 tracking-wider">Admission ID</div>
+                                                    <div className="text-sm font-bold text-text-primary">#{selectedBed.currentAdmission?.admissionNumber || 'ADM-00452'}</div>
                                                 </div>
                                                 <div>
-                                                    <div className="text-[10px] uppercase font-bold text-slate-400 mb-0.5 tracking-wider">Admitted On</div>
-                                                    <div className="text-sm font-bold text-slate-700">22 Jan 2026</div>
+                                                    <div className="text-[10px] uppercase font-bold text-text-muted mb-0.5 tracking-wider">Admitted On</div>
+                                                    <div className="text-sm font-bold text-text-primary">22 Jan 2026</div>
                                                 </div>
                                             </div>
                                         </div>
                                     ) : (
-                                        <div className="py-12 border-2 border-dashed border-slate-100 rounded-2xl text-center">
-                                            <div className="w-12 h-12 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-3 text-slate-300">
+                                        <div className="py-12 border-2 border-dashed border-border rounded-2xl text-center">
+                                            <div className="w-12 h-12 bg-surface-secondary rounded-full flex items-center justify-center mx-auto mb-3 text-text-muted">
                                                 <User size={24} />
                                             </div>
-                                            <p className="text-slate-500 font-medium">No patient currently allocated</p>
+                                            <p className="text-text-secondary font-medium">No patient currently allocated</p>
                                         </div>
                                     )}
 
@@ -443,7 +443,7 @@ const BedManagement = () => {
                                             <>
                                                 <button
                                                     onClick={openTransferModal}
-                                                    className="flex-1 py-3.5 rounded-xl bg-slate-100 text-slate-700 font-bold hover:bg-slate-200 transition-all flex items-center justify-center gap-2"
+                                                    className="flex-1 py-3.5 rounded-xl bg-surface-secondary text-text-primary font-bold hover:bg-surface-highlight transition-all flex items-center justify-center gap-2"
                                                 >
                                                     <ArrowRightLeft size={18} /> Transfer
                                                 </button>
@@ -462,9 +462,9 @@ const BedManagement = () => {
                                         )}
                                     </div>
 
-                                    <div className="flex justify-center gap-4 text-slate-400">
-                                        <button className="p-2 hover:bg-slate-100 rounded-full transition-all" title="View History"><Info size={18} /></button>
-                                        <button className="p-2 hover:bg-slate-100 rounded-full transition-all" title="Edit Bed Settings"><Settings size={18} /></button>
+                                    <div className="flex justify-center gap-4 text-text-muted">
+                                        <button className="p-2 hover:bg-surface-secondary rounded-full transition-all" title="View History"><Info size={18} /></button>
+                                        <button className="p-2 hover:bg-surface-secondary rounded-full transition-all" title="Edit Bed Settings"><Settings size={18} /></button>
                                     </div>
                                 </div>
                             </div>
@@ -488,24 +488,24 @@ const BedManagement = () => {
                             initial={{ opacity: 0, scale: 0.95, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                            className="bg-white rounded-3xl shadow-2xl w-full max-w-md relative z-10 p-8"
+                            className="bg-surface rounded-3xl shadow-2xl w-full max-w-md relative z-10 p-8"
                         >
-                            <h2 className="text-2xl font-bold text-slate-800 mb-2 flex items-center gap-2">
+                            <h2 className="text-2xl font-bold text-text-primary mb-2 flex items-center gap-2">
                                 <ArrowRightLeft className="text-primary" /> Transfer Patient
                             </h2>
-                            <p className="text-slate-500 mb-8">Move patient from Bed {selectedBed.bedNumber} to a new available bed.</p>
+                            <p className="text-text-secondary mb-8">Move patient from Bed {selectedBed.bedNumber} to a new available bed.</p>
 
                             <div className="space-y-6">
-                                <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-lg bg-white border border-slate-100 flex items-center justify-center text-primary font-bold">
+                                <div className="p-4 bg-surface-secondary rounded-2xl border border-border flex items-center gap-4">
+                                    <div className="w-10 h-10 rounded-lg bg-surface border border-border flex items-center justify-center text-primary font-bold">
                                         {selectedBed.bedNumber}
                                     </div>
-                                    <ArrowRightLeft className="text-slate-300 shrink-0" size={20} />
+                                    <ArrowRightLeft className="text-text-muted shrink-0" size={20} />
                                     <div className="flex-1">
                                         <select
                                             value={targetBedId}
                                             onChange={(e) => setTargetBedId(e.target.value)}
-                                            className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:border-primary font-bold text-slate-700"
+                                            className="w-full bg-surface border border-border rounded-xl px-4 py-2.5 outline-none focus:border-primary font-bold text-text-primary"
                                         >
                                             <option value="">Select Target Bed...</option>
                                             {availableBeds.map(bed => (
@@ -517,7 +517,7 @@ const BedManagement = () => {
                                     </div>
                                 </div>
 
-                                <div className="bg-amber-50 p-4 rounded-xl border border-amber-100 flex gap-3 text-amber-700 text-sm">
+                                <div className="bg-amber-500/10 p-4 rounded-xl border border-amber-500/20 flex gap-3 text-amber-600 dark:text-amber-400 text-sm">
                                     <AlertCircle className="shrink-0" size={18} />
                                     <p>Transferring the patient will automatically free up Bed {selectedBed.bedNumber} and update the admission records.</p>
                                 </div>
@@ -525,7 +525,7 @@ const BedManagement = () => {
                                 <div className="flex gap-3 pt-2">
                                     <button
                                         onClick={() => setShowTransferModal(false)}
-                                        className="flex-1 py-3.5 rounded-xl border border-slate-200 text-slate-600 font-bold hover:bg-slate-50 transition-all"
+                                        className="flex-1 py-3.5 rounded-xl border border-border text-text-secondary font-bold hover:bg-surface-secondary transition-all"
                                     >
                                         Cancel
                                     </button>

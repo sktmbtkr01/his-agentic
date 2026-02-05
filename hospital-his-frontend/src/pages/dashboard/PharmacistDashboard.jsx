@@ -10,6 +10,7 @@ import {
 import { format } from 'date-fns';
 import { motion } from 'framer-motion';
 import pharmacyService from '../../services/pharmacy.service';
+import { WelcomeBanner } from '../../components/dashboard';
 
 // --- Reusable Components (Local) ---
 
@@ -53,11 +54,11 @@ const StatCard = ({ title, value, subtext, icon: Icon, color, onClick, isLoading
                 <div className={`p-3 rounded-xl mb-4 inline-block ${color} bg-opacity-10 shadow-sm`}>
                     <Icon size={24} className={color.replace('bg-', 'text-')} />
                 </div>
-                <p className="text-slate-500 text-xs font-bold tracking-wider uppercase mb-1">{title}</p>
-                <h3 className="text-4xl font-extrabold text-slate-800 tracking-tight mb-2">
-                    {isLoading ? <div className="h-9 w-20 bg-gray-200/50 animate-pulse rounded"></div> : <CountUp value={value} />}
+                <p className="text-text-secondary text-xs font-bold tracking-wider uppercase mb-1">{title}</p>
+                <h3 className="text-4xl font-extrabold text-text-primary tracking-tight mb-2">
+                    {isLoading ? <div className="h-9 w-20 bg-surface-secondary animate-pulse rounded"></div> : <CountUp value={value} />}
                 </h3>
-                <div className="flex items-center text-xs font-medium text-slate-500">
+                <div className="flex items-center text-xs font-medium text-text-secondary">
                     {subtext}
                     {onClick && <ChevronRight size={14} className="ml-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />}
                 </div>
@@ -73,10 +74,10 @@ const StatCard = ({ title, value, subtext, icon: Icon, color, onClick, isLoading
 // Priority/Status Badge
 const StatusBadge = ({ status }) => {
     const styles = {
-        'pending': 'bg-amber-50 text-amber-600 border-amber-100',
-        'dispensed': 'bg-emerald-50 text-emerald-600 border-emerald-100',
-        'partially-dispensed': 'bg-blue-50 text-blue-600 border-blue-100',
-        'cancelled': 'bg-red-50 text-red-600 border-red-100'
+        'pending': 'bg-amber-500/10 text-amber-500 border-amber-500/20',
+        'dispensed': 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20',
+        'partially-dispensed': 'bg-blue-500/10 text-blue-500 border-blue-500/20',
+        'cancelled': 'bg-red-500/10 text-red-500 border-red-500/20'
     };
     const labels = {
         'pending': 'Pending',
@@ -166,38 +167,25 @@ const PharmacistDashboard = () => {
 
     return (
         <div className="min-h-screen pb-12 max-w-7xl mx-auto">
-            {/* Header Section */}
-            <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div>
-                    <div className="flex items-center gap-2 text-gray-500 text-sm font-medium mb-1">
-                        <span>{format(currentTime, 'EEEE, d MMMM yyyy')}</span>
-                        <span>•</span>
-                        <Clock size={14} />
-                        <span>{format(currentTime, 'h:mm a')}</span>
-                    </div>
-                    <h1 className="text-3xl font-bold text-slate-800">
-                        {greeting}, <span className="text-emerald-600">{user?.name?.split(' ')[0] || 'Pharmacist'}</span> 💊
-                    </h1>
-                    <p className="text-gray-500 mt-1">Manage prescriptions, dispense medications, and track inventory.</p>
-                </div>
+            {/* Premium Welcome Banner */}
+            <WelcomeBanner
+                userName={user?.name?.split(' ')[0] || 'Pharmacist'}
+                role="pharmacist"
+                onRefresh={handleRefresh}
+                isRefreshing={loading}
+                lastUpdated={new Date()}
+                subtitle="Manage prescriptions, dispense medications, and track inventory."
+            />
 
-                <div>
-                    <button
-                        onClick={handleRefresh}
-                        disabled={loading}
-                        className="p-3 bg-white border border-gray-200 rounded-xl text-gray-600 hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm active:scale-95 disabled:opacity-50"
-                        title="Refresh Data"
-                    >
-                        <RefreshCw size={20} className={loading ? 'animate-spin' : ''} />
-                    </button>
-                    <button
-                        onClick={() => navigate('/pharmacy')}
-                        className="ml-3 px-5 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all shadow-lg shadow-slate-200 inline-flex items-center gap-2"
-                    >
-                        Go to Pharmacy <ArrowRight size={18} />
-                    </button>
-                </div>
-            </header>
+            {/* Quick Action Button */}
+            <div className="flex justify-end mt-4 mb-6">
+                <button
+                    onClick={() => navigate('/pharmacy')}
+                    className="px-5 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all shadow-lg shadow-slate-200 inline-flex items-center gap-2"
+                >
+                    Go to Pharmacy <ArrowRight size={18} />
+                </button>
+            </div>
 
             {/* Stats Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -253,14 +241,14 @@ const PharmacistDashboard = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="lg:col-span-2 bg-white rounded-3xl border border-gray-100 p-6 shadow-sm flex flex-col"
+                    className="lg:col-span-2 bg-surface rounded-3xl border border-border p-6 shadow-sm flex flex-col"
                 >
                     <div className="flex items-center justify-between mb-6">
                         <div>
-                            <h3 className="font-bold text-xl text-slate-800 flex items-center gap-2">
+                            <h3 className="font-bold text-xl text-text-primary flex items-center gap-2">
                                 <Pill className="text-emerald-500" size={20} /> Dispense Queue
                             </h3>
-                            <p className="text-sm text-gray-400">Prescriptions waiting for dispensing</p>
+                            <p className="text-sm text-text-muted">Prescriptions waiting for dispensing</p>
                         </div>
                         <button onClick={() => navigate('/pharmacy')} className="text-sm font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1">
                             View All <ChevronRight size={16} />
@@ -270,11 +258,11 @@ const PharmacistDashboard = () => {
                     <div className="flex-1 overflow-hidden">
                         {pendingQueue.length === 0 ? (
                             <div className="h-64 flex flex-col items-center justify-center text-center">
-                                <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mb-4 text-slate-300">
+                                <div className="w-16 h-16 bg-surface-secondary rounded-full flex items-center justify-center mb-4 text-text-muted">
                                     <CheckCircle size={32} />
                                 </div>
-                                <h4 className="text-slate-600 font-bold">All caught up!</h4>
-                                <p className="text-slate-400 text-sm">No pending prescriptions to dispense.</p>
+                                <h4 className="text-text-secondary font-bold">All caught up!</h4>
+                                <p className="text-text-muted text-sm">No pending prescriptions to dispense.</p>
                             </div>
                         ) : (
                             <div className="space-y-3">
@@ -282,17 +270,17 @@ const PharmacistDashboard = () => {
                                     <div
                                         key={item._id || idx}
                                         onClick={() => navigate('/pharmacy')}
-                                        className="group p-4 rounded-xl border border-gray-100 hover:border-emerald-100 bg-white hover:bg-emerald-50/30 transition-all cursor-pointer flex items-center justify-between"
+                                        className="group p-4 rounded-xl border border-border hover:border-emerald-500/30 bg-surface hover:bg-emerald-500/5 transition-all cursor-pointer flex items-center justify-between"
                                     >
                                         <div className="flex items-center gap-4">
-                                            <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-500 group-hover:bg-white group-hover:text-emerald-600 transition-colors">
+                                            <div className="w-10 h-10 rounded-full bg-surface-secondary flex items-center justify-center text-xs font-bold text-text-secondary group-hover:bg-surface group-hover:text-emerald-500 transition-colors">
                                                 {item.patient?.firstName?.[0] || '?'}{item.patient?.lastName?.[0] || '?'}
                                             </div>
                                             <div>
-                                                <h4 className="font-bold text-slate-700 group-hover:text-emerald-700 transition-colors">
+                                                <h4 className="font-bold text-text-primary group-hover:text-emerald-500 transition-colors">
                                                     {item.patient?.firstName} {item.patient?.lastName}
                                                 </h4>
-                                                <div className="flex items-center gap-2 text-xs text-slate-500">
+                                                <div className="flex items-center gap-2 text-xs text-text-secondary">
                                                     <span>{item.medicines?.length || 0} medication(s)</span>
                                                     <span>•</span>
                                                     <span className="font-mono">{item.prescriptionNumber || 'N/A'}</span>
@@ -301,13 +289,13 @@ const PharmacistDashboard = () => {
                                         </div>
                                         <div className="flex items-center gap-4">
                                             <div className="text-right hidden sm:block">
-                                                <p className="text-[10px] uppercase text-gray-400 font-bold tracking-wider">Prescribed</p>
-                                                <p className="text-xs font-medium text-slate-600">
+                                                <p className="text-[10px] uppercase text-text-muted font-bold tracking-wider">Prescribed</p>
+                                                <p className="text-xs font-medium text-text-secondary">
                                                     {item.createdAt ? new Date(item.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : 'N/A'}
                                                 </p>
                                             </div>
                                             <StatusBadge status={item.status || 'pending'} />
-                                            <ChevronRight size={18} className="text-gray-300 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all" />
+                                            <ChevronRight size={18} className="text-text-muted group-hover:text-emerald-500 group-hover:translate-x-1 transition-all" />
                                         </div>
                                     </div>
                                 ))}
@@ -347,14 +335,14 @@ const PharmacistDashboard = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6 }}
-                        className="bg-white rounded-3xl border border-gray-100 p-6 shadow-sm"
+                        className="bg-surface rounded-3xl border border-border p-6 shadow-sm"
                     >
-                        <h4 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <h4 className="font-bold text-text-primary mb-4 flex items-center gap-2">
                             <ShieldAlert size={18} className="text-red-500" />
                             Expiring Batches
                         </h4>
                         {expiringBatches.length === 0 ? (
-                            <div className="text-center py-4 text-slate-400 text-sm">
+                            <div className="text-center py-4 text-text-muted text-sm">
                                 No batches expiring soon
                             </div>
                         ) : (
@@ -362,10 +350,10 @@ const PharmacistDashboard = () => {
                                 {expiringBatches.map((batch, idx) => (
                                     <div
                                         key={batch._id || idx}
-                                        className="p-3 bg-red-50 border border-red-100 rounded-xl text-sm"
+                                        className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-sm"
                                     >
-                                        <p className="font-medium text-red-800">{batch.medicine?.name || 'Unknown'}</p>
-                                        <p className="text-xs text-red-600">
+                                        <p className="font-medium text-red-500">{batch.medicine?.name || 'Unknown'}</p>
+                                        <p className="text-xs text-red-400">
                                             Batch: {batch.batchNumber} • Expires: {batch.expiryDate ? format(new Date(batch.expiryDate), 'dd MMM yyyy') : 'N/A'}
                                         </p>
                                     </div>
@@ -379,24 +367,24 @@ const PharmacistDashboard = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.7 }}
-                        className="bg-white rounded-3xl border border-gray-100 p-6 shadow-sm"
+                        className="bg-surface rounded-3xl border border-border p-6 shadow-sm"
                     >
-                        <h4 className="font-bold text-slate-800 mb-4">Quick Actions</h4>
+                        <h4 className="font-bold text-text-primary mb-4">Quick Actions</h4>
                         <div className="space-y-2">
-                            <button onClick={() => navigate('/pharmacy')} className="w-full p-3 text-left rounded-xl hover:bg-slate-50 transition-colors flex items-center gap-3 text-sm font-medium text-slate-600 hover:text-slate-900 border border-transparent hover:border-slate-200">
-                                <div className="p-2 bg-emerald-50 text-emerald-600 rounded-lg">
+                            <button onClick={() => navigate('/pharmacy')} className="w-full p-3 text-left rounded-xl hover:bg-surface-highlight transition-colors flex items-center gap-3 text-sm font-medium text-text-secondary hover:text-text-primary border border-transparent hover:border-border">
+                                <div className="p-2 bg-emerald-500/10 text-emerald-500 rounded-lg">
                                     <Pill size={18} />
                                 </div>
                                 Dispense Prescription
                             </button>
-                            <button onClick={() => navigate('/pharmacy')} className="w-full p-3 text-left rounded-xl hover:bg-slate-50 transition-colors flex items-center gap-3 text-sm font-medium text-slate-600 hover:text-slate-900 border border-transparent hover:border-slate-200">
-                                <div className="p-2 bg-blue-50 text-blue-600 rounded-lg">
+                            <button onClick={() => navigate('/pharmacy')} className="w-full p-3 text-left rounded-xl hover:bg-surface-highlight transition-colors flex items-center gap-3 text-sm font-medium text-text-secondary hover:text-text-primary border border-transparent hover:border-border">
+                                <div className="p-2 bg-blue-500/10 text-blue-500 rounded-lg">
                                     <Box size={18} />
                                 </div>
                                 Manage Inventory
                             </button>
-                            <button onClick={() => navigate('/pharmacy')} className="w-full p-3 text-left rounded-xl hover:bg-slate-50 transition-colors flex items-center gap-3 text-sm font-medium text-slate-600 hover:text-slate-900 border border-transparent hover:border-slate-200">
-                                <div className="p-2 bg-amber-50 text-amber-600 rounded-lg">
+                            <button onClick={() => navigate('/pharmacy')} className="w-full p-3 text-left rounded-xl hover:bg-surface-highlight transition-colors flex items-center gap-3 text-sm font-medium text-text-secondary hover:text-text-primary border border-transparent hover:border-border">
+                                <div className="p-2 bg-amber-500/10 text-amber-500 rounded-lg">
                                     <AlertTriangle size={18} />
                                 </div>
                                 View Drug Recalls

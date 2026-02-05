@@ -153,23 +153,23 @@ const EmergencyRegistration = ({ onClose }) => {
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
-            <div className="bg-white rounded-lg shadow-xl w-full max-w-3xl flex flex-col max-h-[90vh] animate-fadeIn">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm">
+            <div className="bg-surface rounded-lg shadow-xl w-full max-w-3xl flex flex-col max-h-[90vh] animate-fadeIn border border-border">
                 {/* Header - Fixed */}
-                <div className="bg-red-600 text-white px-6 py-4 rounded-t-lg flex justify-between items-center flex-shrink-0">
+                <div className="bg-red-600 dark:bg-red-700 px-6 py-4 rounded-t-lg flex justify-between items-center flex-shrink-0">
                     <div>
-                        <h2 className="text-xl font-bold">New Emergency Registration</h2>
+                        <h2 className="text-xl font-bold text-white">New Emergency Registration</h2>
                         <p className="text-red-100 text-sm">Register a new patient to the ER</p>
                     </div>
-                    <button onClick={onClose} className="text-white hover:text-red-100 text-xl font-bold">
+                    <button onClick={onClose} className="text-white hover:text-red-100 text-xl font-bold transition-colors">
                         ✕
                     </button>
                 </div>
 
                 {/* Content - Scrollable Form */}
-                <form id="emergency-registration-form" onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-6">
+                <form id="emergency-registration-form" onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-6 bg-surface">
                     {/* Mode Selection */}
-                    <div className="flex gap-4 mb-6 border-b pb-4">
+                    <div className="flex gap-4 mb-6 border-b border-border pb-4">
                         <label className="flex items-center space-x-2 cursor-pointer">
                             <input
                                 type="radio"
@@ -177,9 +177,9 @@ const EmergencyRegistration = ({ onClose }) => {
                                 value="existing"
                                 checked={registrationMode === 'existing'}
                                 onChange={() => setRegistrationMode('existing')}
-                                className="text-red-600 focus:ring-red-500"
+                                className="text-red-600 focus:ring-red-500 bg-surface-secondary border-border"
                             />
-                            <span className="font-semibold text-gray-700">Existing Patient</span>
+                            <span className="font-semibold text-text-primary">Existing Patient</span>
                         </label>
                         <label className="flex items-center space-x-2 cursor-pointer">
                             <input
@@ -192,15 +192,15 @@ const EmergencyRegistration = ({ onClose }) => {
                                     setSelectedPatient(null);
                                     setFormData(prev => ({ ...prev, firstName: '', lastName: '', age: '', dateOfBirth: '', gender: '', contactNumber: '' }));
                                 }}
-                                className="text-red-600 focus:ring-red-500"
+                                className="text-red-600 focus:ring-red-500 bg-surface-secondary border-border"
                             />
-                            <span className="font-semibold text-gray-700">New Patient</span>
+                            <span className="font-semibold text-text-primary">New Patient</span>
                         </label>
                     </div>
 
                     {isDowntime && (
-                        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-6">
-                            <p className="text-yellow-800 text-sm flex items-center gap-2">
+                        <div className="bg-yellow-50 dark:bg-yellow-500/10 border border-yellow-200 dark:border-yellow-500/20 rounded-lg p-3 mb-6">
+                            <p className="text-yellow-800 dark:text-yellow-400 text-sm flex items-center gap-2">
                                 ⚠️ <strong>Offline Mode Active:</strong> This case will be saved locally and synced when connection is restored.
                             </p>
                         </div>
@@ -211,12 +211,12 @@ const EmergencyRegistration = ({ onClose }) => {
                         {/* Search for Existing Patient */}
                         {registrationMode === 'existing' && (
                             <div className="col-span-2 relative z-10">
-                                <label className="block text-sm font-medium text-gray-700 mb-1">Search Patient (Name / UHID / Phone)</label>
+                                <label className="block text-sm font-medium text-text-secondary mb-1">Search Patient (Name / UHID / Phone)</label>
                                 <input
                                     type="text"
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
-                                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500 max-w-md"
+                                    className="w-full border border-border rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-500 max-w-md bg-surface-secondary text-text-primary placeholder:text-text-muted"
                                     placeholder="Type at least 1 character..."
                                     autoFocus
                                 />
@@ -224,18 +224,18 @@ const EmergencyRegistration = ({ onClose }) => {
 
                                 {/* Typeahead Results */}
                                 {searchResults.length > 0 && (
-                                    <div className="absolute z-50 w-full max-w-md bg-white border border-gray-200 rounded-lg shadow-2xl mt-1 max-h-60 overflow-y-auto">
+                                    <div className="absolute z-50 w-full max-w-md bg-surface border border-border rounded-lg shadow-2xl mt-1 max-h-60 overflow-y-auto">
                                         {searchResults.map(patient => (
                                             <div
                                                 key={patient._id}
                                                 onClick={() => handleSelectPatient(patient)}
-                                                className="px-4 py-3 hover:bg-gray-100 cursor-pointer border-b last:border-b-0 transition-colors"
+                                                className="px-4 py-3 hover:bg-surface-secondary cursor-pointer border-b border-border last:border-b-0 transition-colors"
                                             >
                                                 <div className="flex justify-between items-center">
-                                                    <span className="font-bold text-gray-800">{patient.firstName} {patient.lastName}</span>
-                                                    <span className="text-xs font-mono bg-gray-100 px-2 py-1 rounded text-gray-600">{patient.patientId}</span>
+                                                    <span className="font-bold text-text-primary">{patient.firstName} {patient.lastName}</span>
+                                                    <span className="text-xs font-mono bg-surface-secondary px-2 py-1 rounded text-text-secondary">{patient.patientId}</span>
                                                 </div>
-                                                <div className="text-xs text-gray-500 mt-1 flex gap-3">
+                                                <div className="text-xs text-text-muted mt-1 flex gap-3">
                                                     <span>📞 {patient.phone}</span>
                                                     <span>🎂 {patient.dateOfBirth?.split('T')[0]}</span>
                                                     <span className="capitalize">👤 {patient.gender}</span>
@@ -246,9 +246,9 @@ const EmergencyRegistration = ({ onClose }) => {
                                 )}
 
                                 {selectedPatient && (
-                                    <div className="mt-2 bg-green-50 border border-green-200 rounded p-2 flex items-center gap-2 text-green-800 text-sm">
+                                    <div className="mt-2 bg-emerald-500/10 border border-emerald-500/20 rounded p-2 flex items-center gap-2 text-emerald-700 dark:text-emerald-400 text-sm">
                                         <span>✅ Selected: <strong>{selectedPatient.firstName} {selectedPatient.lastName}</strong></span>
-                                        <button type="button" onClick={() => setSelectedPatient(null)} className="text-green-600 hover:underline text-xs">Change</button>
+                                        <button type="button" onClick={() => setSelectedPatient(null)} className="text-emerald-600 dark:text-emerald-400 hover:underline text-xs">Change</button>
                                     </div>
                                 )}
                             </div>
@@ -256,19 +256,19 @@ const EmergencyRegistration = ({ onClose }) => {
 
                         {/* Personal Information (ReadOnly if Existing) */}
                         <div className="col-span-2">
-                            <h3 className="text-lg font-semibold text-gray-800 mb-4 border-b pb-2">Patient Details</h3>
+                            <h3 className="text-lg font-semibold text-text-primary mb-4 border-b border-border pb-2">Patient Details</h3>
                         </div>
 
                         {/* First Name */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
+                            <label className="block text-sm font-medium text-text-secondary mb-1">First Name *</label>
                             <input
                                 type="text"
                                 name="firstName"
                                 value={formData.firstName}
                                 onChange={handleChange}
                                 disabled={registrationMode === 'existing'}
-                                className={`w-full border rounded-lg px-3 py-2 ${errors.firstName ? 'border-red-500' : 'border-gray-300'} ${registrationMode === 'existing' ? 'bg-gray-100' : ''}`}
+                                className={`w-full border rounded-lg px-3 py-2 ${errors.firstName ? 'border-red-500' : 'border-border'} ${registrationMode === 'existing' ? 'bg-surface-secondary/50 text-text-muted' : 'bg-surface-secondary text-text-primary'}`}
                                 placeholder="John"
                             />
                             {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
@@ -276,14 +276,14 @@ const EmergencyRegistration = ({ onClose }) => {
 
                         {/* Last Name */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
+                            <label className="block text-sm font-medium text-text-secondary mb-1">Last Name *</label>
                             <input
                                 type="text"
                                 name="lastName"
                                 value={formData.lastName}
                                 onChange={handleChange}
                                 disabled={registrationMode === 'existing'}
-                                className={`w-full border rounded-lg px-3 py-2 ${errors.lastName ? 'border-red-500' : 'border-gray-300'} ${registrationMode === 'existing' ? 'bg-gray-100' : ''}`}
+                                className={`w-full border rounded-lg px-3 py-2 ${errors.lastName ? 'border-red-500' : 'border-border'} ${registrationMode === 'existing' ? 'bg-surface-secondary/50 text-text-muted' : 'bg-surface-secondary text-text-primary'}`}
                                 placeholder="Doe"
                             />
                             {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>}
@@ -291,14 +291,14 @@ const EmergencyRegistration = ({ onClose }) => {
 
                         {/* Age */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Age</label>
+                            <label className="block text-sm font-medium text-text-secondary mb-1">Age</label>
                             <input
                                 type="number"
                                 name="age"
                                 value={formData.age}
                                 onChange={handleChange}
                                 disabled={registrationMode === 'existing'}
-                                className={`w-full border rounded-lg px-3 py-2 ${errors.age ? 'border-red-500' : 'border-gray-300'} ${registrationMode === 'existing' ? 'bg-gray-100' : ''}`}
+                                className={`w-full border rounded-lg px-3 py-2 ${errors.age ? 'border-red-500' : 'border-border'} ${registrationMode === 'existing' ? 'bg-surface-secondary/50 text-text-muted' : 'bg-surface-secondary text-text-primary'}`}
                                 placeholder="e.g. 35"
                             />
                             {errors.age && <p className="text-red-500 text-xs mt-1">{errors.age}</p>}
@@ -306,26 +306,26 @@ const EmergencyRegistration = ({ onClose }) => {
 
                         {/* Date of Birth */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
+                            <label className="block text-sm font-medium text-text-secondary mb-1">Date of Birth</label>
                             <input
                                 type="date"
                                 name="dateOfBirth"
                                 value={formData.dateOfBirth}
                                 onChange={handleChange}
                                 disabled={registrationMode === 'existing'}
-                                className={`w-full border border-gray-300 rounded-lg px-3 py-2 ${registrationMode === 'existing' ? 'bg-gray-100' : ''}`}
+                                className={`w-full border border-border rounded-lg px-3 py-2 ${registrationMode === 'existing' ? 'bg-surface-secondary/50 text-text-muted' : 'bg-surface-secondary text-text-primary'}`}
                             />
                         </div>
 
                         {/* Gender */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Gender *</label>
+                            <label className="block text-sm font-medium text-text-secondary mb-1">Gender *</label>
                             <select
                                 name="gender"
                                 value={formData.gender}
                                 onChange={handleChange}
                                 disabled={registrationMode === 'existing'}
-                                className={`w-full border rounded-lg px-3 py-2 ${errors.gender ? 'border-red-500' : 'border-gray-300'} ${registrationMode === 'existing' ? 'bg-gray-100' : ''}`}
+                                className={`w-full border rounded-lg px-3 py-2 ${errors.gender ? 'border-red-500' : 'border-border'} ${registrationMode === 'existing' ? 'bg-surface-secondary/50 text-text-muted' : 'bg-surface-secondary text-text-primary'}`}
                             >
                                 <option value="">Select Gender</option>
                                 <option value="male">Male</option>
@@ -337,32 +337,32 @@ const EmergencyRegistration = ({ onClose }) => {
 
                         {/* Contact Number */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Contact Number</label>
+                            <label className="block text-sm font-medium text-text-secondary mb-1">Contact Number</label>
                             <input
                                 type="tel"
                                 name="contactNumber"
                                 value={formData.contactNumber}
                                 onChange={handleChange}
                                 disabled={registrationMode === 'existing'}
-                                className={`w-full border border-gray-300 rounded-lg px-3 py-2 ${registrationMode === 'existing' ? 'bg-gray-100' : ''}`}
+                                className={`w-full border border-border rounded-lg px-3 py-2 ${registrationMode === 'existing' ? 'bg-surface-secondary/50 text-text-muted' : 'bg-surface-secondary text-text-primary'}`}
                                 placeholder="+91 9876543210"
                             />
                         </div>
 
                         {/* Case Details */}
                         <div className="col-span-2 mt-4">
-                            <h3 className="text-lg font-semibold text-gray-800 mb-4 border-b pb-2">Case Details</h3>
+                            <h3 className="text-lg font-semibold text-text-primary mb-4 border-b border-border pb-2">Case Details</h3>
                         </div>
 
                         {/* Chief Complaint */}
                         <div className="col-span-2">
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Chief Complaint *</label>
+                            <label className="block text-sm font-medium text-text-secondary mb-1">Chief Complaint *</label>
                             <textarea
                                 name="chiefComplaint"
                                 value={formData.chiefComplaint}
                                 onChange={handleChange}
                                 rows={2}
-                                className={`w-full border rounded-lg px-3 py-2 ${errors.chiefComplaint ? 'border-red-500' : 'border-gray-300'}`}
+                                className={`w-full border rounded-lg px-3 py-2 ${errors.chiefComplaint ? 'border-red-500' : 'border-border'} bg-surface-secondary text-text-primary`}
                                 placeholder="Describe the main reason for emergency visit..."
                             />
                             {errors.chiefComplaint && <p className="text-red-500 text-xs mt-1">{errors.chiefComplaint}</p>}
@@ -370,44 +370,44 @@ const EmergencyRegistration = ({ onClose }) => {
 
                         {/* Vitals */}
                         <div className="col-span-2 mt-2">
-                            <h4 className="text-sm font-semibold text-gray-700 mb-2">Initial Vitals (Optional)</h4>
+                            <h4 className="text-sm font-semibold text-text-secondary mb-2">Initial Vitals (Optional)</h4>
                             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-                                <input type="text" name="vitals.bloodPressure" placeholder="BP (120/80)" value={formData.vitals.bloodPressure} onChange={handleChange} className="border rounded px-2 py-1 text-sm" />
-                                <input type="number" name="vitals.pulse" placeholder="Pulse (bpm)" value={formData.vitals.pulse} onChange={handleChange} className="border rounded px-2 py-1 text-sm" />
-                                <input type="number" name="vitals.temperature" placeholder="Temp (°F)" value={formData.vitals.temperature} onChange={handleChange} className="border rounded px-2 py-1 text-sm" />
-                                <input type="number" name="vitals.respiratoryRate" placeholder="RR (breaths/min)" value={formData.vitals.respiratoryRate} onChange={handleChange} className="border rounded px-2 py-1 text-sm" />
-                                <input type="number" name="vitals.oxygenSaturation" placeholder="SPO2 (%)" value={formData.vitals.oxygenSaturation} onChange={handleChange} className="border rounded px-2 py-1 text-sm" />
+                                <input type="text" name="vitals.bloodPressure" placeholder="BP (120/80)" value={formData.vitals.bloodPressure} onChange={handleChange} className="border border-border rounded px-2 py-1 text-sm bg-surface-secondary text-text-primary" />
+                                <input type="number" name="vitals.pulse" placeholder="Pulse (bpm)" value={formData.vitals.pulse} onChange={handleChange} className="border border-border rounded px-2 py-1 text-sm bg-surface-secondary text-text-primary" />
+                                <input type="number" name="vitals.temperature" placeholder="Temp (°F)" value={formData.vitals.temperature} onChange={handleChange} className="border border-border rounded px-2 py-1 text-sm bg-surface-secondary text-text-primary" />
+                                <input type="number" name="vitals.respiratoryRate" placeholder="RR (breaths/min)" value={formData.vitals.respiratoryRate} onChange={handleChange} className="border border-border rounded px-2 py-1 text-sm bg-surface-secondary text-text-primary" />
+                                <input type="number" name="vitals.oxygenSaturation" placeholder="SPO2 (%)" value={formData.vitals.oxygenSaturation} onChange={handleChange} className="border border-border rounded px-2 py-1 text-sm bg-surface-secondary text-text-primary" />
                             </div>
                         </div>
 
                         {/* Initial Triage Level */}
                         <div className="col-span-2">
-                            <label className="block text-sm font-medium text-gray-700 mb-2">Initial Triage Level</label>
+                            <label className="block text-sm font-medium text-text-secondary mb-2">Initial Triage Level</label>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                                 {[
                                     {
                                         value: 'critical',
                                         label: 'Critical',
                                         activeClass: 'bg-red-600 text-white border-red-600 shadow-md transform scale-105',
-                                        inactiveClass: 'bg-white border-red-200 text-red-600 hover:bg-red-50 hover:border-red-300'
+                                        inactiveClass: 'bg-surface border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 hover:border-red-300'
                                     },
                                     {
                                         value: 'urgent',
                                         label: 'Urgent',
                                         activeClass: 'bg-orange-500 text-white border-orange-500 shadow-md transform scale-105',
-                                        inactiveClass: 'bg-white border-orange-200 text-orange-600 hover:bg-orange-50 hover:border-orange-300'
+                                        inactiveClass: 'bg-surface border-orange-200 dark:border-orange-800 text-orange-600 dark:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-900/20 hover:border-orange-300'
                                     },
                                     {
                                         value: 'less-urgent',
                                         label: 'Less Urgent',
                                         activeClass: 'bg-yellow-400 text-gray-900 border-yellow-400 shadow-md transform scale-105',
-                                        inactiveClass: 'bg-white border-yellow-200 text-yellow-600 hover:bg-yellow-50 hover:border-yellow-300'
+                                        inactiveClass: 'bg-surface border-yellow-200 dark:border-yellow-800 text-yellow-600 dark:text-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-900/20 hover:border-yellow-300'
                                     },
                                     {
                                         value: 'non-urgent',
                                         label: 'Non-Urgent',
                                         activeClass: 'bg-green-500 text-white border-green-500 shadow-md transform scale-105',
-                                        inactiveClass: 'bg-white border-green-200 text-green-600 hover:bg-green-50 hover:border-green-300'
+                                        inactiveClass: 'bg-surface border-green-200 dark:border-green-800 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 hover:border-green-300'
                                     },
                                 ].map((level) => (
                                     <label
@@ -435,11 +435,11 @@ const EmergencyRegistration = ({ onClose }) => {
                 </form>
 
                 {/* Footer - Fixed Key Actions */}
-                <div className="border-t p-4 bg-gray-50 rounded-b-lg flex justify-between items-center flex-shrink-0">
+                <div className="border-t border-border p-4 bg-surface-secondary rounded-b-lg flex justify-between items-center flex-shrink-0">
                     <button
                         type="button"
                         onClick={onClose}
-                        className="px-6 py-2.5 text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 font-medium transition-colors shadow-sm"
+                        className="px-6 py-2.5 text-text-primary bg-surface border border-border rounded-lg hover:bg-surface-secondary font-medium transition-colors shadow-sm"
                     >
                         Cancel
                     </button>

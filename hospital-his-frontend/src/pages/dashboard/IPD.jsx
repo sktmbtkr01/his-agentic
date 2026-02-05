@@ -46,12 +46,12 @@ const PatientsList = ({ onDischarge, onViewClinical }) => {
         }
     };
 
-    if (loading) return <div className="p-10 text-center text-gray-400">Loading Patients...</div>;
+    if (loading) return <div className="p-10 text-center text-text-muted">Loading Patients...</div>;
 
     return (
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <div className="bg-surface rounded-2xl border border-border shadow-sm overflow-hidden">
             <table className="w-full text-left">
-                <thead className="bg-gray-50 text-gray-500 text-xs uppercase">
+                <thead className="bg-surface-secondary text-text-secondary text-xs uppercase">
                     <tr>
                         <th className="px-6 py-4">Patient</th>
                         <th className="px-6 py-4">Ward / Bed</th>
@@ -60,24 +60,24 @@ const PatientsList = ({ onDischarge, onViewClinical }) => {
                         <th className="px-6 py-4 text-right">Action</th>
                     </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-100">
+                <tbody className="divide-y divide-border">
                     {patients.length === 0 ? (
-                        <tr><td colSpan="5" className="p-8 text-center text-gray-400">No active admissions</td></tr>
+                        <tr><td colSpan="5" className="p-8 text-center text-text-muted">No active admissions</td></tr>
                     ) : patients.map(adm => (
-                        <tr key={adm._id} className="hover:bg-gray-50/50">
+                        <tr key={adm._id} className="hover:bg-surface-highlight">
                             <td className="px-6 py-4">
-                                <div className="font-bold text-slate-700">{adm.patient?.firstName} {adm.patient?.lastName}</div>
-                                <div className="text-xs text-gray-500">{adm.patient?.patientId}</div>
+                                <div className="font-bold text-text-primary">{adm.patient?.firstName} {adm.patient?.lastName}</div>
+                                <div className="text-xs text-text-secondary">{adm.patient?.patientId}</div>
                                 <div className="text-xs text-blue-500">{adm.diagnosis}</div>
                             </td>
                             <td className="px-6 py-4">
-                                <span className="bg-blue-50 text-blue-700 px-2 py-1 rounded-md text-xs font-bold mr-2">{adm.ward?.name}</span>
-                                <div className="font-medium text-slate-600 mt-1">{adm.bed?.bedNumber}</div>
+                                <span className="bg-blue-500/10 text-blue-600 dark:text-blue-400 px-2 py-1 rounded-md text-xs font-bold mr-2">{adm.ward?.name}</span>
+                                <div className="font-medium text-text-secondary mt-1">{adm.bed?.bedNumber}</div>
                             </td>
-                            <td className="px-6 py-4 text-sm">Dr. {adm.doctor?.profile?.firstName} {adm.doctor?.profile?.lastName}</td>
-                            <td className="px-6 py-4 text-sm text-gray-500">
+                            <td className="px-6 py-4 text-sm text-text-primary">Dr. {adm.doctor?.profile?.firstName} {adm.doctor?.profile?.lastName}</td>
+                            <td className="px-6 py-4 text-sm text-text-secondary">
                                 {new Date(adm.admissionDate).toLocaleDateString()}
-                                <div className="text-xs">{new Date(adm.admissionDate).toLocaleTimeString()}</div>
+                                <div className="text-xs opacity-75">{new Date(adm.admissionDate).toLocaleTimeString()}</div>
                             </td>
                             <td className="px-6 py-4 text-right flex justify-end gap-2">
                                 <button
@@ -88,7 +88,7 @@ const PatientsList = ({ onDischarge, onViewClinical }) => {
                                 </button>
                                 <button
                                     onClick={() => handleDischarge(adm._id)}
-                                    className="text-red-600 hover:bg-red-50 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ml-auto"
+                                    className="text-red-500 hover:bg-red-500/10 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ml-auto"
                                 >
                                     <LogOut size={16} /> Discharge
                                 </button>
@@ -177,18 +177,18 @@ const IPD = () => {
     // --- Helpers ---
     const getStatusColor = (status) => {
         switch (status) {
-            case 'available': return 'bg-green-50 border-green-200 text-green-700';
-            case 'occupied': return 'bg-red-50 border-red-200 text-red-700';
-            case 'under-maintenance': return 'bg-yellow-50 border-yellow-200 text-yellow-700';
-            case 'reserved': return 'bg-blue-50 border-blue-200 text-blue-700';
-            default: return 'bg-gray-50 border-gray-200 text-gray-700';
+            case 'available': return 'bg-green-500/10 border-green-500/20 text-green-600 dark:text-green-400';
+            case 'occupied': return 'bg-red-500/10 border-red-500/20 text-red-600 dark:text-red-400';
+            case 'under-maintenance': return 'bg-yellow-500/10 border-yellow-500/20 text-yellow-600 dark:text-yellow-400';
+            case 'reserved': return 'bg-blue-500/10 border-blue-500/20 text-blue-600 dark:text-blue-400';
+            default: return 'bg-surface-secondary border-border text-text-muted';
         }
     };
 
     // --- Components ---
 
     const BedCard = ({ bed }) => (
-        <div className={`p-4 rounded-xl border-2 transition-all cursor-pointer hover:shadow-md ${getStatusColor(bed.status)}`}>
+        <div className={`p-4 rounded-xl border-2 transition-all cursor-pointer hover:shadow-md bg-surface ${getStatusColor(bed.status)}`}>
             <div className="flex justify-between items-start mb-2">
                 <div className="font-bold text-lg">{bed.bedNumber}</div>
                 {bed.status === 'occupied' && <Activity size={16} className="animate-pulse" />}
@@ -270,30 +270,30 @@ const IPD = () => {
         <div className="space-y-6">
             {/* Header Stats */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div className="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
-                    <div className="p-3 bg-blue-50 text-blue-600 rounded-xl"><BedDouble size={24} /></div>
+                <div className="bg-surface p-4 rounded-2xl border border-border shadow-sm flex items-center gap-4">
+                    <div className="p-3 bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-xl"><BedDouble size={24} /></div>
                     <div>
-                        <p className="text-sm text-gray-500">Total Beds</p>
-                        <h3 className="text-2xl font-bold text-slate-800">{stats.total}</h3>
+                        <p className="text-sm text-text-secondary">Total Beds</p>
+                        <h3 className="text-2xl font-bold text-text-primary">{stats.total}</h3>
                     </div>
                 </div>
-                <div className="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
-                    <div className="p-3 bg-red-50 text-red-600 rounded-xl"><Users size={24} /></div>
+                <div className="bg-surface p-4 rounded-2xl border border-border shadow-sm flex items-center gap-4">
+                    <div className="p-3 bg-red-500/10 text-red-600 dark:text-red-400 rounded-xl"><Users size={24} /></div>
                     <div>
-                        <p className="text-sm text-gray-500">Occupied</p>
-                        <h3 className="text-2xl font-bold text-slate-800">{stats.occupied}</h3>
+                        <p className="text-sm text-text-secondary">Occupied</p>
+                        <h3 className="text-2xl font-bold text-text-primary">{stats.occupied}</h3>
                     </div>
                 </div>
-                <div className="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
-                    <div className="p-3 bg-green-50 text-green-600 rounded-xl"><Activity size={24} /></div>
+                <div className="bg-surface p-4 rounded-2xl border border-border shadow-sm flex items-center gap-4">
+                    <div className="p-3 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-xl"><Activity size={24} /></div>
                     <div>
-                        <p className="text-sm text-gray-500">Occupancy Rate</p>
-                        <h3 className="text-2xl font-bold text-slate-800">{stats.occupancyRate}%</h3>
+                        <p className="text-sm text-text-secondary">Occupancy Rate</p>
+                        <h3 className="text-2xl font-bold text-text-primary">{stats.occupancyRate}%</h3>
                     </div>
                 </div>
                 <button
                     onClick={() => setActiveTab('patients')}
-                    className={`p-4 rounded-2xl border transition-all flex flex-col items-center justify-center gap-1 ${activeTab === 'patients' ? 'bg-indigo-50 border-indigo-200 text-indigo-700' : 'bg-white border-gray-100 hover:bg-gray-50'}`}
+                    className={`p-4 rounded-2xl border transition-all flex flex-col items-center justify-center gap-1 ${activeTab === 'patients' ? 'bg-indigo-500/10 border-indigo-500/50 text-indigo-600 dark:text-indigo-400' : 'bg-surface border-border hover:bg-surface-secondary text-text-secondary'}`}
                 >
                     <Users size={24} />
                     <span className="font-semibold">Patient List</span>
@@ -302,7 +302,7 @@ const IPD = () => {
                 {canAdmit && (
                     <button
                         onClick={() => setActiveTab('admit')}
-                        className={`p-4 rounded-2xl border transition-all flex flex-col items-center justify-center gap-1 ${activeTab === 'admit' ? 'bg-primary text-white shadow-lg' : 'bg-white border-gray-100 hover:bg-gray-50'}`}
+                        className={`p-4 rounded-2xl border transition-all flex flex-col items-center justify-center gap-1 ${activeTab === 'admit' ? 'bg-primary text-white shadow-lg border-primary' : 'bg-surface border-border hover:bg-surface-secondary text-text-secondary'}`}
                     >
                         <Plus size={24} />
                         <span className="font-semibold">New Admission</span>
@@ -322,22 +322,22 @@ const IPD = () => {
                     <div className="space-y-8">
                         {/* Wards Loop */}
                         {loading ? (
-                            <div className="text-center py-20 text-gray-400">Loading Bed Board...</div>
+                            <div className="text-center py-20 text-text-muted">Loading Bed Board...</div>
                         ) : (
                             wards.map(ward => {
                                 const wardBeds = allBeds.filter(b => b.ward?._id === ward._id || b.ward === ward._id);
                                 if (wardBeds.length === 0) return null;
 
                                 return (
-                                    <div key={ward._id} className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-                                        <div className="bg-gray-50 px-6 py-4 border-b border-gray-100 flex justify-between items-center">
+                                    <div key={ward._id} className="bg-surface rounded-2xl border border-border shadow-sm overflow-hidden">
+                                        <div className="bg-surface-secondary px-6 py-4 border-b border-border flex justify-between items-center">
                                             <div>
-                                                <h3 className="font-bold text-slate-800 text-lg">{ward.name}</h3>
-                                                <p className="text-sm text-gray-500">{ward.type.toUpperCase()} • Floor: {ward.floor}</p>
+                                                <h3 className="font-bold text-text-primary text-lg">{ward.name}</h3>
+                                                <p className="text-sm text-text-secondary">{ward.type.toUpperCase()} • Floor: {ward.floor}</p>
                                             </div>
                                             <div className="flex gap-4 text-sm font-medium">
-                                                <span className="text-green-600">{wardBeds.filter(b => b.status === 'available').length} Available</span>
-                                                <span className="text-red-500">{wardBeds.filter(b => b.status === 'occupied').length} Occupied</span>
+                                                <span className="text-emerald-600 dark:text-emerald-400">{wardBeds.filter(b => b.status === 'available').length} Available</span>
+                                                <span className="text-rose-600 dark:text-rose-400">{wardBeds.filter(b => b.status === 'occupied').length} Occupied</span>
                                             </div>
                                         </div>
                                         <div className="p-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -356,18 +356,18 @@ const IPD = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         {/* ... (Existing Admission Form) ... */}
                         <div className="lg:col-span-2 space-y-6">
-                            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                                <h3 className="font-bold text-lg text-slate-800 mb-6 flex items-center gap-2">
+                            <div className="bg-surface p-6 rounded-2xl border border-border shadow-sm">
+                                <h3 className="font-bold text-lg text-text-primary mb-6 flex items-center gap-2">
                                     <Plus className="text-primary" /> Admit Patient
                                 </h3>
 
                                 {/* Pending Requests Section */}
                                 {pendingRequests.length > 0 && (
-                                    <div className="mb-8 p-4 bg-indigo-50 border border-indigo-100 rounded-xl">
-                                        <h4 className="font-bold text-indigo-800 mb-3 text-sm uppercase tracking-wider">Pending Admission Requests</h4>
+                                    <div className="mb-8 p-4 bg-indigo-500/10 border border-indigo-500/20 rounded-xl">
+                                        <h4 className="font-bold text-indigo-700 dark:text-indigo-400 mb-3 text-sm uppercase tracking-wider">Pending Admission Requests</h4>
                                         <div className="space-y-3 max-h-60 overflow-y-auto">
                                             {pendingRequests.map(req => (
-                                                <div key={req._id} className="bg-white p-3 rounded-lg border border-indigo-100 shadow-sm flex justify-between items-center hover:shadow-md transition-all cursor-pointer"
+                                                <div key={req._id} className="bg-surface p-3 rounded-lg border border-indigo-500/20 shadow-sm flex justify-between items-center hover:shadow-md transition-all cursor-pointer"
                                                     onClick={() => {
                                                         setSelectedPatient(req.patient);
                                                         setAdmissionForm(prev => ({ ...prev, reason: req.reason, doctorId: req.doctor?._id || '', requestId: req._id }));
@@ -375,11 +375,11 @@ const IPD = () => {
                                                     }}
                                                 >
                                                     <div>
-                                                        <div className="font-bold text-slate-700">{req.patient?.firstName} {req.patient?.lastName}</div>
-                                                        <div className="text-xs text-gray-500">Dr. {req.doctor?.profile?.firstName || 'Unknown'} • {req.priority.toUpperCase()}</div>
-                                                        <div className="text-xs text-indigo-600 mt-1">Ward: {req.recommendedWardType}</div>
+                                                        <div className="font-bold text-text-primary">{req.patient?.firstName} {req.patient?.lastName}</div>
+                                                        <div className="text-xs text-text-secondary">Dr. {req.doctor?.profile?.firstName || 'Unknown'} • {req.priority.toUpperCase()}</div>
+                                                        <div className="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Ward: {req.recommendedWardType}</div>
                                                     </div>
-                                                    <div className="text-indigo-600 text-xs font-bold border border-indigo-200 px-2 py-1 rounded">Select</div>
+                                                    <div className="text-indigo-600 dark:text-indigo-400 text-xs font-bold border border-indigo-500/20 px-2 py-1 rounded">Select</div>
                                                 </div>
                                             ))}
                                         </div>
@@ -387,51 +387,51 @@ const IPD = () => {
                                 )}
 
                                 {activeTab === 'admit' && pendingRequests.length === 0 && (
-                                    <div className="mb-8 p-6 bg-gray-50 border border-gray-100 border-dashed rounded-xl text-center text-gray-500 text-sm">
+                                    <div className="mb-8 p-6 bg-surface-secondary border border-border border-dashed rounded-xl text-center text-text-muted text-sm">
                                         No pending admission requests from doctors.
                                     </div>
                                 )}
 
                                 {/* Patient Search */}
                                 <div className="mb-6 relative">
-                                    <label className="block font-medium text-slate-700 mb-2">Patient Search</label>
+                                    <label className="block font-medium text-text-primary mb-2">Patient Search</label>
                                     <input
                                         type="text"
                                         placeholder="Search by name, phone..."
-                                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-primary transition-colors"
+                                        className="w-full px-4 py-3 bg-surface-secondary border border-border rounded-xl outline-none focus:border-primary text-text-primary placeholder:text-text-muted transition-colors"
                                         value={searchQuery}
                                         onChange={(e) => setSearchQuery(e.target.value)}
                                     />
                                     {searchQuery && (
-                                        <div className="absolute top-full left-0 right-0 bg-white border border-gray-100 rounded-xl shadow-lg mt-2 z-10 max-h-60 overflow-y-auto">
+                                        <div className="absolute top-full left-0 right-0 bg-surface border border-border rounded-xl shadow-lg mt-2 z-10 max-h-60 overflow-y-auto">
                                             {searchResults.map(p => (
                                                 <div
                                                     key={p._id}
                                                     onClick={() => { setSelectedPatient(p); setSearchQuery(''); }}
-                                                    className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-50 last:border-0"
+                                                    className="p-3 hover:bg-surface-secondary cursor-pointer border-b border-border last:border-0"
                                                 >
-                                                    <div className="font-bold text-slate-700">{p.firstName} {p.lastName}</div>
-                                                    <div className="text-sm text-gray-500">{p.phone} • {p.patientId}</div>
+                                                    <div className="font-bold text-text-primary">{p.firstName} {p.lastName}</div>
+                                                    <div className="text-sm text-text-secondary">{p.phone} • {p.patientId}</div>
                                                 </div>
                                             ))}
                                         </div>
                                     )}
                                     {selectedPatient && (
-                                        <div className="mt-4 p-4 bg-blue-50 border border-blue-100 rounded-xl flex justify-between items-center">
+                                        <div className="mt-4 p-4 bg-blue-500/10 border border-blue-500/20 rounded-xl flex justify-between items-center">
                                             <div>
-                                                <div className="font-bold text-blue-900">{selectedPatient.firstName} {selectedPatient.lastName}</div>
-                                                <div className="text-sm text-blue-700">{selectedPatient.patientId}</div>
+                                                <div className="font-bold text-blue-800 dark:text-blue-300">{selectedPatient.firstName} {selectedPatient.lastName}</div>
+                                                <div className="text-sm text-blue-600 dark:text-blue-400">{selectedPatient.patientId}</div>
                                             </div>
-                                            <button onClick={() => setSelectedPatient(null)} className="text-blue-500 hover:text-blue-700 text-sm font-bold">Change</button>
+                                            <button onClick={() => setSelectedPatient(null)} className="text-blue-500 hover:text-blue-400 text-sm font-bold">Change</button>
                                         </div>
                                     )}
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                     <div>
-                                        <label className="block font-medium text-slate-700 mb-2">Ward</label>
+                                        <label className="block font-medium text-text-primary mb-2">Ward</label>
                                         <select
-                                            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none"
+                                            className="w-full px-4 py-3 bg-surface-secondary border border-border rounded-xl outline-none text-text-primary"
                                             value={admissionForm.wardId}
                                             onChange={(e) => setAdmissionForm({ ...admissionForm, wardId: e.target.value, bedId: '' })}
                                         >
@@ -440,9 +440,9 @@ const IPD = () => {
                                         </select>
                                     </div>
                                     <div>
-                                        <label className="block font-medium text-slate-700 mb-2">Bed Allocation</label>
+                                        <label className="block font-medium text-text-primary mb-2">Bed Allocation</label>
                                         <select
-                                            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none"
+                                            className="w-full px-4 py-3 bg-surface-secondary border border-border rounded-xl outline-none text-text-primary"
                                             value={admissionForm.bedId}
                                             onChange={(e) => setAdmissionForm({ ...admissionForm, bedId: e.target.value })}
                                             disabled={!admissionForm.wardId}
@@ -457,11 +457,11 @@ const IPD = () => {
                                 </div>
 
                                 <div>
-                                    <label className="block font-medium text-slate-700 mb-2">
+                                    <label className="block font-medium text-text-primary mb-2">
                                         {admissionForm.requestId ? 'Admitting Doctor (Auto-assigned)' : 'Primary Doctor'}
                                     </label>
                                     <select
-                                        className={`w-full px-4 py-3 border border-gray-200 rounded-xl outline-none ${admissionForm.requestId ? 'bg-gray-100 cursor-not-allowed opacity-80' : 'bg-gray-50'}`}
+                                        className={`w-full px-4 py-3 border border-border rounded-xl outline-none text-text-primary ${admissionForm.requestId ? 'bg-surface-secondary cursor-not-allowed opacity-80' : 'bg-surface-secondary'}`}
                                         value={admissionForm.doctorId}
                                         onChange={(e) => setAdmissionForm({ ...admissionForm, doctorId: e.target.value })}
                                         disabled={!!admissionForm.requestId}
@@ -476,9 +476,9 @@ const IPD = () => {
                                 </div>
 
                                 <div className="mt-6">
-                                    <label className="block font-medium text-slate-700 mb-2">Reason for Admission</label>
+                                    <label className="block font-medium text-text-primary mb-2">Reason for Admission</label>
                                     <textarea
-                                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none"
+                                        className="w-full px-4 py-3 bg-surface-secondary border border-border rounded-xl outline-none text-text-primary"
                                         rows="3"
                                         placeholder="Diagnosis / Reason..."
                                         value={admissionForm.reason}

@@ -15,8 +15,6 @@ import Prescriptions from './pages/Prescriptions';
 import LabResults from './pages/LabResults';
 import LifeLens from './pages/LifeLens';
 import Timeline from './pages/Timeline';
-import UploadDocument from './pages/UploadDocument';
-import OCRConfirmation from './pages/OCRConfirmation';
 
 // Components
 import ProtectedRoute from './components/ProtectedRoute';
@@ -152,22 +150,6 @@ function AppRoutes() {
         element={
           <ProtectedRoute>
             <Timeline />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/upload-document"
-        element={
-          <ProtectedRoute>
-            <UploadDocument />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/verify-ocr/:documentId"
-        element={
-          <ProtectedRoute>
-            <OCRConfirmation />
           </ProtectedRoute>
         }
       />

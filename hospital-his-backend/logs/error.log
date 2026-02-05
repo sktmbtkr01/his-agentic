@@ -7653,3 +7653,21 @@ Error: Invalid credentials
     at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientAuth.controller.js:46:21
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
 2026-02-04 17:40:17 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-04 21:35:31 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-05 00:08:41 [ERROR]: No active shift found
+Error: No active shift found
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\nursing.controller.js:218:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-05 00:08:42 [ERROR]: No active shift found
+Error: No active shift found
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\nursing.controller.js:218:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-05 00:15:43 [ERROR]: No active shift found
+Error: No active shift found
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\nursing.controller.js:218:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-05 00:15:43 [ERROR]: No active shift found
+Error: No active shift found
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\nursing.controller.js:218:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-05 00:36:13 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001

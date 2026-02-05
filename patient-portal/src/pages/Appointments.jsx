@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, Clock, MapPin, User, Plus, X, RefreshCw } from 'lucide-react';
+import { Calendar, Clock, MapPin, User, Plus, X, RefreshCw, AlertCircle, CheckCircle, ChevronLeft } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import appointmentService from '../services/appointmentService';
 
@@ -8,6 +8,7 @@ const Appointments = () => {
     const navigate = useNavigate();
     const [appointments, setAppointments] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [activeTab, setActiveTab] = useState('upcoming');
     const [rescheduleModal, setRescheduleModal] = useState(null);
     const [rescheduleDate, setRescheduleDate] = useState('');
     const [rescheduleSlot, setRescheduleSlot] = useState(null);
@@ -93,91 +94,156 @@ const Appointments = () => {
         }
     };
 
+    const filteredAppointments = appointments.filter(app => {
+        if (activeTab === 'upcoming') {
+            return ['scheduled', 'confirmed'].includes(app.status);
+        }
+        return ['completed', 'cancelled'].includes(app.status);
+    });
+
     return (
-        <div className="page-container pb-20">
-            <header className="bg-white p-4 sticky top-0 z-10 border-b flex items-center justify-between">
-                <h1 className="text-xl font-bold text-slate-800">My Appointments</h1>
-                <Link to="/book-appointment" className="btn btn-primary text-sm flex items-center gap-1">
-                    <Plus size={16} /> Book New
-                </Link>
-            </header>
+        <div className="min-h-screen bg-[var(--color-background)] pb-24 relative overflow-x-hidden">
+            {/* Glass Header */}
+            <div className="sticky top-0 z-30 glass border-b border-slate-200/50 px-4 pt-4 pb-2">
+                 <div className="flex items-center justify-between mb-4">
+                    <button 
+                        onClick={() => navigate('/dashboard')}
+                        className="p-2 -ml-2 rounded-full hover:bg-slate-100/50 text-slate-600 transition-colors"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
+                    <h1 className="text-lg font-bold text-slate-800">Appointments</h1>
+                    <Link to="/book-appointment" className="p-2 rounded-full bg-blue-600 text-white shadow-lg text-sm flex items-center gap-1 active:scale-90 transition-transform">
+                        <Plus size={20} />
+                    </Link>
+                </div>
 
-            <div className="p-4 space-y-4">
-                {loading ? (
-                    <div className="text-center py-10 text-slate-500">
-                        <div className="spinner mx-auto mb-2" style={{ width: '2rem', height: '2rem' }}></div>
-                        Loading appointments...
-                    </div>
-                ) : appointments.length === 0 ? (
-                    <div className="text-center py-12 bg-white rounded-2xl border border-dashed border-slate-200">
-                        <Calendar size={48} className="mx-auto text-slate-300 mb-2" />
-                        <p className="text-slate-500 font-medium">No appointments found</p>
-                        <p className="text-xs text-slate-400 mb-4">Schedule a check-up with our doctors</p>
-                        <Link to="/book-appointment" className="text-primary font-bold text-sm">Book Appointment</Link>
-                    </div>
-                ) : (
-                    appointments.map(app => (
-                        <motion.div
-                            key={app._id}
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100"
-                        >
-                            <div className="flex justify-between items-start mb-3">
-                                <div>
-                                    <span className={`inline-block px-2 py-1 rounded-md text-xs font-bold mb-2 ${app.status === 'scheduled' ? 'bg-blue-50 text-blue-600' :
-                                        app.status === 'completed' ? 'bg-green-50 text-green-600' :
-                                            'bg-red-50 text-red-600'
-                                        }`}>
-                                        {app.status?.charAt(0).toUpperCase() + app.status?.slice(1)}
-                                    </span>
-                                    <h3 className="font-bold text-slate-800 text-lg">
-                                        Dr. {app.doctor?.firstName} {app.doctor?.lastName}
-                                    </h3>
-                                    <p className="text-sm text-slate-500">{app.doctor?.specialization}</p>
-                                </div>
-                                <div className="text-center bg-slate-50 px-3 py-2 rounded-xl">
-                                    <p className="text-xs text-slate-400 uppercase font-bold">
-                                        {new Date(app.scheduledDate).toLocaleDateString(undefined, { month: 'short' })}
-                                    </p>
-                                    <p className="text-xl font-bold text-slate-800">
-                                        {new Date(app.scheduledDate).getDate()}
-                                    </p>
-                                </div>
+                {/* Tabs */}
+                <div className="flex p-1 bg-slate-100/80 rounded-xl backdrop-blur-sm">
+                    <button
+                        onClick={() => setActiveTab('upcoming')}
+                        className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${
+                            activeTab === 'upcoming' 
+                            ? 'bg-white text-blue-600 shadow-sm scale-1' 
+                            : 'text-slate-500 scale-95 opacity-80'
+                        }`}
+                    >
+                        Upcoming
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('history')}
+                        className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${
+                            activeTab === 'history' 
+                            ? 'bg-white text-slate-800 shadow-sm scale-1' 
+                            : 'text-slate-500 scale-95 opacity-80'
+                        }`}
+                    >
+                        History
+                    </button>
+                </div>
+            </div>
+
+            <div className="p-4 space-y-4 max-w-lg mx-auto">
+                <AnimatePresence mode='wait'>
+                    {loading ? (
+                         <motion.div initial={{opacity:0}} animate={{opacity:1}} className="flex flex-col items-center justify-center py-20 gap-4">
+                             <div className="w-10 h-10 border-4 border-slate-200 border-t-blue-500 rounded-full animate-spin"></div>
+                             <p className="text-sm font-medium text-slate-400">Syncing calendar...</p>
+                         </motion.div>
+                    ) : filteredAppointments.length === 0 ? (
+                        <motion.div initial={{opacity:0, scale: 0.95}} animate={{opacity:1, scale: 1}} className="flex flex-col items-center justify-center py-20 text-center">
+                            <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mb-4 text-slate-300">
+                                <Calendar size={40} />
                             </div>
-
-                            <div className="grid grid-cols-2 gap-3 mb-4">
-                                <div className="flex items-center gap-2 text-sm text-slate-600">
-                                    <Clock size={16} className="text-slate-400" />
-                                    {app.scheduledTime}
-                                </div>
-                                <div className="flex items-center gap-2 text-sm text-slate-600">
-                                    <MapPin size={16} className="text-slate-400" />
-                                    {app.department?.name || 'Main Wing'}
-                                </div>
-                            </div>
-
-                            {app.status === 'scheduled' && (
-                                <div className="flex gap-2 pt-2 border-t border-slate-100">
-                                    <button
-                                        onClick={() => openRescheduleModal(app)}
-                                        className="flex-1 py-2 text-center text-primary text-sm font-medium hover:bg-primary/5 rounded-lg transition flex items-center justify-center gap-1"
-                                    >
-                                        <RefreshCw size={14} />
-                                        Reschedule
-                                    </button>
-                                    <button
-                                        onClick={() => handleCancel(app._id)}
-                                        disabled={actionLoading}
-                                        className="flex-1 py-2 text-center text-red-500 text-sm font-medium hover:bg-red-50 rounded-lg transition disabled:opacity-50"
-                                    >
-                                        Cancel
-                                    </button>
-                                </div>
+                            <h3 className="font-bold text-slate-700 text-lg mb-1">No appointments</h3>
+                            <p className="text-sm text-slate-400 mb-6 max-w-[200px]">
+                                {activeTab === 'upcoming' ? 'You have no upcoming appointments scheduled.' : 'No past appointment history found.'}
+                            </p>
+                            {activeTab === 'upcoming' && (
+                                <Link to="/book-appointment" className="px-6 py-3 bg-blue-600 text-white rounded-xl font-bold text-sm shadow-xl shadow-blue-500/20 active:scale-95 transition-transform">
+                                    Book Now
+                                </Link>
                             )}
                         </motion.div>
-                    ))
-                )}
+                    ) : (
+                        filteredAppointments.map((app, idx) => (
+                            <motion.div
+                                key={app._id}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: idx * 0.05 }}
+                                className="card-premium p-0 bg-white overflow-hidden group"
+                            >
+                                <div className="p-5">
+                                    <div className="flex justify-between items-start mb-4">
+                                        <div className="flex gap-3">
+                                            <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center overflow-hidden flex-shrink-0">
+                                                <User size={24} className="text-slate-400" />
+                                            </div>
+                                            <div>
+                                                <h3 className="font-bold text-slate-800 text-lg leading-tight">
+                                                    Dr. {app.doctor?.firstName} {app.doctor?.lastName}
+                                                </h3>
+                                                <p className="text-sm text-blue-500 font-medium">{app.doctor?.specialization}</p>
+                                            </div>
+                                        </div>
+                                        <div className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                                            app.status === 'scheduled' ? 'bg-blue-50 text-blue-600' :
+                                            app.status === 'completed' ? 'bg-green-50 text-green-600' :
+                                            'bg-rose-50 text-rose-600'
+                                        }`}>
+                                            {app.status}
+                                        </div>
+                                    </div>
+
+                                    <div className="grid grid-cols-2 gap-3 mb-4">
+                                        <div className="bg-slate-50 rounded-xl p-3 flex items-center gap-3">
+                                            <Calendar size={18} className="text-slate-400" />
+                                            <div>
+                                                <p className="text-[10px] font-bold text-slate-400 uppercase">Date</p>
+                                                <p className="font-bold text-slate-700 text-sm">
+                                                    {new Date(app.scheduledDate).toLocaleDateString(undefined, { day: 'numeric', month: 'short' })}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="bg-slate-50 rounded-xl p-3 flex items-center gap-3">
+                                            <Clock size={18} className="text-slate-400" />
+                                            <div>
+                                                <p className="text-[10px] font-bold text-slate-400 uppercase">Time</p>
+                                                <p className="font-bold text-slate-700 text-sm">{app.scheduledTime}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                     <div className="flex items-center gap-2 text-xs text-slate-500 px-1">
+                                        <MapPin size={14} className="text-slate-400" />
+                                        {app.department?.name || 'Main Wing Hospital'}
+                                    </div>
+                                </div>
+
+                                {app.status === 'scheduled' && (
+                                    <div className="border-t border-slate-100 flex divide-x divide-slate-100 bg-slate-50/50">
+                                        <button
+                                            onClick={() => openRescheduleModal(app)}
+                                            className="flex-1 py-3 text-center text-slate-600 text-xs font-bold hover:bg-slate-50 transition-colors flex items-center justify-center gap-2"
+                                        >
+                                            <RefreshCw size={14} />
+                                            Reschedule
+                                        </button>
+                                        <button
+                                            onClick={() => handleCancel(app._id)}
+                                            disabled={actionLoading}
+                                            className="flex-1 py-3 text-center text-rose-500 text-xs font-bold hover:bg-rose-50 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                                        >
+                                            <X size={14} />
+                                            Cancel
+                                        </button>
+                                    </div>
+                                )}
+                            </motion.div>
+                        ))
+                    )}
+                </AnimatePresence>
             </div>
 
             {/* Reschedule Modal */}
@@ -187,43 +253,49 @@ const Appointments = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center p-4"
+                        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end sm:items-center justify-center p-4"
                         onClick={closeRescheduleModal}
                     >
                         <motion.div
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: 100, opacity: 0 }}
-                            className="bg-white rounded-2xl w-full max-w-md max-h-[80vh] overflow-hidden"
+                            className="bg-white rounded-3xl w-full max-w-md max-h-[85vh] overflow-hidden shadow-2xl"
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Modal Header */}
-                            <div className="flex items-center justify-between p-4 border-b">
-                                <h2 className="text-lg font-bold text-slate-800">Reschedule Appointment</h2>
-                                <button onClick={closeRescheduleModal} className="text-slate-400 hover:text-slate-600">
+                            <div className="flex items-center justify-between p-5 border-b border-slate-100">
+                                <div>
+                                    <h2 className="text-lg font-bold text-slate-800">Reschedule</h2>
+                                    <p className="text-xs text-slate-500 font-medium">Please select a new time slot</p>
+                                </div>
+                                <button onClick={closeRescheduleModal} className="p-2 -mr-2 text-slate-400 hover:text-slate-600 hover:bg-slate-50 rounded-full transition-colors">
                                     <X size={24} />
                                 </button>
                             </div>
 
                             {/* Modal Content */}
-                            <div className="p-4 space-y-4 overflow-y-auto max-h-[60vh]">
+                            <div className="p-5 space-y-5 overflow-y-auto max-h-[60vh] custom-scrollbar">
                                 {/* Current Appointment Info */}
-                                <div className="bg-slate-50 p-3 rounded-xl">
-                                    <p className="text-xs text-slate-400 uppercase font-bold mb-1">Current Appointment</p>
-                                    <p className="font-bold text-slate-800">
-                                        Dr. {rescheduleModal.doctor?.firstName} {rescheduleModal.doctor?.lastName}
-                                    </p>
-                                    <p className="text-sm text-slate-500">
-                                        {new Date(rescheduleModal.scheduledDate).toLocaleDateString()} at {rescheduleModal.scheduledTime}
-                                    </p>
+                                <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 flex items-start gap-3">
+                                    <AlertCircle size={20} className="text-blue-500 flex-shrink-0 mt-0.5" />
+                                    <div>
+                                        <p className="text-xs text-blue-600 font-bold uppercase mb-1">Currently Scheduled</p>
+                                        <p className="font-bold text-slate-800 text-sm">
+                                            {new Date(rescheduleModal.scheduledDate).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })}
+                                        </p>
+                                        <p className="text-sm text-slate-600">
+                                            at {rescheduleModal.scheduledTime} with Dr. {rescheduleModal.doctor?.lastName}
+                                        </p>
+                                    </div>
                                 </div>
 
                                 {/* Date Picker */}
                                 <div>
-                                    <label className="block text-sm font-medium text-slate-600 mb-2">New Date</label>
+                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 block">Select New Date</label>
                                     <input
                                         type="date"
-                                        className="w-full p-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none"
+                                        className="w-full p-4 bg-slate-50 border-none rounded-2xl text-slate-700 font-bold focus:ring-2 focus:ring-blue-500 outline-none"
                                         min={new Date().toISOString().split('T')[0]}
                                         value={rescheduleDate}
                                         onChange={(e) => handleDateChange(e.target.value)}
@@ -233,20 +305,25 @@ const Appointments = () => {
                                 {/* Time Slots */}
                                 {rescheduleDate && (
                                     <div>
-                                        <label className="block text-sm font-medium text-slate-600 mb-2">New Time</label>
+                                        <label className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 block">Available Slots</label>
                                         {loadingSlots ? (
-                                            <div className="text-center py-4 text-slate-400">Loading slots...</div>
+                                            <div className="py-8 flex justify-center">
+                                                <div className="w-8 h-8 border-4 border-slate-200 border-t-blue-500 rounded-full animate-spin"></div>
+                                            </div>
                                         ) : availableSlots.length > 0 ? (
-                                            <div className="grid grid-cols-4 gap-2">
+                                            <div className="grid grid-cols-3 gap-2">
                                                 {availableSlots.map(slot => (
                                                     <button
                                                         key={slot.time}
                                                         type="button"
                                                         disabled={!slot.available}
                                                         onClick={() => setRescheduleSlot(slot.time)}
-                                                        className={`py-2 px-1 rounded-lg text-xs font-medium transition-colors ${!slot.available ? 'bg-slate-100 text-slate-300 cursor-not-allowed' :
-                                                            rescheduleSlot === slot.time ? 'bg-primary text-white' :
-                                                                'bg-white border text-slate-600 hover:border-primary'
+                                                        className={`py-3 rounded-xl text-xs font-bold transition-all border ${
+                                                            !slot.available 
+                                                                ? 'bg-slate-50 text-slate-300 border-transparent cursor-not-allowed hidden' 
+                                                                : rescheduleSlot === slot.time 
+                                                                    ? 'bg-slate-800 text-white border-slate-800 shadow-md ring-2 ring-slate-800 ring-offset-2' 
+                                                                    : 'bg-white text-slate-600 border-slate-200 hover:border-slate-300'
                                                             }`}
                                                     >
                                                         {slot.time}
@@ -254,28 +331,23 @@ const Appointments = () => {
                                                 ))}
                                             </div>
                                         ) : (
-                                            <p className="text-center py-4 text-slate-400">No slots available</p>
+                                            <div className="text-center py-8 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
+                                                <p className="text-slate-400 text-sm font-medium">No slots available for this date.</p>
+                                            </div>
                                         )}
                                     </div>
                                 )}
                             </div>
 
                             {/* Modal Footer */}
-                            <div className="flex gap-3 p-4 border-t">
-                                <button
-                                    type="button"
-                                    onClick={closeRescheduleModal}
-                                    className="flex-1 btn btn-secondary"
-                                >
-                                    Cancel
-                                </button>
+                            <div className="p-5 border-t border-slate-100 bg-white sticky bottom-0">
                                 <button
                                     type="button"
                                     disabled={!rescheduleDate || !rescheduleSlot || actionLoading}
                                     onClick={handleReschedule}
-                                    className="flex-1 btn btn-primary disabled:opacity-50"
+                                    className="w-full py-4 bg-blue-600 text-white rounded-xl font-bold text-sm tracking-wide shadow-lg shadow-blue-500/20 active:scale-95 transition-transform disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                                 >
-                                    {actionLoading ? 'Saving...' : 'Confirm'}
+                                    {actionLoading ? 'Updating Check-up...' : 'Confirm Reschedule'}
                                 </button>
                             </div>
                         </motion.div>

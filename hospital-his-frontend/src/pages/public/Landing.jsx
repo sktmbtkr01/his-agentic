@@ -192,99 +192,70 @@ function Landing() {
                 </div>
             </section>
 
-            {/* 4. Trust Strip (Refined) */}
-            <motion.section
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                className="py-8 bg-white border-y border-slate-100 overflow-hidden"
-            >
-                <div className="flex w-[200%] animate-marquee">
-                    {[1, 2].map((i) => (
-                        <div key={i} className="flex justify-around w-1/2 min-w-[50%] px-10 gap-12 text-slate-500 font-semibold text-sm tracking-wide uppercase">
-                            <span className="flex items-center gap-3"><ShieldCheck size={20} className="text-teal-600" /> ISO 27001 Certified</span>
-                            <span className="flex items-center gap-3"><Clock size={20} className="text-teal-600" /> 99.9% Uptime</span>
-                            <span className="flex items-center gap-3"><Lock size={20} className="text-teal-600" /> HIPAA Compliant</span>
-                            <span className="flex items-center gap-3"><Database size={20} className="text-teal-600" /> Secure Records</span>
-                            <span className="flex items-center gap-3"><Users size={20} className="text-teal-600" /> Multi-Role Access</span>
-                        </div>
-                    ))}
-                </div>
-            </motion.section>
-
             {/* 5. How It Works (Timeline inside Glass Card) */}
-            <section className="py-24 bg-background relative overflow-hidden">
+            <section className="py-24 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
+                 {/* Background Orbs for Depth */}
+                 <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-teal-200/20 rounded-full blur-[100px] -translate-y-1/2 -z-10"></div>
+                 <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-200/20 rounded-full blur-[100px] translate-y-1/4 -z-10"></div>
+
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
+                        className="text-center mb-20"
                     >
-                        <h2 className="text-4xl font-bold text-slate-800 mb-4">Streamlined Workflow</h2>
-                        <p className="text-slate-500 max-w-xl mx-auto">From registration to discharge, experience a seamless healthcare journey.</p>
+                        <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 mb-6 font-display tracking-tight">Streamlined Workflow</h2>
+                        <p className="text-slate-500 text-lg max-w-2xl mx-auto font-light">From patient registration to final discharge, experience a seamless, integrated healthcare journey powered by intelligent automation.</p>
                     </motion.div>
 
                     {/* Timeline Card */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="bg-white/60 backdrop-blur-xl border border-white/40 shadow-glass-lg rounded-3xl p-8 md:p-12 relative overflow-hidden"
-                    >
-                        {/* Decorative background gradients */}
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+                    <div className="relative">
+                        {/* Connecting Line (Desktop) */}
+                        <motion.div 
+                            initial={{ scaleX: 0, opacity: 0 }}
+                            whileInView={{ scaleX: 1, opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1.5, ease: "circOut" }}
+                            className="hidden md:block absolute top-[60px] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-teal-200 via-blue-200 to-indigo-200 z-0 origin-left"
+                        ></motion.div>
 
-                        {/* Timeline Container */}
-                        <div className="relative mt-8 mb-4">
-                            {/* Base Line */}
-                            <div className="absolute top-1/2 left-0 w-full h-1 bg-gray-200 rounded-full -translate-y-1/2 z-0 hidden md:block"></div>
-
-                            {/* Animated Progress Line */}
-                            <motion.div
-                                initial={{ scaleX: 0 }}
-                                whileInView={{ scaleX: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
-                                className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-teal-500 to-blue-600 rounded-full -translate-y-1/2 z-0 origin-left hidden md:block"
-                            ></motion.div>
-
-                            {/* Steps Grid */}
-                            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 relative z-10">
                                 <TimelineStep
                                     number="01"
                                     title="Quick Registration"
-                                    desc="AI-powered check-in reduces wait times."
-                                    delay={0.6}
-                                    icon={<UserCog size={24} className="text-white" />}
+                                    desc="AI-powered check-in with facial recognition reduces wait times by 60%."
+                                    delay={0.2}
+                                    icon={<UserCog size={28} className="text-teal-600" />}
+                                    color="teal"
                                 />
                                 <TimelineStep
                                     number="02"
                                     title="Smart Triage"
-                                    desc="Auto-priority assignment based on vitals."
-                                    delay={0.9}
-                                    icon={<Activity size={24} className="text-white" />}
+                                    desc="Auto-priority assignment based on real-time vitals analysis."
+                                    delay={0.4}
+                                    icon={<Activity size={28} className="text-blue-600" />}
+                                    color="blue"
                                 />
                                 <TimelineStep
                                     number="03"
                                     title="Care & Diagnostics"
-                                    desc="Integrated labs, imaging, and prescriptions."
-                                    delay={1.2}
-                                    icon={<FlaskConical size={24} className="text-white" />}
+                                    desc="Integrated labs ordering, imaging results, and care plans."
+                                    delay={0.6}
+                                    icon={<FlaskConical size={28} className="text-indigo-600" />}
+                                    color="indigo"
                                 />
                                 <TimelineStep
                                     number="04"
                                     title="Billing & Discharge"
-                                    desc="Seamless insurance claim and automated billing."
-                                    delay={1.5}
-                                    icon={<Banknote size={24} className="text-white" />}
+                                    desc="Seamless insurance claims processing and automated discharge summaries."
+                                    delay={0.8}
+                                    icon={<Banknote size={28} className="text-purple-600" />}
+                                    color="purple"
                                 />
                             </div>
-                        </div>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -317,10 +288,18 @@ function Landing() {
             <section className="py-20 bg-slate-800 text-white relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
                 <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.2
+                            }
+                        }
+                    }}
                     className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10"
                 >
                     <StatItem number="10k+" label="Patients Served" />
@@ -332,7 +311,13 @@ function Landing() {
 
             {/* 8. Footer */}
             <footer className="bg-slate-900 text-white pt-16 pb-8">
-                <div className="max-w-7xl mx-auto px-6">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="max-w-7xl mx-auto px-6"
+                >
                     <div className="grid md:grid-cols-4 gap-12 mb-12">
                         <div className="space-y-4">
                             <div className="flex items-center gap-3">
@@ -352,7 +337,7 @@ function Landing() {
                     <div className="text-center text-slate-500 text-xs border-t border-slate-800 pt-8">
                         &copy; 2026 LifelineX Inc. All rights reserved.
                     </div>
-                </div>
+                </motion.div>
             </footer>
 
         </div>
@@ -485,23 +470,39 @@ function LoadBar({ label, value, color }) {
     );
 }
 
-function TimelineStep({ number, title, desc, delay, icon }) {
+function TimelineStep({ number, title, desc, delay, icon, color = 'teal' }) {
+    const colorVariants = {
+        teal: 'from-teal-500 to-teal-600 shadow-teal-500/20 ring-teal-50',
+        blue: 'from-blue-500 to-blue-600 shadow-blue-500/20 ring-blue-50',
+        indigo: 'from-indigo-500 to-indigo-600 shadow-indigo-500/20 ring-indigo-50',
+        purple: 'from-purple-500 to-purple-600 shadow-purple-500/20 ring-purple-50',
+    };
+
+    const textColors = {
+        teal: 'text-teal-600',
+        blue: 'text-blue-600',
+        indigo: 'text-indigo-600',
+        purple: 'text-purple-600',
+    };
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: delay }}
-            className="flex flex-col items-center text-center group"
+            className="flex flex-col items-center text-center group relative p-4 rounded-2xl hover:bg-white/50 hover:shadow-lg transition-all duration-300"
         >
             {/* Circle Node */}
-            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-teal-500 to-teal-700 shadow-lg shadow-teal-500/30 flex items-center justify-center mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300 ring-4 ring-white">
-                {icon}
+            <div className={`w-16 h-16 rounded-full bg-white shadow-xl flex items-center justify-center mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300 ring-8 ${colorVariants[color].split(' ring-')[1]} border border-slate-50`}>
+                 <div className={`bg-slate-50 p-3 rounded-full ${textColors[color].replace('text-', 'bg-').replace('600', '50')}`}>
+                    {icon}
+                 </div>
             </div>
 
-            <span className="text-xs font-bold text-teal-600/60 tracking-wider mb-2 uppercase">Step {number}</span>
-            <h3 className="text-lg font-bold text-slate-800 mb-2">{title}</h3>
-            <p className="text-sm text-slate-500 leading-relaxed max-w-[200px] mx-auto">{desc}</p>
+            <span className={`text-[10px] font-bold tracking-widest mb-2 uppercase px-3 py-1 rounded-full bg-slate-50 ${textColors[color]}`}>Step {number}</span>
+            <h3 className="text-lg font-bold text-slate-800 mb-2 leading-tight">{title}</h3>
+            <p className="text-sm text-slate-500 leading-relaxed max-w-[200px] mx-auto font-medium">{desc}</p>
         </motion.div>
     );
 }
@@ -573,10 +574,16 @@ function Carousel3D() {
 
 function StatItem({ number, label }) {
     return (
-        <div className="space-y-2">
+        <motion.div 
+            variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+            }}
+            className="space-y-2"
+        >
             <div className="text-4xl md:text-5xl font-bold text-teal-400">{number}</div>
             <div className="text-white/60 text-sm font-medium uppercase tracking-wider">{label}</div>
-        </div>
+        </motion.div>
     );
 }
 
