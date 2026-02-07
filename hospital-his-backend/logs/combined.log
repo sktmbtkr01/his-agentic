@@ -18684,3 +18684,1151 @@ Error: No active shift found
 2026-02-05 00:53:52 [INFO]: 🔧 Checking inventory policy defaults...
 2026-02-05 00:53:57 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
 2026-02-05 00:53:57 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-05 08:33:43 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-05 08:33:43 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-05 08:33:48 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-05 08:33:48 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-05 08:33:48 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-05 08:33:48 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-05 08:33:48 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-05 08:33:48 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-05 08:33:48 [INFO]: 🔌 WebSocket enabled
+2026-02-05 08:33:48 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-05 08:33:48 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-05 08:34:32 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-05 08:35:24 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-05 08:35:46 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 08:35:46 [INFO]: Client connected: 2FWOeR0rqbOGa8oRAAAC
+2026-02-05 08:35:47 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 08:35:47 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 08:35:47 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 08:35:56 [INFO]: Client disconnected: 2FWOeR0rqbOGa8oRAAAC
+2026-02-05 08:36:23 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 08:36:23 [INFO]: Client connected: f-XttalmpKvEtzBgAAAF
+2026-02-05 08:36:23 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 08:36:23 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 08:36:23 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 08:37:04 [INFO]: Client disconnected: f-XttalmpKvEtzBgAAAF
+2026-02-05 08:37:05 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 08:37:05 [INFO]: Client connected: gj8-sgKijIetuRBNAAAI
+2026-02-05 08:37:05 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 08:37:05 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 08:37:05 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 08:37:15 [INFO]: Client disconnected: gj8-sgKijIetuRBNAAAI
+2026-02-05 08:37:16 [INFO]: Client connected: PsBZfdlkZUZQXLYtAAAL
+2026-02-05 08:37:16 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 08:37:17 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 08:37:17 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 08:37:17 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 08:37:22 [INFO]: Client disconnected: PsBZfdlkZUZQXLYtAAAL
+2026-02-05 08:37:23 [INFO]: Client connected: X_ngcrt85dMTOVtZAAAO
+2026-02-05 08:37:23 [INFO]: Socket X_ngcrt85dMTOVtZAAAO joined emergency room
+2026-02-05 08:37:24 [INFO]: Client disconnected: X_ngcrt85dMTOVtZAAAO
+2026-02-05 08:37:26 [INFO]: Client connected: r__O-S7VrP9b_uYFAAAR
+2026-02-05 08:37:26 [INFO]: Socket r__O-S7VrP9b_uYFAAAR joined emergency room
+2026-02-05 08:37:34 [INFO]: Client disconnected: r__O-S7VrP9b_uYFAAAR
+2026-02-05 08:38:51 [INFO]: Client connected: 5cejUq1z4DM02RmwAAAU
+2026-02-05 08:38:51 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-05T00:00:00.000Z to 2026-02-06T00:00:00.000Z
+2026-02-05 08:38:51 [INFO]: User 697f269a52f4567a06a1e7fa joined personal room
+2026-02-05 08:38:51 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 65
+2026-02-05 08:38:51 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-05T00:00:00.000Z to 2026-02-06T00:00:00.000Z
+2026-02-05 08:38:51 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 65
+2026-02-05 08:38:59 [INFO]: Client disconnected: 5cejUq1z4DM02RmwAAAU
+2026-02-05 08:39:05 [INFO]: Client connected: M1CMsf_T6ifLEwyDAAAX
+2026-02-05 08:39:05 [INFO]: Socket M1CMsf_T6ifLEwyDAAAX joined emergency room
+2026-02-05 08:39:06 [INFO]: Client disconnected: M1CMsf_T6ifLEwyDAAAX
+2026-02-05 08:45:10 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-05 08:45:16 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-05 08:45:31 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 08:45:31 [INFO]: Client connected: gxEUCxZuDeoXQiAFAAAa
+2026-02-05 08:45:31 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 08:45:31 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 08:45:31 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 08:45:39 [INFO]: Client disconnected: gxEUCxZuDeoXQiAFAAAa
+2026-02-05 12:08:55 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-05 12:09:05 [INFO]: MongoDB reconnected
+2026-02-05 12:09:11 [INFO]: Client connected: iltgke-aZCoXZdqAAAAd
+2026-02-05 12:09:11 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 12:09:11 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 12:09:11 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 12:09:11 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 12:09:14 [INFO]: Client disconnected: iltgke-aZCoXZdqAAAAd
+2026-02-05 12:09:16 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 12:09:16 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 12:09:16 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 12:09:16 [INFO]: Client connected: 5GH-lnc-bKY1305LAAAg
+2026-02-05 12:09:16 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 12:09:22 [INFO]: Client disconnected: 5GH-lnc-bKY1305LAAAg
+2026-02-05 12:09:30 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 12:09:30 [INFO]: Client connected: Pmy1TCNtncySjG6DAAAj
+2026-02-05 12:09:30 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 12:09:30 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 12:09:30 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 12:10:30 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 12:10:31 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 12:11:30 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 12:11:30 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 12:12:30 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 12:12:30 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 12:13:30 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 12:13:30 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 12:14:06 [INFO]: Client disconnected: Pmy1TCNtncySjG6DAAAj
+2026-02-05 12:14:06 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 12:14:06 [INFO]: Client connected: jfEirIHHAWvVUX2iAAAl
+2026-02-05 12:14:07 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 12:14:36 [INFO]: Client disconnected: jfEirIHHAWvVUX2iAAAl
+2026-02-05 12:15:53 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-05T00:00:00.000Z to 2026-02-06T00:00:00.000Z
+2026-02-05 12:15:53 [INFO]: Client connected: T_l0JlvGO63eqX8RAAAo
+2026-02-05 12:15:53 [INFO]: User 697f269a52f4567a06a1e7fa joined personal room
+2026-02-05 12:15:53 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 65
+2026-02-05 12:15:53 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-05T00:00:00.000Z to 2026-02-06T00:00:00.000Z
+2026-02-05 12:15:53 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 65
+2026-02-05 12:15:55 [INFO]: Client disconnected: T_l0JlvGO63eqX8RAAAo
+2026-02-05 12:16:59 [INFO]: [PatientRegistration] New patient registered: PAT000066 - gauri barve
+2026-02-05 12:21:08 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-05T00:00:00.000Z to 2026-02-06T00:00:00.000Z
+2026-02-05 12:21:08 [INFO]: Client connected: aRweYjnAwUcl7OgRAAAr
+2026-02-05 12:21:08 [INFO]: [ReceptionistDashboard] Registrations today: 1, Total patients: 66
+2026-02-05 12:21:08 [INFO]: User 697f269a52f4567a06a1e7fa joined personal room
+2026-02-05 12:21:08 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-05T00:00:00.000Z to 2026-02-06T00:00:00.000Z
+2026-02-05 12:21:08 [INFO]: [ReceptionistDashboard] Registrations today: 1, Total patients: 66
+2026-02-05 12:21:22 [INFO]: Client disconnected: aRweYjnAwUcl7OgRAAAr
+2026-02-05 12:21:38 [INFO]: Client connected: JwTrO7ZqmncI7pseAAAu
+2026-02-05 12:21:38 [INFO]: Socket JwTrO7ZqmncI7pseAAAu joined emergency room
+2026-02-05 12:21:39 [INFO]: Client disconnected: JwTrO7ZqmncI7pseAAAu
+2026-02-05 12:22:35 [INFO]: Client connected: LDexHE6sEg5c2fFEAAAx
+2026-02-05 12:22:35 [INFO]: Socket LDexHE6sEg5c2fFEAAAx joined emergency room
+2026-02-05 12:22:36 [INFO]: Client disconnected: LDexHE6sEg5c2fFEAAAx
+2026-02-05 12:22:41 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-05T00:00:00.000Z to 2026-02-06T00:00:00.000Z
+2026-02-05 12:22:41 [INFO]: Client connected: zrtiGQytZ4UVZpkoAAA0
+2026-02-05 12:22:41 [INFO]: User 697f269a52f4567a06a1e7fa joined personal room
+2026-02-05 12:22:41 [INFO]: [ReceptionistDashboard] Registrations today: 1, Total patients: 66
+2026-02-05 12:22:41 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-05T00:00:00.000Z to 2026-02-06T00:00:00.000Z
+2026-02-05 12:22:41 [INFO]: [ReceptionistDashboard] Registrations today: 1, Total patients: 66
+2026-02-05 12:22:46 [INFO]: Client disconnected: zrtiGQytZ4UVZpkoAAA0
+2026-02-05 12:25:58 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 12:25:58 [INFO]: Client connected: lggSt3baxCVJqglzAAA3
+2026-02-05 12:25:58 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 12:25:58 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 12:25:58 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 12:25:59 [INFO]: Client disconnected: lggSt3baxCVJqglzAAA3
+2026-02-05 12:26:15 [INFO]: Client connected: TPhGgDUz7ISftfE3AAA6
+2026-02-05 12:26:15 [INFO]: Socket TPhGgDUz7ISftfE3AAA6 joined emergency room
+2026-02-05 12:26:17 [INFO]: Client disconnected: TPhGgDUz7ISftfE3AAA6
+2026-02-05 12:30:55 [INFO]: Client connected: jh7LHQvMBof5tFGjAAA9
+2026-02-05 12:30:55 [INFO]: Socket jh7LHQvMBof5tFGjAAA9 joined emergency room
+2026-02-05 12:31:11 [INFO]: Client disconnected: jh7LHQvMBof5tFGjAAA9
+2026-02-05 12:31:11 [INFO]: Client connected: N3Dlp5qv9hn5TelOAAA_
+2026-02-05 12:31:11 [INFO]: Socket N3Dlp5qv9hn5TelOAAA_ joined emergency room
+2026-02-05 12:31:19 [INFO]: Client disconnected: N3Dlp5qv9hn5TelOAAA_
+2026-02-05 12:31:28 [INFO]: Client connected: RcLrD2iFmq-FmfehAABC
+2026-02-05 12:31:28 [INFO]: Socket RcLrD2iFmq-FmfehAABC joined emergency room
+2026-02-05 12:31:29 [INFO]: Client disconnected: RcLrD2iFmq-FmfehAABC
+2026-02-05 12:32:34 [INFO]: Client connected: N0rVZ3T-E3mdsqODAABF
+2026-02-05 12:32:34 [INFO]: Socket N0rVZ3T-E3mdsqODAABF joined emergency room
+2026-02-05 12:32:36 [INFO]: Client disconnected: N0rVZ3T-E3mdsqODAABF
+2026-02-05 12:32:37 [INFO]: Client connected: rsD4VPKBf06AgOqxAABI
+2026-02-05 12:32:37 [INFO]: Socket rsD4VPKBf06AgOqxAABI joined emergency room
+2026-02-05 12:32:39 [INFO]: Client disconnected: rsD4VPKBf06AgOqxAABI
+2026-02-05 12:32:42 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:376:14)
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:421:3)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+2026-02-05 12:32:48 [INFO]: Client connected: x7N5D0smA5RPW-uGAABL
+2026-02-05 12:32:48 [INFO]: Socket x7N5D0smA5RPW-uGAABL joined emergency room
+2026-02-05 12:32:49 [INFO]: Client disconnected: x7N5D0smA5RPW-uGAABL
+2026-02-05 12:47:28 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-05 12:47:38 [INFO]: MongoDB reconnected
+2026-02-05 13:03:01 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 13:03:01 [INFO]: Client connected: XGlZq4g6-42QHNGZAABO
+2026-02-05 13:03:01 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 13:03:01 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 13:03:01 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 13:03:15 [INFO]: Client disconnected: XGlZq4g6-42QHNGZAABO
+2026-02-05 13:03:26 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-05 13:03:38 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-05T00:00:00.000Z to 2026-02-06T00:00:00.000Z
+2026-02-05 13:03:38 [INFO]: Client connected: xl2b7UGauKUvyZtgAABR
+2026-02-05 13:03:38 [INFO]: User 697f269a52f4567a06a1e7fa joined personal room
+2026-02-05 13:03:38 [INFO]: [ReceptionistDashboard] Registrations today: 1, Total patients: 66
+2026-02-05 13:03:38 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-05T00:00:00.000Z to 2026-02-06T00:00:00.000Z
+2026-02-05 13:03:38 [INFO]: [ReceptionistDashboard] Registrations today: 1, Total patients: 66
+2026-02-05 13:04:02 [INFO]: Client disconnected: xl2b7UGauKUvyZtgAABR
+2026-02-05 13:05:47 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-05 13:05:58 [INFO]: MongoDB reconnected
+2026-02-05 13:06:11 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-05 13:06:22 [INFO]: MongoDB reconnected
+2026-02-05 13:06:25 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-05 13:06:35 [INFO]: MongoDB reconnected
+2026-02-05 13:08:10 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-05 13:08:12 [INFO]: MongoDB reconnected
+2026-02-05 13:08:47 [INFO]: Client connected: MmgH2eh-hIin04fCAABU
+2026-02-05 13:08:47 [INFO]: User 697f269a52f4567a06a1e7fa joined personal room
+2026-02-05 13:08:47 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-05T00:00:00.000Z to 2026-02-06T00:00:00.000Z
+2026-02-05 13:08:47 [INFO]: [ReceptionistDashboard] Registrations today: 1, Total patients: 66
+2026-02-05 13:08:47 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-05T00:00:00.000Z to 2026-02-06T00:00:00.000Z
+2026-02-05 13:08:47 [INFO]: [ReceptionistDashboard] Registrations today: 1, Total patients: 66
+2026-02-05 13:09:02 [INFO]: Client disconnected: MmgH2eh-hIin04fCAABU
+2026-02-05 13:09:12 [INFO]: Client connected: igIVge_bOqRIs8R6AABX
+2026-02-05 13:09:12 [INFO]: Socket igIVge_bOqRIs8R6AABX joined emergency room
+2026-02-05 13:09:29 [INFO]: Client disconnected: igIVge_bOqRIs8R6AABX
+2026-02-05 13:09:40 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 13:09:40 [INFO]: Client connected: wv7N3mwCFb1Plx6tAABa
+2026-02-05 13:09:40 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 13:09:40 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 13:09:40 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 13:09:46 [INFO]: Client disconnected: wv7N3mwCFb1Plx6tAABa
+2026-02-05 13:09:46 [INFO]: Client connected: HoSRE2DDf-AGdqcWAABd
+2026-02-05 13:09:46 [INFO]: Socket HoSRE2DDf-AGdqcWAABd joined emergency room
+2026-02-05 13:13:40 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-05 13:16:39 [INFO]: MongoDB reconnected
+2026-02-05 13:27:29 [INFO]: Client disconnected: HoSRE2DDf-AGdqcWAABd
+2026-02-05 13:27:43 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-05 13:27:46 [INFO]: MongoDB reconnected
+2026-02-05 13:27:47 [INFO]: Client connected: r9L3nwQ3_aVqD6l9AABg
+2026-02-05 13:27:47 [INFO]: Socket r9L3nwQ3_aVqD6l9AABg joined emergency room
+2026-02-05 13:43:19 [INFO]: Client disconnected: r9L3nwQ3_aVqD6l9AABg
+2026-02-05 13:43:20 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 13:43:20 [INFO]: Client connected: b9Sg_BY7li99UZtKAABj
+2026-02-05 13:43:20 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 13:43:20 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 13:43:20 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 13:43:26 [INFO]: Client disconnected: b9Sg_BY7li99UZtKAABj
+2026-02-05 13:43:26 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 13:43:26 [INFO]: Client connected: ifkPBq1UVswMeZIaAABm
+2026-02-05 13:43:27 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 13:43:27 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f269a52f4567a06a1e7f2
+2026-02-05 13:43:27 [INFO]: [ClinicalDashboard] Response: appointments=37, labs=5, critical=0
+2026-02-05 13:43:30 [INFO]: Client disconnected: ifkPBq1UVswMeZIaAABm
+2026-02-05 13:47:28 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-05 13:47:58 [INFO]: MongoDB reconnected
+2026-02-05 13:48:03 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-05 13:48:13 [INFO]: MongoDB reconnected
+2026-02-05 14:00:27 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-05 14:00:29 [INFO]: MongoDB reconnected
+2026-02-05 14:50:33 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-05 14:50:44 [INFO]: MongoDB reconnected
+2026-02-05 15:43:27 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-05 15:43:37 [INFO]: MongoDB reconnected
+2026-02-07 13:23:59 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 13:23:59 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:24:05 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:24:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:24:05 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:24:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:24:05 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:24:05 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:24:05 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:24:05 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:24:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:24:22 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientAuth.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-07 13:25:34 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 13:25:34 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:25:40 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:25:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:25:40 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:25:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:25:40 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:25:40 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:25:40 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:25:40 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:25:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:26:19 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 13:26:19 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:26:24 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:26:24 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:26:24 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:26:24 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:26:24 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:26:24 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:26:24 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:26:24 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:26:24 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:28:58 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 13:28:58 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:29:04 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:29:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:29:04 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:29:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:29:04 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:29:04 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:29:04 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:29:04 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:29:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:32:27 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 13:32:27 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:32:32 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:32:32 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:32:32 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:32:32 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:32:32 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:32:32 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:32:32 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:32:32 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:32:32 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:35:56 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 13:35:56 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:36:01 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:36:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:36:01 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:36:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:36:01 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:36:01 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:36:01 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:36:01 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:36:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:37:24 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 13:37:24 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:37:30 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:37:30 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:37:30 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:37:30 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:37:30 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:37:30 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:37:30 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:37:30 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:37:30 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:38:04 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 13:38:04 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:38:10 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:38:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:38:10 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:38:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:38:10 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:38:10 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:38:10 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:38:10 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:38:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:39:31 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 13:39:31 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:39:36 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:39:36 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:39:36 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:39:36 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:39:36 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:39:36 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:39:36 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:39:36 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:39:36 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:44:07 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 13:44:07 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:44:12 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:44:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:44:12 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:44:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:44:12 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:44:12 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:44:12 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:44:12 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:44:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:45:25 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 13:45:25 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:45:30 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:45:30 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:45:30 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:45:30 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:45:30 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:45:30 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:45:30 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:45:30 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:45:30 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:46:12 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 13:46:12 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:46:17 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:46:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:46:17 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:46:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:46:17 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:46:17 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:46:17 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:46:17 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:46:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:49:57 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 13:49:57 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:50:02 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:50:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:50:02 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:50:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:50:02 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:50:02 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:50:02 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:50:02 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:50:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:50:07 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 13:50:07 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:50:12 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:50:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:50:12 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:50:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:50:12 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:50:12 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:50:12 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:50:12 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:50:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:50:21 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 13:50:21 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:50:26 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:50:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:50:26 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:50:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:50:26 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:50:26 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:50:26 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:50:26 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:50:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:50:32 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 13:50:32 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:50:38 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:50:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:50:38 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:50:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:50:38 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:50:38 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:50:38 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:50:38 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:50:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:54:32 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 13:54:32 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:54:37 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:54:37 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:54:37 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:54:37 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:54:37 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:54:37 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:54:37 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:54:37 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:54:37 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:54:49 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 13:54:49 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:54:55 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:54:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:54:55 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:54:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:54:55 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:54:55 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:54:55 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:54:55 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:54:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:55:02 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 13:55:02 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:55:07 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:55:07 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:55:07 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:55:07 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:55:07 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:55:07 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:55:07 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:55:07 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:55:07 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:55:24 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 13:55:24 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:55:29 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:55:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:55:29 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:55:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:55:29 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:55:29 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:55:29 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:55:29 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:55:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:55:44 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 13:55:44 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:55:49 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:55:49 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:55:49 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:55:49 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:55:49 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:55:49 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:55:49 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:55:49 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:55:49 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:57:16 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 13:57:16 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 13:57:21 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 13:57:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:57:21 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 13:57:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 13:57:21 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 13:57:21 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 13:57:21 [INFO]: 🔌 WebSocket enabled
+2026-02-07 13:57:21 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 13:57:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:00:15 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 14:00:15 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:00:20 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:00:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:00:20 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:00:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:00:20 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:00:20 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:00:20 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:00:20 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:00:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:01:26 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 14:01:26 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:01:31 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:01:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:01:31 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:01:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:01:31 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:01:31 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:01:31 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:01:31 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:01:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:02:39 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 14:02:39 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:02:44 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:02:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:02:44 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:02:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:02:44 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:02:44 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:02:44 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:02:44 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:02:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:02:50 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 14:02:50 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:02:55 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:02:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:02:55 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:02:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:02:55 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:02:55 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:02:55 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:02:55 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:02:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:11:15 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 14:11:15 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:11:20 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:11:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:11:20 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:11:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:11:20 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:11:20 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:11:20 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:11:20 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:11:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:15:15 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 14:15:15 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:15:20 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:15:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:15:20 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:15:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:15:20 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:15:20 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:15:20 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:15:20 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:15:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:15:56 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 14:15:56 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:16:01 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:16:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:16:01 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:16:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:16:01 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:16:01 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:16:01 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:16:01 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:16:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:16:35 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 14:16:35 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:16:40 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:16:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:16:40 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:16:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:16:40 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:16:40 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:16:40 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:16:40 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:16:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:17:11 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 14:17:11 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:17:15 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 14:17:15 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:17:21 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 14:17:21 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:17:27 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:17:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:17:27 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:17:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:17:27 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:17:27 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:17:27 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:17:27 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:17:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:17:32 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 14:17:32 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:17:38 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:17:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:17:38 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:17:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:17:38 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:17:38 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:17:38 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:17:38 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:17:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:18:04 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 14:18:04 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:18:09 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:18:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:18:09 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:18:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:18:09 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:18:09 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:18:09 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:18:09 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:18:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:18:45 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 14:18:45 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:18:51 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:18:51 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:18:51 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:18:51 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:18:51 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:18:51 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:18:51 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:18:51 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:18:51 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:19:32 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 14:19:32 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:19:38 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:19:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:19:38 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:19:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:19:38 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:19:38 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:19:38 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:19:38 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:19:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:19:47 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 14:19:47 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:19:56 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 14:19:56 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:20:01 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:20:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:20:01 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:20:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:20:01 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:20:01 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:20:01 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:20:01 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:20:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:20:16 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 14:20:16 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:20:22 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:20:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:20:22 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:20:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:20:22 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:20:22 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:20:22 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:20:22 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:20:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:20:39 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 14:20:39 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:20:45 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:20:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:20:45 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:20:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:20:45 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:20:45 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:20:45 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:20:45 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:20:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:22:15 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 14:22:15 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:22:20 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:22:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:22:20 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:22:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:22:20 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:22:20 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:22:20 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:22:20 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:22:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:27:08 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 14:27:08 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:27:14 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:27:14 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:27:14 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:27:14 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:27:14 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:27:14 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:27:14 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:27:14 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:27:14 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:29:12 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 14:29:12 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:29:17 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:29:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:29:17 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:29:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:29:17 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:29:17 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:29:17 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:29:17 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:29:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:48:22 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 14:48:22 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:48:28 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:48:28 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:48:28 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:48:28 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:48:28 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:48:28 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:48:28 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:48:28 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:48:28 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:58:58 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 14:58:58 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 14:59:05 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 14:59:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:59:05 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 14:59:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 14:59:05 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 14:59:05 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 14:59:05 [INFO]: 🔌 WebSocket enabled
+2026-02-07 14:59:05 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 14:59:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:00:30 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:00:30 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:00:36 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 15:00:36 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:00:41 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:00:41 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:00:41 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:00:41 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:00:41 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:00:41 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:00:41 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:00:41 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:00:41 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:05:50 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:05:50 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:05:57 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:05:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:05:57 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:05:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:05:57 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:05:57 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:05:57 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:05:57 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:05:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:12:28 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 15:12:28 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:12:36 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:12:36 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:12:36 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:12:36 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:12:36 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:12:36 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:12:36 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:12:36 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:12:36 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:12:53 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:12:53 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:13:02 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:13:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:13:02 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:13:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:13:02 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:13:02 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:13:02 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:13:02 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:13:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:14:08 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:14:08 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:14:17 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:14:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:14:17 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:14:18 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:14:18 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:14:18 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:14:18 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:14:18 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:14:18 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:20:46 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 15:20:46 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:20:52 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:20:52 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:20:52 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:20:52 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:20:52 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:20:52 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:20:52 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:20:52 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:20:52 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:21:08 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:21:08 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:21:13 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:21:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:21:13 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:21:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:21:13 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:21:13 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:21:13 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:21:13 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:21:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:21:23 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:21:23 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:21:29 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:21:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:21:29 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:21:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:21:29 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:21:29 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:21:29 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:21:29 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:21:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:23:20 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 15:23:20 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:23:25 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:23:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:23:25 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:23:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:23:25 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:23:25 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:23:25 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:23:25 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:23:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:23:38 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:23:38 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:23:43 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:23:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:23:43 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:23:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:23:43 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:23:43 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:23:43 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:23:43 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:23:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:23:53 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientAuth.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-07 15:24:01 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:24:01 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:24:08 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:24:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:24:08 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:24:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:24:08 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:24:08 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:24:08 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:24:08 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:24:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:24:12 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:24:12 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:24:17 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:24:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:24:17 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:24:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:24:17 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:24:17 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:24:17 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:24:17 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:24:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:24:25 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 15:24:25 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:24:31 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:24:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:24:31 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:24:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:24:31 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:24:31 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:24:31 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:24:31 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:24:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:24:34 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 15:24:34 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:24:40 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:24:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:24:40 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:24:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:24:40 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:24:40 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:24:40 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:24:40 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:24:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:26:03 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:26:03 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:26:09 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:26:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:26:09 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:26:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:26:09 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:26:09 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:26:09 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:26:09 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:26:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:27:28 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 15:27:28 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:27:34 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:27:34 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:27:34 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:27:34 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:27:34 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:27:34 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:27:34 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:27:34 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:27:34 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:27:53 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 15:27:53 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:28:00 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:28:00 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:28:00 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:28:00 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:28:00 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:28:00 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:28:00 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:28:00 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:28:00 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:28:54 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:28:54 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:28:59 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:28:59 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:28:59 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:28:59 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:28:59 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:28:59 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:28:59 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:28:59 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:28:59 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:29:38 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 15:29:38 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:29:44 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:29:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:29:44 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:29:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:29:44 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:29:44 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:29:44 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:29:44 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:29:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:32:29 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-07 15:32:40 [INFO]: MongoDB reconnected
+2026-02-07 15:33:49 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 15:33:49 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:33:55 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:33:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:33:55 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:33:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:33:55 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:33:55 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:33:55 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:33:55 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:33:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:34:06 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:34:06 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:34:12 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:34:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:34:12 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:34:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:34:12 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:34:12 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:34:12 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:34:12 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:34:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:36:49 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:36:49 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:36:53 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 15:36:53 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:36:59 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:36:59 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:36:59 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:36:59 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:36:59 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:36:59 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:36:59 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:36:59 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:36:59 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:37:50 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:37:50 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:37:56 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:37:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:37:56 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:37:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:37:56 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:37:56 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:37:56 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:37:56 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:37:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:38:01 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 15:38:01 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:38:06 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:38:06 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:38:06 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:38:06 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:38:06 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:38:06 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:38:06 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:38:06 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:38:06 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:40:10 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 15:40:10 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:40:14 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 15:40:14 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:40:21 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:40:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:40:21 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:40:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:40:21 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:40:21 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:40:21 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:40:21 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:40:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:42:07 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:42:07 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:42:14 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:42:14 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:42:14 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:42:14 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:42:14 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:42:14 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:42:14 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:42:14 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:42:14 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:47:30 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:47:30 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:47:35 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 15:47:35 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:47:41 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:47:41 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:47:41 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:47:41 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:47:41 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:47:41 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:47:41 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:47:41 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:47:41 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:48:13 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 15:48:13 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:48:19 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:48:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:48:19 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:48:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:48:19 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:48:19 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:48:19 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:48:19 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:48:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:49:03 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 15:49:03 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:49:09 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:49:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:49:09 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:49:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:49:09 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:49:09 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:49:09 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:49:09 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:49:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:52:36 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:52:36 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:52:42 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:52:42 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:52:42 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:52:42 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:52:42 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:52:42 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:52:42 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:52:42 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:52:42 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:54:50 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 15:54:50 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:54:56 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:54:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:54:56 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:54:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:54:56 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:54:56 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:54:56 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:54:56 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:54:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:56:10 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 15:56:10 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:56:16 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:56:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:56:16 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:56:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:56:16 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:56:16 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:56:16 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:56:16 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:56:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:56:59 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 15:56:59 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 15:57:04 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 15:57:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:57:04 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 15:57:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:57:04 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 15:57:04 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 15:57:04 [INFO]: 🔌 WebSocket enabled
+2026-02-07 15:57:04 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 15:57:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 15:58:55 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 15:58:55 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 16:00:02 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 16:00:02 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 16:00:09 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 16:00:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 16:00:09 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 16:00:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 16:00:09 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 16:00:09 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 16:00:09 [INFO]: 🔌 WebSocket enabled
+2026-02-07 16:00:09 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 16:00:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 16:01:56 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 16:01:56 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 16:02:03 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 16:02:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 16:02:03 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 16:02:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 16:02:03 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 16:02:03 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 16:02:03 [INFO]: 🔌 WebSocket enabled
+2026-02-07 16:02:03 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 16:02:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 16:02:55 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 16:02:55 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 16:03:03 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 16:03:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 16:03:03 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 16:03:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 16:03:03 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 16:03:03 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 16:03:03 [INFO]: 🔌 WebSocket enabled
+2026-02-07 16:03:03 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 16:03:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 16:03:13 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 16:03:13 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 16:03:21 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 16:03:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 16:03:21 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 16:03:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 16:03:21 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 16:03:21 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 16:03:21 [INFO]: 🔌 WebSocket enabled
+2026-02-07 16:03:21 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 16:03:21 [INFO]: ═══════════════════════════════════════════════════════════════

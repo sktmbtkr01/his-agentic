@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
 import HealthScoreCard from '../components/HealthScoreCard';
-import NudgeCard from '../components/NudgeCard';
+import SmartNudgeCard from '../components/SmartNudgeCard';
 import nudgeService from '../services/nudgeService';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -171,10 +171,11 @@ const Dashboard = () => {
                         <AnimatePresence>
                             {nudges.length > 0 ? (
                                 nudges.map(nudge => (
-                                    <NudgeCard
+                                    <SmartNudgeCard
                                         key={nudge._id}
                                         nudge={nudge}
                                         onRespond={handleNudgeResponse}
+                                        onRemove={(id) => setNudges(prev => prev.filter(n => n._id !== id))}
                                     />
                                 ))
                             ) : (

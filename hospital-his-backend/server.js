@@ -70,9 +70,13 @@ const patientPrescriptionRoutes = require('./routes/patient/patientPrescription.
 const patientLabRoutes = require('./routes/patient/patientLab.routes');
 const patientAnalyticsRoutes = require('./routes/patient/analytics.routes');
 const patientRecordsRoutes = require('./routes/patient/patientRecords.routes');
+const wellnessRoutes = require('./routes/patient/wellness.routes');
 
 // Doctor Sentinel Routes
 const doctorSentinelRoutes = require('./routes/doctor/doctorSentinel.routes');
+
+// Test Routes (for nudge ML testing - disable in production)
+const testRoutes = require('./routes/test.routes');
 
 // Services (auto-run on startup)
 const { ensureInventoryPolicyDefaults } = require('./services/inventoryPolicyDefaults.service');
@@ -207,11 +211,17 @@ app.use(`${API_PREFIX}/patient/auth`, patientAuthRoutes);
 app.use(`${API_PREFIX}/patient/signals`, signalsRoutes);
 app.use(`${API_PREFIX}/patient/score`, healthScoreRoutes);
 app.use(`${API_PREFIX}/patient/nudges`, careNudgeRoutes);
+
+// Test Routes (disable in production!)
+if (process.env.NODE_ENV !== 'production') {
+    app.use(`${API_PREFIX}/test`, testRoutes);
+}
 app.use(`${API_PREFIX}/patient/appointments`, patientAppointmentRoutes);
 app.use(`${API_PREFIX}/patient/prescriptions`, patientPrescriptionRoutes);
 app.use(`${API_PREFIX}/patient/labs`, patientLabRoutes);
 app.use(`${API_PREFIX}/patient/analytics`, patientAnalyticsRoutes);
 app.use(`${API_PREFIX}/patient/records`, patientRecordsRoutes);
+app.use(`${API_PREFIX}/patient/wellness`, wellnessRoutes);
 
 // Doctor Sentinel Routes (for HIS integration)
 app.use(`${API_PREFIX}/doctor/sentinel`, doctorSentinelRoutes);

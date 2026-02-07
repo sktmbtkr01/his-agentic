@@ -7671,3 +7671,38 @@ Error: No active shift found
     at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\nursing.controller.js:218:21
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
 2026-02-05 00:36:13 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-05 08:34:32 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-05 08:35:24 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-05 08:45:10 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-05 08:45:16 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-05 12:32:42 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:376:14)
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:421:3)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+2026-02-05 13:03:26 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-07 13:24:22 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientAuth.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-07 15:23:53 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientAuth.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)

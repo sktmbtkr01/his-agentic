@@ -19,6 +19,7 @@ import Timeline from './pages/Timeline';
 // Components
 import ProtectedRoute from './components/ProtectedRoute';
 import VoiceAssistant from './components/VoiceAssistant';
+import WellnessAgentChat from './components/wellness/WellnessAgentChat';
 
 // Redirect authenticated users away from login
 const PublicRoute = ({ children }) => {
@@ -188,6 +189,8 @@ function App() {
         <AppRoutes />
         {/* Global Voice Assistant - appears on all pages */}
         <VoiceAssistant />
+        {/* Global Wellness Agent Chat - appears on all authenticated pages */}
+        <WellnessAgentChat />
       </AuthProvider>
     </BrowserRouter>
   );
