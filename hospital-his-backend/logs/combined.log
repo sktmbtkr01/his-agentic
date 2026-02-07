@@ -20723,3 +20723,6 @@ Error: Not authorized to access this route
 2026-02-08 01:45:15 [INFO]: 📋 Health check: http://localhost:5001/api/health
 2026-02-08 01:45:15 [INFO]: ═══════════════════════════════════════════════════════════════
 2026-02-08 01:45:23 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-08 01:45:25 [INFO]: Running initial device sync check...
+2026-02-08 01:49:30 [INFO]: Device sync completed for 69879e46e48d7bfa6db9cbd5: 2 records
+2026-02-08 02:00:00 [INFO]: Hourly device sync triggered
