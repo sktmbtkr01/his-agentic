@@ -19832,3 +19832,894 @@ Error: Invalid credentials
 2026-02-07 16:03:21 [INFO]: 🔌 WebSocket enabled
 2026-02-07 16:03:21 [INFO]: 📋 Health check: http://localhost:5001/api/health
 2026-02-07 16:03:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 21:05:21 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 21:05:21 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 21:05:26 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 21:08:51 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 21:08:51 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 21:08:57 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 21:08:57 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 21:08:57 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 21:08:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 21:08:57 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 21:08:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 21:08:57 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 21:08:57 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 21:08:57 [INFO]: 🔌 WebSocket enabled
+2026-02-07 21:08:57 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 21:08:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 21:09:06 [INFO]: Client connected: vxavgprnsAVUvb9lAAAB
+2026-02-07 21:09:06 [INFO]: Socket vxavgprnsAVUvb9lAAAB joined emergency room
+2026-02-07 21:09:07 [INFO]: Running initial device sync check...
+2026-02-07 21:14:34 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 21:14:34 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 21:14:38 [ERROR]: Failed to connect device: Cannot read properties of undefined (reading 'charAt')
+TypeError: Cannot read properties of undefined (reading 'charAt')
+    at default (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\models\DeviceConnection.js:60:38)
+    at SchemaType.getDefault (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1145:31)
+    at D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\setDefaultsOnInsert.js:81:28
+    at Schema.eachPath (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schema.js:1533:5)
+    at module.exports (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\setDefaultsOnInsert.js:76:10)
+    at model.Query._findOneAndUpdate (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:3346:18)
+    at model.Query.exec (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.connectDevice (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\services\deviceSync.service.js:57:28)
+    at async connectDevice (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\controllers\patient\device.controller.js:62:24)
+2026-02-07 21:14:41 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 21:14:41 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 21:14:42 [ERROR]: Failed to connect device: Cannot read properties of undefined (reading 'charAt')
+TypeError: Cannot read properties of undefined (reading 'charAt')
+    at default (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\models\DeviceConnection.js:60:38)
+    at SchemaType.getDefault (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1145:31)
+    at D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\setDefaultsOnInsert.js:81:28
+    at Schema.eachPath (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schema.js:1533:5)
+    at module.exports (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\setDefaultsOnInsert.js:76:10)
+    at model.Query._findOneAndUpdate (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:3346:18)
+    at model.Query.exec (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.connectDevice (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\services\deviceSync.service.js:57:28)
+    at async connectDevice (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\controllers\patient\device.controller.js:62:24)
+2026-02-07 21:17:59 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 21:17:59 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 21:18:05 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 21:18:05 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 21:18:05 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 21:18:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 21:18:05 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 21:18:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 21:18:05 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 21:18:05 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 21:18:05 [INFO]: 🔌 WebSocket enabled
+2026-02-07 21:18:05 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 21:18:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 21:18:12 [INFO]: Client connected: Db7cIvuz-mWdkJmcAAAB
+2026-02-07 21:18:12 [INFO]: Socket Db7cIvuz-mWdkJmcAAAB joined emergency room
+2026-02-07 21:18:15 [INFO]: Running initial device sync check...
+2026-02-07 21:32:12 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 21:32:12 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 21:32:17 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 21:32:17 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 21:32:17 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 21:32:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 21:32:17 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 21:32:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 21:32:17 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 21:32:17 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 21:32:17 [INFO]: 🔌 WebSocket enabled
+2026-02-07 21:32:17 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 21:32:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 21:32:18 [INFO]: Client connected: oQUyDT7Br3D5-MqdAAAB
+2026-02-07 21:32:18 [INFO]: Socket oQUyDT7Br3D5-MqdAAAB joined emergency room
+2026-02-07 21:32:27 [INFO]: Running initial device sync check...
+2026-02-07 21:33:08 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 21:33:08 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 21:33:13 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 21:33:13 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 21:33:13 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 21:33:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 21:33:13 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 21:33:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 21:33:13 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 21:33:13 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 21:33:13 [INFO]: 🔌 WebSocket enabled
+2026-02-07 21:33:13 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 21:33:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 21:33:13 [INFO]: Client connected: QlYbQaErN6xOODF9AAAB
+2026-02-07 21:33:13 [INFO]: Socket QlYbQaErN6xOODF9AAAB joined emergency room
+2026-02-07 21:33:23 [INFO]: Running initial device sync check...
+2026-02-07 22:00:00 [INFO]: Hourly device sync triggered
+2026-02-07 22:38:04 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:38:05 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:52:18 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 22:52:18 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 22:52:23 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 22:52:23 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 22:52:23 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 22:52:23 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 22:52:23 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 22:52:23 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 22:52:23 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 22:52:23 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 22:52:23 [INFO]: 🔌 WebSocket enabled
+2026-02-07 22:52:23 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 22:52:23 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 22:52:23 [INFO]: Client connected: yuS_EtMGavO99OLoAAAB
+2026-02-07 22:52:23 [INFO]: Socket yuS_EtMGavO99OLoAAAB joined emergency room
+2026-02-07 22:52:33 [INFO]: Running initial device sync check...
+2026-02-07 22:53:51 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:53:51 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:53:55 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:53:55 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:54:37 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:54:37 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:54:57 [INFO]: Device sync completed for 69877567e48d7bfa6db9c29b: 2 records
+2026-02-07 22:54:57 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:56:36 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 22:56:36 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 22:56:41 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 22:56:41 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 22:56:41 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 22:56:41 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 22:56:41 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 22:56:41 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 22:56:41 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 22:56:41 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 22:56:41 [INFO]: 🔌 WebSocket enabled
+2026-02-07 22:56:41 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 22:56:41 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 22:56:45 [INFO]: Client connected: 9eDLU0DsT3G5coNiAAAB
+2026-02-07 22:56:45 [INFO]: Socket 9eDLU0DsT3G5coNiAAAB joined emergency room
+2026-02-07 22:56:51 [INFO]: Running initial device sync check...
+2026-02-07 22:57:21 [INFO]: Device sync completed for 69877567e48d7bfa6db9c29b: 2 records
+2026-02-07 23:00:00 [INFO]: Hourly device sync triggered
+2026-02-07 23:02:50 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:02:50 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:02:50 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 0 records
+2026-02-07 23:05:42 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:05:42 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:05:42 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 0 records
+2026-02-07 23:05:53 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:05:53 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:05:53 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 0 records
+2026-02-07 23:08:08 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 23:08:08 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:08:13 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:08:13 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:08:13 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:08:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:08:13 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:08:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:08:13 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:08:13 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:08:13 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:08:13 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:08:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:08:13 [INFO]: Client connected: 4EHGL3WnpfjM7Rj5AAAB
+2026-02-07 23:08:13 [INFO]: Socket 4EHGL3WnpfjM7Rj5AAAB joined emergency room
+2026-02-07 23:08:23 [INFO]: Running initial device sync check...
+2026-02-07 23:09:42 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:09:42 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:09:42 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 0 records
+2026-02-07 23:09:55 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:09:55 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:09:55 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 0 records
+2026-02-07 23:10:58 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 23:10:58 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:11:03 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:11:03 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:11:03 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:11:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:11:03 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:11:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:11:03 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:11:03 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:11:03 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:11:03 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:11:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:11:03 [INFO]: Client connected: EsSmO72hAPgRQ8VCAAAB
+2026-02-07 23:11:03 [INFO]: Socket EsSmO72hAPgRQ8VCAAAB joined emergency room
+2026-02-07 23:11:15 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 23:11:15 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:11:20 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:11:20 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:11:20 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:11:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:11:20 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:11:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:11:20 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:11:20 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:11:20 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:11:20 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:11:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:11:20 [INFO]: Client connected: SQOXEwbhN_HcgYVxAAAB
+2026-02-07 23:11:20 [INFO]: Socket SQOXEwbhN_HcgYVxAAAB joined emergency room
+2026-02-07 23:11:30 [INFO]: Running initial device sync check...
+2026-02-07 23:14:39 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at D:\cocode 4\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:28:21
+    at D:\cocode 4\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-07 23:16:08 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 23:16:08 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:16:13 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:16:13 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:16:13 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:16:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:16:13 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:16:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:16:13 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:16:13 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:16:13 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:16:13 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:16:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:16:13 [INFO]: Client connected: XbdeON5Pt50_7X-aAAAB
+2026-02-07 23:16:14 [INFO]: Socket XbdeON5Pt50_7X-aAAAB joined emergency room
+2026-02-07 23:16:23 [INFO]: Running initial device sync check...
+2026-02-07 23:16:26 [INFO]: [SyncDevice] Starting sync for device: 6987773be48d7bfa6db9c37f
+2026-02-07 23:16:26 [INFO]: [SyncDevice] Device found: provider=google_fit, isDemoMode=false
+2026-02-07 23:16:26 [INFO]: [SyncDevice] Has tokens object: true
+2026-02-07 23:16:26 [INFO]: [SyncDevice] Has accessToken: true
+2026-02-07 23:16:26 [INFO]: [SyncDevice] AccessToken preview: ya29.a0AUMWg_Igw49hba7UEGDV3AM...
+2026-02-07 23:16:26 [INFO]: [SyncDevice] Using provider: google_fit
+2026-02-07 23:16:26 [INFO]: [SyncDevice] Provider exists in map: true
+2026-02-07 23:16:26 [INFO]: [SyncDevice] Calling provider.fetchAllData with token: true
+2026-02-07 23:16:30 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:16:30 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:16:30 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 0 records
+2026-02-07 23:24:46 [INFO]: [SyncDevice] Starting sync for device: 6987773be48d7bfa6db9c37f
+2026-02-07 23:24:46 [INFO]: [SyncDevice] Device found: provider=google_fit, isDemoMode=false
+2026-02-07 23:24:46 [INFO]: [SyncDevice] Has tokens object: true
+2026-02-07 23:24:46 [INFO]: [SyncDevice] Has accessToken: true
+2026-02-07 23:24:46 [INFO]: [SyncDevice] AccessToken preview: ya29.a0AUMWg_Igw49hba7UEGDV3AM...
+2026-02-07 23:24:46 [INFO]: [SyncDevice] Using provider: google_fit
+2026-02-07 23:24:46 [INFO]: [SyncDevice] Provider exists in map: true
+2026-02-07 23:24:46 [INFO]: [SyncDevice] Calling provider.fetchAllData with token: true
+2026-02-07 23:24:50 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:24:50 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:24:50 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 0 records
+2026-02-07 23:26:08 [INFO]: [SyncDevice] Starting sync for device: 6987773be48d7bfa6db9c37f
+2026-02-07 23:26:08 [INFO]: [SyncDevice] Device found: provider=google_fit, isDemoMode=false
+2026-02-07 23:26:08 [INFO]: [SyncDevice] Has tokens object: true
+2026-02-07 23:26:08 [INFO]: [SyncDevice] Has accessToken: true
+2026-02-07 23:26:08 [INFO]: [SyncDevice] AccessToken preview: ya29.a0AUMWg_J8m3viYKZXvU7_Vtc...
+2026-02-07 23:26:08 [INFO]: [SyncDevice] Using provider: google_fit
+2026-02-07 23:26:08 [INFO]: [SyncDevice] Provider exists in map: true
+2026-02-07 23:26:08 [INFO]: [SyncDevice] Calling provider.fetchAllData with token: true
+2026-02-07 23:26:12 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:26:12 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:26:12 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 0 records
+2026-02-07 23:27:19 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 23:27:19 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:27:24 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:27:24 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:27:24 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:27:24 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:27:24 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:27:24 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:27:24 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:27:24 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:27:24 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:27:24 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:27:24 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:27:25 [INFO]: Client connected: 5pZVBWbf_3PinRNZAAAB
+2026-02-07 23:27:25 [INFO]: Socket 5pZVBWbf_3PinRNZAAAB joined emergency room
+2026-02-07 23:27:34 [INFO]: Running initial device sync check...
+2026-02-07 23:27:55 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 23:27:55 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:28:00 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:28:00 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:28:00 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:28:00 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:28:00 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:28:00 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:28:00 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:28:00 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:28:00 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:28:00 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:28:00 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:28:01 [INFO]: Client connected: fQCZokc2ilmAwBY1AAAB
+2026-02-07 23:28:01 [INFO]: Socket fQCZokc2ilmAwBY1AAAB joined emergency room
+2026-02-07 23:28:11 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 23:28:11 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:28:16 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:28:16 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:28:16 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:28:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:28:16 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:28:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:28:16 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:28:16 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:28:16 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:28:16 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:28:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:28:21 [INFO]: Client connected: 8MpIA2FfT9zR13DKAAAB
+2026-02-07 23:28:21 [INFO]: Socket 8MpIA2FfT9zR13DKAAAB joined emergency room
+2026-02-07 23:28:26 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 23:28:26 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:28:31 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:28:31 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:28:31 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:28:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:28:31 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:28:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:28:31 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:28:31 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:28:31 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:28:31 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:28:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:28:31 [INFO]: Client connected: aQ_58VCwCaEOFQk9AAAB
+2026-02-07 23:28:31 [INFO]: Socket aQ_58VCwCaEOFQk9AAAB joined emergency room
+2026-02-07 23:28:41 [INFO]: Running initial device sync check...
+2026-02-07 23:28:50 [INFO]: [SyncDevice] Starting sync for device: 6987773be48d7bfa6db9c37f
+2026-02-07 23:28:50 [INFO]: [SyncDevice] Device found: provider=google_fit, isDemoMode=false
+2026-02-07 23:28:50 [INFO]: [SyncDevice] Has tokens object: true
+2026-02-07 23:28:50 [INFO]: [SyncDevice] Has accessToken: true
+2026-02-07 23:28:50 [INFO]: [SyncDevice] AccessToken preview: ya29.a0AUMWg_J8m3viYKZXvU7_Vtc...
+2026-02-07 23:28:51 [INFO]: [SyncDevice] Using provider: google_fit
+2026-02-07 23:28:51 [INFO]: [SyncDevice] Provider exists in map: true
+2026-02-07 23:28:51 [INFO]: [SyncDevice] Calling provider.fetchAllData with token: true
+2026-02-07 23:28:59 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:28:59 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:28:59 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 0 records
+2026-02-07 23:30:07 [INFO]: [SyncDevice] Starting sync for device: 6987773be48d7bfa6db9c37f
+2026-02-07 23:30:07 [INFO]: [SyncDevice] Device found: provider=google_fit, isDemoMode=false
+2026-02-07 23:30:07 [INFO]: [SyncDevice] Has tokens object: true
+2026-02-07 23:30:07 [INFO]: [SyncDevice] Has accessToken: true
+2026-02-07 23:30:07 [INFO]: [SyncDevice] AccessToken preview: ya29.a0AUMWg_LfBcGiHCv429NgNPD...
+2026-02-07 23:30:07 [INFO]: [SyncDevice] Using provider: google_fit
+2026-02-07 23:30:07 [INFO]: [SyncDevice] Provider exists in map: true
+2026-02-07 23:30:07 [INFO]: [SyncDevice] Calling provider.fetchAllData with token: true
+2026-02-07 23:30:12 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:30:12 [WARN]: Failed to save signal: Cast to date failed for value "Invalid Date" (type Date) at path "recordedAt" for model "Signal"
+2026-02-07 23:30:12 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 0 records
+2026-02-07 23:31:18 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 23:31:18 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:31:23 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:31:23 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:31:23 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:31:23 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:31:23 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:31:23 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:31:23 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:31:23 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:31:23 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:31:23 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:31:23 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:31:23 [INFO]: Client connected: VwcxnwmhIKPUisqZAAAB
+2026-02-07 23:31:23 [INFO]: Socket VwcxnwmhIKPUisqZAAAB joined emergency room
+2026-02-07 23:31:33 [INFO]: Running initial device sync check...
+2026-02-07 23:31:52 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 23:31:52 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:31:57 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:31:57 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:31:57 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:31:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:31:57 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:31:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:31:57 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:31:57 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:31:57 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:31:57 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:31:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:31:57 [INFO]: Client connected: LGuB1AxaS8sHRkeQAAAB
+2026-02-07 23:31:57 [INFO]: Socket LGuB1AxaS8sHRkeQAAAB joined emergency room
+2026-02-07 23:32:07 [INFO]: Running initial device sync check...
+2026-02-07 23:32:42 [INFO]: [SyncDevice] Starting sync for device: 6987773be48d7bfa6db9c37f
+2026-02-07 23:32:42 [INFO]: [SyncDevice] Device found: provider=google_fit, isDemoMode=false
+2026-02-07 23:32:42 [INFO]: [SyncDevice] Has tokens object: true
+2026-02-07 23:32:42 [INFO]: [SyncDevice] Has accessToken: true
+2026-02-07 23:32:42 [INFO]: [SyncDevice] AccessToken preview: ya29.a0AUMWg_LfBcGiHCv429NgNPD...
+2026-02-07 23:32:42 [INFO]: [SyncDevice] Using provider: google_fit
+2026-02-07 23:32:42 [INFO]: [SyncDevice] Provider exists in map: true
+2026-02-07 23:32:42 [INFO]: [SyncDevice] Calling provider.fetchAllData with token: true
+2026-02-07 23:32:48 [INFO]: [SyncDevice] Converting data to signals...
+2026-02-07 23:32:48 [INFO]: [SyncDevice] Generated 2 signals
+2026-02-07 23:32:48 [INFO]: [SyncDevice] Processing signal: vitals for Sat Feb 07 2026 23:32:48 GMT+0530 (India Standard Time)
+2026-02-07 23:32:48 [INFO]: [SyncDevice] Updating existing signal: 6987756950c6ee42c14165dd
+2026-02-07 23:32:49 [INFO]: [SyncDevice] Signal saved successfully
+2026-02-07 23:32:49 [INFO]: [SyncDevice] Processing signal: lifestyle for Sat Feb 07 2026 23:32:48 GMT+0530 (India Standard Time)
+2026-02-07 23:32:49 [INFO]: [SyncDevice] Updating existing signal: 6987756950c6ee42c14165e0
+2026-02-07 23:32:49 [INFO]: [SyncDevice] Signal saved successfully
+2026-02-07 23:32:49 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 2 records
+2026-02-07 23:34:41 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 23:34:41 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:34:47 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:34:47 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:34:47 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:34:47 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:34:47 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:34:47 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:34:47 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:34:47 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:34:47 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:34:47 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:34:47 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:34:47 [INFO]: Client connected: GKZlMKwa5L3Bz8NLAAAB
+2026-02-07 23:34:47 [INFO]: Socket GKZlMKwa5L3Bz8NLAAAB joined emergency room
+2026-02-07 23:34:57 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 23:34:57 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:35:06 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:35:06 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:35:06 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:35:06 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:35:06 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:35:06 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:35:06 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:35:06 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:35:06 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:35:06 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:35:06 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:35:08 [INFO]: Client connected: 68ICto9t6HZYWCV0AAAB
+2026-02-07 23:35:08 [INFO]: Socket 68ICto9t6HZYWCV0AAAB joined emergency room
+2026-02-07 23:35:17 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-07 23:35:17 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:35:25 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:35:25 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:35:25 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:35:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:35:25 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:35:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:35:25 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:35:25 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:35:25 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:35:25 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:35:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:35:26 [INFO]: Client connected: nTa7opAayhtXO6SoAAAB
+2026-02-07 23:35:26 [INFO]: Socket nTa7opAayhtXO6SoAAAB joined emergency room
+2026-02-07 23:35:35 [INFO]: Running initial device sync check...
+2026-02-07 23:35:42 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 23:35:42 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:35:54 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 23:35:54 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:36:02 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:36:02 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:36:02 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:36:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:36:02 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:36:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:36:02 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:36:02 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:36:02 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:36:02 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:36:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:36:02 [INFO]: Client connected: qRJMcCxHARbSGgEBAAAB
+2026-02-07 23:36:02 [INFO]: Socket qRJMcCxHARbSGgEBAAAB joined emergency room
+2026-02-07 23:36:12 [INFO]: Running initial device sync check...
+2026-02-07 23:36:59 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 2 records
+2026-02-07 23:37:13 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 2 records
+2026-02-07 23:37:26 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 2 records
+2026-02-07 23:37:34 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 2 records
+2026-02-07 23:38:54 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 2 records
+2026-02-07 23:40:55 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 23:40:55 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:41:00 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:41:00 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:41:00 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:41:00 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:41:00 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:41:00 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:41:00 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:41:00 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:41:00 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:41:00 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:41:00 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:41:01 [INFO]: Client connected: TyAH4oF8l3TM-M_dAAAB
+2026-02-07 23:41:01 [INFO]: Socket TyAH4oF8l3TM-M_dAAAB joined emergency room
+2026-02-07 23:41:04 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 23:41:04 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:41:09 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:41:09 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:41:09 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:41:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:41:09 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:41:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:41:09 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:41:09 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:41:09 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:41:09 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:41:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:41:10 [INFO]: Client connected: qSKQ5CrXwUCE8pUwAAAB
+2026-02-07 23:41:11 [INFO]: Socket qSKQ5CrXwUCE8pUwAAAB joined emergency room
+2026-02-07 23:41:15 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 23:41:15 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:41:20 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:41:20 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:41:20 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:41:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:41:20 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:41:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:41:20 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:41:20 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:41:20 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:41:20 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:41:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:41:20 [INFO]: Client connected: sWGhYun60YRfZcWZAAAB
+2026-02-07 23:41:20 [INFO]: Socket sWGhYun60YRfZcWZAAAB joined emergency room
+2026-02-07 23:41:30 [INFO]: Running initial device sync check...
+2026-02-07 23:41:33 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 2 records
+2026-02-07 23:41:53 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 2 records
+2026-02-07 23:43:17 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 23:43:17 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:43:22 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:43:22 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:43:22 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:43:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:43:22 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:43:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:43:22 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:43:22 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:43:22 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:43:22 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:43:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:43:23 [INFO]: Client connected: _dV-Lwj6lPguFQT1AAAB
+2026-02-07 23:43:23 [INFO]: Socket _dV-Lwj6lPguFQT1AAAB joined emergency room
+2026-02-07 23:43:32 [INFO]: Running initial device sync check...
+2026-02-07 23:44:21 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 23:44:21 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:44:26 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:44:26 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:44:26 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:44:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:44:26 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:44:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:44:26 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:44:26 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:44:26 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:44:26 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:44:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:44:26 [INFO]: Client connected: YGqY56E4qUvgA5PHAAAB
+2026-02-07 23:44:26 [INFO]: Socket YGqY56E4qUvgA5PHAAAB joined emergency room
+2026-02-07 23:44:36 [INFO]: Running initial device sync check...
+2026-02-07 23:44:45 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 23:44:45 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:44:50 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:44:50 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:44:50 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:44:50 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:44:50 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:44:50 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:44:50 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:44:50 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:44:50 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:44:50 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:44:50 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:44:50 [INFO]: Client connected: urb_jOHI8isXH3ieAAAB
+2026-02-07 23:44:51 [INFO]: Socket urb_jOHI8isXH3ieAAAB joined emergency room
+2026-02-07 23:45:02 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 23:45:02 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:45:07 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:45:07 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:45:07 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:45:07 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:45:07 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:45:07 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:45:07 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:45:07 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:45:07 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:45:07 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:45:07 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:45:08 [INFO]: Client connected: -jo_iQ-OmlmKPkpoAAAB
+2026-02-07 23:45:09 [INFO]: Socket -jo_iQ-OmlmKPkpoAAAB joined emergency room
+2026-02-07 23:45:17 [INFO]: Running initial device sync check...
+2026-02-07 23:46:10 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 2 records
+2026-02-07 23:47:17 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-07 23:47:17 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:47:22 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:47:22 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:47:22 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:47:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:47:22 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:47:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:47:22 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:47:22 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:47:22 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:47:22 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:47:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:47:22 [INFO]: Client connected: ob0_8WTarChPbNseAAAB
+2026-02-07 23:47:23 [INFO]: Socket ob0_8WTarChPbNseAAAB joined emergency room
+2026-02-07 23:47:32 [INFO]: Running initial device sync check...
+2026-02-07 23:49:41 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 2 records
+2026-02-07 23:50:40 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 23:50:40 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:50:45 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:50:45 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:50:45 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:50:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:50:45 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:50:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:50:45 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:50:45 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:50:45 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:50:45 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:50:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:50:45 [INFO]: Client connected: 4AKSYeLIxOdVoOtQAAAB
+2026-02-07 23:50:45 [INFO]: Socket 4AKSYeLIxOdVoOtQAAAB joined emergency room
+2026-02-07 23:50:55 [INFO]: Running initial device sync check...
+2026-02-07 23:51:28 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 2 records
+2026-02-07 23:55:05 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-07 23:55:05 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-07 23:55:10 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-07 23:55:10 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-07 23:55:10 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-07 23:55:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:55:10 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-07 23:55:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:55:10 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-07 23:55:10 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-07 23:55:10 [INFO]: 🔌 WebSocket enabled
+2026-02-07 23:55:10 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-07 23:55:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-07 23:55:10 [INFO]: Client connected: MQPYwIAYjKdTAjbJAAAB
+2026-02-07 23:55:11 [INFO]: Socket MQPYwIAYjKdTAjbJAAAB joined emergency room
+2026-02-07 23:55:20 [INFO]: Running initial device sync check...
+2026-02-07 23:58:38 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 2 records
+2026-02-08 00:00:00 [INFO]: Hourly device sync triggered
+2026-02-08 01:09:48 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-08 01:09:48 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-08 01:09:54 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-08 01:09:54 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-08 01:09:54 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-08 01:09:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:09:54 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-08 01:09:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:09:54 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-08 01:09:54 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-08 01:09:54 [INFO]: 🔌 WebSocket enabled
+2026-02-08 01:09:54 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-08 01:09:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:10:04 [INFO]: Running initial device sync check...
+2026-02-08 01:10:04 [INFO]: Starting device sync for 1 device(s)
+2026-02-08 01:10:13 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 2 records
+2026-02-08 01:10:13 [INFO]: Synced device 6987773be48d7bfa6db9c37f for patient PAT000062
+2026-02-08 01:10:14 [INFO]: Device sync completed: 1 success, 0 failed (9849ms)
+2026-02-08 01:34:00 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 2 records
+2026-02-08 01:40:13 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-08 01:40:13 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-08 01:40:18 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-08 01:40:18 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-08 01:40:18 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-08 01:40:18 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:40:18 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-08 01:40:18 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:40:18 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-08 01:40:18 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-08 01:40:18 [INFO]: 🔌 WebSocket enabled
+2026-02-08 01:40:18 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-08 01:40:18 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:40:28 [INFO]: Running initial device sync check...
+2026-02-08 01:42:52 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-08 01:42:52 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-08 01:42:57 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-08 01:42:57 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-08 01:42:57 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-08 01:42:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:42:57 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-08 01:42:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:42:57 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-08 01:42:57 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-08 01:42:57 [INFO]: 🔌 WebSocket enabled
+2026-02-08 01:42:57 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-08 01:42:57 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:42:58 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-08 01:43:07 [INFO]: Running initial device sync check...
+2026-02-08 01:43:23 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-02-08 01:43:23 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-08 01:43:28 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-08 01:43:28 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-08 01:43:28 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-08 01:43:28 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:43:29 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-08 01:43:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:43:29 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-08 01:43:29 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-08 01:43:29 [INFO]: 🔌 WebSocket enabled
+2026-02-08 01:43:29 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-08 01:43:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:43:29 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-08 01:43:38 [INFO]: Running initial device sync check...
+2026-02-08 01:43:53 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-08 01:43:53 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-08 01:43:58 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-08 01:43:58 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-08 01:43:58 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-08 01:43:58 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:43:58 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-08 01:43:58 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:43:58 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-08 01:43:58 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-08 01:43:58 [INFO]: 🔌 WebSocket enabled
+2026-02-08 01:43:58 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-08 01:43:58 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:43:59 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-08 01:44:08 [INFO]: Running initial device sync check...
+2026-02-08 01:44:21 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-08 01:44:21 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-08 01:44:27 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-08 01:44:27 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-08 01:44:27 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-08 01:44:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:44:27 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-08 01:44:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:44:27 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-08 01:44:27 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-08 01:44:27 [INFO]: 🔌 WebSocket enabled
+2026-02-08 01:44:27 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-08 01:44:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:44:39 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-08 01:44:39 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-08 01:44:44 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-08 01:44:44 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-08 01:44:44 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-08 01:44:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:44:44 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-08 01:44:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:44:44 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-08 01:44:44 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-08 01:44:44 [INFO]: 🔌 WebSocket enabled
+2026-02-08 01:44:44 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-08 01:44:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:45:02 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-02-08 01:45:02 [INFO]: 🔧 Checking inventory policy defaults...
+2026-02-08 01:45:03 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-02-08 01:45:14 [INFO]: 🔧 Inventory policy defaults complete: 0 created, 0 updated, 11 skipped
+2026-02-08 01:45:15 [INFO]: Device sync scheduler started (runs every hour)
+2026-02-08 01:45:15 [INFO]: 📱 Device sync scheduler started (hourly)
+2026-02-08 01:45:15 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:45:15 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-08 01:45:15 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:45:15 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-08 01:45:15 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-08 01:45:15 [INFO]: 🔌 WebSocket enabled
+2026-02-08 01:45:15 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-08 01:45:15 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-08 01:45:23 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
