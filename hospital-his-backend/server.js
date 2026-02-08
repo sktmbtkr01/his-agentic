@@ -168,7 +168,8 @@ app.get('/', (req, res) => {
     res.status(200).json({
         success: true,
         message: 'HIS Agentic Backend API',
-        version: '1.0.0',
+        version: '1.0.1',
+        buildId: '20260208-2218',
         environment: config.nodeEnv,
         endpoints: {
             health: '/api/health',
