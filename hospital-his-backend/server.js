@@ -79,12 +79,19 @@ const patientPrescriptionRoutes = require('./routes/patient/patientPrescription.
 const patientLabRoutes = require('./routes/patient/patientLab.routes');
 const patientAnalyticsRoutes = require('./routes/patient/analytics.routes');
 const patientRecordsRoutes = require('./routes/patient/patientRecords.routes');
+const wellnessRoutes = require('./routes/patient/wellness.routes');
+const deviceRoutes = require('./routes/patient/device.routes');
+const predictiveRoutes = require('./routes/patient/predictive.routes');
 
 // Doctor Sentinel Routes
 const doctorSentinelRoutes = require('./routes/doctor/doctorSentinel.routes');
 
+// Test Routes (for nudge ML testing - disable in production)
+const testRoutes = require('./routes/test.routes');
+
 // Services (auto-run on startup)
 const { ensureInventoryPolicyDefaults } = require('./services/inventoryPolicyDefaults.service');
+const deviceSyncScheduler = require('./services/deviceSyncScheduler.service');
 
 // Initialize Express app
 const app = express();
@@ -397,11 +404,19 @@ app.use(`${API_PREFIX}/patient/auth`, patientAuthRoutes);
 app.use(`${API_PREFIX}/patient/signals`, signalsRoutes);
 app.use(`${API_PREFIX}/patient/score`, healthScoreRoutes);
 app.use(`${API_PREFIX}/patient/nudges`, careNudgeRoutes);
+
+// Test Routes (disable in production!)
+if (process.env.NODE_ENV !== 'production') {
+    app.use(`${API_PREFIX}/test`, testRoutes);
+}
 app.use(`${API_PREFIX}/patient/appointments`, patientAppointmentRoutes);
 app.use(`${API_PREFIX}/patient/prescriptions`, patientPrescriptionRoutes);
 app.use(`${API_PREFIX}/patient/labs`, patientLabRoutes);
 app.use(`${API_PREFIX}/patient/analytics`, patientAnalyticsRoutes);
 app.use(`${API_PREFIX}/patient/records`, patientRecordsRoutes);
+app.use(`${API_PREFIX}/patient/wellness`, wellnessRoutes);
+app.use(`${API_PREFIX}/patient/devices`, deviceRoutes);
+app.use(`${API_PREFIX}/patient/predictive`, predictiveRoutes);
 
 // Doctor Sentinel Routes (for HIS integration)
 app.use(`${API_PREFIX}/doctor/sentinel`, doctorSentinelRoutes);
@@ -467,6 +482,10 @@ const startServer = async () => {
 
         // Ensure inventory policy defaults are set (idempotent)
         await ensureInventoryPolicyDefaults();
+
+        // Start device sync scheduler (hourly background sync)
+        deviceSyncScheduler.startScheduler();
+        logger.info('📱 Device sync scheduler started (hourly)');
 
         // Start HTTP server
         httpServer.listen(PORT, '0.0.0.0', () => {

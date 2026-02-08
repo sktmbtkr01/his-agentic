@@ -15,10 +15,13 @@ import Prescriptions from './pages/Prescriptions';
 import LabResults from './pages/LabResults';
 import LifeLens from './pages/LifeLens';
 import Timeline from './pages/Timeline';
+import DeviceSync from './pages/DeviceSync';
+import HealthInsights from './pages/HealthInsights';
 
 // Components
 import ProtectedRoute from './components/ProtectedRoute';
 import VoiceAssistant from './components/VoiceAssistant';
+import WellnessAgentChat from './components/wellness/WellnessAgentChat';
 
 // Redirect authenticated users away from login
 const PublicRoute = ({ children }) => {
@@ -79,6 +82,14 @@ function AppRoutes() {
         }
       />
       <Route
+        path="/log/symptom"
+        element={
+          <ProtectedRoute>
+            <LogSymptom />
+          </ProtectedRoute>
+        }
+      />
+      <Route
         path="/log-mood"
         element={
           <ProtectedRoute>
@@ -87,7 +98,23 @@ function AppRoutes() {
         }
       />
       <Route
+        path="/log/mood"
+        element={
+          <ProtectedRoute>
+            <LogMood />
+          </ProtectedRoute>
+        }
+      />
+      <Route
         path="/log-lifestyle"
+        element={
+          <ProtectedRoute>
+            <LogLifestyle />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/log/lifestyle"
         element={
           <ProtectedRoute>
             <LogLifestyle />
@@ -153,6 +180,30 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
+      <Route
+        path="/devices"
+        element={
+          <ProtectedRoute>
+            <DeviceSync />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/device-sync"
+        element={
+          <ProtectedRoute>
+            <DeviceSync />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/health-insights"
+        element={
+          <ProtectedRoute>
+            <HealthInsights />
+          </ProtectedRoute>
+        }
+      />
 
       {/* Default redirect */}
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
@@ -188,6 +239,8 @@ function App() {
         <AppRoutes />
         {/* Global Voice Assistant - appears on all pages */}
         <VoiceAssistant />
+        {/* Global Wellness Agent Chat - appears on all authenticated pages */}
+        <WellnessAgentChat />
       </AuthProvider>
     </BrowserRouter>
   );

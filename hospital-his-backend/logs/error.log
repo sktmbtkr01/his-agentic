@@ -7671,3 +7671,237 @@ Error: No active shift found
     at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\nursing.controller.js:218:21
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
 2026-02-05 00:36:13 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-05 08:34:32 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-05 08:35:24 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-05 08:45:10 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-05 08:45:16 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-05 12:32:42 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:376:14)
+    at router.process_params (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:421:3)
+    at next (C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+2026-02-05 13:03:26 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-07 13:24:22 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientAuth.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-07 15:23:53 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\Lifeline\Co-Code-S4DS\hospital-his-backend\controllers\patient\patientAuth.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-07 21:05:26 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-07 21:14:34 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 21:14:34 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 21:14:38 [ERROR]: Failed to connect device: Cannot read properties of undefined (reading 'charAt')
+TypeError: Cannot read properties of undefined (reading 'charAt')
+    at default (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\models\DeviceConnection.js:60:38)
+    at SchemaType.getDefault (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1145:31)
+    at D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\setDefaultsOnInsert.js:81:28
+    at Schema.eachPath (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schema.js:1533:5)
+    at module.exports (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\setDefaultsOnInsert.js:76:10)
+    at model.Query._findOneAndUpdate (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:3346:18)
+    at model.Query.exec (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.connectDevice (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\services\deviceSync.service.js:57:28)
+    at async connectDevice (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\controllers\patient\device.controller.js:62:24)
+2026-02-07 21:14:41 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 21:14:41 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 21:14:42 [ERROR]: Failed to connect device: Cannot read properties of undefined (reading 'charAt')
+TypeError: Cannot read properties of undefined (reading 'charAt')
+    at default (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\models\DeviceConnection.js:60:38)
+    at SchemaType.getDefault (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1145:31)
+    at D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\setDefaultsOnInsert.js:81:28
+    at Schema.eachPath (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\schema.js:1533:5)
+    at module.exports (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\helpers\setDefaultsOnInsert.js:76:10)
+    at model.Query._findOneAndUpdate (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:3346:18)
+    at model.Query.exec (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.connectDevice (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\services\deviceSync.service.js:57:28)
+    at async connectDevice (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\controllers\patient\device.controller.js:62:24)
+2026-02-07 22:38:04 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:38:05 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:53:51 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:53:51 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:53:55 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:53:55 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:54:37 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:54:37 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 22:54:57 [ERROR]: Failed to get devices: Path collision at tokens.accessToken remaining portion accessToken
+MongoServerError: Path collision at tokens.accessToken remaining portion accessToken
+    at Connection.onMessage (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:202:26)
+    at MessageStream.<anonymous> (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\connection.js:61:60)
+    at MessageStream.emit (node:events:518:28)
+    at processIncomingData (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:124:16)
+    at MessageStream._write (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\mongodb\lib\cmap\message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at TLSSocket.ondata (node:internal/streams/readable:1009:22)
+    at TLSSocket.emit (node:events:518:28)
+2026-02-07 23:14:39 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at D:\cocode 4\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:28:21
+    at D:\cocode 4\Co-Code-S4DS\hospital-his-backend\utils\asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:328:13)
+    at D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-08 17:50:29 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at D:\cocode 4\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processTimers (node:internal/timers:526:9)
