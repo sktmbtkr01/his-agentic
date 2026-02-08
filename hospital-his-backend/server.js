@@ -415,7 +415,10 @@ app.use(`${API_PREFIX}/patient/labs`, patientLabRoutes);
 app.use(`${API_PREFIX}/patient/analytics`, patientAnalyticsRoutes);
 app.use(`${API_PREFIX}/patient/records`, patientRecordsRoutes);
 app.use(`${API_PREFIX}/patient/wellness`, wellnessRoutes);
+
+logger.info(`Mounting Patient Device Routes at ${API_PREFIX}/patient/devices`);
 app.use(`${API_PREFIX}/patient/devices`, deviceRoutes);
+
 app.use(`${API_PREFIX}/patient/predictive`, predictiveRoutes);
 
 // Doctor Sentinel Routes (for HIS integration)
