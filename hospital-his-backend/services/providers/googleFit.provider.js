@@ -151,15 +151,21 @@ const fetchAggregateData = async (accessToken, identifier, startTimeNanos, endTi
         ? { dataSourceId: identifier }
         : { dataTypeName: identifier };
 
+    console.log(`[GoogleFit DEBUG] fetchAggregateData for: ${identifier}`);
+
     try {
+        const requestBody = {
+            aggregateBy: [aggregateParam],
+            bucketByTime: { durationMillis: 86400000 }, // 1 day
+            startTimeMillis: startTimeNanos / 1000000,
+            endTimeMillis: endTimeNanos / 1000000,
+        };
+
+        console.log(`[GoogleFit DEBUG] Request body:`, JSON.stringify(requestBody, null, 2));
+
         const response = await axios.post(
             `${GOOGLE_FIT_CONFIG.apiBaseUrl}/dataset:aggregate`,
-            {
-                aggregateBy: [aggregateParam],
-                bucketByTime: { durationMillis: 86400000 }, // 1 day
-                startTimeMillis: startTimeNanos / 1000000,
-                endTimeMillis: endTimeNanos / 1000000,
-            },
+            requestBody,
             {
                 headers: {
                     Authorization: `Bearer ${accessToken}`,
@@ -168,9 +174,11 @@ const fetchAggregateData = async (accessToken, identifier, startTimeNanos, endTi
             }
         );
 
+        console.log(`[GoogleFit DEBUG] Response for ${identifier}:`, JSON.stringify(response.data, null, 2));
+
         return response.data;
     } catch (error) {
-        console.error(`Failed to fetch ${identifier}:`, error.response?.data || error.message);
+        console.error(`[GoogleFit DEBUG] Failed to fetch ${identifier}:`, error.response?.data || error.message);
         return null;
     }
 };
@@ -179,17 +187,25 @@ const fetchAggregateData = async (accessToken, identifier, startTimeNanos, endTi
  * Helper to get value from aggregate response with fallback
  */
 const getValueFromResponse = async (accessToken, sourceId, typeId, startTimeNanos, endTimeNanos, valueType = 'intVal', scale = 1) => {
-    // Try primary source (merged/derived)
-    let data = await fetchAggregateData(accessToken, sourceId, startTimeNanos, endTimeNanos);
+    console.log(`[GoogleFit DEBUG] getValueFromResponse - trying GENERIC typeId FIRST: ${typeId}`);
+
+    // Try GENERIC type first (more reliable across devices)
+    let data = await fetchAggregateData(accessToken, typeId, startTimeNanos, endTimeNanos);
     let value = data?.bucket?.[0]?.dataset?.[0]?.point?.[0]?.value?.[0]?.[valueType];
 
-    // If no value, try generic type (fallback)
+    console.log(`[GoogleFit DEBUG] Generic type result: value=${value}, bucket exists=${!!data?.bucket?.[0]}, dataset exists=${!!data?.bucket?.[0]?.dataset?.[0]}, point exists=${!!data?.bucket?.[0]?.dataset?.[0]?.point?.[0]}`);
+
+    // If no value from generic type, try derived source as fallback
     if (value === undefined || value === null) {
-        data = await fetchAggregateData(accessToken, typeId, startTimeNanos, endTimeNanos);
+        console.log(`[GoogleFit DEBUG] Generic failed, trying derived sourceId: ${sourceId}`);
+        data = await fetchAggregateData(accessToken, sourceId, startTimeNanos, endTimeNanos);
         value = data?.bucket?.[0]?.dataset?.[0]?.point?.[0]?.value?.[0]?.[valueType];
+        console.log(`[GoogleFit DEBUG] Derived source result: value=${value}`);
     }
 
-    return (value || 0) * scale;
+    const finalValue = (value || 0) * scale;
+    console.log(`[GoogleFit DEBUG] Final value for ${typeId}: ${finalValue}`);
+    return finalValue;
 };
 
 // ============================================
@@ -261,26 +277,45 @@ const generateMockSleepData = () => {
  * Fetch activity data (steps, calories, distance)
  */
 const fetchActivityData = async (accessToken) => {
+    console.log('[GoogleFit DEBUG] fetchActivityData called');
+    console.log('[GoogleFit DEBUG] isGoogleFitConfigured:', isGoogleFitConfigured());
+    console.log('[GoogleFit DEBUG] accessToken present:', !!accessToken);
+
     if (!isGoogleFitConfigured() || !accessToken) {
-        return generateMockActivityData();
+        console.log('[GoogleFit DEBUG] Using MOCK activity data (no config or token)');
+        const mockData = generateMockActivityData();
+        console.log('[GoogleFit DEBUG] Mock activity data:', JSON.stringify(mockData, null, 2));
+        return mockData;
     }
 
     const { startTimeNanos, endTimeNanos } = getTodayTimeRange();
+    console.log('[GoogleFit DEBUG] Time range:', {
+        start: new Date(startTimeNanos / 1000000).toISOString(),
+        end: new Date(endTimeNanos / 1000000).toISOString()
+    });
 
     try {
         // Fetch steps (Try derived first, then generic)
+        console.log('[GoogleFit DEBUG] Fetching steps...');
         const steps = await getValueFromResponse(accessToken, DATA_SOURCES.STEPS, DATA_TYPES.STEPS, startTimeNanos, endTimeNanos, 'intVal');
+        console.log('[GoogleFit DEBUG] Steps result:', steps);
 
         // Fetch calories
+        console.log('[GoogleFit DEBUG] Fetching calories...');
         const calories = Math.round(await getValueFromResponse(accessToken, DATA_SOURCES.CALORIES, DATA_TYPES.CALORIES, startTimeNanos, endTimeNanos, 'fpVal'));
+        console.log('[GoogleFit DEBUG] Calories result:', calories);
 
         // Fetch active minutes
+        console.log('[GoogleFit DEBUG] Fetching active minutes...');
         const activeMinutes = await getValueFromResponse(accessToken, DATA_SOURCES.ACTIVE_MINUTES, DATA_TYPES.ACTIVE_MINUTES, startTimeNanos, endTimeNanos, 'intVal');
+        console.log('[GoogleFit DEBUG] Active minutes result:', activeMinutes);
 
         // Fetch distance (km)
+        console.log('[GoogleFit DEBUG] Fetching distance...');
         const distance = parseFloat((await getValueFromResponse(accessToken, DATA_SOURCES.DISTANCE, DATA_TYPES.DISTANCE, startTimeNanos, endTimeNanos, 'fpVal', 0.001)).toFixed(2));
+        console.log('[GoogleFit DEBUG] Distance result:', distance);
 
-        return {
+        const result = {
             summary: {
                 steps,
                 caloriesOut: calories,
@@ -295,8 +330,10 @@ const fetchActivityData = async (accessToken) => {
                 distance: 8,
             },
         };
+        console.log('[GoogleFit DEBUG] REAL activity data result:', JSON.stringify(result, null, 2));
+        return result;
     } catch (error) {
-        console.error('Failed to fetch Google Fit activity data:', error);
+        console.error('[GoogleFit DEBUG] Failed to fetch Google Fit activity data:', error);
         // CRITICAL: Return empty real data instead of mock data on error/failure
         return {
             summary: { steps: 0, caloriesOut: 0, activeMinutes: 0, distance: 0, floors: 0 },
@@ -310,19 +347,35 @@ const fetchActivityData = async (accessToken) => {
  */
 const fetchHeartRateData = async (accessToken) => {
     if (!isGoogleFitConfigured() || !accessToken) {
+        console.log('[GoogleFit DEBUG] Using MOCK heart rate (no config or token)')
         return generateMockHeartRateData();
     }
 
     const { startTimeNanos, endTimeNanos } = getTodayTimeRange();
 
     try {
-        const hrData = await fetchAggregateData(accessToken, DATA_SOURCES.HEART_RATE, startTimeNanos, endTimeNanos);
-        const avgHR = Math.round(hrData?.bucket?.[0]?.dataset?.[0]?.point?.[0]?.value?.[0]?.fpVal || 0);
+        console.log('[GoogleFit DEBUG] Fetching REAL heart rate data...');
+
+        // Try GENERIC type first (more reliable across devices)
+        console.log('[GoogleFit DEBUG] Trying generic heart rate type first...');
+        let hrData = await fetchAggregateData(accessToken, DATA_TYPES.HEART_RATE, startTimeNanos, endTimeNanos);
+        let avgHR = Math.round(hrData?.bucket?.[0]?.dataset?.[0]?.point?.[0]?.value?.[0]?.fpVal || 0);
+        console.log('[GoogleFit DEBUG] Generic heart rate result:', avgHR);
+
+        // If generic fails, try derived data source
+        if (avgHR === 0) {
+            console.log('[GoogleFit DEBUG] Generic failed, trying derived source...');
+            hrData = await fetchAggregateData(accessToken, DATA_SOURCES.HEART_RATE, startTimeNanos, endTimeNanos);
+            avgHR = Math.round(hrData?.bucket?.[0]?.dataset?.[0]?.point?.[0]?.value?.[0]?.fpVal || 0);
+            console.log('[GoogleFit DEBUG] Derived heart rate result:', avgHR);
+        }
 
         if (avgHR === 0) {
+            console.log('[GoogleFit DEBUG] No heart rate data from API, returning MOCK');
             return generateMockHeartRateData();
         }
 
+        console.log('[GoogleFit DEBUG] Returning REAL heart rate:', avgHR);
         return {
             restingHeartRate: avgHR - 5,
             current: avgHR,
@@ -333,7 +386,7 @@ const fetchHeartRateData = async (accessToken) => {
             ],
         };
     } catch (error) {
-        console.error('Failed to fetch Google Fit heart rate:', error);
+        console.error('[GoogleFit DEBUG] Failed to fetch heart rate:', error);
         return generateMockHeartRateData();
     }
 };
@@ -351,19 +404,31 @@ const fetchSleepData = async (accessToken) => {
  * Fetch all data types
  */
 const fetchAllData = async (accessToken) => {
+    console.log('\n========================================');
+    console.log('[GoogleFit DEBUG] fetchAllData called');
+    console.log('[GoogleFit DEBUG] accessToken:', accessToken ? `${accessToken.substring(0, 20)}...` : 'NULL');
+    console.log('========================================\n');
+
     const [activity, heartRate, sleep] = await Promise.all([
         fetchActivityData(accessToken),
         fetchHeartRateData(accessToken),
         fetchSleepData(accessToken),
     ]);
 
-    return {
+    const result = {
         activity,
         heartRate,
         sleep,
         syncedAt: new Date().toISOString(),
         provider: 'google_fit',
     };
+
+    console.log('\n========================================');
+    console.log('[GoogleFit DEBUG] fetchAllData FINAL RESULT:');
+    console.log(JSON.stringify(result, null, 2));
+    console.log('========================================\n');
+
+    return result;
 };
 
 module.exports = {

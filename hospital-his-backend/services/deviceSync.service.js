@@ -246,7 +246,7 @@ const getPatientDevices = async (patientId) => {
  * Sync a specific device
  */
 const syncDevice = async (deviceId) => {
-    const device = await DeviceConnection.findById(deviceId).select('+tokens.accessToken +tokens.refreshToken');
+    const device = await DeviceConnection.findById(deviceId).select('+tokens.accessToken +tokens.refreshToken +tokens.expiresAt');
 
     if (!device || !device.isConnected) {
         throw new Error('Device not found or not connected');
@@ -257,13 +257,56 @@ const syncDevice = async (deviceId) => {
 
         // Get provider
         const provider = providers[device.provider] || providers[DEVICE_PROVIDERS.DEMO];
-        const accessToken = device.tokens?.accessToken;
+        let accessToken = device.tokens?.accessToken;
+        const refreshToken = device.tokens?.refreshToken;
+        const expiresAt = device.tokens?.expiresAt;
+
+        logger.info(`[DeviceSync DEBUG] Starting sync for device ${deviceId}`);
+        logger.info(`[DeviceSync DEBUG] Provider: ${device.provider}, isDemoMode: ${device.isDemoMode}`);
+        logger.info(`[DeviceSync DEBUG] AccessToken present: ${!!accessToken}`);
+        logger.info(`[DeviceSync DEBUG] RefreshToken present: ${!!refreshToken}`);
+        logger.info(`[DeviceSync DEBUG] Token expires at: ${expiresAt}`);
+
+        // Check if token is expired, about to expire (5 minute buffer), or expiry is unknown
+        const now = new Date();
+        const tokenExpired = !expiresAt || new Date(expiresAt) < new Date(now.getTime() + 5 * 60 * 1000);
+
+        logger.info(`[DeviceSync DEBUG] Token expired/unknown: ${tokenExpired}`);
+
+        if (tokenExpired && refreshToken && provider.refreshAccessToken) {
+            logger.info(`[DeviceSync DEBUG] Token expired or unknown, attempting refresh...`);
+            try {
+                const newTokens = await provider.refreshAccessToken(refreshToken);
+                accessToken = newTokens.accessToken;
+
+                // Update device with new tokens
+                device.tokens.accessToken = newTokens.accessToken;
+                device.tokens.expiresAt = newTokens.expiresAt;
+                await device.save();
+
+                logger.info(`[DeviceSync DEBUG] Token refreshed successfully! New expiry: ${newTokens.expiresAt}`);
+            } catch (refreshError) {
+                logger.error(`[DeviceSync DEBUG] Token refresh failed:`, refreshError.message);
+                logger.error(`[DeviceSync DEBUG] Full refresh error:`, JSON.stringify(refreshError.response?.data || refreshError));
+                // Continue with old token, might still work
+            }
+        } else if (!refreshToken) {
+            logger.warn(`[DeviceSync DEBUG] No refresh token available - user may need to reconnect`);
+        }
 
         // Fetch all data
         const data = await provider.fetchAllData(accessToken);
 
+        logger.info(`[DeviceSync DEBUG] Raw data from provider:`);
+        logger.info(JSON.stringify(data, null, 2));
+
         // Convert to Signal records
         const signals = await convertToSignals(device.patient, data);
+
+        logger.info(`[DeviceSync DEBUG] Converted to ${signals.length} signals`);
+        signals.forEach((s, i) => {
+            logger.info(`[DeviceSync DEBUG] Signal ${i}: category=${s.category}, data=${JSON.stringify(s)}`);
+        });
 
         // Save signals
         let recordsProcessed = 0;
@@ -283,8 +326,10 @@ const syncDevice = async (deviceId) => {
                 if (existingSignal) {
                     Object.assign(existingSignal, signalData);
                     await existingSignal.save();
+                    logger.info(`[DeviceSync DEBUG] Updated existing signal ${existingSignal._id}`);
                 } else {
-                    await Signal.create(signalData);
+                    const newSignal = await Signal.create(signalData);
+                    logger.info(`[DeviceSync DEBUG] Created new signal ${newSignal._id}`);
                 }
                 recordsProcessed++;
             } catch (err) {
@@ -329,9 +374,10 @@ const convertToSignals = async (patientId, data) => {
 
     // Vitals signal (heart rate)
     if (data.heartRate) {
-        const heartRateValue = data.heartRate.restingHeartRate ||
-            data.heartRate.current ||
-            data.heartRate.currentHeartRate;
+        // Use current heart rate first (matches what phone shows), then fall back to others
+        const heartRateValue = data.heartRate.current ||
+            data.heartRate.currentHeartRate ||
+            data.heartRate.restingHeartRate;
 
         if (heartRateValue) {
             signals.push({
@@ -404,6 +450,8 @@ const getActivityType = (activeMinutes) => {
  * Get latest synced data for a patient
  */
 const getLatestSyncedData = async (patientId) => {
+    logger.info(`[DeviceSync DEBUG] getLatestSyncedData called for patient ${patientId}`);
+
     // Get the most recent device sync signals
     const [vitalsSignal, lifestyleSignal] = await Promise.all([
         Signal.findOne({
@@ -418,13 +466,16 @@ const getLatestSyncedData = async (patientId) => {
         }).sort({ recordedAt: -1 }),
     ]);
 
+    logger.info(`[DeviceSync DEBUG] vitalsSignal: ${JSON.stringify(vitalsSignal)}`);
+    logger.info(`[DeviceSync DEBUG] lifestyleSignal: ${JSON.stringify(lifestyleSignal)}`);
+
     // Get connected device info
     const device = await DeviceConnection.findOne({
         patient: patientId,
         isConnected: true,
     });
 
-    return {
+    const result = {
         hasDevice: !!device,
         device: device ? {
             id: device._id,
@@ -446,6 +497,11 @@ const getLatestSyncedData = async (patientId) => {
             recordedAt: lifestyleSignal.recordedAt,
         } : null,
     };
+
+    logger.info(`[DeviceSync DEBUG] getLatestSyncedData RESULT:`);
+    logger.info(JSON.stringify(result, null, 2));
+
+    return result;
 };
 
 /**
