@@ -102,7 +102,7 @@ const connectDevice = async (patientId, provider, options = {}) => {
             return connectDevice(patientId, DEVICE_PROVIDERS.DEMO, options);
         }
 
-        const redirectUri = options.redirectUri || `${process.env.BACKEND_URL || 'http://localhost:5001'}/api/v1/patient/devices/callback/google_fit`;
+        const redirectUri = options.redirectUri || `${process.env.BACKEND_URL || 'http://localhost:5001'}/api/v1/patient/devices/oauth-redirect/google_fit`;
         const state = Buffer.from(JSON.stringify({ patientId, provider: 'google_fit' })).toString('base64');
         const authUrl = googleFitProvider.getAuthorizationUrl(redirectUri, state);
 
