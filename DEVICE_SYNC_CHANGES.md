@@ -247,4 +247,103 @@ scopes: [
 
 ---
 
+## 🚀 Deployment Guide - Google Cloud Console Changes
+
+When deploying to production, you'll need to update the following in Google Cloud Console:
+
+### 1. Redirect URIs
+
+In [Google Cloud Console > APIs & Services > Credentials](https://console.cloud.google.com/apis/credentials):
+
+| Environment | Redirect URI |
+|-------------|--------------|
+| **Local (Current)** | `http://localhost:5001/api/v1/patient/devices/callback/google_fit` |
+| **Production** | `https://your-domain.com/api/v1/patient/devices/callback/google_fit` |
+
+**Steps:**
+1. Go to your OAuth 2.0 Client ID
+2. Click "Edit"
+3. Under **Authorized redirect URIs**, add your production URL
+4. Save
+
+---
+
+### 2. Authorized JavaScript Origins
+
+| Environment | Origin |
+|-------------|--------|
+| **Local** | `http://localhost:5174` |
+| **Production** | `https://your-domain.com` |
+
+---
+
+### 3. Test Users vs Production Mode
+
+Currently, your app is likely in **"Testing"** mode, which limits access to only approved test users.
+
+| Status | What to do |
+|--------|------------|
+| **Testing Mode** | Only test emails you added can use the app |
+| **Production Mode** | Anyone can use the app (requires Google verification) |
+
+**To add test users:**
+1. Go to **OAuth consent screen**
+2. Scroll to **Test users**
+3. Add email addresses of people who need to test
+
+**To publish (go live):**
+1. Go to **OAuth consent screen**
+2. Click **"Publish App"**
+3. If using sensitive scopes (like fitness.sleep.read), you'll need Google verification
+
+---
+
+### 4. Production Environment Variables
+
+Update your `.env` on the production server:
+
+```env
+# Production URLs
+PATIENT_PORTAL_URL=https://your-patient-portal.com
+BACKEND_URL=https://your-backend-api.com
+
+# Same credentials (unless you create separate prod credentials)
+GOOGLE_FIT_CLIENT_ID=your_client_id
+GOOGLE_FIT_CLIENT_SECRET=your_client_secret
+```
+
+---
+
+### 5. OAuth Scopes Verification Status
+
+Some scopes require Google verification before production:
+
+| Scope | Verification Required? |
+|-------|----------------------|
+| `fitness.activity.read` | ⚠️ Sensitive - needs verification |
+| `fitness.heart_rate.read` | ⚠️ Sensitive - needs verification |
+| `fitness.sleep.read` | ⚠️ Sensitive - needs verification |
+| `fitness.body.read` | ⚠️ Sensitive - needs verification |
+| `fitness.location.read` | ⚠️ Sensitive - needs verification |
+
+**If verification is required:**
+1. Submit your app for review in OAuth consent screen
+2. Provide privacy policy URL
+3. Explain why you need each scope
+4. Wait for Google approval (can take 1-6 weeks)
+
+---
+
+### Deployment Checklist
+
+- [ ] Add production redirect URI in Google Cloud Console
+- [ ] Add production JavaScript origin (if needed)
+- [ ] Add test users OR publish app for production
+- [ ] Update `.env` with production URLs
+- [ ] Submit for Google verification (if using sensitive scopes)
+- [ ] Test OAuth flow on production environment
+- [ ] Verify data sync works with production credentials
+
+---
+
 *Document created: February 8, 2026*

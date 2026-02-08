@@ -23056,3 +23056,143 @@ Error: Not authorized to access this route
     "recordedAt": "2026-02-08T07:55:32.115Z"
   }
 }
+2026-02-08 18:00:00 [INFO]: Hourly device sync triggered
+2026-02-08 18:00:00 [INFO]: Starting device sync for 1 device(s)
+2026-02-08 18:00:00 [INFO]: [DeviceSync DEBUG] Starting sync for device 6987773be48d7bfa6db9c37f
+2026-02-08 18:00:00 [INFO]: [DeviceSync DEBUG] Provider: google_fit, isDemoMode: false
+2026-02-08 18:00:00 [INFO]: [DeviceSync DEBUG] AccessToken present: true
+2026-02-08 18:00:00 [INFO]: [DeviceSync DEBUG] RefreshToken present: true
+2026-02-08 18:00:00 [INFO]: [DeviceSync DEBUG] Token expires at: Sun Feb 08 2026 14:19:42 GMT+0530 (India Standard Time)
+2026-02-08 18:00:00 [INFO]: [DeviceSync DEBUG] Token expired/unknown: true
+2026-02-08 18:00:00 [INFO]: [DeviceSync DEBUG] Token expired or unknown, attempting refresh...
+2026-02-08 18:00:01 [INFO]: [DeviceSync DEBUG] Token refreshed successfully! New expiry: Sun Feb 08 2026 19:00:00 GMT+0530 (India Standard Time)
+2026-02-08 18:00:04 [INFO]: [DeviceSync DEBUG] Raw data from provider:
+2026-02-08 18:00:04 [INFO]: {
+  "activity": {
+    "summary": {
+      "steps": 944,
+      "caloriesOut": 1148,
+      "activeMinutes": 12,
+      "distance": 0.54,
+      "floors": 0
+    },
+    "goals": {
+      "steps": 10000,
+      "caloriesOut": 2500,
+      "activeMinutes": 60,
+      "distance": 8
+    }
+  },
+  "heartRate": {
+    "restingHeartRate": 73,
+    "current": 78,
+    "zones": [
+      {
+        "name": "Resting",
+        "minutes": 0,
+        "min": 40,
+        "max": 100
+      },
+      {
+        "name": "Active",
+        "minutes": 0,
+        "min": 100,
+        "max": 140
+      },
+      {
+        "name": "High",
+        "minutes": 0,
+        "min": 140,
+        "max": 180
+      }
+    ]
+  },
+  "sleep": {
+    "summary": {
+      "totalMinutesAsleep": 630,
+      "totalTimeInBed": 660,
+      "efficiency": 100
+    },
+    "stages": {
+      "deep": 126,
+      "light": 315,
+      "rem": 157,
+      "wake": 31
+    },
+    "quality": "excellent"
+  },
+  "syncedAt": "2026-02-08T12:30:04.355Z",
+  "provider": "google_fit"
+}
+2026-02-08 18:00:04 [INFO]: [DeviceSync DEBUG] Converted to 2 signals
+2026-02-08 18:00:04 [INFO]: [DeviceSync DEBUG] Signal 0: category=vitals, data={"patient":"6982e14cf98d1ed6946bcfe4","category":"vitals","recordedAt":"2026-02-08T12:30:04.355Z","source":"device_sync","vitals":{"heartRate":78,"notes":"Synced from google_fit"}}
+2026-02-08 18:00:04 [INFO]: [DeviceSync DEBUG] Signal 1: category=lifestyle, data={"patient":"6982e14cf98d1ed6946bcfe4","category":"lifestyle","recordedAt":"2026-02-08T12:30:04.355Z","source":"device_sync","lifestyle":{"activity":{"type":"light","duration":12,"description":"944 steps, 1148 cal burned"},"sleep":{"duration":10.5,"quality":"excellent"}}}
+2026-02-08 18:00:04 [INFO]: [DeviceSync DEBUG] Updated existing signal 6987951d1df0fc9c0e9c8335
+2026-02-08 18:00:04 [INFO]: [DeviceSync DEBUG] Updated existing signal 6987951d1df0fc9c0e9c8338
+2026-02-08 18:00:04 [INFO]: Device sync completed for 6987773be48d7bfa6db9c37f: 2 records
+2026-02-08 18:00:04 [INFO]: Synced device 6987773be48d7bfa6db9c37f for patient PAT000062
+2026-02-08 18:00:04 [INFO]: Device sync completed: 1 success, 0 failed (4678ms)
+2026-02-08 18:00:32 [INFO]: [DeviceSync DEBUG] getLatestSyncedData called for patient 6982e14cf98d1ed6946bcfe4
+2026-02-08 18:00:32 [INFO]: [DeviceSync DEBUG] vitalsSignal: {"vitals":{"heartRate":78,"notes":"Synced from google_fit"},"_id":"6987951d1df0fc9c0e9c8335","patient":"6982e14cf98d1ed6946bcfe4","category":"vitals","recordedAt":"2026-02-08T12:30:04.355Z","source":"device_sync","isActive":true,"createdAt":"2026-02-07T19:40:13.604Z","updatedAt":"2026-02-08T12:30:04.379Z","__v":0,"formattedDate":"08 Feb 2026","relativeTime":"0 min ago","id":"6987951d1df0fc9c0e9c8335"}
+2026-02-08 18:00:32 [INFO]: [DeviceSync DEBUG] lifestyleSignal: {"lifestyle":{"sleep":{"duration":10.5,"quality":"excellent"},"activity":{"type":"light","duration":12,"description":"944 steps, 1148 cal burned"}},"_id":"6987951d1df0fc9c0e9c8338","patient":"6982e14cf98d1ed6946bcfe4","category":"lifestyle","recordedAt":"2026-02-08T12:30:04.355Z","source":"device_sync","isActive":true,"createdAt":"2026-02-07T19:40:13.644Z","updatedAt":"2026-02-08T12:30:04.410Z","__v":0,"formattedDate":"08 Feb 2026","relativeTime":"0 min ago","id":"6987951d1df0fc9c0e9c8338"}
+2026-02-08 18:00:32 [INFO]: [DeviceSync DEBUG] getLatestSyncedData RESULT:
+2026-02-08 18:00:32 [INFO]: {
+  "hasDevice": true,
+  "device": {
+    "id": "6987773be48d7bfa6db9c37f",
+    "provider": "google_fit",
+    "displayName": "Google Fit",
+    "isDemoMode": false,
+    "lastSync": {
+      "status": "success",
+      "timestamp": "2026-02-08T12:30:04.426Z",
+      "recordsProcessed": 2,
+      "errorMessage": null,
+      "errorCode": null
+    },
+    "nextSyncAt": "2026-02-08T13:30:04.426Z"
+  },
+  "vitals": {
+    "heartRate": 78,
+    "recordedAt": "2026-02-08T12:30:04.355Z"
+  },
+  "lifestyle": {
+    "steps": 944,
+    "activeMinutes": 12,
+    "sleepHours": 10.5,
+    "sleepQuality": "excellent",
+    "recordedAt": "2026-02-08T12:30:04.355Z"
+  }
+}
+2026-02-08 18:05:35 [INFO]: [DeviceSync DEBUG] getLatestSyncedData called for patient 6982e14cf98d1ed6946bcfe4
+2026-02-08 18:05:35 [INFO]: [DeviceSync DEBUG] vitalsSignal: {"vitals":{"heartRate":78,"notes":"Synced from google_fit"},"_id":"6987951d1df0fc9c0e9c8335","patient":"6982e14cf98d1ed6946bcfe4","category":"vitals","recordedAt":"2026-02-08T12:30:04.355Z","source":"device_sync","isActive":true,"createdAt":"2026-02-07T19:40:13.604Z","updatedAt":"2026-02-08T12:30:04.379Z","__v":0,"formattedDate":"08 Feb 2026","relativeTime":"5 min ago","id":"6987951d1df0fc9c0e9c8335"}
+2026-02-08 18:05:35 [INFO]: [DeviceSync DEBUG] lifestyleSignal: {"lifestyle":{"sleep":{"duration":10.5,"quality":"excellent"},"activity":{"type":"light","duration":12,"description":"944 steps, 1148 cal burned"}},"_id":"6987951d1df0fc9c0e9c8338","patient":"6982e14cf98d1ed6946bcfe4","category":"lifestyle","recordedAt":"2026-02-08T12:30:04.355Z","source":"device_sync","isActive":true,"createdAt":"2026-02-07T19:40:13.644Z","updatedAt":"2026-02-08T12:30:04.410Z","__v":0,"formattedDate":"08 Feb 2026","relativeTime":"5 min ago","id":"6987951d1df0fc9c0e9c8338"}
+2026-02-08 18:05:35 [INFO]: [DeviceSync DEBUG] getLatestSyncedData RESULT:
+2026-02-08 18:05:35 [INFO]: {
+  "hasDevice": true,
+  "device": {
+    "id": "6987773be48d7bfa6db9c37f",
+    "provider": "google_fit",
+    "displayName": "Google Fit",
+    "isDemoMode": false,
+    "lastSync": {
+      "status": "success",
+      "timestamp": "2026-02-08T12:30:04.426Z",
+      "recordsProcessed": 2,
+      "errorMessage": null,
+      "errorCode": null
+    },
+    "nextSyncAt": "2026-02-08T13:30:04.426Z"
+  },
+  "vitals": {
+    "heartRate": 78,
+    "recordedAt": "2026-02-08T12:30:04.355Z"
+  },
+  "lifestyle": {
+    "steps": 944,
+    "activeMinutes": 12,
+    "sleepHours": 10.5,
+    "sleepQuality": "excellent",
+    "recordedAt": "2026-02-08T12:30:04.355Z"
+  }
+}
