@@ -21,6 +21,11 @@ const {
 // NOTE: Using /oauth-redirect instead of /callback because HF Spaces blocks /callback paths
 router.get('/oauth-redirect/:provider', handleCallback);
 
+// DEBUG: Simple test route to check if new routes are being registered
+router.get('/oauth-test', (req, res) => {
+    res.json({ success: true, message: 'OAuth test route works!', timestamp: new Date().toISOString() });
+});
+
 // All other routes require patient authentication
 router.use(authenticatePatient);
 
