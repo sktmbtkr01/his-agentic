@@ -424,6 +424,33 @@ app.use(`${API_PREFIX}/patient/predictive`, predictiveRoutes);
 // Doctor Sentinel Routes (for HIS integration)
 app.use(`${API_PREFIX}/doctor/sentinel`, doctorSentinelRoutes);
 
+// DEBUG: List all routes (To debug 404 issues)
+app.get(`${API_PREFIX}/debug/routes`, (req, res) => {
+    const routes = [];
+    app._router.stack.forEach((middleware) => {
+        if (middleware.route) {
+            // routes registered directly on the app
+            routes.push(`${Object.keys(middleware.route.methods).join(',').toUpperCase()} ${middleware.route.path}`);
+        } else if (middleware.name === 'router') {
+            // router middleware
+            middleware.handle.stack.forEach((handler) => {
+                if (handler.route) {
+                    const method = Object.keys(handler.route.methods).join(',').toUpperCase();
+                    const path = handler.route.path;
+                    // Try to find the prefix (This is tricky in Express, sticking to known prefixes)
+                    let prefix = '';
+                    if (middleware.regexp.toString().includes('/api/v1/patient/devices')) prefix = '/api/v1/patient/devices';
+                    else if (middleware.regexp.toString().includes('/api/v1/patient/auth')) prefix = '/api/v1/patient/auth';
+                    else prefix = 'UNKNOWN_PREFIX'; // simplified for now
+
+                    routes.push(`${method} ${prefix}${path} (Regex: ${middleware.regexp})`);
+                }
+            });
+        }
+    });
+    res.json({ success: true, count: routes.length, routes });
+});
+
 // 404 handler for undefined routes
 app.use('*', (req, res) => {
     res.status(404).json({
