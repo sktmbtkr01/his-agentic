@@ -27,6 +27,7 @@ const DATA_SOURCES = {
     CALORIES: 'derived:com.google.calories.expended:com.google.android.gms:merge_calories_expended',
     DISTANCE: 'derived:com.google.distance.delta:com.google.android.gms:merge_distance_delta',
     ACTIVE_MINUTES: 'derived:com.google.active_minutes:com.google.android.gms:merge_active_minutes',
+    SLEEP: 'derived:com.google.sleep.segment:com.google.android.gms:merged',
 };
 
 // Data type names for Google Fit aggregate API (Generic fallback)
@@ -36,6 +37,7 @@ const DATA_TYPES = {
     CALORIES: 'com.google.calories.expended',
     DISTANCE: 'com.google.distance.delta',
     ACTIVE_MINUTES: 'com.google.active_minutes',
+    SLEEP: 'com.google.sleep.segment',
 };
 
 /**
@@ -392,12 +394,117 @@ const fetchHeartRateData = async (accessToken) => {
 };
 
 /**
- * Fetch sleep data
+ * Fetch sleep data using Sessions API
  */
 const fetchSleepData = async (accessToken) => {
-    // Google Fit sleep API requires special permissions
-    // For now, return mock data
-    return generateMockSleepData();
+    if (!isGoogleFitConfigured() || !accessToken) {
+        console.log('[GoogleFit DEBUG] Using MOCK sleep data (no config or token)');
+        return generateMockSleepData();
+    }
+
+    // Get last night's sleep (from yesterday 6PM to today 12PM)
+    const now = new Date();
+    const endTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0, 0);
+    const startTime = new Date(endTime.getTime() - 18 * 60 * 60 * 1000); // 18 hours before noon
+
+    try {
+        console.log('[GoogleFit DEBUG] Fetching REAL sleep data using Sessions API...');
+        console.log('[GoogleFit DEBUG] Sleep time range:', {
+            start: startTime.toISOString(),
+            end: endTime.toISOString()
+        });
+
+        // Use Sessions API for sleep data (activity type 72 = sleep)
+        const sessionsUrl = `${GOOGLE_FIT_CONFIG.apiBaseUrl}/sessions?startTime=${startTime.toISOString()}&endTime=${endTime.toISOString()}&activityType=72`;
+
+        console.log('[GoogleFit DEBUG] Sessions API URL:', sessionsUrl);
+
+        const response = await axios.get(sessionsUrl, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`,
+                'Content-Type': 'application/json',
+            },
+        });
+
+        console.log('[GoogleFit DEBUG] Sessions API response:', JSON.stringify(response.data, null, 2));
+
+        const sessions = response.data?.session || [];
+        let totalSleepMinutes = 0;
+
+        for (const session of sessions) {
+            const startMillis = parseInt(session.startTimeMillis || 0);
+            const endMillis = parseInt(session.endTimeMillis || 0);
+            const durationMinutes = (endMillis - startMillis) / (1000 * 60);
+
+            console.log('[GoogleFit DEBUG] Sleep session found:', {
+                name: session.name,
+                start: new Date(startMillis).toISOString(),
+                end: new Date(endMillis).toISOString(),
+                durationMinutes: durationMinutes
+            });
+
+            totalSleepMinutes += durationMinutes;
+        }
+
+        console.log('[GoogleFit DEBUG] Total sleep from sessions:', totalSleepMinutes);
+
+        // If no sessions, try aggregate API as fallback
+        if (totalSleepMinutes === 0) {
+            console.log('[GoogleFit DEBUG] No sleep sessions, trying aggregate API...');
+            const startTimeNanos = startTime.getTime() * 1000000;
+            const endTimeNanos = endTime.getTime() * 1000000;
+
+            let sleepData = await fetchAggregateData(accessToken, DATA_TYPES.SLEEP, startTimeNanos, endTimeNanos);
+            console.log('[GoogleFit DEBUG] Aggregate sleep response:', JSON.stringify(sleepData, null, 2));
+
+            const points = sleepData?.bucket?.[0]?.dataset?.[0]?.point || [];
+
+            for (const point of points) {
+                const startNanos = parseInt(point.startTimeNanos || 0);
+                const endNanos = parseInt(point.endTimeNanos || 0);
+                const durationMinutes = (endNanos - startNanos) / (1000000 * 60 * 1000);
+                const sleepType = point.value?.[0]?.intVal;
+
+                // Sleep type: 1=awake, 2=sleep, 3=out of bed, 4=light, 5=deep, 6=REM
+                if (sleepType >= 2 && sleepType !== 3) {
+                    totalSleepMinutes += durationMinutes;
+                }
+            }
+            console.log('[GoogleFit DEBUG] Aggregate sleep minutes:', totalSleepMinutes);
+        }
+
+        if (totalSleepMinutes === 0) {
+            console.log('[GoogleFit DEBUG] No sleep data from any source, returning MOCK');
+            return generateMockSleepData();
+        }
+
+        // Calculate quality based on duration
+        let quality = 'poor';
+        if (totalSleepMinutes >= 420) quality = 'excellent'; // 7+ hours
+        else if (totalSleepMinutes >= 360) quality = 'good'; // 6+ hours
+        else if (totalSleepMinutes >= 300) quality = 'fair'; // 5+ hours
+
+        const efficiency = Math.min(100, Math.round((totalSleepMinutes / 480) * 100));
+
+        console.log('[GoogleFit DEBUG] Returning REAL sleep data:', { totalSleepMinutes, quality });
+        return {
+            summary: {
+                totalMinutesAsleep: totalSleepMinutes,
+                totalTimeInBed: totalSleepMinutes + 30,
+                efficiency,
+            },
+            stages: {
+                deep: Math.floor(totalSleepMinutes * 0.2),
+                light: Math.floor(totalSleepMinutes * 0.5),
+                rem: Math.floor(totalSleepMinutes * 0.25),
+                wake: Math.floor(totalSleepMinutes * 0.05),
+            },
+            quality,
+        };
+    } catch (error) {
+        console.error('[GoogleFit DEBUG] Failed to fetch sleep:', error.response?.data || error.message);
+        return generateMockSleepData();
+    }
 };
 
 /**
