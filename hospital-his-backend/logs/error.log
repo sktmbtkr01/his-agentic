@@ -7899,3 +7899,9 @@ Error: Not authorized to access this route
     at Function.handle (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:175:3)
     at router (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\index.js:47:12)
     at Layer.handle [as handle_request] (D:\cocode 4\Co-Code-S4DS\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+2026-02-08 17:50:29 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at D:\cocode 4\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processTimers (node:internal/timers:526:9)

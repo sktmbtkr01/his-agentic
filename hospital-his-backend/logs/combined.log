@@ -22888,3 +22888,171 @@ Error: Not authorized to access this route
     "recordedAt": "2026-02-08T07:55:32.115Z"
   }
 }
+2026-02-08 15:24:08 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-02-08 17:50:29 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at D:\cocode 4\Co-Code-S4DS\hospital-his-backend\middleware\patientAuth.middleware.js:49:21
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processTimers (node:internal/timers:526:9)
+2026-02-08 17:50:32 [INFO]: MongoDB reconnected
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] getLatestSyncedData called for patient 6982e14cf98d1ed6946bcfe4
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] vitalsSignal: {"vitals":{"heartRate":80,"notes":"Synced from google_fit"},"_id":"6987951d1df0fc9c0e9c8335","patient":"6982e14cf98d1ed6946bcfe4","category":"vitals","recordedAt":"2026-02-08T07:55:32.115Z","source":"device_sync","isActive":true,"createdAt":"2026-02-07T19:40:13.604Z","updatedAt":"2026-02-08T07:55:32.333Z","__v":0,"formattedDate":"08 Feb 2026","relativeTime":"4 hours ago","id":"6987951d1df0fc9c0e9c8335"}
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] lifestyleSignal: {"lifestyle":{"sleep":{"duration":10.5,"quality":"excellent"},"activity":{"type":"sedentary","duration":0,"description":"161 steps, 886 cal burned"}},"_id":"6987951d1df0fc9c0e9c8338","patient":"6982e14cf98d1ed6946bcfe4","category":"lifestyle","recordedAt":"2026-02-08T07:55:32.115Z","source":"device_sync","isActive":true,"createdAt":"2026-02-07T19:40:13.644Z","updatedAt":"2026-02-08T07:55:32.483Z","__v":0,"formattedDate":"08 Feb 2026","relativeTime":"4 hours ago","id":"6987951d1df0fc9c0e9c8338"}
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] getLatestSyncedData RESULT:
+2026-02-08 17:50:32 [INFO]: {
+  "hasDevice": true,
+  "device": {
+    "id": "6987773be48d7bfa6db9c37f",
+    "provider": "google_fit",
+    "displayName": "Google Fit",
+    "isDemoMode": false,
+    "lastSync": {
+      "status": "success",
+      "timestamp": "2026-02-08T07:55:32.530Z",
+      "recordsProcessed": 2,
+      "errorMessage": null,
+      "errorCode": null
+    },
+    "nextSyncAt": "2026-02-08T08:55:32.530Z"
+  },
+  "vitals": {
+    "heartRate": 80,
+    "recordedAt": "2026-02-08T07:55:32.115Z"
+  },
+  "lifestyle": {
+    "steps": 161,
+    "activeMinutes": 0,
+    "sleepHours": 10.5,
+    "sleepQuality": "excellent",
+    "recordedAt": "2026-02-08T07:55:32.115Z"
+  }
+}
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] getLatestSyncedData called for patient 6982e14cf98d1ed6946bcfe4
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] vitalsSignal: {"vitals":{"heartRate":80,"notes":"Synced from google_fit"},"_id":"6987951d1df0fc9c0e9c8335","patient":"6982e14cf98d1ed6946bcfe4","category":"vitals","recordedAt":"2026-02-08T07:55:32.115Z","source":"device_sync","isActive":true,"createdAt":"2026-02-07T19:40:13.604Z","updatedAt":"2026-02-08T07:55:32.333Z","__v":0,"formattedDate":"08 Feb 2026","relativeTime":"4 hours ago","id":"6987951d1df0fc9c0e9c8335"}
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] lifestyleSignal: {"lifestyle":{"sleep":{"duration":10.5,"quality":"excellent"},"activity":{"type":"sedentary","duration":0,"description":"161 steps, 886 cal burned"}},"_id":"6987951d1df0fc9c0e9c8338","patient":"6982e14cf98d1ed6946bcfe4","category":"lifestyle","recordedAt":"2026-02-08T07:55:32.115Z","source":"device_sync","isActive":true,"createdAt":"2026-02-07T19:40:13.644Z","updatedAt":"2026-02-08T07:55:32.483Z","__v":0,"formattedDate":"08 Feb 2026","relativeTime":"4 hours ago","id":"6987951d1df0fc9c0e9c8338"}
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] getLatestSyncedData RESULT:
+2026-02-08 17:50:32 [INFO]: {
+  "hasDevice": true,
+  "device": {
+    "id": "6987773be48d7bfa6db9c37f",
+    "provider": "google_fit",
+    "displayName": "Google Fit",
+    "isDemoMode": false,
+    "lastSync": {
+      "status": "success",
+      "timestamp": "2026-02-08T07:55:32.530Z",
+      "recordsProcessed": 2,
+      "errorMessage": null,
+      "errorCode": null
+    },
+    "nextSyncAt": "2026-02-08T08:55:32.530Z"
+  },
+  "vitals": {
+    "heartRate": 80,
+    "recordedAt": "2026-02-08T07:55:32.115Z"
+  },
+  "lifestyle": {
+    "steps": 161,
+    "activeMinutes": 0,
+    "sleepHours": 10.5,
+    "sleepQuality": "excellent",
+    "recordedAt": "2026-02-08T07:55:32.115Z"
+  }
+}
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] getLatestSyncedData called for patient 6982e14cf98d1ed6946bcfe4
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] vitalsSignal: {"vitals":{"heartRate":80,"notes":"Synced from google_fit"},"_id":"6987951d1df0fc9c0e9c8335","patient":"6982e14cf98d1ed6946bcfe4","category":"vitals","recordedAt":"2026-02-08T07:55:32.115Z","source":"device_sync","isActive":true,"createdAt":"2026-02-07T19:40:13.604Z","updatedAt":"2026-02-08T07:55:32.333Z","__v":0,"formattedDate":"08 Feb 2026","relativeTime":"4 hours ago","id":"6987951d1df0fc9c0e9c8335"}
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] lifestyleSignal: {"lifestyle":{"sleep":{"duration":10.5,"quality":"excellent"},"activity":{"type":"sedentary","duration":0,"description":"161 steps, 886 cal burned"}},"_id":"6987951d1df0fc9c0e9c8338","patient":"6982e14cf98d1ed6946bcfe4","category":"lifestyle","recordedAt":"2026-02-08T07:55:32.115Z","source":"device_sync","isActive":true,"createdAt":"2026-02-07T19:40:13.644Z","updatedAt":"2026-02-08T07:55:32.483Z","__v":0,"formattedDate":"08 Feb 2026","relativeTime":"4 hours ago","id":"6987951d1df0fc9c0e9c8338"}
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] getLatestSyncedData RESULT:
+2026-02-08 17:50:32 [INFO]: {
+  "hasDevice": true,
+  "device": {
+    "id": "6987773be48d7bfa6db9c37f",
+    "provider": "google_fit",
+    "displayName": "Google Fit",
+    "isDemoMode": false,
+    "lastSync": {
+      "status": "success",
+      "timestamp": "2026-02-08T07:55:32.530Z",
+      "recordsProcessed": 2,
+      "errorMessage": null,
+      "errorCode": null
+    },
+    "nextSyncAt": "2026-02-08T08:55:32.530Z"
+  },
+  "vitals": {
+    "heartRate": 80,
+    "recordedAt": "2026-02-08T07:55:32.115Z"
+  },
+  "lifestyle": {
+    "steps": 161,
+    "activeMinutes": 0,
+    "sleepHours": 10.5,
+    "sleepQuality": "excellent",
+    "recordedAt": "2026-02-08T07:55:32.115Z"
+  }
+}
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] getLatestSyncedData called for patient 6982e14cf98d1ed6946bcfe4
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] vitalsSignal: {"vitals":{"heartRate":80,"notes":"Synced from google_fit"},"_id":"6987951d1df0fc9c0e9c8335","patient":"6982e14cf98d1ed6946bcfe4","category":"vitals","recordedAt":"2026-02-08T07:55:32.115Z","source":"device_sync","isActive":true,"createdAt":"2026-02-07T19:40:13.604Z","updatedAt":"2026-02-08T07:55:32.333Z","__v":0,"formattedDate":"08 Feb 2026","relativeTime":"4 hours ago","id":"6987951d1df0fc9c0e9c8335"}
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] lifestyleSignal: {"lifestyle":{"sleep":{"duration":10.5,"quality":"excellent"},"activity":{"type":"sedentary","duration":0,"description":"161 steps, 886 cal burned"}},"_id":"6987951d1df0fc9c0e9c8338","patient":"6982e14cf98d1ed6946bcfe4","category":"lifestyle","recordedAt":"2026-02-08T07:55:32.115Z","source":"device_sync","isActive":true,"createdAt":"2026-02-07T19:40:13.644Z","updatedAt":"2026-02-08T07:55:32.483Z","__v":0,"formattedDate":"08 Feb 2026","relativeTime":"4 hours ago","id":"6987951d1df0fc9c0e9c8338"}
+2026-02-08 17:50:32 [INFO]: [DeviceSync DEBUG] getLatestSyncedData RESULT:
+2026-02-08 17:50:32 [INFO]: {
+  "hasDevice": true,
+  "device": {
+    "id": "6987773be48d7bfa6db9c37f",
+    "provider": "google_fit",
+    "displayName": "Google Fit",
+    "isDemoMode": false,
+    "lastSync": {
+      "status": "success",
+      "timestamp": "2026-02-08T07:55:32.530Z",
+      "recordsProcessed": 2,
+      "errorMessage": null,
+      "errorCode": null
+    },
+    "nextSyncAt": "2026-02-08T08:55:32.530Z"
+  },
+  "vitals": {
+    "heartRate": 80,
+    "recordedAt": "2026-02-08T07:55:32.115Z"
+  },
+  "lifestyle": {
+    "steps": 161,
+    "activeMinutes": 0,
+    "sleepHours": 10.5,
+    "sleepQuality": "excellent",
+    "recordedAt": "2026-02-08T07:55:32.115Z"
+  }
+}
+2026-02-08 17:55:32 [INFO]: [DeviceSync DEBUG] getLatestSyncedData called for patient 6982e14cf98d1ed6946bcfe4
+2026-02-08 17:55:32 [INFO]: [DeviceSync DEBUG] vitalsSignal: {"vitals":{"heartRate":80,"notes":"Synced from google_fit"},"_id":"6987951d1df0fc9c0e9c8335","patient":"6982e14cf98d1ed6946bcfe4","category":"vitals","recordedAt":"2026-02-08T07:55:32.115Z","source":"device_sync","isActive":true,"createdAt":"2026-02-07T19:40:13.604Z","updatedAt":"2026-02-08T07:55:32.333Z","__v":0,"formattedDate":"08 Feb 2026","relativeTime":"4 hours ago","id":"6987951d1df0fc9c0e9c8335"}
+2026-02-08 17:55:32 [INFO]: [DeviceSync DEBUG] lifestyleSignal: {"lifestyle":{"sleep":{"duration":10.5,"quality":"excellent"},"activity":{"type":"sedentary","duration":0,"description":"161 steps, 886 cal burned"}},"_id":"6987951d1df0fc9c0e9c8338","patient":"6982e14cf98d1ed6946bcfe4","category":"lifestyle","recordedAt":"2026-02-08T07:55:32.115Z","source":"device_sync","isActive":true,"createdAt":"2026-02-07T19:40:13.644Z","updatedAt":"2026-02-08T07:55:32.483Z","__v":0,"formattedDate":"08 Feb 2026","relativeTime":"4 hours ago","id":"6987951d1df0fc9c0e9c8338"}
+2026-02-08 17:55:32 [INFO]: [DeviceSync DEBUG] getLatestSyncedData RESULT:
+2026-02-08 17:55:32 [INFO]: {
+  "hasDevice": true,
+  "device": {
+    "id": "6987773be48d7bfa6db9c37f",
+    "provider": "google_fit",
+    "displayName": "Google Fit",
+    "isDemoMode": false,
+    "lastSync": {
+      "status": "success",
+      "timestamp": "2026-02-08T07:55:32.530Z",
+      "recordsProcessed": 2,
+      "errorMessage": null,
+      "errorCode": null
+    },
+    "nextSyncAt": "2026-02-08T08:55:32.530Z"
+  },
+  "vitals": {
+    "heartRate": 80,
+    "recordedAt": "2026-02-08T07:55:32.115Z"
+  },
+  "lifestyle": {
+    "steps": 161,
+    "activeMinutes": 0,
+    "sleepHours": 10.5,
+    "sleepQuality": "excellent",
+    "recordedAt": "2026-02-08T07:55:32.115Z"
+  }
+}
