@@ -7905,3 +7905,26 @@ Error: Not authorized to access this route
     at processTicksAndRejections (node:internal/process/task_queues:105:5)
     at runNextTicks (node:internal/process/task_queues:69:3)
     at process.processTimers (node:internal/timers:526:9)
+2026-02-08 20:50:32 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-08 20:52:57 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-08 21:14:33 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-08 21:15:24 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-08 21:16:34 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-08 21:17:37 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-08 21:18:15 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-08 21:18:43 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-08 21:19:46 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-08 21:21:17 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-08 21:23:22 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-08 21:25:20 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-08 21:54:18 [ERROR]: Migration error:
+2026-02-08 21:54:18 [ERROR]: Migration error:
+2026-02-08 21:56:31 [ERROR]: Migration error:
+2026-02-08 21:56:32 [ERROR]: Migration error:
+2026-02-08 21:58:28 [ERROR]: Migration error:
+2026-02-08 21:58:28 [ERROR]: Migration error:
+2026-02-08 21:59:07 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-02-08 22:05:04 [ERROR]: Redis connection error:
+2026-02-08 22:06:38 [ERROR]: Migration error:
+2026-02-08 22:11:47 [ERROR]: Migration error:
+2026-02-08 22:30:31 [ERROR]: Redis connection error:

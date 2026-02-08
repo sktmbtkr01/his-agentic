@@ -82,10 +82,10 @@ const VitalsDisplay = ({ onConnectDevice }) => {
     // Loading state
     if (loading) {
         return (
-            <div className="card-premium p-6 bg-white">
-                <div className="flex items-center justify-center gap-3 text-slate-400">
-                    <div className="w-5 h-5 border-2 border-slate-300 border-t-blue-500 rounded-full animate-spin" />
-                    <span className="text-sm">Loading vitals...</span>
+            <div className="rounded-[24px] p-6 bg-white border border-stone-100 shadow-soft">
+                <div className="flex items-center justify-center gap-3 text-stone-400">
+                    <div className="w-5 h-5 border-2 border-stone-300 border-t-[#3E5F4F] rounded-full animate-spin" />
+                    <span className="text-sm font-bold text-stone-500">Syncing data...</span>
                 </div>
             </div>
         );
@@ -97,31 +97,31 @@ const VitalsDisplay = ({ onConnectDevice }) => {
             <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="card-premium p-6 bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-100"
+                className="rounded-[24px] p-8 -mt-2 bg-white border border-stone-100 shadow-soft text-center group transition-all hover:shadow-lg relative overflow-hidden"
             >
-                <div className="text-center">
-                    <div className="w-14 h-14 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-inner">
-                        <Smartphone className="w-7 h-7 text-indigo-600" />
-                    </div>
-                    <h3 className="text-lg font-bold text-slate-800 mb-2">Connect a Wearable</h3>
-                    <p className="text-sm text-slate-500 mb-4">
-                        Sync data from your fitness tracker for personalized health insights
-                    </p>
-                    <button
-                        onClick={onConnectDevice}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all hover:-translate-y-0.5"
-                    >
-                        <Zap size={18} />
-                        Connect Device
-                    </button>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#1FA89A]/10 to-transparent rounded-bl-full opacity-50" />
+                
+                <div className="w-16 h-16 bg-[#3E5F4F]/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <Smartphone className="w-8 h-8 text-[#3E5F4F]" />
                 </div>
+                <h3 className="text-lg font-bold text-stone-800 mb-2">Connect a Wearable</h3>
+                <p className="text-sm text-stone-500 mb-6 max-w-xs mx-auto font-medium">
+                    Sync data from your fitness tracker to unlock tailored health insights.
+                </p>
+                <button
+                    onClick={onConnectDevice}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#3E5F4F] text-white font-bold rounded-2xl shadow-lg shadow-[#3E5F4F]/20 hover:bg-[#2F4A3D] transition-all active:scale-95"
+                >
+                    <Zap size={18} />
+                    Connect Device
+                </button>
             </motion.div>
         );
     }
 
     const { device, vitals, lifestyle } = vitalsData;
 
-    // Vitals cards data
+    // Vitals cards data matching new bold palette
     const vitalCards = [
         {
             id: 'heart-rate',
@@ -129,10 +129,12 @@ const VitalsDisplay = ({ onConnectDevice }) => {
             label: 'Heart Rate',
             value: vitals?.heartRate || '--',
             unit: 'bpm',
-            color: 'rose',
-            gradient: 'from-rose-500 to-pink-500',
-            bgGradient: 'from-rose-50 to-pink-50',
-            available: !!vitals?.heartRate,
+            // Heart Coral: #E05A4F
+            color: 'text-[#E05A4F]',
+            iconBg: 'bg-[#E05A4F]/20',
+            badgeBg: 'bg-[#E05A4F]/15',
+            badgeText: 'text-[#C03A2F]',
+            quality: null,
         },
         {
             id: 'steps',
@@ -140,10 +142,13 @@ const VitalsDisplay = ({ onConnectDevice }) => {
             label: 'Steps',
             value: lifestyle?.steps ? lifestyle.steps.toLocaleString() : '--',
             unit: 'today',
-            color: 'emerald',
-            gradient: 'from-emerald-500 to-teal-500',
-            bgGradient: 'from-emerald-50 to-teal-50',
-            available: !!lifestyle?.steps,
+            // Activity Teal: #1FA89A
+            color: 'text-[#1FA89A]',
+            iconBg: 'bg-[#1FA89A]/20',
+            badgeBg: 'bg-[#1FA89A]/15',
+            badgeText: 'text-[#0D6D63]',
+            quality: null,
+
         },
         {
             id: 'sleep',
@@ -152,10 +157,11 @@ const VitalsDisplay = ({ onConnectDevice }) => {
             value: lifestyle?.sleepHours ? lifestyle.sleepHours.toFixed(1) : '--',
             unit: 'hours',
             quality: lifestyle?.sleepQuality,
-            color: 'indigo',
-            gradient: 'from-indigo-500 to-purple-500',
-            bgGradient: 'from-indigo-50 to-purple-50',
-            available: !!lifestyle?.sleepHours,
+            // Sleep Lavender: #7C6FD6
+            color: 'text-[#7C6FD6]',
+            iconBg: 'bg-[#7C6FD6]/20',
+            badgeBg: 'bg-[#7C6FD6]/15',
+            badgeText: 'text-[#5B4E9E]',
         },
         {
             id: 'active',
@@ -163,10 +169,12 @@ const VitalsDisplay = ({ onConnectDevice }) => {
             label: 'Active',
             value: lifestyle?.activeMinutes || '--',
             unit: 'mins',
-            color: 'amber',
-            gradient: 'from-amber-500 to-orange-500',
-            bgGradient: 'from-amber-50 to-orange-50',
-            available: !!lifestyle?.activeMinutes,
+            // Mood Amber: #E6A23C
+            color: 'text-[#E6A23C]',
+            iconBg: 'bg-[#E6A23C]/20',
+            badgeBg: 'bg-[#E6A23C]/15',
+            badgeText: 'text-[#B87A1B]',
+            quality: null,
         },
     ];
 
@@ -177,24 +185,24 @@ const VitalsDisplay = ({ onConnectDevice }) => {
             className="space-y-4"
         >
             {/* Header with sync button */}
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center px-2">
                 <div className="flex items-center gap-2">
-                    <div className={`w-2 h-2 rounded-full ${device?.isDemoMode ? 'bg-amber-500' : 'bg-emerald-500'} animate-pulse`} />
-                    <span className="text-xs font-medium text-slate-500">
+                    <div className={`w-2.5 h-2.5 rounded-full ${device?.isDemoMode ? 'bg-[#E6A23C]' : 'bg-[#1FA89A]'} shadow-sm`} />
+                    <span className="text-xs font-bold uppercase tracking-wide text-stone-500">
                         {device?.displayName || 'Wearable'} {device?.isDemoMode && '(Demo)'}
                     </span>
                 </div>
                 <button
                     onClick={handleSync}
                     disabled={syncing}
-                    className="flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-blue-600 transition-colors disabled:opacity-50"
+                    className="flex items-center gap-1.5 text-xs font-bold text-stone-500 hover:text-[#3E5F4F] transition-colors disabled:opacity-50"
                 >
-                    <RefreshCw size={14} className={syncing ? 'animate-spin' : ''} />
+                    <RefreshCw size={12} className={`stroke-[2.5px] ${syncing ? 'animate-spin' : ''}`} />
                     {syncing ? 'Syncing...' : formatTimeSince(device?.lastSync?.timestamp)}
                 </button>
             </div>
 
-            {/* Vitals Grid */}
+            {/* Vitals Grid - Vivid Cards */}
             <div className="grid grid-cols-2 gap-3">
                 <AnimatePresence>
                     {vitalCards.map((card, index) => (
@@ -203,23 +211,18 @@ const VitalsDisplay = ({ onConnectDevice }) => {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: index * 0.1 }}
-                            className={`card-premium p-4 bg-gradient-to-br ${card.bgGradient} border border-${card.color}-100 relative overflow-hidden`}
+                            className="p-4 rounded-[24px] bg-white border border-stone-100 shadow-sm hover:shadow-md transition-all relative overflow-hidden group"
                         >
-                            {/* Background decoration */}
-                            <div className={`absolute -right-4 -bottom-4 w-20 h-20 bg-gradient-to-br ${card.gradient} opacity-10 rounded-full blur-xl`} />
+                             {/* Subtle corner glow */}
+                             <div className={`absolute top-0 right-0 w-16 h-16 ${card.iconBg} blur-2xl opacity-40 -mr-6 -mt-6 transition-opacity group-hover:opacity-60`} />
 
                             <div className="relative">
                                 <div className="flex justify-between items-start mb-3">
-                                    <div className={`p-2 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm`}>
-                                        <card.icon className={`w-5 h-5 text-${card.color}-500`} />
+                                    <div className={`p-2.5 rounded-xl ${card.iconBg} ${card.color}`}>
+                                        <card.icon size={20} strokeWidth={2.5} />
                                     </div>
                                     {card.quality && (
-                                        <span className={`text-xs font-semibold px-2 py-0.5 rounded-full capitalize
-                                            ${card.quality === 'excellent' ? 'bg-emerald-100 text-emerald-700' :
-                                                card.quality === 'good' ? 'bg-blue-100 text-blue-700' :
-                                                    card.quality === 'fair' ? 'bg-amber-100 text-amber-700' :
-                                                        'bg-rose-100 text-rose-700'}
-                                        `}>
+                                        <span className={`text-[10px] font-extrabold px-2 py-1 rounded-full capitalize ${card.badgeBg} ${card.badgeText}`}>
                                             {card.quality}
                                         </span>
                                     )}
@@ -227,12 +230,12 @@ const VitalsDisplay = ({ onConnectDevice }) => {
 
                                 <div className="space-y-0.5">
                                     <div className="flex items-baseline gap-1">
-                                        <span className={`text-2xl font-bold text-${card.color}-700`}>
+                                        <span className="text-2xl font-black text-stone-800 tracking-tight">
                                             {card.value}
                                         </span>
-                                        <span className="text-xs text-slate-500">{card.unit}</span>
+                                        <span className="text-[10px] font-bold text-stone-400 uppercase tracking-wide">{card.unit}</span>
                                     </div>
-                                    <p className="text-xs font-medium text-slate-600">{card.label}</p>
+                                    <p className="text-xs font-bold text-stone-500">{card.label}</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -245,7 +248,7 @@ const VitalsDisplay = ({ onConnectDevice }) => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="flex items-center gap-2 text-xs text-rose-600 bg-rose-50 p-3 rounded-xl"
+                    className="flex items-center gap-2 text-xs font-bold text-[#C03A2F] bg-[#E05A4F]/10 p-4 rounded-2xl"
                 >
                     <AlertCircle size={14} />
                     {error}
@@ -254,9 +257,9 @@ const VitalsDisplay = ({ onConnectDevice }) => {
 
             {/* Demo mode notice */}
             {device?.isDemoMode && (
-                <div className="flex items-center gap-2 text-xs text-amber-700 bg-amber-50 p-3 rounded-xl border border-amber-100">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#B87A1B] bg-[#E6A23C]/10 p-4 rounded-2xl border border-[#E6A23C]/20">
                     <Activity size={14} />
-                    <span>Demo mode - Connect a real device for accurate data</span>
+                    <span>Demo Data Active</span>
                 </div>
             )}
         </motion.div>

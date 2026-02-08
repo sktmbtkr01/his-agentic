@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
 import HealthScoreCard from '../components/HealthScoreCard';
+import SmartMetricsGrid from '../components/SmartMetricsGrid';
+import VitalsCard from '../components/VitalsCard';
+import WellnessHero from '../components/WellnessHero';
+import FloatingNavBar from '../components/FloatingNavBar';
 import SmartNudgeCard from '../components/SmartNudgeCard';
 import nudgeService from '../services/nudgeService';
 import deviceService from '../services/deviceService';
@@ -20,15 +24,30 @@ import {
     ChevronRight,
     Search,
     Bell,
-    Check
+    Check,
+    X,
+    LogOut
 } from 'lucide-react';
 
 const Dashboard = () => {
     const { patient, logout } = useAuth();
     const [nudges, setNudges] = useState([]);
     const [isFabOpen, setIsFabOpen] = useState(false);
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [vitalsData, setVitalsData] = useState(null);
     const [vitalsLoading, setVitalsLoading] = useState(true);
+
+    // Lock body scroll when drawer is open
+    useEffect(() => {
+        if (isDrawerOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+             document.body.style.overflow = 'unset';
+        };
+    }, [isDrawerOpen]);
 
     useEffect(() => {
         const fetchNudges = async () => {
@@ -66,10 +85,10 @@ const Dashboard = () => {
     };
 
     const quickActions = [
-        { label: 'Symptom', icon: <Stethoscope size={24} />, to: '/log-symptom', color: 'text-rose-500 bg-rose-50' },
-        { label: 'Mood', icon: <Smile size={24} />, to: '/log-mood', color: 'text-amber-500 bg-amber-50' },
-        { label: 'Lifestyle', icon: <Activity size={24} />, to: '/log-lifestyle', color: 'text-emerald-500 bg-emerald-50' },
-        { label: 'History', icon: <FileText size={24} />, to: '/history', color: 'text-blue-500 bg-blue-50' },
+        { label: 'Symptom', icon: <Stethoscope size={20} />, to: '/log-symptom', cardBg: 'bg-gradient-to-br from-rose-50 to-white', iconColor: 'text-rose-500', borderColor: 'border-rose-100', iconBg: 'bg-white shadow-rose-100' },
+        { label: 'Mood', icon: <Smile size={20} />, to: '/log-mood', cardBg: 'bg-gradient-to-br from-amber-50 to-white', iconColor: 'text-amber-500', borderColor: 'border-amber-100', iconBg: 'bg-white shadow-amber-100' },
+        { label: 'Lifestyle', icon: <Activity size={20} />, to: '/log-lifestyle', cardBg: 'bg-gradient-to-br from-emerald-50 to-white', iconColor: 'text-emerald-600', borderColor: 'border-emerald-100', iconBg: 'bg-white shadow-emerald-100' },
+        { label: 'History', icon: <FileText size={20} />, to: '/history', cardBg: 'bg-gradient-to-br from-blue-50 to-white', iconColor: 'text-blue-600', borderColor: 'border-blue-100', iconBg: 'bg-white shadow-blue-100' },
     ];
 
     const containerVariants = {
@@ -88,276 +107,119 @@ const Dashboard = () => {
     };
 
     return (
-        <div className="min-h-screen bg-[var(--color-background)] pb-24 relative overflow-x-hidden">
+        <div className="min-h-screen bg-bone-100 relative">
+            <div className="max-w-md mx-auto bg-bone-100 min-h-screen pb-32 px-5 pt-6 shadow-2xl shadow-bone-300/20">
+                
+                <WellnessHero onMenuClick={() => setIsDrawerOpen(true)} />
 
-            {/* 1. Modern Glass Header */}
-            <div className="sticky top-0 z-30 glass border-b border-b-slate-200/50 px-6 py-4 flex justify-between items-center">
-                <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-500 to-cyan-400 flex items-center justify-center text-white font-bold shadow-lg shadow-blue-500/20">
-                        {patient?.firstName?.[0] || 'U'}
-                    </div>
-                    <div>
-                        <p className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider">Good Morning</p>
-                        <h1 className="text-lg font-bold text-[var(--color-text-primary)] leading-tight">{patient?.firstName}</h1>
-                    </div>
-                </div>
-                <div className="flex gap-2">
-                    <button className="p-2 rounded-full hover:bg-slate-100 text-[var(--color-text-secondary)] transition-colors relative">
-                        <Bell size={20} />
-                        {nudges.length > 0 && <span className="absolute top-1.5 right-2 w-2 h-2 bg-red-500 rounded-full border border-white"></span>}
-                    </button>
-                    <button onClick={logout} className="p-2 rounded-full hover:bg-slate-100 text-[var(--color-text-secondary)] transition-colors">
-                        <User size={20} />
-                    </button>
-                </div>
-            </div>
+                <motion.div variants={containerVariants} initial="hidden" animate="visible" className="flex flex-col gap-6">
+                    
+                    {/* 1. Health Score Section */}
+                    <motion.div variants={itemVariants}>
+                        <HealthScoreCard />
+                    </motion.div>
 
-            <motion.div
-                className="px-6 pt-6 max-w-lg mx-auto"
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-            >
-                {/* 2. Health Insights Carousel / Summary */}
-                <motion.div variants={itemVariants} className="mb-8">
-                    <div className="flex justify-between items-end mb-4">
-                        <h2 className="text-xl font-bold text-[var(--color-text-primary)]">Daily Vitals</h2>
-                        <span className="text-sm font-semibold text-blue-600">See All</span>
-                    </div>
-
-                    {/* Horizontal Scroll Snap Area */}
-                    <div className="flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 scrollbar-hide snap-x">
-                        {/* Main Health Score */}
-                        <div className="min-w-[85%] snap-center">
-                            <HealthScoreCard />
+                    {/* 2. Daily Vitals (Grid Layout) */}
+                    <motion.div variants={itemVariants}>
+                        <div className="flex items-center justify-between mb-4 px-1">
+                            <h2 className="text-lg font-serif font-bold text-sage-900 flex items-center gap-2">
+                                Daily Vitals
+                                <span className="w-1.5 h-1.5 rounded-full bg-peach-500"></span>
+                            </h2>
+                            <Link to="/devices" className="text-sm font-semibold text-peach-600 hover:text-peach-700">See All</Link>
                         </div>
-
-                        {/* Dynamic Vitals Cards from Device Sync */}
-                        {vitalsLoading ? (
-                            <>
-                                <div className="card-premium p-6 min-w-[45%] snap-center flex flex-col justify-between bg-white animate-pulse">
-                                    <div className="w-10 h-10 bg-slate-100 rounded-lg" />
-                                    <div className="mt-4 space-y-2">
-                                        <div className="w-12 h-6 bg-slate-100 rounded" />
-                                        <div className="w-16 h-3 bg-slate-50 rounded" />
-                                    </div>
-                                </div>
-                                <div className="card-premium p-6 min-w-[45%] snap-center flex flex-col justify-between bg-white animate-pulse">
-                                    <div className="w-10 h-10 bg-slate-100 rounded-lg" />
-                                    <div className="mt-4 space-y-2">
-                                        <div className="w-12 h-6 bg-slate-100 rounded" />
-                                        <div className="w-16 h-3 bg-slate-50 rounded" />
-                                    </div>
-                                </div>
-                            </>
-                        ) : vitalsData?.hasDevice ? (
-                            <>
-                                {/* Heart Rate Card */}
-                                <Link to="/devices" className="card-premium p-6 min-w-[45%] snap-center flex flex-col justify-between bg-gradient-to-br from-rose-50 to-pink-50 border border-rose-100 hover:shadow-lg transition-shadow">
-                                    <div className="flex justify-between items-start">
-                                        <div className="p-2 bg-white/80 backdrop-blur-sm rounded-lg text-rose-500 shadow-sm">
-                                            <Activity size={20} />
+                        <div className="grid grid-cols-2 gap-3">
+                            {vitalsLoading ? (
+                                <>
+                                    <div className="bg-white p-4 rounded-3xl border border-bone-200 shadow-sm h-32 animate-pulse" />
+                                    <div className="bg-white p-4 rounded-3xl border border-bone-200 shadow-sm h-32 animate-pulse" />
+                                </>
+                            ) : vitalsData?.hasDevice ? (
+                                <>
+                                    <Link to="/devices" className="block"><VitalsCard type="heart" value={vitalsData.vitals?.heartRate} unit="bpm" label="Heart Rate" status="Synced" /></Link>
+                                    <Link to="/devices" className="block"><VitalsCard type="sleep" value={vitalsData.lifestyle?.sleepHours?.toFixed(1)} unit="hrs" label="Sleep" status={vitalsData.lifestyle?.sleepQuality || 'N/A'} /></Link>
+                                    <Link to="/devices" className="block"><VitalsCard type="steps" value={vitalsData.lifestyle?.steps?.toLocaleString()} unit="steps" label="Daily Steps" status="Today" /></Link>
+                                    <Link to="/devices" className="flex flex-col items-center justify-center bg-sage-50 rounded-[24px] border border-sage-100 shadow-soft hover:shadow-lg transition-all min-h-[180px] group relative overflow-hidden">
+                                         <div className="absolute inset-0 bg-sage-100/30 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        <div className="p-4 rounded-full bg-white text-sage-400 shadow-sm mb-3 group-hover:scale-110 transition-transform z-10">
+                                            <Activity size={24} />
                                         </div>
-                                        <span className="text-xs text-rose-400 font-medium flex items-center gap-1">
-                                            <span className="w-1.5 h-1.5 bg-rose-400 rounded-full animate-pulse" />
-                                            Synced
-                                        </span>
-                                    </div>
-                                    <div className="mt-4">
-                                        <span className="text-2xl font-bold text-rose-700">{vitalsData.vitals?.heartRate || '--'}</span>
-                                        <span className="text-sm text-rose-500 ml-1">bpm</span>
-                                        <p className="text-xs text-rose-400 mt-1">Heart Rate</p>
-                                    </div>
-                                </Link>
-
-                                {/* Sleep Quality Card */}
-                                <Link to="/devices" className="card-premium p-6 min-w-[45%] snap-center flex flex-col justify-between bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-100 hover:shadow-lg transition-shadow">
-                                    <div className="flex justify-between items-start">
-                                        <div className="p-2 bg-white/80 backdrop-blur-sm rounded-lg text-indigo-500 shadow-sm">
-                                            <Brain size={20} />
-                                        </div>
-                                        <span className="text-xs text-indigo-400 font-medium capitalize">{vitalsData.lifestyle?.sleepQuality || 'N/A'}</span>
-                                    </div>
-                                    <div className="mt-4">
-                                        <span className="text-2xl font-bold text-indigo-700">{vitalsData.lifestyle?.sleepHours?.toFixed(1) || '--'}</span>
-                                        <span className="text-sm text-indigo-500 ml-1">hrs</span>
-                                        <p className="text-xs text-indigo-400 mt-1">Sleep</p>
-                                    </div>
-                                </Link>
-
-                                {/* Steps Card */}
-                                <Link to="/devices" className="card-premium p-6 min-w-[45%] snap-center flex flex-col justify-between bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100 hover:shadow-lg transition-shadow">
-                                    <div className="flex justify-between items-start">
-                                        <div className="p-2 bg-white/80 backdrop-blur-sm rounded-lg text-emerald-500 shadow-sm">
-                                            <Activity size={20} />
-                                        </div>
-                                        <span className="text-xs text-emerald-400 font-medium">Today</span>
-                                    </div>
-                                    <div className="mt-4">
-                                        <span className="text-2xl font-bold text-emerald-700">{vitalsData.lifestyle?.steps?.toLocaleString() || '--'}</span>
-                                        <span className="text-sm text-emerald-500 ml-1">steps</span>
-                                        <p className="text-xs text-emerald-400 mt-1">Daily Steps</p>
-                                    </div>
-                                </Link>
-                            </>
-                        ) : (
-                            /* No Device Connected - Connect Prompt */
-                            <Link to="/devices" className="card-premium p-6 min-w-[60%] snap-center flex flex-col items-center justify-center bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-dashed border-indigo-200 hover:border-indigo-400 transition-all group">
-                                <div className="w-12 h-12 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                                    <Activity size={24} className="text-indigo-600" />
-                                </div>
-                                <p className="font-bold text-indigo-700 text-sm">Connect a Wearable</p>
-                                <p className="text-xs text-indigo-500 text-center mt-1">Sync heart rate, steps & sleep</p>
-                            </Link>
-                        )}
-                    </div>
-                </motion.div>
-
-                {/* 3. Quick Actions Grid */}
-                <motion.div variants={itemVariants} className="mb-8">
-                    <h3 className="section-title mb-4 font-bold text-[var(--color-text-primary)]">Quick Actions</h3>
-                    <div className="grid grid-cols-4 gap-3">
-                        {quickActions.map((action, i) => (
-                            <Link
-                                key={i}
-                                to={action.to}
-                                className="flex flex-col items-center gap-2 group"
-                            >
-                                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm transition-transform group-hover:scale-105 ${action.color}`}>
-                                    {action.icon}
-                                </div>
-                                <span className="text-xs font-semibold text-[var(--color-text-secondary)]">{action.label}</span>
-                            </Link>
-                        ))}
-                    </div>
-                </motion.div>
-
-                {/* 3.5 Smart Alerts - AI-powered proactive health insights */}
-                <motion.div variants={itemVariants} className="mb-8">
-                    <ProactiveAlertsCard compact maxAlerts={3} />
-                </motion.div>
-
-                {/* 4. Priorities / Nudges */}
-                <motion.div variants={itemVariants} className="mb-8">
-                    <h3 className="section-title mb-4 font-bold text-[var(--color-text-primary)]">For You</h3>
-                    <div className="space-y-3">
-                        <AnimatePresence>
-                            {nudges.length > 0 ? (
-                                nudges.map(nudge => (
-                                    <SmartNudgeCard
-                                        key={nudge._id}
-                                        nudge={nudge}
-                                        onRespond={handleNudgeResponse}
-                                        onRemove={(id) => setNudges(prev => prev.filter(n => n._id !== id))}
-                                    />
-                                ))
+                                        <span className="text-xs font-bold text-sage-500 uppercase tracking-widest z-10">More Metrics</span>
+                                     </Link>
+                                </>
                             ) : (
-                                <div className="card-premium p-8 text-center bg-white/50 border-dashed border-2 border-slate-200">
-                                    <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <Check size={24} />
-                                    </div>
-                                    <p className="font-semibold text-slate-700">All Caught Up!</p>
-                                    <p className="text-xs text-slate-500 mt-1">You're maintaining your routine perfectly.</p>
-                                </div>
+                                <Link to="/devices" className="col-span-2 p-6 rounded-3xl bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-dashed border-indigo-200 flex flex-col items-center justify-center text-center gap-2">
+                                    <div className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600"><Activity size={20} /></div>
+                                    <div><h3 className="font-bold text-indigo-900 text-sm">Connect a Wearable</h3><p className="text-xs text-indigo-600">Track heart rate, sleep & more</p></div>
+                                </Link>
                             )}
-                        </AnimatePresence>
-                    </div>
-                </motion.div>
+                        </div>
+                    </motion.div>
 
-                {/* 5. Menu List */}
-                <motion.div variants={itemVariants} className="space-y-3 pb-8">
-                    <h3 className="section-title mb-4 font-bold text-[var(--color-text-primary)]">Menu</h3>
-                    {[
-                        { icon: <User size={20} />, label: 'My Profile', to: '/profile', color: 'blue' },
-                        { icon: <Calendar size={20} />, label: 'Appointments', to: '/appointments', color: 'teal' },
-                        { icon: <Pill size={20} />, label: 'Prescriptions', to: '/prescriptions', color: 'rose' },
-                        { icon: <FileText size={20} />, label: 'Lab Results', to: '/lab-results', color: 'amber' },
-                        { icon: <Brain size={20} />, label: 'LifeLens 360', to: '/lifelens', color: 'purple', highlight: true }
-                    ].map((item, idx) => {
-                        // Color mapping for dynamic styles
-                        const colorStyles = {
-                            blue: 'bg-blue-50/50 border-blue-100 hover:border-blue-200 hover:shadow-blue-500/10',
-                            teal: 'bg-teal-50/50 border-teal-100 hover:border-teal-200 hover:shadow-teal-500/10',
-                            rose: 'bg-rose-50/50 border-rose-100 hover:border-rose-200 hover:shadow-rose-500/10',
-                            amber: 'bg-amber-50/50 border-amber-100 hover:border-amber-200 hover:shadow-amber-500/10',
-                            purple: 'bg-purple-50/80 border-purple-100 shadow-lg shadow-purple-500/10 backdrop-blur-xl hover:shadow-purple-500/20'
-                        };
-
-                        const iconStyles = {
-                            blue: 'bg-blue-100 text-blue-600',
-                            teal: 'bg-teal-100 text-teal-600',
-                            rose: 'bg-rose-100 text-rose-600',
-                            amber: 'bg-amber-100 text-amber-600',
-                            purple: 'bg-purple-100 text-purple-600'
-                        };
-
-                        const textStyles = {
-                            blue: 'text-blue-900',
-                            teal: 'text-teal-900',
-                            rose: 'text-rose-900',
-                            amber: 'text-amber-900',
-                            purple: 'text-purple-900'
-                        };
-
-                        return (
-                            <Link
-                                key={idx}
-                                to={item.to}
-                                className={`relative p-5 rounded-2xl border flex items-center justify-between transition-all duration-300 group
-                                ${colorStyles[item.color] || 'bg-white border-slate-100'}
-                                ${item.highlight ? '' : 'shadow-sm hover:shadow-md hover:-translate-y-0.5'}
-                                overflow-hidden
-                            `}
-                            >
-                                {/* Detailed Decorative Gradient Bar */}
-                                <div className={`absolute left-0 top-3 bottom-3 w-1.5 rounded-r-full shadow-sm opacity-60
-                                ${item.color === 'blue' ? 'bg-gradient-to-b from-blue-400 to-blue-600' : ''}
-                                ${item.color === 'teal' ? 'bg-gradient-to-b from-teal-400 to-teal-600' : ''}
-                                ${item.color === 'rose' ? 'bg-gradient-to-b from-rose-400 to-rose-600' : ''}
-                                ${item.color === 'amber' ? 'bg-gradient-to-b from-amber-400 to-amber-600' : ''}
-                                ${item.color === 'purple' ? 'bg-gradient-to-b from-purple-400 to-purple-600' : ''}
-                            `}></div>
-
-                                <div className="flex items-center gap-4 pl-3">
-                                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105 shadow-sm ${iconStyles[item.color]}`}>
-                                        {item.icon}
+                    {/* 3. Quick Actions */}
+                    <motion.div variants={itemVariants}>
+                         <div className="grid grid-cols-4 gap-3">
+                            {quickActions.map((action, i) => (
+                                <Link key={i} to={action.to} className={`flex flex-col items-center justify-between p-3 rounded-[24px] border ${action.cardBg} ${action.borderColor} shadow-soft active:scale-95 transition-all min-h-[110px]`}>
+                                    <div className={`p-2.5 rounded-2xl shadow-sm ${action.iconBg} ${action.iconColor}`}>
+                                        {action.icon}
                                     </div>
-                                    <span className={`font-bold text-sm tracking-wide ${textStyles[item.color]}`}>
-                                        {item.label}
-                                    </span>
-                                </div>
+                                    <span className={`text-[10px] font-bold uppercase tracking-wider ${action.iconColor} opacity-90 mt-2`}>{action.label}</span>
+                                </Link>
+                            ))}
+                        </div>
+                    </motion.div>
 
-                                <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 bg-white/50 backdrop-blur-sm
-                                ${item.color === 'blue' ? 'text-blue-400 group-hover:text-blue-600' : ''}
-                                ${item.color === 'teal' ? 'text-teal-400 group-hover:text-teal-600' : ''}
-                                ${item.color === 'rose' ? 'text-rose-400 group-hover:text-rose-600' : ''}
-                                ${item.color === 'amber' ? 'text-amber-400 group-hover:text-amber-600' : ''}
-                                ${item.color === 'purple' ? 'text-purple-500 group-hover:text-purple-700' : ''}
-                            `}>
-                                    <ChevronRight size={18} />
-                                </div>
-                            </Link>
-                        );
-                    })}
+                    {/* 4. Proactive Alerts */}
+                    <motion.div variants={itemVariants}>
+                        <ProactiveAlertsCard compact maxAlerts={3} />
+                    </motion.div>
+
+                    {/* 5. Health Actions / Nudges */}
+                    <motion.div variants={itemVariants}>
+                         <h3 className="text-lg font-serif font-bold text-sage-900 mb-4 px-1">Health Actions</h3>
+                         <div className="space-y-3">
+                            <AnimatePresence>
+                                {nudges.length > 0 ? (
+                                    nudges.map((nudge) => (
+                                        <SmartNudgeCard
+                                            key={nudge._id}
+                                            nudge={nudge}
+                                            onRespond={handleNudgeResponse}
+                                        />
+                                    ))
+                                ) : (
+                                    <div className="p-6 text-center bg-white/50 border-dashed border-2 border-bone-200 rounded-3xl">
+                                        <div className="w-10 h-10 bg-sage-100 text-sage-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                                            <Check size={20} />
+                                        </div>
+                                        <p className="font-semibold text-sage-700 text-sm">All Caught Up!</p>
+                                    </div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    </motion.div>
+
                 </motion.div>
-
-            </motion.div>
+            </div>
+            
+            <FloatingNavBar />
 
             {/* Floating Action Button (FAB) */}
-            <div className="fixed bottom-6 right-6 z-40">
+            <div className="fixed bottom-24 right-4 z-40">
                 <AnimatePresence>
                     {isFabOpen && (
                         <motion.div
                             initial={{ opacity: 0, y: 10, scale: 0.9 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 10, scale: 0.9 }}
-                            className="absolute bottom-16 right-0 mb-2 flex flex-col gap-2 min-w-[160px]"
+                            className="absolute bottom-16 right-0 mb-2 flex flex-col gap-2 min-w-[170px]"
                         >
-                            <Link to="/book-appointment" className="bg-white text-slate-700 shadow-xl rounded-xl p-3 flex items-center gap-3 border border-slate-100 hover:bg-slate-50">
-                                <Calendar size={18} className="text-blue-500" />
+                            <Link to="/book-appointment" className="bg-white text-sage-900 shadow-xl rounded-2xl p-3 flex items-center gap-3 border border-sage-100">
+                                <Calendar size={18} className="text-peach-500" />
                                 <span className="font-semibold text-sm">Book Visit</span>
                             </Link>
-                            <Link to="/log-symptom" className="bg-white text-slate-700 shadow-xl rounded-xl p-3 flex items-center gap-3 border border-slate-100 hover:bg-slate-50">
+                            <Link to="/log-symptom" className="bg-white text-sage-900 shadow-xl rounded-2xl p-3 flex items-center gap-3 border border-sage-100">
                                 <Stethoscope size={18} className="text-rose-500" />
                                 <span className="font-semibold text-sm">Log Health</span>
                             </Link>
@@ -367,11 +229,110 @@ const Dashboard = () => {
 
                 <button
                     onClick={() => setIsFabOpen(!isFabOpen)}
-                    className={`w-14 h-14 rounded-full shadow-2xl shadow-blue-500/40 flex items-center justify-center text-white transition-all transform hover:scale-105 active:scale-95 ${isFabOpen ? 'bg-slate-800 rotate-45' : 'bg-blue-600'}`}
+                    className={`w-14 h-14 rounded-full shadow-2xl shadow-peach-500/30 flex items-center justify-center text-white transition-all transform hover:scale-105 active:scale-95 ${isFabOpen ? 'bg-sage-800 rotate-45' : 'bg-peach-500'}`}
                 >
                     <Plus size={28} />
                 </button>
             </div>
+
+            {/* Side Drawer Menu */}
+            <AnimatePresence>
+                {isDrawerOpen && (
+                    <div className="fixed inset-0 z-50 flex justify-end">
+                        {/* Backdrop overlay */}
+                        <motion.div 
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setIsDrawerOpen(false)}
+                            className="absolute inset-0 bg-black/30 backdrop-blur-sm"
+                        />
+                        
+                        {/* Drawer content */}
+                        <motion.div 
+                            initial={{ x: "100%" }}
+                            animate={{ x: 0 }}
+                            exit={{ x: "100%" }}
+                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            className="relative w-[85%] max-w-sm bg-white h-full shadow-2xl rounded-l-[32px] overflow-hidden flex flex-col"
+                        >
+                            {/* Drawer Header */}
+                            <div className="p-6 bg-sage-50 flex justify-between items-center border-b border-sage-100">
+                                <div>
+                                    <h2 className="text-xl font-serif font-bold text-sage-900">Menu</h2>
+                                    <p className="text-xs text-sage-500 font-medium">Quick Access</p>
+                                </div>
+                                <button 
+                                    onClick={() => setIsDrawerOpen(false)}
+                                    className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-sage-500 hover:text-sage-800 shadow-sm transition-colors"
+                                >
+                                    <X size={20} />
+                                </button>
+                            </div>
+
+                            {/* Drawer Items */}
+                            <div className="flex-1 overflow-y-auto p-6 space-y-6">
+                                {/* Profile Summary */}
+                                <div className="flex items-center gap-4 mb-6 p-4 bg-sage-50 rounded-[24px] border border-sage-100">
+                                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                                         <img 
+                                            src={`https://api.dicebear.com/7.x/notionists/svg?seed=${patient?.firstName || 'User'}&backgroundColor=e3e4db`} 
+                                            alt="Profile" 
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-sage-900">{patient?.firstName || 'User'} {patient?.lastName}</h3>
+                                        <Link to="/profile" className="text-xs font-semibold text-peach-600 hover:text-peach-700">View Profile</Link>
+                                    </div>
+                                </div>
+
+                                <div className="space-y-4">
+                                    {[
+                                        { icon: <User size={20} />, label: 'My Profile', to: '/profile', color: 'bg-blue-50 text-blue-600' },
+                                        { icon: <Calendar size={20} />, label: 'Appointments', to: '/appointments', color: 'bg-teal-50 text-teal-600' },
+                                        { icon: <Pill size={20} />, label: 'Prescriptions', to: '/prescriptions', color: 'bg-rose-50 text-rose-600' },
+                                        { icon: <FileText size={20} />, label: 'Lab Results', to: '/lab-results', color: 'bg-amber-50 text-amber-600' },
+                                        { icon: <Brain size={20} />, label: 'LifeLens 360', to: '/lifelens', color: 'bg-purple-50 text-purple-600', highlight: true }
+                                    ].map((item, idx) => (
+                                         <Link 
+                                            key={idx} 
+                                            to={item.to} 
+                                            onClick={() => setIsDrawerOpen(false)}
+                                            className={`flex items-center justify-between p-4 rounded-[24px] bg-white border border-stone-100 shadow-soft hover:shadow-lg transition-all active:scale-95 ${item.highlight ? 'ring-2 ring-purple-100 bg-purple-50/30' : ''}`}
+                                         >
+                                            <div className="flex items-center gap-4">
+                                                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${item.color}`}>
+                                                    {item.icon}
+                                                </div>
+                                                <span className="font-bold text-sage-900 text-sm">{item.label}</span>
+                                            </div>
+                                            <div className="w-8 h-8 rounded-full bg-stone-50 flex items-center justify-center text-stone-300">
+                                                <ChevronRight size={18} />
+                                            </div>
+                                         </Link>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Drawer Footer */}
+                            <div className="p-6 border-t border-stone-100 bg-stone-50">
+                                <button 
+                                    onClick={logout}
+                                    className="w-full py-3 rounded-full bg-white border border-stone-200 text-stone-600 font-bold shadow-sm hover:bg-stone-100 flex items-center justify-center gap-2"
+                                >
+                                    <LogOut size={18} />
+                                    Sign Out
+                                </button>
+                                <p className="text-center text-[10px] text-stone-400 mt-4">
+                                    LifelineX v5.0 • &copy; 2026
+                                </p>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
+
         </div>
     );
 };

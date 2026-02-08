@@ -131,15 +131,15 @@ const DeviceSyncPanel = ({ onClose, onDeviceChange }) => {
     const formatSyncStatus = (status) => {
         switch (status) {
             case 'success':
-                return { text: 'Synced', color: 'emerald', icon: CheckCircle };
+                return { text: 'Synced', colorClass: 'text-[#1FA89A]', bgClass: 'bg-[#1FA89A]/10', icon: CheckCircle };
             case 'syncing':
-                return { text: 'Syncing...', color: 'blue', icon: RefreshCw };
+                return { text: 'Syncing...', colorClass: 'text-[#5E7C66]', bgClass: 'bg-[#5E7C66]/10', icon: RefreshCw };
             case 'failed':
-                return { text: 'Failed', color: 'rose', icon: XCircle };
+                return { text: 'Failed', colorClass: 'text-[#E05A4F]', bgClass: 'bg-[#E05A4F]/10', icon: XCircle };
             case 'pending':
-                return { text: 'Pending', color: 'amber', icon: Clock };
+                return { text: 'Pending', colorClass: 'text-[#E6A23C]', bgClass: 'bg-[#E6A23C]/10', icon: Clock };
             default:
-                return { text: 'Unknown', color: 'slate', icon: AlertTriangle };
+                return { text: 'Unknown', colorClass: 'text-slate-400', bgClass: 'bg-slate-100', icon: AlertTriangle };
         }
     };
 
@@ -157,16 +157,20 @@ const DeviceSyncPanel = ({ onClose, onDeviceChange }) => {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-auto overflow-hidden">
+        <div className="bg-[#FDFBF7] rounded-[24px] shadow-2xl max-w-md w-full mx-auto overflow-hidden border border-[#5E7C66]/10">
             {/* Header */}
-            <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-6 text-white">
-                <div className="flex justify-between items-start">
+            <div className="bg-gradient-to-r from-[#5E7C66] to-[#3E5F4F] p-6 text-white relative overflow-hidden">
+                {/* Decorative circles */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 blur-2xl"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-5 -mb-5 blur-xl"></div>
+                
+                <div className="flex justify-between items-start relative z-10">
                     <div>
-                        <h2 className="text-xl font-bold">Connected Devices</h2>
-                        <p className="text-indigo-200 text-sm mt-1">Manage your wearable devices</p>
+                        <h2 className="text-xl font-bold tracking-tight">Connected Devices</h2>
+                        <p className="text-[#E8F5E9]/90 text-sm mt-1">Manage your health data sources</p>
                     </div>
                     {onClose && (
-                        <button onClick={onClose} className="text-white/70 hover:text-white">
+                        <button onClick={onClose} className="text-white/70 hover:text-white transition-colors bg-white/10 hover:bg-white/20 rounded-full p-1">
                             <XCircle size={24} />
                         </button>
                     )}
@@ -182,10 +186,10 @@ const DeviceSyncPanel = ({ onClose, onDeviceChange }) => {
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0 }}
-                            className="flex items-center gap-2 p-3 bg-emerald-50 text-emerald-700 rounded-xl border border-emerald-100"
+                            className="flex items-center gap-2 p-3 bg-[#1FA89A]/10 text-[#1FA89A] rounded-2xl border border-[#1FA89A]/20"
                         >
                             <CheckCircle size={18} />
-                            <span className="text-sm font-medium">{successMessage}</span>
+                            <span className="text-sm font-bold">{successMessage}</span>
                         </motion.div>
                     )}
                     {error && (
@@ -193,26 +197,26 @@ const DeviceSyncPanel = ({ onClose, onDeviceChange }) => {
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0 }}
-                            className="flex items-center gap-2 p-3 bg-rose-50 text-rose-700 rounded-xl border border-rose-100"
+                            className="flex items-center gap-2 p-3 bg-[#E05A4F]/10 text-[#E05A4F] rounded-2xl border border-[#E05A4F]/20"
                         >
                             <AlertTriangle size={18} />
-                            <span className="text-sm font-medium">{error}</span>
+                            <span className="text-sm font-bold">{error}</span>
                         </motion.div>
                     )}
                 </AnimatePresence>
 
                 {/* Loading State */}
                 {loading ? (
-                    <div className="flex items-center justify-center py-8 text-slate-400">
+                    <div className="flex items-center justify-center py-8 text-[#5E7C66]/60">
                         <RefreshCw className="w-6 h-6 animate-spin mr-2" />
-                        <span>Loading devices...</span>
+                        <span className="font-medium">Loading devices...</span>
                     </div>
                 ) : (
                     <>
                         {/* Connected Devices */}
                         {devices.length > 0 ? (
-                            <div className="space-y-3">
-                                <h3 className="text-sm font-semibold text-slate-700">Your Devices</h3>
+                            <div className="space-y-4">
+                                <h3 className="text-sm font-bold text-[#5E7C66] uppercase tracking-wider ml-1">Your Devices</h3>
                                 {devices.map((device) => {
                                     const Icon = getDeviceIcon(device.provider);
                                     const syncStatus = formatSyncStatus(device.lastSync?.status);
@@ -224,54 +228,56 @@ const DeviceSyncPanel = ({ onClose, onDeviceChange }) => {
                                             key={device._id}
                                             initial={{ opacity: 0, y: 10 }}
                                             animate={{ opacity: 1, y: 0 }}
-                                            className="bg-slate-50 border border-slate-100 rounded-2xl p-4 hover:shadow-md transition-all"
+                                            className="bg-white border border-[#E2E8F0] rounded-[24px] p-5 shadow-sm hover:shadow-md transition-all group"
                                         >
                                             <div className="flex items-center gap-4">
                                                 {/* Device Icon */}
-                                                <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-sm ${device.isDemoMode
-                                                    ? 'bg-gradient-to-br from-amber-100 to-orange-100'
-                                                    : 'bg-gradient-to-br from-indigo-100 to-purple-100'
+                                                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-inner ${device.isDemoMode
+                                                    ? 'bg-gradient-to-br from-[#E6A23C]/20 to-[#E6A23C]/10'
+                                                    : 'bg-gradient-to-br from-[#5E7C66]/20 to-[#3E5F4F]/20'
                                                     }`}>
-                                                    <Icon className={`w-6 h-6 ${device.isDemoMode ? 'text-amber-600' : 'text-indigo-600'
+                                                    <Icon className={`w-7 h-7 ${device.isDemoMode ? 'text-[#E6A23C]' : 'text-[#3E5F4F]'
                                                         }`} />
                                                 </div>
 
                                                 {/* Device Info */}
                                                 <div className="flex-1 min-w-0">
                                                     <div className="flex items-center gap-2">
-                                                        <h4 className="font-bold text-slate-800 truncate">
+                                                        <h4 className="font-bold text-[#2D3748] text-lg truncate">
                                                             {device.displayName}
                                                         </h4>
                                                         {device.isDemoMode && (
-                                                            <span className="text-xs font-medium px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full">
+                                                            <span className="text-[10px] font-bold px-2 py-0.5 bg-[#E6A23C]/10 text-[#E6A23C] rounded-full border border-[#E6A23C]/20 uppercase tracking-wide">
                                                                 Demo
                                                             </span>
                                                         )}
                                                     </div>
-                                                    <div className="flex items-center gap-2 mt-1">
-                                                        <StatusIcon className={`w-3.5 h-3.5 text-${syncStatus.color}-500`} />
-                                                        <span className={`text-xs text-${syncStatus.color}-600 font-medium`}>
-                                                            {syncStatus.text}
-                                                        </span>
-                                                        <span className="text-xs text-slate-400">
-                                                            • {formatLastSync(device.lastSync?.timestamp)}
+                                                    <div className="flex items-center gap-3 mt-1.5">
+                                                        <div className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full ${syncStatus.bgClass}`}>
+                                                            <StatusIcon className={`w-3 h-3 ${syncStatus.colorClass}`} />
+                                                            <span className={`text-xs font-bold ${syncStatus.colorClass}`}>
+                                                                {syncStatus.text}
+                                                            </span>
+                                                        </div>
+                                                        <span className="text-xs text-[#5E7C66]/70 font-medium">
+                                                            {formatLastSync(device.lastSync?.timestamp)}
                                                         </span>
                                                     </div>
                                                 </div>
 
                                                 {/* Actions */}
-                                                <div className="flex items-center gap-2">
+                                                <div className="flex flex-col gap-1">
                                                     <button
                                                         onClick={() => handleSync(device._id)}
                                                         disabled={isSyncing}
-                                                        className="p-2 hover:bg-blue-50 rounded-xl text-blue-600 transition-colors disabled:opacity-50"
+                                                        className="p-2 hover:bg-[#5E7C66]/10 rounded-xl text-[#5E7C66] transition-colors disabled:opacity-50"
                                                         title="Sync now"
                                                     >
                                                         <RefreshCw size={18} className={isSyncing ? 'animate-spin' : ''} />
                                                     </button>
                                                     <button
                                                         onClick={() => handleDisconnect(device._id)}
-                                                        className="p-2 hover:bg-rose-50 rounded-xl text-rose-500 transition-colors"
+                                                        className="p-2 hover:bg-[#E05A4F]/10 rounded-xl text-[#E05A4F] transition-colors"
                                                         title="Disconnect"
                                                     >
                                                         <Trash2 size={18} />
@@ -280,14 +286,14 @@ const DeviceSyncPanel = ({ onClose, onDeviceChange }) => {
                                             </div>
 
                                             {/* Next Sync Info */}
-                                            <div className="mt-3 pt-3 border-t border-slate-200 flex items-center justify-between">
-                                                <div className="flex items-center gap-2 text-xs text-slate-500">
+                                            <div className="mt-4 pt-3 border-t border-[#F0F4F8] flex items-center justify-between">
+                                                <div className="flex items-center gap-2 text-xs font-medium text-[#5E7C66]/80">
                                                     <Clock size={14} />
                                                     <span>Next sync: {device.nextSyncIn || 'Scheduled'}</span>
                                                 </div>
-                                                <div className="flex items-center gap-1 text-xs">
-                                                    <Wifi size={12} className="text-emerald-500" />
-                                                    <span className="text-emerald-600 font-medium">Hourly sync enabled</span>
+                                                <div className="flex items-center gap-1.5 text-xs font-bold bg-[#FDFBF7] px-2 py-1 rounded-lg">
+                                                    <Wifi size={12} className="text-[#1FA89A]" />
+                                                    <span className="text-[#1FA89A]">Hourly sync enabled</span>
                                                 </div>
                                             </div>
                                         </motion.div>
@@ -296,42 +302,42 @@ const DeviceSyncPanel = ({ onClose, onDeviceChange }) => {
                             </div>
                         ) : (
                             <div className="text-center py-8">
-                                <div className="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                    <WifiOff className="w-8 h-8 text-slate-400" />
+                                <div className="w-20 h-20 bg-[#FDFBF7] rounded-[24px] flex items-center justify-center mx-auto mb-4 border border-[#5E7C66]/10 shadow-sm">
+                                    <WifiOff className="w-10 h-10 text-[#5E7C66]/40" />
                                 </div>
-                                <h3 className="font-bold text-slate-700 mb-1">No Devices Connected</h3>
-                                <p className="text-sm text-slate-500 mb-4">
-                                    Connect a wearable to track your health metrics
+                                <h3 className="font-bold text-[#2D3748] mb-1">No Devices Connected</h3>
+                                <p className="text-sm text-[#5E7C66]/70 mb-4 px-8">
+                                    Connect a wearable device to start tracking your vital health metrics automatically.
                                 </p>
                             </div>
                         )}
 
                         {/* Connect New Device */}
-                        <div className="border-t border-slate-100 pt-6">
-                            <h3 className="text-sm font-semibold text-slate-700 mb-3">Add a Device</h3>
-                            <div className="space-y-2">
+                        <div className="border-t border-[#5E7C66]/10 pt-6">
+                            <h3 className="text-sm font-bold text-[#5E7C66] uppercase tracking-wider mb-4 ml-1">Add a Device</h3>
+                            <div className="space-y-3">
                                 {/* Demo Device Option */}
                                 <button
                                     onClick={() => handleConnect('demo')}
                                     disabled={connecting || devices.some(d => d.provider === 'demo')}
-                                    className="w-full flex items-center gap-4 p-4 border border-slate-200 rounded-xl hover:border-indigo-300 hover:bg-indigo-50/50 transition-all group disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full flex items-center gap-4 p-4 border border-[#E2E8F0] rounded-[20px] hover:border-[#5E7C66]/30 hover:bg-[#5E7C66]/5 transition-all group disabled:opacity-50 disabled:cursor-not-allowed bg-white"
                                 >
-                                    <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center shadow-md">
-                                        <Smartphone className="w-5 h-5 text-white" />
+                                    <div className="w-12 h-12 bg-gradient-to-br from-[#5E7C66] to-[#3E5F4F] rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                                        <Smartphone className="w-6 h-6 text-white" />
                                     </div>
                                     <div className="flex-1 text-left">
-                                        <h4 className="font-bold text-slate-800 group-hover:text-indigo-700">
+                                        <h4 className="font-bold text-[#2D3748] group-hover:text-[#3E5F4F] transition-colors">
                                             Demo Wearable
                                         </h4>
-                                        <p className="text-xs text-slate-500">
+                                        <p className="text-xs text-[#5E7C66]/70">
                                             Try with simulated health data
                                         </p>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         {connecting && (
-                                            <RefreshCw className="w-4 h-4 animate-spin text-indigo-500" />
+                                            <RefreshCw className="w-4 h-4 animate-spin text-[#5E7C66]" />
                                         )}
-                                        <ChevronRight size={18} className="text-slate-400 group-hover:text-indigo-500" />
+                                        <ChevronRight size={20} className="text-[#5E7C66]/40 group-hover:text-[#5E7C66] transition-colors" />
                                     </div>
                                 </button>
 
@@ -339,55 +345,57 @@ const DeviceSyncPanel = ({ onClose, onDeviceChange }) => {
                                 <button
                                     onClick={() => handleConnect('fitbit')}
                                     disabled={!providers?.fitbit?.configured || connecting}
-                                    className="w-full flex items-center gap-4 p-4 border border-slate-200 rounded-xl hover:border-teal-300 hover:bg-teal-50/50 transition-all group disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full flex items-center gap-4 p-4 border border-[#E2E8F0] rounded-[20px] hover:border-[#1FA89A]/30 hover:bg-[#1FA89A]/5 transition-all group disabled:opacity-50 disabled:cursor-not-allowed bg-white"
                                 >
-                                    <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-md">
-                                        <Watch className="w-5 h-5 text-white" />
+                                    <div className="w-12 h-12 bg-gradient-to-br from-[#1FA89A] to-[#147D73] rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                                        <Watch className="w-6 h-6 text-white" />
                                     </div>
                                     <div className="flex-1 text-left">
-                                        <h4 className="font-bold text-slate-800 group-hover:text-teal-700">
+                                        <h4 className="font-bold text-[#2D3748] group-hover:text-[#1FA89A]">
                                             Fitbit
                                         </h4>
-                                        <p className="text-xs text-slate-500">
+                                        <p className="text-xs text-[#5E7C66]/70">
                                             {providers?.fitbit?.configured
                                                 ? 'Sync heart rate, steps & sleep'
                                                 : 'API not configured'}
                                         </p>
                                     </div>
-                                    <ChevronRight size={18} className="text-slate-400 group-hover:text-teal-500" />
+                                    <ChevronRight size={20} className="text-[#5E7C66]/40 group-hover:text-[#1FA89A] transition-colors" />
                                 </button>
 
                                 {/* Google Fit Option */}
                                 <button
                                     onClick={() => handleConnect('google_fit')}
                                     disabled={!providers?.google_fit?.configured || connecting}
-                                    className="w-full flex items-center gap-4 p-4 border border-slate-200 rounded-xl hover:border-emerald-300 hover:bg-emerald-50/50 transition-all group disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full flex items-center gap-4 p-4 border border-[#E2E8F0] rounded-[20px] hover:border-[#E05A4F]/30 hover:bg-[#E05A4F]/5 transition-all group disabled:opacity-50 disabled:cursor-not-allowed bg-white"
                                 >
-                                    <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-500 rounded-xl flex items-center justify-center shadow-md">
-                                        <Activity className="w-5 h-5 text-white" />
+                                    <div className="w-12 h-12 bg-gradient-to-br from-[#E05A4F] to-[#C03E39] rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                                        <Activity className="w-6 h-6 text-white" />
                                     </div>
                                     <div className="flex-1 text-left">
-                                        <h4 className="font-bold text-slate-800 group-hover:text-emerald-700">
+                                        <h4 className="font-bold text-[#2D3748] group-hover:text-[#E05A4F]">
                                             Google Fit
                                         </h4>
-                                        <p className="text-xs text-slate-500">
+                                        <p className="text-xs text-[#5E7C66]/70">
                                             {providers?.google_fit?.configured
                                                 ? 'Sync activity & heart rate from Android'
                                                 : 'API not configured'}
                                         </p>
                                     </div>
-                                    <ChevronRight size={18} className="text-slate-400 group-hover:text-emerald-500" />
+                                    <ChevronRight size={20} className="text-[#5E7C66]/40 group-hover:text-[#E05A4F] transition-colors" />
                                 </button>
                             </div>
                         </div>
 
                         {/* Info Notice */}
-                        <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 flex items-start gap-3">
-                            <Zap className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                            <div className="text-sm text-blue-700">
-                                <p className="font-medium">Auto-sync enabled</p>
-                                <p className="text-blue-600 text-xs mt-0.5">
-                                    Your devices sync automatically every hour for the latest data
+                        <div className="bg-[#1FA89A]/5 border border-[#1FA89A]/20 rounded-[20px] p-4 flex items-start gap-4">
+                            <div className="p-2 bg-[#1FA89A]/10 rounded-full">
+                                <Zap className="w-5 h-5 text-[#1FA89A] flex-shrink-0" />
+                            </div>
+                            <div className="text-sm text-[#3E5F4F]">
+                                <p className="font-bold text-[#1FA89A]">Auto-sync enabled</p>
+                                <p className="text-[#5E7C66]/80 text-xs mt-1 leading-relaxed">
+                                    Your devices sync automatically every hour to ensure your health dashboard is always up to date.
                                 </p>
                             </div>
                         </div>

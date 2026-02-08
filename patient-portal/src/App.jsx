@@ -20,8 +20,9 @@ import HealthInsights from './pages/HealthInsights';
 
 // Components
 import ProtectedRoute from './components/ProtectedRoute';
-import VoiceAssistant from './components/VoiceAssistant';
+import VoiceAssistant from './components/VoiceAssistant'; // Re-importing to ensure consistency
 import WellnessAgentChat from './components/wellness/WellnessAgentChat';
+import FloatingNavBar from './components/FloatingNavBar';
 
 // Redirect authenticated users away from login
 const PublicRoute = ({ children }) => {
@@ -232,6 +233,19 @@ const ComingSoon = ({ title }) => (
   </div>
 );
 
+const AuthenticatedUI = () => {
+  const { isAuthenticated } = useAuth();
+  // Only show these global UI elements when user is logged in
+  if (!isAuthenticated) return null;
+  
+  return (
+    <>
+      <FloatingNavBar />
+      <WellnessAgentChat />
+    </>
+  );
+};
+
 function App() {
   return (
     <BrowserRouter>
@@ -239,8 +253,7 @@ function App() {
         <AppRoutes />
         {/* Global Voice Assistant - appears on all pages */}
         <VoiceAssistant />
-        {/* Global Wellness Agent Chat - appears on all authenticated pages */}
-        <WellnessAgentChat />
+        <AuthenticatedUI />
       </AuthProvider>
     </BrowserRouter>
   );

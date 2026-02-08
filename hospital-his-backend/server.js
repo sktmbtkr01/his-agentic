@@ -13,6 +13,9 @@ const { Server } = require('socket.io');
 // Configuration
 const config = require('./config/config');
 const connectDB = require('./config/database');
+const { connectRedis, disconnectRedis } = require('./config/redis');
+const { connectPostgres, disconnectPostgres, runMigrations } = require('./config/postgres');
+const { initializeModels } = require('./models/postgres');
 const logger = require('./utils/logger');
 const errorHandler = require('./middleware/error.middleware');
 
@@ -290,6 +293,22 @@ const startServer = async () => {
         // Connect to MongoDB
         await connectDB();
 
+        // Connect to Redis (for caching)
+        const redisClient = await connectRedis();
+        if (redisClient) {
+            logger.info('📦 Redis cache enabled');
+        }
+
+        // Connect to PostgreSQL (for billing/inventory)
+        const sequelize = await connectPostgres();
+        if (sequelize) {
+            // Initialize Sequelize models
+            initializeModels();
+            // Run migrations in development
+            await runMigrations();
+            logger.info('🐘 PostgreSQL connected for billing/inventory');
+        }
+
         // Ensure inventory policy defaults are set (idempotent)
         await ensureInventoryPolicyDefaults();
 
@@ -318,13 +337,28 @@ const startServer = async () => {
 process.on('unhandledRejection', (err, promise) => {
     logger.error(`Unhandled Rejection: ${err.message}`);
     // Close server & exit process
-    httpServer.close(() => process.exit(1));
+    httpServer.close(async () => {
+        await disconnectRedis();
+        await disconnectPostgres();
+        process.exit(1);
+    });
 });
 
 // Handle uncaught exceptions
 process.on('uncaughtException', (err) => {
     logger.error(`Uncaught Exception: ${err.message}`);
     process.exit(1);
+});
+
+// Handle graceful shutdown
+process.on('SIGTERM', async () => {
+    logger.info('SIGTERM received. Shutting down gracefully...');
+    httpServer.close(async () => {
+        await disconnectRedis();
+        await disconnectPostgres();
+        logger.info('Server closed.');
+        process.exit(0);
+    });
 });
 
 // Start the server

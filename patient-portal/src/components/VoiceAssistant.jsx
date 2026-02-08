@@ -104,77 +104,60 @@ const VoiceAssistant = () => {
         synthesis.speak(utterance);
     }, [synthesis, isMuted]);
 
-    // Voice recording
-    const startRecording = async () => {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({
-                audio: { sampleRate: 16000, channelCount: 1 }
-            });
+    // Voice recording with Browser SpeechRecognition
+    const recognitionRef = useRef(null);
 
-            mediaRecorderRef.current = new MediaRecorder(stream, { mimeType: 'audio/webm' });
-            audioChunksRef.current = [];
+    useEffect(() => {
+        // Initialize SpeechRecognition
+        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            recognitionRef.current = new SpeechRecognition();
+            recognitionRef.current.continuous = false;
+            recognitionRef.current.interimResults = false;
+            recognitionRef.current.lang = 'en-US';
 
-            mediaRecorderRef.current.ondataavailable = (e) => {
-                audioChunksRef.current.push(e.data);
+            recognitionRef.current.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                if (transcript.trim()) {
+                    handleSendMessage(transcript);
+                }
+                setIsRecording(false);
             };
 
-            mediaRecorderRef.current.onstop = async () => {
-                stream.getTracks().forEach(track => track.stop());
-
-                if (audioChunksRef.current.length === 0) return;
-
-                const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
-                await handleTranscription(audioBlob);
+            recognitionRef.current.onerror = (event) => {
+                console.error('Speech recognition error', event.error);
+                setIsRecording(false);
+                if (event.error !== 'no-speech') {
+                    addSystemMessage('❌ Microphone error. Please try typing.');
+                }
             };
 
-            mediaRecorderRef.current.start();
-            setIsRecording(true);
-
-        } catch (error) {
-            console.error('Mic error:', error);
-            addSystemMessage('❌ Microphone access denied. Please type your message.');
+            recognitionRef.current.onend = () => {
+                setIsRecording(false);
+            };
         }
-    };
+    }, [sessionId]); // Re-bind if session changes, though refs are stable
 
-    const stopRecording = () => {
-        if (mediaRecorderRef.current && isRecording) {
-            mediaRecorderRef.current.stop();
+    const startRecording = () => {
+        if (!recognitionRef.current) {
+            addSystemMessage('❌ Voice input not supported in this browser.');
+            return;
+        }
+
+        try {
+            recognitionRef.current.start();
+            setIsRecording(true);
+        } catch (error) {
+            console.error('Start recording error:', error);
+            // Sometimes it throws if already started
             setIsRecording(false);
         }
     };
 
-    const handleTranscription = async (audioBlob) => {
-        setIsLoading(true);
-        try {
-            const reader = new FileReader();
-            reader.readAsDataURL(audioBlob);
-
-            reader.onloadend = async () => {
-                const base64Audio = reader.result.split(',')[1];
-
-                try {
-                    const result = await voiceAgentService.transcribeAudio(sessionId, base64Audio, 48000);
-
-                    if (result.transcript && result.transcript.trim()) {
-                        const transcribedText = result.transcript.trim();
-
-                        if (transcribedText.startsWith('[Mock') || transcribedText.includes('GCP')) {
-                            addSystemMessage('⚠️ Voice not available. Please type your message.');
-                        } else {
-                            await handleSendMessage(transcribedText);
-                        }
-                    } else {
-                        addSystemMessage('🎤 No speech detected. Try again or type your message.');
-                    }
-                } catch (error) {
-                    console.error('Transcription error:', error);
-                    addSystemMessage('Type your message instead of speaking.');
-                }
-                setIsLoading(false);
-            };
-        } catch (error) {
-            setIsLoading(false);
-            console.error('Audio processing error:', error);
+    const stopRecording = () => {
+        if (recognitionRef.current) {
+            recognitionRef.current.stop();
+            setIsRecording(false);
         }
     };
 
@@ -309,10 +292,10 @@ const VoiceAssistant = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-teal-500 to-emerald-600 text-white shadow-lg shadow-teal-200 flex items-center justify-center"
+                className="fixed bottom-24 right-4 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-teal-500 to-emerald-600 text-white shadow-lg shadow-teal-200 flex items-center justify-center transform hover:-translate-y-1 transition-transform"
                 style={{ display: isOpen ? 'none' : 'flex' }}
             >
-                <MessageCircle size={24} />
+                <Mic size={24} />
                 {isConnected && (
                     <span className="absolute top-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-white" />
                 )}
@@ -325,7 +308,7 @@ const VoiceAssistant = () => {
                         initial={{ opacity: 0, y: 20, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.95 }}
-                        className="fixed bottom-6 right-6 z-50 w-[360px] h-[520px] bg-slate-50 rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden"
+                        className="fixed bottom-24 right-4 z-50 w-[min(360px,90vw)] h-[520px] bg-white rounded-[28px] shadow-2xl border border-stone-200 flex flex-col overflow-hidden"
                     >
                         {/* Header */}
                         <div className="bg-gradient-to-r from-teal-500 to-emerald-600 text-white p-4 flex items-center justify-between">
