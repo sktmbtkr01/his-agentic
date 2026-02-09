@@ -59,17 +59,16 @@ const connectDevice = async (req, res) => {
         const patientId = req.patient._id;
         let { provider = DEVICE_PROVIDERS.DEMO, redirectUri } = req.body;
 
-        // If redirectUri is not provided, try to construct it from the request to support deployments without explicit BACKEND_URL
-        if (!redirectUri && provider === DEVICE_PROVIDERS.GOOGLE_FIT) {
-            if (process.env.NODE_ENV === 'production') {
-                // Hardcode specific HF Space URL to ensure exact match with Google Console whitelist
-                redirectUri = 'https://sktmbtkr-his-agentic-backend.hf.space/api/v1/patient/devices/auth-complete/google_fit';
-            } else {
-                const protocol = req.protocol;
-                const host = req.get('host');
-                redirectUri = `${protocol}://${host}/api/v1/patient/devices/auth-complete/google_fit`;
-            }
-            logger.info(`[DeviceController] Using Redirect URI: ${redirectUri}`);
+        // In production, ALWAYS force the hardcoded URL to prevent frontend mismatches
+        if (process.env.NODE_ENV === 'production' && provider === DEVICE_PROVIDERS.GOOGLE_FIT) {
+            redirectUri = 'https://sktmbtkr-his-agentic-backend.hf.space/api/v1/patient/devices/auth-complete/google_fit';
+            logger.info(`[DeviceController] FORCING Production Redirect URI: ${redirectUri}`);
+        } else if (!redirectUri && provider === DEVICE_PROVIDERS.GOOGLE_FIT) {
+            // Development fallback
+            const protocol = req.protocol;
+            const host = req.get('host');
+            redirectUri = `${protocol}://${host}/api/v1/patient/devices/auth-complete/google_fit`;
+            logger.info(`[DeviceController] Using Dev Redirect URI: ${redirectUri}`);
         }
 
         const result = await deviceSyncService.connectDevice(patientId, provider, { redirectUri });
