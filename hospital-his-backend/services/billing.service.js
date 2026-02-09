@@ -2,6 +2,7 @@ const Billing = require('../models/Billing');
 const BillingItem = require('../models/BillingItem');
 const Tariff = require('../models/Tariff');
 const { PAYMENT_STATUS, CLINICAL_CODING_STATUS } = require('../config/constants');
+const { syncBillToPostgres, syncPaymentToPostgres } = require('./billing.postgres.service');
 
 /**
  * Billing Service
@@ -75,6 +76,9 @@ class BillingService {
             paymentStatus: PAYMENT_STATUS.PENDING,
         });
 
+        // Dual-write to PostgreSQL
+        syncBillToPostgres(bill).catch(err => console.error('PostgreSQL sync error:', err.message));
+
         return bill;
     }
 
@@ -92,7 +96,12 @@ class BillingService {
         bill.balanceAmount = totals.grandTotal - bill.paidAmount;
         bill.paymentStatus = this.getPaymentStatus(bill.paidAmount, totals.grandTotal);
 
-        return bill.save();
+        const savedBill = await bill.save();
+
+        // Dual-write to PostgreSQL
+        syncBillToPostgres(savedBill).catch(err => console.error('PostgreSQL sync error:', err.message));
+
+        return savedBill;
     }
 
     /**
@@ -156,6 +165,9 @@ class BillingService {
         }
 
         await bill.save();
+
+        // Dual-write to PostgreSQL
+        syncBillToPostgres(bill).catch(err => console.error('PostgreSQL sync error:', err.message));
         return bill;
     }
 
@@ -470,6 +482,10 @@ class BillingService {
         });
 
         await bill.save();
+
+        // Dual-write to PostgreSQL
+        syncBillToPostgres(bill).catch(err => console.error('PostgreSQL sync error:', err.message));
+
         return bill;
     }
 
@@ -536,6 +552,11 @@ class BillingService {
         });
 
         await bill.save();
+
+        // Dual-write payment to PostgreSQL
+        syncBillToPostgres(bill).catch(err => console.error('PostgreSQL sync error:', err.message));
+        syncPaymentToPostgres(bill, { amount, mode, reference, notes, receivedBy }).catch(err => console.error('PostgreSQL payment sync error:', err.message));
+
         return bill;
     }
 }
