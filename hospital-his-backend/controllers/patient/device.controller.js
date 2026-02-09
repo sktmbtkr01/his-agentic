@@ -104,13 +104,14 @@ const handleCallback = async (req, res) => {
         const result = await deviceSyncService.handleOAuthCallback(provider, code, state, redirectUri);
 
 
-        let redirectBase = process.env.PATIENT_PORTAL_URL || 'http://localhost:5174';
+        // Default to Vercel app if env var is missing
+        let redirectBase = process.env.PATIENT_PORTAL_URL || 'https://his-patient-portal.vercel.app';
+
+        // Robust production check
+        const isProduction = process.env.NODE_ENV === 'production' || req.get('host').includes('hf.space');
 
         // Fix for deployment: If PATIENT_PORTAL_URL is localhost but we are in production
-        // (and likely on HF Spaces), try to redirect to the known Vercel app or stay on same domain specific page if needed.
-        // However, the user is likely using the Vercel frontend.
-        if (process.env.NODE_ENV === 'production' && redirectBase.includes('localhost')) {
-            // Hardcoded fallback based on user logs seeing requests from vercel
+        if (isProduction && redirectBase.includes('localhost')) {
             const fallbackUrl = 'https://his-patient-portal.vercel.app';
             logger.warn(`[OAuth Callback] overriding localhost redirect to ${fallbackUrl}`);
             redirectBase = fallbackUrl;
@@ -121,13 +122,14 @@ const handleCallback = async (req, res) => {
     } catch (error) {
         logger.error('OAuth callback failed:', error);
 
-        let redirectBase = process.env.PATIENT_PORTAL_URL || 'http://localhost:5174';
+        // Default to Vercel app if env var is missing, to prevent localhost redirects in deployment
+        let redirectBase = process.env.PATIENT_PORTAL_URL || 'https://his-patient-portal.vercel.app';
 
-        // Fix for deployment: If PATIENT_PORTAL_URL is localhost but we are in production
-        // (and likely on HF Spaces), try to redirect to the known Vercel app or stay on same domain specific page if needed.
-        // However, the user is likely using the Vercel frontend.
-        if (process.env.NODE_ENV === 'production' && redirectBase.includes('localhost')) {
-            // Hardcoded fallback based on user logs seeing requests from vercel
+        // Robust production check: explicit env var OR running on HF Spaces
+        const isProduction = process.env.NODE_ENV === 'production' || req.get('host').includes('hf.space');
+
+        // Double check: if we are in production but somehow redirectBase is still localhost, force it to Vercel
+        if (isProduction && redirectBase.includes('localhost')) {
             const fallbackUrl = 'https://his-patient-portal.vercel.app';
             logger.warn(`[OAuth Callback] overriding localhost redirect to ${fallbackUrl}`);
             redirectBase = fallbackUrl;
