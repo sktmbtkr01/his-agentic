@@ -88,7 +88,7 @@ const handleCallback = async (req, res) => {
             return res.redirect(`${process.env.PATIENT_PORTAL_URL}/devices?error=${encodeURIComponent(error_description || oauthError)}`);
         }
 
-        const redirectUri = `${req.protocol}://${req.get('host')}/api/v1/patient/devices/oauth-redirect/${provider}`;
+        const redirectUri = `${req.protocol}://${req.get('host')}/api/v1/patient/devices/auth-complete/${provider}`;
         const result = await deviceSyncService.handleOAuthCallback(provider, code, state, redirectUri);
 
         // Redirect back to patient portal

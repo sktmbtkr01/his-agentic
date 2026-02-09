@@ -65,7 +65,7 @@ router.get('/orders/:id/report', labController.getReport);
  * @route   POST /api/lab/orders/:id/generate-summary
  * @desc    Generate AI summary for a lab test (on-demand)
  */
-router.post('/orders/:id/generate-summary', authorize('doctor', 'admin'), labController.generateAiSummary);
+router.post('/orders/:id/generate-summary', authorize('doctor', 'admin', 'lab_tech'), labController.generateAiSummary);
 
 /**
  * @route   GET /api/lab/queue

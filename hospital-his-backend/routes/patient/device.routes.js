@@ -18,14 +18,15 @@ const {
 } = require('../../controllers/patient/device.controller');
 
 // OAuth callback doesn't require authentication (state contains patient info)
-// NOTE: Using /oauth-redirect instead of /callback because HF Spaces blocks /callback paths
-router.get('/oauth-redirect/:provider', handleCallback);
-// Also register /callback for backwards compatibility
+// NOTE: Using /auth-complete instead of /callback or /oauth-redirect because HF Spaces blocks those paths
+router.get('/auth-complete/:provider', handleCallback);
+// Also register /callback and /oauth-redirect for backwards compatibility
 router.get('/callback/:provider', handleCallback);
+router.get('/oauth-redirect/:provider', handleCallback);
 
 // DEBUG: Simple test route to check if new routes are being registered
-router.get('/oauth-test', (req, res) => {
-    res.json({ success: true, message: 'OAuth test route works!', timestamp: new Date().toISOString() });
+router.get('/auth-test', (req, res) => {
+    res.json({ success: true, message: 'Auth test route works!', timestamp: new Date().toISOString() });
 });
 
 // All other routes require patient authentication

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FlaskConical, Clock, CheckCircle, AlertCircle, AlertTriangle, User, TestTube, X, Check, Loader, Receipt, Loader2, Banknote, CreditCard } from 'lucide-react';
+import { FlaskConical, Clock, CheckCircle, AlertCircle, AlertTriangle, User, TestTube, X, Check, Loader, Receipt, Loader2, Banknote, CreditCard, Brain, Sparkles } from 'lucide-react';
 import labService from '../../services/lab.service';
 import departmentBillingService from '../../services/departmentBilling.service';
 import toast from 'react-hot-toast';
@@ -17,6 +17,7 @@ const Laboratory = () => {
     const [submitting, setSubmitting] = useState(false);
     const [pdfFile, setPdfFile] = useState(null);
     const [uploading, setUploading] = useState(false);
+    const [aiSummary, setAiSummary] = useState(null);
 
     // Billing state
     const [unbilledOrders, setUnbilledOrders] = useState([]);
@@ -93,6 +94,21 @@ const Laboratory = () => {
                 isCritical: false
             })));
             setRemarks('');
+
+            // Load existing AI summary if available
+            if (res.data.aiSummary) {
+                try {
+                    const summary = typeof res.data.aiSummary === 'string'
+                        ? JSON.parse(res.data.aiSummary)
+                        : res.data.aiSummary;
+                    setAiSummary(summary);
+                } catch (e) {
+                    setAiSummary({ summary: res.data.aiSummary });
+                }
+            } else {
+                setAiSummary(null);
+            }
+
             setShowResultModal(true);
         } catch (error) {
             console.error("Error fetching order details", error);
@@ -236,12 +252,24 @@ const Laboratory = () => {
         if (!selectedOrder || !pdfFile) return;
         setUploading(true);
         try {
-            await labService.uploadReport(selectedOrder._id, pdfFile);
-            alert("PDF uploaded and AI summary generated!");
+            const response = await labService.uploadReport(selectedOrder._id, pdfFile);
+            toast.success("PDF uploaded and AI summary generated!");
             setPdfFile(null);
+
+            // Extract and display AI summary
+            if (response.data?.aiSummary) {
+                try {
+                    const summary = typeof response.data.aiSummary === 'string'
+                        ? JSON.parse(response.data.aiSummary)
+                        : response.data.aiSummary;
+                    setAiSummary(summary);
+                } catch (e) {
+                    setAiSummary({ summary: response.data.aiSummary });
+                }
+            }
         } catch (error) {
             console.error("Error uploading PDF", error);
-            alert("Failed to upload PDF");
+            toast.error("Failed to upload PDF");
         } finally {
             setUploading(false);
         }
@@ -523,6 +551,70 @@ const Laboratory = () => {
                                             </div>
                                             <p className="text-xs text-blue-600 mt-2">AI will extract key findings and generate a clinical summary.</p>
                                         </div>
+
+                                        {/* AI Summary Display */}
+                                        {aiSummary && (
+                                            <div className="mb-6 p-4 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl border border-purple-200">
+                                                <h3 className="font-bold text-purple-800 text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                                                    <Brain size={16} className="text-purple-600" />
+                                                    AI Clinical Summary
+                                                    <Sparkles size={14} className="text-amber-500" />
+                                                </h3>
+
+                                                {aiSummary.overallStatus && (
+                                                    <div className="mb-3">
+                                                        <span className={`px-3 py-1.5 rounded-full text-xs font-bold ${aiSummary.overallStatus === 'critical'
+                                                            ? 'bg-red-100 text-red-700 border border-red-200'
+                                                            : aiSummary.overallStatus === 'attention_needed'
+                                                                ? 'bg-amber-100 text-amber-700 border border-amber-200'
+                                                                : 'bg-emerald-100 text-emerald-700 border border-emerald-200'
+                                                            }`}>
+                                                            {aiSummary.overallStatus === 'critical' ? '🔴 Critical'
+                                                                : aiSummary.overallStatus === 'attention_needed' ? '🟡 Attention Needed'
+                                                                    : '🟢 Normal'}
+                                                        </span>
+                                                    </div>
+                                                )}
+
+                                                {aiSummary.summary && (
+                                                    <div className="mb-3">
+                                                        <p className="text-sm text-slate-700 leading-relaxed whitespace-pre-line">{aiSummary.summary}</p>
+                                                    </div>
+                                                )}
+
+                                                {aiSummary.keyFindings && aiSummary.keyFindings.length > 0 && (
+                                                    <div className="mb-3">
+                                                        <h4 className="text-xs font-bold text-purple-700 mb-2">Key Findings:</h4>
+                                                        <ul className="space-y-1">
+                                                            {aiSummary.keyFindings.map((finding, idx) => (
+                                                                <li key={idx} className="text-sm text-slate-600 flex items-start gap-2">
+                                                                    <span className="text-purple-500 mt-1">•</span>
+                                                                    {finding}
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                )}
+
+                                                {aiSummary.abnormalValues && aiSummary.abnormalValues.length > 0 && (
+                                                    <div className="mb-3 p-3 bg-red-50 rounded-lg border border-red-100">
+                                                        <h4 className="text-xs font-bold text-red-700 mb-2">⚠️ Abnormal Values:</h4>
+                                                        <ul className="space-y-1">
+                                                            {aiSummary.abnormalValues.map((item, idx) => (
+                                                                <li key={idx} className="text-sm text-red-600">{item}</li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                )}
+
+                                                {aiSummary.clinicalRecommendation && (
+                                                    <div className="p-3 bg-indigo-50 rounded-lg border border-indigo-100">
+                                                        <h4 className="text-xs font-bold text-indigo-700 mb-1">💡 Clinical Recommendation:</h4>
+                                                        <p className="text-sm text-indigo-800">{aiSummary.clinicalRecommendation}</p>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        )}
 
                                         {/* Actions */}
                                         <div className="flex justify-end gap-3">
