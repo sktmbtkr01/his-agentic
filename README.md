@@ -28,8 +28,8 @@ LifelineX transforms traditional healthcare management into a proactive, intelli
 |-----------|--------------|
 | **Backend** | Node.js, Express, MongoDB (Data), PostgreSQL (Inventory/Billing), Redis (Caching) |
 | **Frontend** | React, Vite, TailwindCSS, Framer Motion |
-| **AI & ML** | Python, FastAPI, LangGraph (Orchestration), Google Gemini / OpenRouter LLMs |
-| **Voice** | Web Speech API, Twilio / Custom STT/TTS Pipelines |
+| **AI & ML** | Python, FastAPI, Google Gemini / OpenRouter LLMs |
+| **Voice** | Web Speech API, GCS STT/TTS Pipelines |
 | **DevOps** | Docker, GitHub Actions, Hugging Face Spaces |
 
 ---
@@ -128,10 +128,7 @@ his-agentic/
 
 ---
 
-## 🔒 Security & Compliance
-- **Data Privacy**: GDPR/HIPAA compliant data handling guidelines.
-- **Encryption**: AES-256 encryption for sensitive patient records.
-- **Role-Based Access**: Strict permission levels for Admins, Doctors, and Patients.
+
 
 ---
 
