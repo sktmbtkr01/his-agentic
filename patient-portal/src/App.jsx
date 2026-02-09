@@ -242,6 +242,7 @@ const AuthenticatedUI = () => {
     <>
       <FloatingNavBar />
       <WellnessAgentChat />
+      <VoiceAssistant />
     </>
   );
 };
@@ -251,8 +252,6 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <AppRoutes />
-        {/* Global Voice Assistant - appears on all pages */}
-        <VoiceAssistant />
         <AuthenticatedUI />
       </AuthProvider>
     </BrowserRouter>
