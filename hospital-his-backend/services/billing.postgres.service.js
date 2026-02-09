@@ -11,9 +11,13 @@ const logger = require('../utils/logger');
  * Check if dual-write is enabled
  */
 const isDualWriteEnabled = () => {
-    return process.env.USE_POSTGRES_BILLING === 'true' &&
-        process.env.DUAL_WRITE_MODE === 'true' &&
-        isPostgresConnected();
+    const usePostgresBilling = process.env.USE_POSTGRES_BILLING === 'true';
+    const dualWriteMode = process.env.DUAL_WRITE_MODE === 'true';
+    const pgConnected = isPostgresConnected();
+
+    logger.info(`🔍 Dual-write check: USE_POSTGRES_BILLING=${usePostgresBilling}, DUAL_WRITE_MODE=${dualWriteMode}, isPostgresConnected=${pgConnected}`);
+
+    return usePostgresBilling && dualWriteMode && pgConnected;
 };
 
 /**
