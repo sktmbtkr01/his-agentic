@@ -77,12 +77,17 @@ const exchangeCodeForTokens = async (code, redirectUri) => {
     }
 
     try {
-        const response = await axios.post(GOOGLE_FIT_CONFIG.tokenUrl, {
-            client_id: process.env.GOOGLE_FIT_CLIENT_ID,
-            client_secret: process.env.GOOGLE_FIT_CLIENT_SECRET,
-            code,
-            redirect_uri: redirectUri,
-            grant_type: 'authorization_code',
+        const params = new URLSearchParams();
+        params.append('client_id', process.env.GOOGLE_FIT_CLIENT_ID);
+        params.append('client_secret', process.env.GOOGLE_FIT_CLIENT_SECRET);
+        params.append('code', code);
+        params.append('redirect_uri', redirectUri);
+        params.append('grant_type', 'authorization_code');
+
+        const response = await axios.post(GOOGLE_FIT_CONFIG.tokenUrl, params, {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
         });
 
         const { access_token, refresh_token, expires_in, scope, token_type } = response.data;

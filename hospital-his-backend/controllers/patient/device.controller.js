@@ -104,7 +104,20 @@ const handleCallback = async (req, res) => {
         res.redirect(`${process.env.PATIENT_PORTAL_URL}/devices?success=true&provider=${provider}`);
     } catch (error) {
         logger.error('OAuth callback failed:', error);
-        res.redirect(`${process.env.PATIENT_PORTAL_URL}/devices?error=${encodeURIComponent(error.message)}`);
+
+        let redirectBase = process.env.PATIENT_PORTAL_URL || 'http://localhost:5174';
+
+        // Fix for deployment: If PATIENT_PORTAL_URL is localhost but we are in production
+        // (and likely on HF Spaces), try to redirect to the known Vercel app or stay on same domain specific page if needed.
+        // However, the user is likely using the Vercel frontend.
+        if (process.env.NODE_ENV === 'production' && redirectBase.includes('localhost')) {
+            // Hardcoded fallback based on user logs seeing requests from vercel
+            const fallbackUrl = 'https://his-patient-portal.vercel.app';
+            logger.warn(`[OAuth Callback] overriding localhost redirect to ${fallbackUrl}`);
+            redirectBase = fallbackUrl;
+        }
+
+        res.redirect(`${redirectBase}/devices?error=${encodeURIComponent(error.message)}`);
     }
 };
 
