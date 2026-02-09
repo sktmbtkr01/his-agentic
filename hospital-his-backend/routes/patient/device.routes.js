@@ -20,6 +20,8 @@ const {
 // OAuth callback doesn't require authentication (state contains patient info)
 // NOTE: Using /oauth-redirect instead of /callback because HF Spaces blocks /callback paths
 router.get('/oauth-redirect/:provider', handleCallback);
+// Also register /callback for backwards compatibility
+router.get('/callback/:provider', handleCallback);
 
 // DEBUG: Simple test route to check if new routes are being registered
 router.get('/oauth-test', (req, res) => {

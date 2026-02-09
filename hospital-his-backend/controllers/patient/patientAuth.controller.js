@@ -8,9 +8,10 @@ const jwt = require('jsonwebtoken');
 const config = require('../../config/config');
 const asyncHandler = require('../../utils/asyncHandler');
 const ErrorResponse = require('../../utils/errorResponse');
+const cacheService = require('../../services/cache.service');
 
-// Store patient refresh tokens (in production, use a separate model or Redis)
-const patientRefreshTokens = new Map();
+// Legacy in-memory store (fallback when Redis is unavailable)
+const patientRefreshTokensMemory = new Map();
 
 /**
  * @desc    Login patient using Patient ID + Date of Birth
@@ -71,8 +72,12 @@ exports.refresh = asyncHandler(async (req, res, next) => {
             return next(new ErrorResponse('Invalid refresh token', 401));
         }
 
-        // Verify token exists in our store
-        const storedToken = patientRefreshTokens.get(decoded.patientId);
+        // Verify token exists in our store (Redis first, then memory fallback)
+        let storedToken = await cacheService.patientTokens.get(decoded.patientId);
+        if (!storedToken) {
+            storedToken = patientRefreshTokensMemory.get(decoded.patientId);
+        }
+        
         if (storedToken !== refreshToken) {
             return next(new ErrorResponse('Invalid refresh token', 401));
         }
@@ -96,8 +101,10 @@ exports.refresh = asyncHandler(async (req, res, next) => {
  * @access  Private (Patient)
  */
 exports.logout = asyncHandler(async (req, res, next) => {
-    // Remove refresh token from store
-    patientRefreshTokens.delete(req.patient._id.toString());
+    // Remove refresh token from store (both Redis and memory)
+    const patientId = req.patient._id.toString();
+    await cacheService.patientTokens.delete(patientId);
+    patientRefreshTokensMemory.delete(patientId);
 
     res.status(200).json({
         success: true,
@@ -201,8 +208,10 @@ const sendPatientTokenResponse = async (patient, statusCode, res) => {
         { expiresIn: config.jwtRefreshExpire || '7d' }
     );
 
-    // Store refresh token
-    patientRefreshTokens.set(patient._id.toString(), refreshToken);
+    // Store refresh token in Redis (with fallback to memory)
+    const patientId = patient._id.toString();
+    await cacheService.patientTokens.set(patientId, refreshToken);
+    patientRefreshTokensMemory.set(patientId, refreshToken); // Backup
 
     res.status(statusCode).json({
         success: true,

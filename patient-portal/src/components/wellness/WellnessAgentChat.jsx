@@ -6,11 +6,11 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { 
-    MessageCircle, 
-    X, 
-    Send, 
-    Sparkles, 
+import {
+    MessageCircle,
+    X,
+    Send,
+    Sparkles,
     ChevronRight,
     AlertTriangle,
     RefreshCw,
@@ -30,7 +30,7 @@ import useWellnessChat from '../../hooks/useWellnessChat';
 const WellnessFAB = ({ onClick, hasUnread }) => (
     <motion.button
         onClick={onClick}
-        className="fixed bottom-24 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-500/30 flex items-center justify-center hover:shadow-xl hover:shadow-blue-500/40 transition-shadow"
+        className="fixed bottom-40 right-4 z-50 w-14 h-14 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-500/30 flex items-center justify-center hover:shadow-xl hover:shadow-blue-500/40 transition-all transform hover:-translate-y-1"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         initial={{ scale: 0, opacity: 0 }}
@@ -59,14 +59,14 @@ const ChatHeader = ({ onClose, onReset }) => (
             </div>
         </div>
         <div className="flex items-center gap-1">
-            <button 
+            <button
                 onClick={onReset}
                 className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500 transition-colors"
                 title="Start new conversation"
             >
                 <RefreshCw size={18} />
             </button>
-            <button 
+            <button
                 onClick={onClose}
                 className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500 transition-colors"
             >
@@ -93,15 +93,14 @@ const ChatMessage = ({ message, onActionClick }) => {
             <div className={`max-w-[85%] ${isUser ? 'order-1' : 'order-2'}`}>
                 {/* Message Bubble */}
                 <div
-                    className={`px-4 py-2.5 rounded-2xl ${
-                        isUser
+                    className={`px-4 py-2.5 rounded-2xl ${isUser
                             ? 'bg-blue-600 text-white rounded-br-md'
                             : isEmergency
-                            ? 'bg-red-50 dark:bg-red-900/30 text-red-800 dark:text-red-200 border border-red-200 dark:border-red-800 rounded-bl-md'
-                            : isError
-                            ? 'bg-amber-50 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 rounded-bl-md'
-                            : 'bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-100 rounded-bl-md'
-                    }`}
+                                ? 'bg-red-50 dark:bg-red-900/30 text-red-800 dark:text-red-200 border border-red-200 dark:border-red-800 rounded-bl-md'
+                                : isError
+                                    ? 'bg-amber-50 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 rounded-bl-md'
+                                    : 'bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-100 rounded-bl-md'
+                        }`}
                 >
                     {isEmergency && (
                         <div className="flex items-center gap-2 mb-2 text-red-600 dark:text-red-400">
@@ -113,7 +112,7 @@ const ChatMessage = ({ message, onActionClick }) => {
                 </div>
 
                 {/* Suggested Actions */}
-                {message.suggestedActions && message.suggestedActions.length > 0 && (
+                {Array.isArray(message.suggestedActions) && message.suggestedActions.length > 0 && (
                     <div className="flex flex-wrap gap-2 mt-2">
                         {message.suggestedActions.map((action, idx) => (
                             <button
@@ -167,11 +166,55 @@ const TypingIndicator = () => (
 );
 
 /**
- * Message input area
+ * Message input area with voice input support
  */
 const ChatInput = ({ onSend, isLoading }) => {
     const [input, setInput] = useState('');
+    const [isListening, setIsListening] = useState(false);
+    const [isSupported, setIsSupported] = useState(false);
     const inputRef = useRef(null);
+    const recognitionRef = useRef(null);
+
+    useEffect(() => {
+        // Check browser support for SpeechRecognition
+        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+            setIsSupported(true);
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            recognitionRef.current = new SpeechRecognition();
+            recognitionRef.current.continuous = false;
+            recognitionRef.current.interimResults = false;
+            recognitionRef.current.lang = 'en-US';
+
+            recognitionRef.current.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                setInput((prev) => {
+                    const newValue = prev ? `${prev} ${transcript}` : transcript;
+                    return newValue;
+                });
+                setIsListening(false);
+            };
+
+            recognitionRef.current.onerror = (event) => {
+                console.error('Speech recognition error', event.error);
+                setIsListening(false);
+            };
+
+            recognitionRef.current.onend = () => {
+                setIsListening(false);
+            };
+        }
+    }, []);
+
+    const toggleListening = () => {
+        if (!isSupported || !recognitionRef.current) return;
+
+        if (isListening) {
+            recognitionRef.current.stop();
+        } else {
+            recognitionRef.current.start();
+            setIsListening(true);
+        }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -189,7 +232,7 @@ const ChatInput = ({ onSend, isLoading }) => {
     };
 
     return (
-        <form 
+        <form
             onSubmit={handleSubmit}
             className="flex items-end gap-2 p-4 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800"
         >
@@ -199,16 +242,43 @@ const ChatInput = ({ onSend, isLoading }) => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={handleKeyDown}
-                    placeholder="Ask Wellness anything..."
-                    className="w-full px-4 py-2.5 pr-12 bg-slate-100 dark:bg-slate-700 border-0 rounded-xl text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 resize-none max-h-24"
+                    placeholder={isListening ? "Listening..." : "Ask Wellness anything..."}
+                    className={`w-full px-4 py-2.5 pr-12 border-0 rounded-xl text-sm transition-all resize-none max-h-24 ${isListening
+                            ? 'bg-red-50 text-slate-800 placeholder-red-500 ring-2 ring-red-200'
+                            : 'bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50'
+                        }`}
                     rows={1}
                     disabled={isLoading}
                 />
+
+                {/* Voice Button inside input */}
+                {isSupported && (
+                    <button
+                        type="button"
+                        onClick={toggleListening}
+                        disabled={isLoading}
+                        className={`absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-lg transition-all ${isListening
+                                ? 'text-red-500 hover:bg-red-100'
+                                : 'text-slate-400 hover:text-blue-500 hover:bg-slate-200 dark:hover:bg-slate-600'
+                            }`}
+                        title={isListening ? "Stop listening" : "Start voice input"}
+                    >
+                        {isListening ? (
+                            <div className="relative">
+                                <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-ping" />
+                                <MicOff size={18} />
+                            </div>
+                        ) : (
+                            <Mic size={18} />
+                        )}
+                    </button>
+                )}
             </div>
+
             <button
                 type="submit"
                 disabled={!input.trim() || isLoading}
-                className="p-2.5 rounded-xl bg-blue-600 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-700 transition-colors"
+                className="p-2.5 rounded-xl bg-blue-600 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-700 transition-colors shadow-sm"
             >
                 <Send size={18} />
             </button>
@@ -224,7 +294,7 @@ const WellnessAgentChat = () => {
     const navigate = useNavigate();
     const messagesEndRef = useRef(null);
     const { isAuthenticated } = useAuth();
-    
+
     const {
         isOpen,
         messages,
@@ -304,13 +374,16 @@ const WellnessAgentChat = () => {
                             )}
 
                             {/* Messages */}
-                            {messages.map((message) => (
-                                <ChatMessage
-                                    key={message.id}
-                                    message={message}
-                                    onActionClick={handleActionClick}
-                                />
-                            ))}
+                            {Array.isArray(messages) && messages.map((message) => {
+                                if (!message) return null;
+                                return (
+                                    <ChatMessage
+                                        key={message.id || `msg_${Math.random()}`}
+                                        message={message}
+                                        onActionClick={handleActionClick}
+                                    />
+                                );
+                            })}
 
                             {/* Typing Indicator */}
                             <AnimatePresence>

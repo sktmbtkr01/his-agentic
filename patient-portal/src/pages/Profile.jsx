@@ -121,7 +121,7 @@ const Profile = () => {
 
             {/* Profile Header Card */}
             <div className="px-4 pt-6 pb-2 relative z-[1]">
-                 <div className="card-premium p-6 bg-gradient-to-br from-blue-600 to-indigo-600 text-white border-none shadow-blue-500/30">
+                 <div className="card-premium p-6 bg-gradient-to-br from-[#F4A28C] to-[#D96C6C] text-white border-none shadow-lg shadow-[#D96C6C]/30 rounded-[28px]">
                     <div className="flex items-center gap-4 mb-4">
                         <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm shadow-inner border border-white/30 flex items-center justify-center text-3xl font-bold">
                             {profile?.firstName?.[0]}{profile?.lastName?.[0]}
