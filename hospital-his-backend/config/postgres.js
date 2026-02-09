@@ -46,8 +46,8 @@ let isConnected = false;
  * Initialize PostgreSQL connection
  */
 const connectPostgres = async () => {
-    const usePostgres = 
-        process.env.USE_POSTGRES_BILLING === 'true' || 
+    const usePostgres =
+        process.env.USE_POSTGRES_BILLING === 'true' ||
         process.env.USE_POSTGRES_INVENTORY === 'true';
 
     if (!usePostgres) {
@@ -109,15 +109,21 @@ const runMigrations = async () => {
     if (!sequelize) return;
 
     try {
-        // Sync all models (in development) or run migrations (in production)
-        if (process.env.NODE_ENV === 'development') {
-            await sequelize.sync({ alter: true });
-            logger.info('PostgreSQL models synced');
-        }
-        // In production, use sequelize-cli migrations
+        // Sync all models - creates tables if they don't exist
+        // In development: alter existing tables to match models
+        // In production: only create new tables, don't alter existing
+        const syncOptions = process.env.NODE_ENV === 'development'
+            ? { alter: true }
+            : { alter: false };
+
+        await sequelize.sync(syncOptions);
+        logger.info('✅ PostgreSQL models synced (tables created/updated)');
     } catch (error) {
         logger.error('Migration error:', error.message);
-        throw error;
+        // Don't throw in production - allow app to continue with MongoDB
+        if (process.env.NODE_ENV === 'development') {
+            throw error;
+        }
     }
 };
 
@@ -131,7 +137,7 @@ const withTransaction = async (callback) => {
     }
 
     const transaction = await sequelize.transaction();
-    
+
     try {
         const result = await callback(transaction);
         await transaction.commit();
