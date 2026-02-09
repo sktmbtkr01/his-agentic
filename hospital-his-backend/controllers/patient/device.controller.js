@@ -57,7 +57,16 @@ const getDevices = async (req, res) => {
 const connectDevice = async (req, res) => {
     try {
         const patientId = req.patient._id;
-        const { provider = DEVICE_PROVIDERS.DEMO, redirectUri } = req.body;
+        let { provider = DEVICE_PROVIDERS.DEMO, redirectUri } = req.body;
+
+        // If redirectUri is not provided, try to construct it from the request to support deployments without explicit BACKEND_URL
+        if (!redirectUri && provider === DEVICE_PROVIDERS.GOOGLE_FIT) {
+            // In production (like HF Spaces), force HTTPS as req.protocol might be http behind proxy
+            const protocol = process.env.NODE_ENV === 'production' ? 'https' : req.protocol;
+            const host = req.get('host');
+            redirectUri = `${protocol}://${host}/api/v1/patient/devices/auth-complete/google_fit`;
+            logger.info(`[DeviceController] Auto-detected Redirect URI: ${redirectUri}`);
+        }
 
         const result = await deviceSyncService.connectDevice(patientId, provider, { redirectUri });
 

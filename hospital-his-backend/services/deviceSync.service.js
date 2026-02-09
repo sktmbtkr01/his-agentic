@@ -103,7 +103,7 @@ const connectDevice = async (patientId, provider, options = {}) => {
         }
 
         const redirectUri = options.redirectUri || `${process.env.BACKEND_URL || 'http://localhost:5001'}/api/v1/patient/devices/auth-complete/google_fit`;
-        const state = Buffer.from(JSON.stringify({ patientId, provider: 'google_fit' })).toString('base64');
+        const state = Buffer.from(JSON.stringify({ patientId, provider: 'google_fit', redirectUri })).toString('base64');
         const authUrl = googleFitProvider.getAuthorizationUrl(redirectUri, state);
 
         return {
@@ -148,10 +148,15 @@ const handleOAuthCallback = async (provider, code, state, redirectUri) => {
         // Decode state to get patient ID
         const stateData = JSON.parse(Buffer.from(state, 'base64').toString());
         const patientId = stateData.patientId;
+        const storedRedirectUri = stateData.redirectUri;
 
         if (!patientId) {
             throw new Error('Invalid OAuth state');
         }
+
+        // Use the redirectUri stored in state if available (ensures consistency), otherwise use the one passed from controller
+        const finalRedirectUri = storedRedirectUri || redirectUri;
+        logger.info(`[OAuth Callback] Using Redirect URI: ${finalRedirectUri} (From state: ${!!storedRedirectUri})`);
 
         let tokens;
         let providerType;
@@ -159,11 +164,11 @@ const handleOAuthCallback = async (provider, code, state, redirectUri) => {
 
         // Exchange code for tokens based on provider
         if (provider === 'google_fit' || provider === DEVICE_PROVIDERS.GOOGLE_FIT) {
-            tokens = await googleFitProvider.exchangeCodeForTokens(code, redirectUri);
+            tokens = await googleFitProvider.exchangeCodeForTokens(code, finalRedirectUri);
             providerType = DEVICE_PROVIDERS.GOOGLE_FIT;
             displayName = 'Google Fit';
         } else {
-            tokens = await fitbitProvider.exchangeCodeForTokens(code, redirectUri);
+            tokens = await fitbitProvider.exchangeCodeForTokens(code, finalRedirectUri);
             providerType = DEVICE_PROVIDERS.FITBIT;
             displayName = 'Fitbit';
         }
