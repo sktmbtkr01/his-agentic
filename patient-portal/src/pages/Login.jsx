@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { motion } from 'framer-motion';
+import { User, Calendar, ArrowRight, Activity, Lock, Phone } from 'lucide-react';
 
 const Login = () => {
     const [patientId, setPatientId] = useState('');
@@ -28,95 +30,123 @@ const Login = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center px-4 py-12 page-container">
-            <div className="w-full max-w-md">
-                {/* Logo */}
+        <div className="min-h-screen flex items-center justify-center p-4 bg-bone-100 relative overflow-hidden">
+            {/* Background Decorative Blobs */}
+            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-sage-200/40 rounded-full blur-[100px]" />
+            <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-peach-200/40 rounded-full blur-[100px]" />
+
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="w-full max-w-md relative z-10"
+            >
+                {/* Logo Section */}
                 <div className="text-center mb-8">
-                    <h1 className="logo-text text-3xl mb-2">LifelineX</h1>
-                    <p className="text-stone-600 dark:text-stone-400">Patient Portal</p>
+                    <motion.div
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                        className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-sage-600 text-white mb-4 shadow-lg shadow-sage-200 transform rotate-3"
+                    >
+                        <Activity size={32} />
+                    </motion.div>
+                    <h1 className="font-serif text-4xl text-sage-900 mb-1 tracking-tight">LifelineX</h1>
+                    <p className="text-sage-600 font-medium tracking-wide text-sm uppercase">Patient Portal</p>
                 </div>
 
                 {/* Login Card */}
-                <div className="card card-elevated">
-                    <h2 className="text-xl font-semibold text-center mb-6" style={{ color: 'rgb(var(--color-text-primary))' }}>
-                        Welcome Back
-                    </h2>
+                <div className="bg-white/80 backdrop-blur-xl border border-white/60 p-8 md:p-10 rounded-[2rem] shadow-soft">
+                    <div className="text-center mb-8">
+                        <h2 className="text-2xl font-serif text-sage-900 mb-2">Welcome Back</h2>
+                        <p className="text-sage-500 text-sm">Please sign in to access your health records</p>
+                    </div>
 
                     {error && (
-                        <div className="alert alert-error mb-4">
-                            {error}
-                        </div>
+                        <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            className="bg-red-50 text-red-600 p-4 rounded-xl text-sm border border-red-100 mb-6 flex items-start gap-3"
+                        >
+                            <div className="mt-0.5 min-w-[16px]">⚠️</div>
+                            <p>{error}</p>
+                        </motion.div>
                     )}
 
-                    <form onSubmit={handleSubmit} className="space-y-5">
+                    <form onSubmit={handleSubmit} className="space-y-6">
                         {/* Patient ID */}
-                        <div>
-                            <label htmlFor="patientId" className="label">
+                        <div className="space-y-2">
+                            <label htmlFor="patientId" className="block text-sm font-medium text-sage-700 ml-1">
                                 Patient ID
                             </label>
-                            <input
-                                type="text"
-                                id="patientId"
-                                value={patientId}
-                                onChange={(e) => setPatientId(e.target.value.toUpperCase())}
-                                placeholder="e.g., PAT000001"
-                                className="input"
-                                required
-                                autoComplete="off"
-                            />
-                            <p className="text-xs mt-1" style={{ color: 'rgb(var(--color-text-muted))' }}>
-                                Enter your Patient ID from your hospital records
-                            </p>
+                            <div className="relative group">
+                                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-sage-400 group-focus-within:text-sage-600 transition-colors">
+                                    <User size={20} />
+                                </div>
+                                <input
+                                    type="text"
+                                    id="patientId"
+                                    value={patientId}
+                                    onChange={(e) => setPatientId(e.target.value.toUpperCase())}
+                                    placeholder="e.g., PAT000001"
+                                    className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-sage-200 bg-white/50 focus:bg-white focus:border-sage-400 focus:ring-4 focus:ring-sage-100 transition-all outline-none text-sage-900 placeholder:text-sage-300 font-medium uppercase"
+                                    required
+                                    autoComplete="off"
+                                />
+                            </div>
                         </div>
 
                         {/* Date of Birth */}
-                        <div>
-                            <label htmlFor="dateOfBirth" className="label">
+                        <div className="space-y-2">
+                            <label htmlFor="dateOfBirth" className="block text-sm font-medium text-sage-700 ml-1">
                                 Date of Birth
                             </label>
-                            <input
-                                type="date"
-                                id="dateOfBirth"
-                                value={dateOfBirth}
-                                onChange={(e) => setDateOfBirth(e.target.value)}
-                                className="input"
-                                required
-                            />
+                            <div className="relative group">
+                                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-sage-400 group-focus-within:text-sage-600 transition-colors">
+                                    <Calendar size={20} />
+                                </div>
+                                <input
+                                    type="date"
+                                    id="dateOfBirth"
+                                    value={dateOfBirth}
+                                    onChange={(e) => setDateOfBirth(e.target.value)}
+                                    className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-sage-200 bg-white/50 focus:bg-white focus:border-sage-400 focus:ring-4 focus:ring-sage-100 transition-all outline-none text-sage-900 font-medium"
+                                    required
+                                />
+                            </div>
                         </div>
 
                         {/* Submit Button */}
                         <button
                             type="submit"
                             disabled={isLoading || !patientId || !dateOfBirth}
-                            className="btn btn-primary w-full py-3 text-base"
+                            className="w-full py-4 rounded-xl bg-sage-600 text-white font-semibold text-lg hover:bg-sage-700 active:scale-[0.98] transition-all shadow-lg shadow-sage-200 hover:shadow-sage-300 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2 group mt-2"
                         >
                             {isLoading ? (
-                                <span className="flex items-center justify-center gap-2">
-                                    <span className="spinner"></span>
-                                    Signing in...
-                                </span>
+                                <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                             ) : (
-                                'Sign In'
+                                <>
+                                    Sign In
+                                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                                </>
                             )}
                         </button>
                     </form>
-
-                    {/* Help Text */}
-                    <div className="mt-6 pt-6 border-t" style={{ borderColor: 'rgb(var(--color-surface-highlight))' }}>
-                        <p className="text-sm text-center" style={{ color: 'rgb(var(--color-text-secondary))' }}>
-                            Need help? Contact the hospital reception or call{' '}
-                            <a href="tel:+911234567890" className="font-medium" style={{ color: 'rgb(var(--color-primary))' }}>
-                                +91 123 456 7890
-                            </a>
-                        </p>
-                    </div>
                 </div>
 
-                {/* Security Notice */}
-                <p className="text-xs text-center mt-6" style={{ color: 'rgb(var(--color-text-muted))' }}>
-                    🔒 Your health data is protected with end-to-end encryption
-                </p>
-            </div>
+                {/* Footer / Help */}
+                <div className="mt-8 text-center space-y-4">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/40 border border-white/50 backdrop-blur-sm text-sm text-sage-700">
+                        <Phone size={14} className="text-sage-500" />
+                        <span>Support: <a href="tel:+911234567890" className="font-bold text-sage-800 hover:text-sage-900 transition-colors">+91 123 456 7890</a></span>
+                    </div>
+
+                    <div className="flex items-center justify-center gap-2 text-xs text-sage-500 opacity-80">
+                        <Lock size={12} />
+                        <span>End-to-end encrypted & secure</span>
+                    </div>
+                </div>
+            </motion.div>
         </div>
     );
 };
