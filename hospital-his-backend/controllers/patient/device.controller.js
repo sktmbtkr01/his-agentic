@@ -61,11 +61,15 @@ const connectDevice = async (req, res) => {
 
         // If redirectUri is not provided, try to construct it from the request to support deployments without explicit BACKEND_URL
         if (!redirectUri && provider === DEVICE_PROVIDERS.GOOGLE_FIT) {
-            // In production (like HF Spaces), force HTTPS as req.protocol might be http behind proxy
-            const protocol = process.env.NODE_ENV === 'production' ? 'https' : req.protocol;
-            const host = req.get('host');
-            redirectUri = `${protocol}://${host}/api/v1/patient/devices/auth-complete/google_fit`;
-            logger.info(`[DeviceController] Auto-detected Redirect URI: ${redirectUri}`);
+            if (process.env.NODE_ENV === 'production') {
+                // Hardcode specific HF Space URL to ensure exact match with Google Console whitelist
+                redirectUri = 'https://sktmbtkr-his-agentic-backend.hf.space/api/v1/patient/devices/auth-complete/google_fit';
+            } else {
+                const protocol = req.protocol;
+                const host = req.get('host');
+                redirectUri = `${protocol}://${host}/api/v1/patient/devices/auth-complete/google_fit`;
+            }
+            logger.info(`[DeviceController] Using Redirect URI: ${redirectUri}`);
         }
 
         const result = await deviceSyncService.connectDevice(patientId, provider, { redirectUri });
